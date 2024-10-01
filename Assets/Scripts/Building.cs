@@ -6,6 +6,7 @@ public class Building : MonoBehaviour
 {
     public bool Placed { get; private set; }
     public BoundsInt area;
+    private bool isDragging = false;
 
     #region Build Methods
 
@@ -29,9 +30,53 @@ public class Building : MonoBehaviour
         BoundsInt areaTemp = area;
         areaTemp.position = positionInt;
         Placed = true; 
+        isDragging = false;
         GridBuilding.current.TakeArea(areaTemp);
         
     }
 
     #endregion
+
+    public void OnMouseDown()
+    {
+        if (!Placed)
+        {
+            isDragging = true;
+        }
+    }
+
+    public void OnMouseUp()
+    {
+        isDragging = false;
+        
+        SnapToGrid();
+    }
+
+    private void Update()
+    {
+        if (isDragging)
+        {
+            
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.z = 0;  
+            
+            SnapToGrid(mousePosition);
+        }
+    }
+
+    private void SnapToGrid(Vector3 position)
+    {
+       
+        Vector3Int cellPosition = GridBuilding.current.gridLayout.WorldToCell(position);
+
+        
+        transform.position = GridBuilding.current.gridLayout.CellToWorld(cellPosition);
+    }
+
+    
+    private void SnapToGrid()
+    {
+        Vector3Int cellPosition = GridBuilding.current.gridLayout.WorldToCell(transform.position);
+        transform.position = GridBuilding.current.gridLayout.CellToWorld(cellPosition);
+    }
 }

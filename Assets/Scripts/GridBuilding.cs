@@ -46,28 +46,48 @@ public class GridBuilding : MonoBehaviour
         {
             return;
         }
+        
+        if (!temp.Placed)
+        {
+            Vector2 touchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3Int cellPos = gridLayout.LocalToCell(touchPos);
+            FollowBuilding();
 
+            if (prevPos != cellPos)
+            {
+                //temp.transform.localPosition = gridLayout.CellToLocalInterpolated(cellPos + new Vector3(.5f,
+                //.5f, 0f));
+                prevPos = cellPos;
+                FollowBuilding();
+            }
+            
+            
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (temp.CanBePlaced())
+                {
+                    temp.Place();
+                }
+            }
+            else if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                ClearArea();
+                Destroy(temp.gameObject);
+            
+            }
+        }
+        
+        
         if (Input.GetMouseButtonDown(0))
         {
             if (EventSystem.current.IsPointerOverGameObject(0))
             {
                 return;
             }
-
-            if (!temp.Placed)
-            {
-                Vector2 touchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                Vector3Int cellPos = gridLayout.LocalToCell(touchPos);
-
-                if (prevPos != cellPos)
-                {
-                    temp.transform.localPosition = gridLayout.CellToLocalInterpolated(cellPos + new Vector3(.5f,
-                        .5f, 0f));
-                    prevPos = cellPos;
-                    FollowBuilding();
-                }
-            }
-        }
+            
+            
+           
+        }/*
         else if (Input.GetKeyDown(KeyCode.Space))
         {
             if (temp.CanBePlaced())
@@ -80,7 +100,7 @@ public class GridBuilding : MonoBehaviour
             ClearArea();
             Destroy(temp.gameObject);
             
-        }
+        }*/
     }
 
     #endregion
