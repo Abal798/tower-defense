@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8779746919612603036}
   - component: {fileID: 4566385561218843705}
   m_Layer: 0
-  m_Name: Hdv
+  m_Name: SmallHDV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -68,6 +68,19 @@ public class GridBuilding : MonoBehaviour
                 }
             }
         }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (temp.CanBePlaced())
+            {
+                temp.Place();
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ClearArea();
+            Destroy(temp.gameObject);
+            
+        }
     }
 
     #endregion
@@ -115,7 +128,7 @@ public class GridBuilding : MonoBehaviour
         FollowBuilding();
     }
 
-    private void ClearArena()
+    private void ClearArea()
     {
         TileBase[] toClear = new TileBase[prevArea.size.x * prevArea.size.y * prevArea.size.z];
         FillTiles(toClear, TileType.Empty);
@@ -124,7 +137,7 @@ public class GridBuilding : MonoBehaviour
 
     private void FollowBuilding()
     {
-        ClearArena();
+        ClearArea();
         
         temp.area.position = gridLayout.WorldToCell(temp.gameObject.transform.position);
         BoundsInt buildingArea = temp.area;
@@ -152,6 +165,27 @@ public class GridBuilding : MonoBehaviour
         
         TempTilemap.SetTilesBlock(buildingArea, tileArray);
         prevArea = buildingArea;
+    }
+
+    public bool CanTakeArea(BoundsInt area)
+    {
+        TileBase[] baseArray = GetTilesBlock(area, MainTilemap);
+        foreach (var b in baseArray)
+        {
+            if (b != tileBases[TileType.White])
+            {
+                Debug.Log("Can't place here");
+                return false;
+            }
+        }
+
+        return true;
+    }
+    
+    public void TakeArea(BoundsInt area)
+    {
+        SetTilesBlock(area, TileType.Empty, TempTilemap);
+        SetTilesBlock(area, TileType.Green, MainTilemap);
     }
 
     #endregion
