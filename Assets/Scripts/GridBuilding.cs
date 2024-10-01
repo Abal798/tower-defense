@@ -144,6 +144,14 @@ public class GridBuilding : MonoBehaviour
 
     public void InitializeWithBuilding(GameObject building)
     {
+        if (temp != null)
+        {
+            if (!temp.Placed)
+            {
+                return;
+            }
+            
+        }
         temp = Instantiate(building, Vector3.zero, Quaternion.identity).GetComponent<Building>();
         FollowBuilding();
     }
