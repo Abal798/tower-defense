@@ -62,14 +62,14 @@ public class GridBuilding : MonoBehaviour
             }
             
             
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetMouseButtonDown(0))
             {
                 if (temp.CanBePlaced())
                 {
                     temp.Place();
                 }
             }
-            else if (Input.GetKeyDown(KeyCode.Escape))
+            else if (Input.GetMouseButtonDown(1))
             {
                 ClearArea();
                 Destroy(temp.gameObject);

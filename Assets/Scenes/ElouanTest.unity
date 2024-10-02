@@ -393,6 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 50
+  speedFactor: 75
   edgeThreshold: 110
   minPosition: {x: -18.5, y: -22.5}
   maxPosition: {x: 18.5, y: 22.5}

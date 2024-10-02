@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraManager : MonoBehaviour
 {
     public float moveSpeed = 50f; // Speed at which the camera moves
+    public float speedFactor = 50f;
     public float edgeThreshold = 500f; // Distance from the edge of the screen to trigger movement
     
     public Vector2 minPosition; // Minimum bounds for the camera
@@ -28,7 +29,7 @@ public class CameraManager : MonoBehaviour
         maxPosition = (new Vector2((15 - camera.orthographicSize) * 1.85f , (15 - camera.orthographicSize) + 12.5f));
         minPosition = (new Vector2((15 - camera.orthographicSize) * -1.85f ,   -12.5f - (15 - camera.orthographicSize)));        
         
-        moveSpeed = (camera.orthographicSize * 5) + 35;
+        moveSpeed = (camera.orthographicSize * 5) + speedFactor;
 
         if (mousePosition.x < edgeThreshold)
         {
