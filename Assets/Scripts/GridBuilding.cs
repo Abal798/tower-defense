@@ -33,11 +33,13 @@ public class GridBuilding : MonoBehaviour
         tileBases.Add(TileType.White, Resources.Load<TileBase>(titlePath + "white"));
         tileBases.Add(TileType.Green, Resources.Load<TileBase>(titlePath + "green"));
         tileBases.Add(TileType.Red, Resources.Load<TileBase>(titlePath + "red"));
+        tileBases.Add(TileType.Grey, Resources.Load<TileBase>(titlePath + "grey"));
         
         Debug.Log("Empty Tile: " + (tileBases[TileType.Empty] == null ? "null" : "Loaded"));
         Debug.Log("Green Tile: " + (tileBases[TileType.Green] == null ? "Failed to Load" : "Loaded"));
         Debug.Log("Red Tile: " + (tileBases[TileType.Red] == null ? "Failed to Load" : "Loaded"));
         Debug.Log("White Tile: " + (tileBases[TileType.White] == null ? "Failed to Load" : "Loaded"));
+        Debug.Log("Grey Tile: " + (tileBases[TileType.Grey] == null ? "Failed to Load" : "Loaded"));
     }
 
     private void Update()
@@ -165,35 +167,44 @@ public class GridBuilding : MonoBehaviour
 
     private void FollowBuilding()
     {
+        // Clear the previous area first
         ClearArea();
         
         temp.area.position = gridLayout.WorldToCell(temp.gameObject.transform.position);
         BoundsInt buildingArea = temp.area;
 
+        
         TileBase[] baseArray = GetTilesBlock(buildingArea, MainTilemap);
 
-        int size = baseArray.Length;
-        TileBase[] tileArray = new TileBase[size];
+        
+        TileBase[] tileArray = new TileBase[baseArray.Length];
 
+        
+        bool canPlace = true;
+
+        
         for (int i = 0; i < baseArray.Length; i++)
         {
             
             if (baseArray[i] == tileBases[TileType.White])
             {
-                
+               
                 tileArray[i] = tileBases[TileType.Green];
             }
             else
             {
                 
-                FillTiles(tileArray, TileType.Red);
-                break;
+                tileArray[i] = tileBases[TileType.Red];
+                
             }
         }
+
         
         TempTilemap.SetTilesBlock(buildingArea, tileArray);
+        
         prevArea = buildingArea;
     }
+
 
     public bool CanTakeArea(BoundsInt area)
     {
@@ -213,7 +224,7 @@ public class GridBuilding : MonoBehaviour
     public void TakeArea(BoundsInt area)
     {
         SetTilesBlock(area, TileType.Empty, TempTilemap);
-        SetTilesBlock(area, TileType.Green, MainTilemap);
+        SetTilesBlock(area, TileType.Grey, MainTilemap);
     }
 
     #endregion
@@ -224,5 +235,6 @@ public enum TileType
     Empty,
     White,
     Green, 
-    Red
+    Red,
+    Grey
 }
