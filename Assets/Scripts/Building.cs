@@ -6,7 +6,7 @@ public class Building : MonoBehaviour
 {
     public bool Placed { get; private set; }
     public BoundsInt area;
-    private bool isDragging = false;
+    private bool isDragging = true;
 
     #region Build Methods
 
@@ -36,21 +36,7 @@ public class Building : MonoBehaviour
     }
 
     #endregion
-
-    public void OnMouseDown()
-    {
-        if (!Placed)
-        {
-            isDragging = true;
-        }
-    }
-
-    public void OnMouseUp()
-    {
-        isDragging = false;
-        
-        SnapToGrid();
-    }
+    
 
     private void Update()
     {
@@ -60,6 +46,7 @@ public class Building : MonoBehaviour
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = 0;  
             
+            SnapToGrid(mousePosition);
             SnapToGrid(mousePosition);
         }
     }
