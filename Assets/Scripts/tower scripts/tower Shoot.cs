@@ -5,7 +5,7 @@ using UnityEngine;
 public class towerShoot : MonoBehaviour
 {
     public float detectionRadius = 10f;
-    public LayerMask targetLayer;
+    public LayerMask ennemyLayer;
     public float rotationSpeed = 10f;
 
     private GameObject target;
@@ -14,8 +14,7 @@ public class towerShoot : MonoBehaviour
     void Update()
     {
         FindClosestTargetWithCircleCast();
-
-        // Si une cible est détectée, oriente le GameObject vers cette cible
+        
         if (targetDetected && (target != null))
         {
             RotateTowardsTarget();
@@ -23,7 +22,7 @@ public class towerShoot : MonoBehaviour
     }
     void FindClosestTargetWithCircleCast()
     {
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, detectionRadius, targetLayer);
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, detectionRadius, ennemyLayer);
         
         if (hitColliders.Length == 0)
         {
@@ -54,18 +53,13 @@ public class towerShoot : MonoBehaviour
     
     void RotateTowardsTarget()
     {
-        // Calcule la direction vers la cible
         Vector2 direction = (target.transform.position - transform.position).normalized;
-
-        // Calcule l'angle nécessaire pour se tourner vers la cible
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        // Applique la rotation progressivement vers la cible avec une interpolation
+        
         Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, angle));
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
-
-    // Pour afficher visuellement le rayon de détection dans l'éditeur Unity
+    
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;

@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRadius: 10
-  targetLayer:
+  ennemyLayer:
     serializedVersion: 2
     m_Bits: 64
   rotationSpeed: 10
