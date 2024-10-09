@@ -6,6 +6,7 @@ public class BulletBehaviour : MonoBehaviour
 {
 
     public float bulletSpeed = 1;
+    public float dammage;
     public GameObject target;
 
     void Update()

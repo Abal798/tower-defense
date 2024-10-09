@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a25a52e69bf406342a968d2eec980936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRadius: 10
+  detectionRadius: 100
   rotationSpeed: 10
   bullet: {fileID: 3102247936313608300, guid: a8c838c3270f40948964b205f61007de, type: 3}
   ennemyLayer:
@@ -187,6 +187,7 @@ GameObject:
   - component: {fileID: 330188302}
   - component: {fileID: 330188301}
   - component: {fileID: 330188303}
+  - component: {fileID: 330188304}
   m_Layer: 6
   m_Name: Monster
   m_TagString: Untagged
@@ -255,7 +256,7 @@ Transform:
   m_GameObject: {fileID: 330188299}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.12, y: 2.08, z: 0}
+  m_LocalPosition: {x: 5.83, y: -1.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -306,6 +307,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &330188304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330188299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 624125c9e150c554eb88ef8f6e7a4c7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 10
+  incomingDamage: 0
 --- !u!1 &352648705
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,6 +332,7 @@ GameObject:
   - component: {fileID: 352648708}
   - component: {fileID: 352648707}
   - component: {fileID: 352648706}
+  - component: {fileID: 352648709}
   m_Layer: 6
   m_Name: Monster (1)
   m_TagString: Untagged
@@ -430,12 +446,26 @@ Transform:
   m_GameObject: {fileID: 352648705}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.59, y: 2.08, z: 0}
+  m_LocalPosition: {x: -5.68, y: -0.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &352648709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352648705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 624125c9e150c554eb88ef8f6e7a4c7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 10
+  incomingDamage: 0
 --- !u!1 &629879776
 GameObject:
   m_ObjectHideFlags: 0

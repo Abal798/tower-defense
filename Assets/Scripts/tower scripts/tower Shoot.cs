@@ -79,7 +79,12 @@ public class towerShoot : MonoBehaviour
 
     void Shoot()
     {
-        GameObject newBullet = Instantiate(bullet, transform.position, transform.rotation);
-        newBullet.GetComponent<BulletBehaviour>().target = target;
+        if (target != null)
+        {
+            GameObject newBullet = Instantiate(bullet, transform.position, transform.rotation);
+            newBullet.GetComponent<BulletBehaviour>().target = target;
+            target.GetComponent<MonsterDeathBehaviour>().incomingDamage +=
+                newBullet.GetComponent<BulletBehaviour>().dammage;
+        }
     }
 }
