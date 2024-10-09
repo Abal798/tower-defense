@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class BulletBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+    public float bulletSpeed = 1;
+    public GameObject target;
+
     void Update()
     {
-        
+        MoveTowardsTarget();
+    }
+    
+    void MoveTowardsTarget()
+    {
+        Vector3 TargetDirection = new Vector3(transform.position.x - target.transform.position.x,
+            transform.position.y - target.transform.position.y, 0).normalized;
+
+        transform.position -= TargetDirection * bulletSpeed * Time.deltaTime;
     }
 }

@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class towerShoot : MonoBehaviour
 {
+    [Header("stats modifiables")]
     public float detectionRadius = 10f;
-    public LayerMask ennemyLayer;
     public float rotationSpeed = 10f;
-
-    private GameObject target;
+    
+    [Header("a renseigner")]
+    public GameObject bullet;
+    public LayerMask ennemyLayer;
+    public KeyCode towerShootKey;
+    
+    [Header("automatique , ne pas toucher")]
+    public GameObject target;
     private bool targetDetected = false;
 
     void Update()
@@ -18,6 +24,11 @@ public class towerShoot : MonoBehaviour
         if (targetDetected && (target != null))
         {
             RotateTowardsTarget();
+        }
+
+        if (Input.GetKeyDown(towerShootKey))
+        {
+            Shoot();
         }
     }
     void FindClosestTargetWithCircleCast()
@@ -64,5 +75,11 @@ public class towerShoot : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
+    }
+
+    void Shoot()
+    {
+        GameObject newBullet = Instantiate(bullet, transform.position, transform.rotation);
+        newBullet.GetComponent<BulletBehaviour>().target = target;
     }
 }
