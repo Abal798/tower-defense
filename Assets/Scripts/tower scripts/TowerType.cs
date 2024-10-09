@@ -5,22 +5,26 @@ using UnityEngine;
 
 public class TowerType : MonoBehaviour
 {
-    public GameObject TowerTypeInterface;
-    public GameObject setFireTypeButton;
-    public GameObject setElectricTypeButton;
-    public GameObject setIceTypeButton;
-    
+    public GameObject TowerTypeButtons;
+    public bool isSelected = false;
+    public int powerType;
     void Start()
     {
-        TowerTypeInterface.SetActive(false);
+        isSelected = false;
+        TowerTypeButtons.SetActive(false);
     }
 
     // Update is called once per frame
-    private void OnMouseOver()
+    private void OnMouseDown()
     {
-        if (Input.GetMouseButtonDown(1))
+        isSelected = !isSelected;
+        if (isSelected == true)
         {
-            TowerTypeInterface.SetActive(true);
+            TowerTypeButtons.SetActive(true);
+        }
+        else
+        {
+            TowerTypeButtons.SetActive(false);
         }
     }
 }
