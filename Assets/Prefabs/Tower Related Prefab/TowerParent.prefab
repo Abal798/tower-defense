@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e5252a8dc787acc4d80df9e8704858db, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -561,7 +561,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c520f85749c5459479aa9fed6f6d712e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TowerTypeButtons: {fileID: 6713654961525417853}
+  towerTypeButtons: {fileID: 6713654961525417853}
+  towerSpriteCircle: {fileID: 4857769606392902754}
+  towerSpriteSquare: {fileID: 3578041062121001066}
   isSelected: 0
   powerType: 0
 --- !u!61 &5485536859388079292
@@ -727,7 +729,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e5252a8dc787acc4d80df9e8704858db, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class TowerType : MonoBehaviour
 {
-    public GameObject TowerTypeButtons;
+    public GameObject towerTypeButtons;
+    public Renderer towerSpriteCircle;
+    public Renderer towerSpriteSquare;
     public bool isSelected = false;
     public int powerType;
     void Start()
     {
-        isSelected = false;
-        TowerTypeButtons.SetActive(false);
+        isSelected = true;
     }
 
     // Update is called once per frame
@@ -20,11 +21,15 @@ public class TowerType : MonoBehaviour
         isSelected = !isSelected;
         if (isSelected == true)
         {
-            TowerTypeButtons.SetActive(true);
+            towerSpriteCircle.material.color = Color.yellow;
+            towerSpriteSquare.material.color = Color.yellow;
+            towerTypeButtons.SetActive(true);
         }
         else
         {
-            TowerTypeButtons.SetActive(false);
+            towerSpriteCircle.material.color = Color.white;
+            towerSpriteSquare.material.color = Color.white;
+            towerTypeButtons.SetActive(false);
         }
     }
 }
