@@ -5,22 +5,35 @@ using UnityEngine;
 
 public class TowerType : MonoBehaviour
 {
-    public GameObject TowerTypeInterface;
-    public GameObject setFireTypeButton;
-    public GameObject setElectricTypeButton;
-    public GameObject setIceTypeButton;
-    
+    public GameObject towerTypeButtons;
+    public Renderer towerSpriteCircle;
+    public Renderer towerSpriteSquare;
+    public bool isSelected = false;
+    public int powerType;
     void Start()
     {
-        TowerTypeInterface.SetActive(false);
+        isSelected = true;
     }
 
     // Update is called once per frame
-    private void OnMouseOver()
+    private void OnMouseDown()
     {
-        if (Input.GetMouseButtonDown(1))
+        isSelected = !isSelected;
+    }
+
+    void Update()
+    {
+        if (isSelected == true)
         {
-            TowerTypeInterface.SetActive(true);
+            towerSpriteCircle.material.color = Color.yellow;
+            towerSpriteSquare.material.color = Color.yellow;
+            towerTypeButtons.SetActive(true);
+        }
+        else
+        {
+            towerSpriteCircle.material.color = Color.white;
+            towerSpriteSquare.material.color = Color.white;
+            towerTypeButtons.SetActive(false);
         }
     }
 }

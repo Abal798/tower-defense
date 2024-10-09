@@ -19,24 +19,58 @@ public class TowerShoot : MonoBehaviour
     public GameObject electricBullet;
     public LayerMask ennemyLayer;
     public KeyCode towerShootKey;
+    public TowerType TType;
 
     [Header("automatique , ne pas toucher")]
     public GameObject towerTypeBullet;
     public GameObject target;
     private bool targetDetected = false;
+    private int actualType;
+
+    void Start()
+    {
+        towerTypeBullet = null;
+    }
 
     void Update()
     {
-        FindClosestTargetWithCircleCast();
+        if(towerTypeBullet != null)
+        {
+            FindClosestTargetWithCircleCast();
         
-        if (targetDetected && (target != null))
-        {
-            RotateTowardsTarget();
-        }
+            if (targetDetected && (target != null))
+            {
+                RotateTowardsTarget();
+            }
 
-        if (Input.GetKeyDown(towerShootKey))
+            if (Input.GetKeyDown(towerShootKey))
+            {
+                Shoot();
+            }
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (TType.powerType != actualType)
         {
-            Shoot();
+            if (TType.powerType == 1)
+            {
+                actualType = 1;
+                towerTypeBullet = fireBullet;
+            }
+
+            if (TType.powerType == 2)
+            {
+                actualType = 2;
+                towerTypeBullet = electricBullet;
+            }
+
+            if (TType.powerType == 3)
+            {
+                actualType = 3;
+                towerTypeBullet = iceBullet;
+            }
         }
     }
     void FindClosestTargetWithCircleCast()
