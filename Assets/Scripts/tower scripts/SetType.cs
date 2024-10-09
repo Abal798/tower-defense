@@ -12,5 +12,6 @@ public class SetType : MonoBehaviour
     private void OnMouseDown()
     {
         TType.powerType = MyType;
+        TType.isSelected = false;
     }
 }

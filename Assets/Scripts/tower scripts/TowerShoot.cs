@@ -25,6 +25,7 @@ public class TowerShoot : MonoBehaviour
     public GameObject towerTypeBullet;
     public GameObject target;
     private bool targetDetected = false;
+    private int actualType;
 
     void Start()
     {
@@ -47,21 +48,27 @@ public class TowerShoot : MonoBehaviour
                 Shoot();
             }
         }
+    }
 
-        if (TType.isSelected == true)
+    void FixedUpdate()
+    {
+        if (TType.powerType != actualType)
         {
             if (TType.powerType == 1)
             {
+                actualType = 1;
                 towerTypeBullet = fireBullet;
             }
 
             if (TType.powerType == 2)
             {
+                actualType = 2;
                 towerTypeBullet = electricBullet;
             }
 
             if (TType.powerType == 3)
             {
+                actualType = 3;
                 towerTypeBullet = iceBullet;
             }
         }

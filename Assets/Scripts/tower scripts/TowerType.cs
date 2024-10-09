@@ -19,6 +19,10 @@ public class TowerType : MonoBehaviour
     private void OnMouseDown()
     {
         isSelected = !isSelected;
+    }
+
+    void Update()
+    {
         if (isSelected == true)
         {
             towerSpriteCircle.material.color = Color.yellow;
