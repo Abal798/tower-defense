@@ -2,18 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class towerShoot : MonoBehaviour
+public class TowerShoot : MonoBehaviour
 {
     [Header("stats modifiables")]
     public float detectionRadius = 10f;
     public float rotationSpeed = 10f;
-    
-    [Header("a renseigner")]
-    public GameObject bullet;
+    public float dammage = 1f;
+    public float bulletSpeed = 10f;
+
+    [Header("a renseigner, les GD pas toucher")]
+    public GameObject towerSprite;
+    public GameObject basicBullet;
+
+    public GameObject fireBullet;
+    public GameObject iceBullet;
+    public GameObject electricBullet;
     public LayerMask ennemyLayer;
     public KeyCode towerShootKey;
-    
+
     [Header("automatique , ne pas toucher")]
+    public GameObject towerTypeBullet;
     public GameObject target;
     private bool targetDetected = false;
 
@@ -64,11 +72,11 @@ public class towerShoot : MonoBehaviour
     
     void RotateTowardsTarget()
     {
-        Vector2 direction = (target.transform.position - transform.position).normalized;
+        Vector2 direction = (target.transform.position - towerSprite.transform.position).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         
         Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, angle));
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        towerSprite.transform.rotation = Quaternion.Slerp(towerSprite.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
     
     void OnDrawGizmosSelected()
@@ -81,8 +89,11 @@ public class towerShoot : MonoBehaviour
     {
         if (target != null)
         {
-            GameObject newBullet = Instantiate(bullet, transform.position, transform.rotation);
+            GameObject newBullet = Instantiate(towerTypeBullet, transform.position, transform.rotation);
             newBullet.GetComponent<BulletBehaviour>().target = target;
+            newBullet.GetComponent<BulletBehaviour>().dammage = dammage;
+            newBullet.GetComponent<BulletBehaviour>().bulletSpeed = bulletSpeed;
+            
             target.GetComponent<MonsterDeathBehaviour>().incomingDamage +=
                 newBullet.GetComponent<BulletBehaviour>().dammage;
         }

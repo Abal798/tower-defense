@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MonsterDeathBehaviour : MonoBehaviour
@@ -25,13 +26,14 @@ public class MonsterDeathBehaviour : MonoBehaviour
 
         if (healthPoints <= 0)
         {
-            Destroy(transform);
+            Debug.Log("je suis sensé mourir");
+            Destroy(gameObject);
         }
     }
     
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        Destroy(other.gameObject, 0.1f);
+        Destroy(other.gameObject);
         healthPoints -= 1;
     }
 }
