@@ -24,8 +24,8 @@ public class TowerShoot : MonoBehaviour
     [Header("automatique , ne pas toucher")]
     public GameObject towerTypeBullet;
     public GameObject target;
-    private bool targetDetected = false;
-    private int actualType;
+    public bool targetDetected = false;
+    public int actualType;
 
     void Start()
     {

@@ -87,7 +87,7 @@ public class MapManager : MonoBehaviour
 
         float walkingCost = dataFromTiles[tile].walkingCost;
 
-        return walkingCost;
+        return  walkingCost;
 
 
     }
