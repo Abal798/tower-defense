@@ -145,3 +145,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 10
   incomingDamage: 0
+  RM: {fileID: 7524079527896660285, guid: 73a61c49f76438b44a9ba7ff4e83d558, type: 3}
