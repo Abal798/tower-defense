@@ -31,7 +31,7 @@ public class TowerShoot : MonoBehaviour
     {
         towerTypeBullet = null;
     }
-
+    
     void Update()
     {
         if(towerTypeBullet != null)
@@ -48,10 +48,7 @@ public class TowerShoot : MonoBehaviour
                 Shoot();
             }
         }
-    }
-
-    void FixedUpdate()
-    {
+        
         if (TType.powerType != actualType)
         {
             if (TType.powerType == 1)

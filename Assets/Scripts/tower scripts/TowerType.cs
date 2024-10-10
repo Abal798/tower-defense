@@ -35,6 +35,7 @@ public class TowerType : MonoBehaviour
             isSelected = true;
             firstTime = false;
         }
+        
         if (isSelected == true)
         {
             towerSpriteCircle.material.color = Color.yellow;
