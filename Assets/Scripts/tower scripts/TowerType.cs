@@ -10,10 +10,16 @@ public class TowerType : MonoBehaviour
     public Renderer towerSpriteSquare;
     public bool isSelected = false;
     public int powerType;
+    public bool isPlaced;
+    public bool firstTime = true;
+
+    public Building Building;
+    //public Building Building;
     void Start()
     {
-        isSelected = true;
+        Building = transform.parent.parent.GetComponent<Building>();
     }
+    
 
     // Update is called once per frame
     private void OnMouseDown()
@@ -23,6 +29,12 @@ public class TowerType : MonoBehaviour
 
     void Update()
     {
+        
+        if (Building.Placed && firstTime)
+        {
+            isSelected = true;
+            firstTime = false;
+        }
         if (isSelected == true)
         {
             towerSpriteCircle.material.color = Color.yellow;

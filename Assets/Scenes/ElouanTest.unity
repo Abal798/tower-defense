@@ -394,7 +394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 50
   speedFactor: 75
-  edgeThreshold: 110
+  edgeThreshold: 10
   minPosition: {x: -18.5, y: -22.5}
   maxPosition: {x: 18.5, y: 22.5}
   zoomSpeed: 2
@@ -755,7 +755,7 @@ MonoBehaviour:
         m_MethodName: InitializeWithBuilding
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1083337897966377102, guid: 94e7c5b7c4fa86442a5eb25d20c9004f, type: 3}
+          m_ObjectArgument: {fileID: 7234503307843581842, guid: 29511a5861e89ce4293b294750d70ba7, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -7384,7 +7384,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2051169203
   m_SortingLayer: -1
-  m_SortingOrder: 0
+  m_SortingOrder: -100
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.012000024, y: 0.012000024, z: 0}
   m_MaxChunkCount: 16
@@ -7481,7 +7481,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2051169203
   m_SortingLayer: -1
-  m_SortingOrder: 1
+  m_SortingOrder: -100
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16

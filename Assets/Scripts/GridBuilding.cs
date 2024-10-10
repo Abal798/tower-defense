@@ -180,7 +180,6 @@ public class GridBuilding : MonoBehaviour
         TileBase[] tileArray = new TileBase[baseArray.Length];
 
         
-        bool canPlace = true;
 
         
         for (int i = 0; i < baseArray.Length; i++)
