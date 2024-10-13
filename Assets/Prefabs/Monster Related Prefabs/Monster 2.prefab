@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8496490190715410811}
   - component: {fileID: 4462025437506793994}
   m_Layer: 6
-  m_Name: Monster
+  m_Name: Monster 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.16, y: -1.52, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -144,5 +144,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 10
-  incomingDamage: 0
   RM: {fileID: 7524079527896660285, guid: 73a61c49f76438b44a9ba7ff4e83d558, type: 3}
+  incomingDamage: 0
