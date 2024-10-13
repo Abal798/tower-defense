@@ -44,8 +44,21 @@ public class TowerType : MonoBehaviour
         }
         else
         {
-            towerSpriteCircle.material.color = Color.white;
-            towerSpriteSquare.material.color = Color.white;
+            if (powerType == 1)
+            {
+                towerSpriteCircle.material.color = Color.red;
+                towerSpriteSquare.material.color = Color.red; 
+            }
+            if (powerType == 2)
+            {
+                towerSpriteCircle.material.color = Color.blue;
+                towerSpriteSquare.material.color = Color.blue; 
+            }
+            if (powerType == 3)
+            {
+                towerSpriteCircle.material.color = Color.white;
+                towerSpriteSquare.material.color = Color.white; 
+            }
             towerTypeButtons.SetActive(false);
         }
     }
