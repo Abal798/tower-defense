@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7374532177628107893}
   - component: {fileID: 8496490190715410811}
   - component: {fileID: 4462025437506793994}
+  - component: {fileID: 9090679952894154339}
   m_Layer: 6
   m_Name: Monster 2
   m_TagString: Untagged
@@ -146,3 +147,17 @@ MonoBehaviour:
   healthPoints: 10
   RM: {fileID: 7524079527896660285, guid: 73a61c49f76438b44a9ba7ff4e83d558, type: 3}
   incomingDamage: 0
+--- !u!114 &9090679952894154339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791313746008852168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 644751aa41c97214c9690332cfddd75f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterSpeed: 1
+  target: {fileID: 0}
