@@ -9,6 +9,7 @@ public class TowerShoot : MonoBehaviour
     public float rotationSpeed = 10f;
     public float dammage = 1f;
     public float bulletSpeed = 10f;
+    public float cadence = 2f;
 
     [Header("a renseigner, les GD pas toucher")]
     public GameObject towerSprite;
@@ -30,8 +31,9 @@ public class TowerShoot : MonoBehaviour
     void Start()
     {
         towerTypeBullet = null;
+        StartCoroutine(ShootAtInterval());
     }
-
+    
     void Update()
     {
         if(towerTypeBullet != null)
@@ -48,10 +50,7 @@ public class TowerShoot : MonoBehaviour
                 Shoot();
             }
         }
-    }
-
-    void FixedUpdate()
-    {
+        
         if (TType.powerType != actualType)
         {
             if (TType.powerType == 1)
@@ -127,9 +126,22 @@ public class TowerShoot : MonoBehaviour
             newBullet.GetComponent<BulletBehaviour>().target = target;
             newBullet.GetComponent<BulletBehaviour>().dammage = dammage;
             newBullet.GetComponent<BulletBehaviour>().bulletSpeed = bulletSpeed;
+            target.GetComponent<MonsterDeathBehaviour>().incomingDamage += dammage;
             
-            target.GetComponent<MonsterDeathBehaviour>().incomingDamage +=
-                newBullet.GetComponent<BulletBehaviour>().dammage;
+            Destroy(newBullet, 5f);
         }
     }
+    
+    IEnumerator ShootAtInterval()
+    {
+        while (true)
+        {
+            if (target != null)
+            {
+                Shoot();
+            }
+            yield return new WaitForSeconds(1f / cadence);
+        }
+    }
+    
 }

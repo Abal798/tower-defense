@@ -1,25 +1,16 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletBehaviour : MonoBehaviour
+public class MonsterMovementBehaviourTemprary : MonoBehaviour
 {
 
-    public float bulletSpeed = 1;
-    public float dammage;
+    public float monsterSpeed = 1;
     public GameObject target;
 
     void Update()
     {
-        if (target != null)
-        {
-            MoveTowardsTarget();
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        MoveTowardsTarget();
     }
     
     void MoveTowardsTarget()
@@ -27,8 +18,6 @@ public class BulletBehaviour : MonoBehaviour
         Vector3 TargetDirection = new Vector3(transform.position.x - target.transform.position.x,
             transform.position.y - target.transform.position.y, 0).normalized;
 
-        transform.position -= TargetDirection * bulletSpeed * Time.deltaTime;
+        transform.position -= TargetDirection * monsterSpeed * Time.deltaTime;
     }
-
-    
 }

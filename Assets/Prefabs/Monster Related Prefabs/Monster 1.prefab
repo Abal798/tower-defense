@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 7374532177628107893}
   - component: {fileID: 8496490190715410811}
   - component: {fileID: 4462025437506793994}
+  - component: {fileID: 2700044390524569264}
   m_Layer: 6
-  m_Name: Monster
+  m_Name: Monster 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.69389236, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -143,6 +144,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 624125c9e150c554eb88ef8f6e7a4c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 10
-  incomingDamage: 0
+  healthPoints: 4
   RM: {fileID: 7524079527896660285, guid: 73a61c49f76438b44a9ba7ff4e83d558, type: 3}
+  incomingDamage: 0
+--- !u!114 &2700044390524569264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791313746008852168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 644751aa41c97214c9690332cfddd75f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterSpeed: 2
+  target: {fileID: 0}

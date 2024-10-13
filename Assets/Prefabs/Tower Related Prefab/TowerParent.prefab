@@ -325,6 +325,8 @@ MonoBehaviour:
   TType: {fileID: 1277247054682543609}
   towerTypeBullet: {fileID: 3102247936313608300, guid: a8c838c3270f40948964b205f61007de, type: 3}
   target: {fileID: 0}
+  targetDetected: 0
+  actualType: 0
 --- !u!61 &4136117764412013222
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -629,7 +631,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1948492406404947399
 Transform:
   m_ObjectHideFlags: 0

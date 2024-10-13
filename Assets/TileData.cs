@@ -7,6 +7,6 @@ using UnityEngine.Tilemaps;
 public class TileData : ScriptableObject
 {
     public TileBase[] tiles;
-    public float walkingCost;
+    public int walkingCost;
     public bool buildable;
 }
