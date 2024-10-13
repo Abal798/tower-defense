@@ -12,7 +12,14 @@ public class BulletBehaviour : MonoBehaviour
 
     void Update()
     {
-        MoveTowardsTarget();
+        if (target != null)
+        {
+            MoveTowardsTarget();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
     
     void MoveTowardsTarget()

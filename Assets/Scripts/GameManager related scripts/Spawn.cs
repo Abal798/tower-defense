@@ -41,13 +41,27 @@ public class Spawn : MonoBehaviour
             x -= x % 1;
             if (x - 10 < 0)
             {
-                x += 10;
+                if (x > 0)
+                {
+                    x += 10;
+                }
+                else
+                {
+                    x -= 10;
+                }
             }
             float y = Random.Range(-1 * SpawnCircleRadius, SpawnCircleRadius);
             y -= y % 1;
             if (y - 10 < 0)
             {
-                y += 10;
+                if (y > 0)
+                {
+                    y += 10;
+                }
+                else
+                {
+                    y -= 10;
+                }
             }
             GameObject newMonster = Instantiate(monsterTypeOne, new Vector2(x,y), Quaternion.identity);
             newMonster.GetComponent<MonsterDeathBehaviour>().RM = this.gameObject.GetComponent<RessourcesManager>();
@@ -60,13 +74,27 @@ public class Spawn : MonoBehaviour
             x -= x % 1;
             if (x - 10 < 0)
             {
-                x += 10;
+                if (x > 0)
+                {
+                    x += 10;
+                }
+                else
+                {
+                    x -= 10;
+                }
             }
             float y = Random.Range(-1 * SpawnCircleRadius, SpawnCircleRadius);
             y -= y % 1;
             if (y - 10 < 0)
             {
-                y += 10;
+                if (y > 0)
+                {
+                    y += 10;
+                }
+                else
+                {
+                    y -= 10;
+                }
             }
             GameObject newMonster = Instantiate(monsterTypeTwo, new Vector2(x,y), Quaternion.identity);
             newMonster.GetComponent<MonsterDeathBehaviour>().RM = this.gameObject.GetComponent<RessourcesManager>();
