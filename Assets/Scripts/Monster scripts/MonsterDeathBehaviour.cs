@@ -60,6 +60,7 @@ public class MonsterDeathBehaviour : MonoBehaviour
     {
         {
             GameObject newParticules = Instantiate(deathParticules, transform);
+            Destroy(newParticules,1f);
             newParticules.transform.SetParent(deathPrticulesParent);
             Destroy(gameObject);
             Destroy(newParticules,0.3f);
