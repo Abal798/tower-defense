@@ -113,6 +113,10 @@ public class Pathfinding : MonoBehaviour
         InsertTileInToVisit(currentCell + new Vector3Int(1, 0, 0), currentCell, tilesToVisit[0].priority, doColor);
         InsertTileInToVisit(currentCell + new Vector3Int(0, -1, 0), currentCell, tilesToVisit[0].priority, doColor);
         InsertTileInToVisit(currentCell + new Vector3Int(-1, 0, 0), currentCell, tilesToVisit[0].priority, doColor);
+        InsertTileInToVisit(currentCell + new Vector3Int(-1, 1, 0), currentCell, tilesToVisit[0].priority, doColor);
+        InsertTileInToVisit(currentCell + new Vector3Int(1, 1, 0), currentCell, tilesToVisit[0].priority, doColor);
+        InsertTileInToVisit(currentCell + new Vector3Int(-1, -1, 0), currentCell, tilesToVisit[0].priority, doColor);
+        InsertTileInToVisit(currentCell + new Vector3Int(1, -1, 0), currentCell, tilesToVisit[0].priority, doColor);
     }
 
     bool TileInToVisitList(Vector3Int cellToCheck)

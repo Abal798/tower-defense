@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 7374532177628107893}
   - component: {fileID: 8496490190715410811}
   - component: {fileID: 4462025437506793994}
-  - component: {fileID: 2700044390524569264}
+  - component: {fileID: 4164270264960268209}
+  - component: {fileID: -1325253033383984031}
   m_Layer: 6
   m_Name: Monster 1
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1791313746008852168}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.16, y: -1.52, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -147,8 +148,9 @@ MonoBehaviour:
   healthPoints: 4
   deathParticules: {fileID: 5132903826172967407, guid: 69e5a0a7244bdad4b9395227de198bcd, type: 3}
   incomingDamage: 0
-  RM: {fileID: 7524079527896660285, guid: 73a61c49f76438b44a9ba7ff4e83d558, type: 3}
---- !u!114 &2700044390524569264
+  RM: {fileID: 0}
+  deathPrticulesParent: {fileID: 0}
+--- !u!114 &4164270264960268209
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,8 +159,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1791313746008852168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 644751aa41c97214c9690332cfddd75f, type: 3}
+  m_Script: {fileID: 11500000, guid: 64e50e6681f273d40b1fd6cb26d1470e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterSpeed: 2
-  target: {fileID: 0}
+  tilesToVisit: []
+  debugList: []
+  resultTempo: []
+  Final: []
+  txtDebugging: {fileID: 5873502354103935828, guid: 9f58c2acb26096c408414e9d01c9f818, type: 3}
+--- !u!114 &-1325253033383984031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791313746008852168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa78fdba10acf9c40b0226b3e7c7447c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deplacements: []
+  pathfinding: {fileID: 0}
+  speed: 4
+  gridLayout: {fileID: 0}

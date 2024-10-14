@@ -238,7 +238,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   towerShootKey: 32
-  TType: {fileID: 5794689373167687733}
   towerTypeBullet: {fileID: 3102247936313608300, guid: a8c838c3270f40948964b205f61007de, type: 3}
   target: {fileID: 0}
   targetDetected: 0
