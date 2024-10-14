@@ -13,7 +13,7 @@ public class Spawn : MonoBehaviour
     public GameObject monsterTypeTwo;
     public RessourcesManager RM;
 
-    public float SpawnCircleRadius;
+    public float squareSize = 56;
 
     public void ButtonFonctionLaunchWave()
     {
@@ -37,71 +37,48 @@ public class Spawn : MonoBehaviour
     {
         for(var i = 0; i < numberOfMonsterOne; i++)
         {
-            float x = Random.Range(-1 * SpawnCircleRadius, SpawnCircleRadius);
-            x -= x % 1;
-            if (x - 10 < 0)
-            {
-                if (x > 0)
-                {
-                    x += 10;
-                }
-                else
-                {
-                    x -= 10;
-                }
-            }
-            float y = Random.Range(-1 * SpawnCircleRadius, SpawnCircleRadius);
-            y -= y % 1;
-            if (y - 10 < 0)
-            {
-                if (y > 0)
-                {
-                    y += 10;
-                }
-                else
-                {
-                    y -= 10;
-                }
-            }
-            GameObject newMonster = Instantiate(monsterTypeOne, new Vector2(x,y), Quaternion.identity);
+            
+            GameObject newMonster = Instantiate(monsterTypeOne,  GetRandomPositionOnSquareEdge(), Quaternion.identity);
             newMonster.GetComponent<MonsterDeathBehaviour>().RM = this.gameObject.GetComponent<RessourcesManager>();
             newMonster.GetComponent<MonsterMovementBehaviourTemprary>().target = this.gameObject;
         }
         
         for(var i = 0; i < numberOfMonsterTwo; i++)
         {
-            float x = Random.Range(-1 * SpawnCircleRadius, SpawnCircleRadius);
-            x -= x % 1;
-            if (x - 10 < 0)
-            {
-                if (x > 0)
-                {
-                    x += 10;
-                }
-                else
-                {
-                    x -= 10;
-                }
-            }
-            float y = Random.Range(-1 * SpawnCircleRadius, SpawnCircleRadius);
-            y -= y % 1;
-            if (y - 10 < 0)
-            {
-                if (y > 0)
-                {
-                    y += 10;
-                }
-                else
-                {
-                    y -= 10;
-                }
-            }
-            GameObject newMonster = Instantiate(monsterTypeTwo, new Vector2(x,y), Quaternion.identity);
+            
+            GameObject newMonster = Instantiate(monsterTypeTwo, GetRandomPositionOnSquareEdge(), Quaternion.identity);
             newMonster.GetComponent<MonsterDeathBehaviour>().RM = this.gameObject.GetComponent<RessourcesManager>();
             newMonster.GetComponent<MonsterMovementBehaviourTemprary>().target = this.gameObject;
         }
 
         hasToSpawn = false;
+    }
+    
+    
+    Vector3 GetRandomPositionOnSquareEdge()
+    {
+        float halfSize = squareSize / 2;
+        // Choose a random side: 0 = Top, 1 = Bottom, 2 = Left, 3 = Right
+        int side = Random.Range(0, 4);
+
+        Vector3 position = Vector3.zero;
+        switch (side)
+        {
+            case 0: // Top
+                position = new Vector3(Random.Range(-halfSize, halfSize), halfSize, 0);
+                break;
+            case 1: // Bottom
+                position = new Vector3(Random.Range(-halfSize, halfSize), -halfSize, 0);
+                break;
+            case 2: // Left
+                position = new Vector3(-halfSize, Random.Range(-halfSize, halfSize), 0);
+                break;
+            case 3: // Right
+                position = new Vector3(halfSize, Random.Range(-halfSize, halfSize), 0);
+                break;
+        }
+
+        return position;
     }
     
     
