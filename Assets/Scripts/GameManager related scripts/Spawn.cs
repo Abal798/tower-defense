@@ -97,7 +97,7 @@ public class Spawn : MonoBehaviour
                 }
             }
             GameObject newMonster = Instantiate(monsterTypeTwo, new Vector2(x,y), Quaternion.identity);
-            newMonster.GetComponent<MonsterDeathBehaviour>().RM = this.gameObject.GetComponent<RessourcesManager>();
+            newMonster.GetComponent<MonsterDeathBehaviour>().RM = gameObject.GetComponent<RessourcesManager>();
             newMonster.GetComponent<MonsterMovementBehaviourTemprary>().target = this.gameObject;
         }
 

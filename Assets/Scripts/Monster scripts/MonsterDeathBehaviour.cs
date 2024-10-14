@@ -10,12 +10,16 @@ public class MonsterDeathBehaviour : MonoBehaviour
     public float healthPoints;
     
     [Header("a renseigner (les GD, tjr pas toucher)")]
-    public RessourcesManager RM;
+    
+
+    public GameObject deathParticules;
     
     [Header("automatique")]
     public float incomingDamage = 0;
     private float totalHealthPoints;
-
+    public RessourcesManager RM;
+    public Transform deathPrticulesParent;
+    
     void Start()
     {
         totalHealthPoints = healthPoints;
@@ -26,6 +30,7 @@ public class MonsterDeathBehaviour : MonoBehaviour
         if (incomingDamage >= totalHealthPoints)
         {
             gameObject.layer = LayerMask.NameToLayer("deadEnnemy");
+            Destroy(gameObject,5f);
         }
     }
     
@@ -54,7 +59,10 @@ public class MonsterDeathBehaviour : MonoBehaviour
     void Death()
     {
         {
+            GameObject newParticules = Instantiate(deathParticules, transform);
+            newParticules.transform.SetParent(deathPrticulesParent);
             Destroy(gameObject);
+            Destroy(newParticules,0.3f);
         }
     }
 }
