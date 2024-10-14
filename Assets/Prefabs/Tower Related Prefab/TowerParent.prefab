@@ -265,7 +265,7 @@ MonoBehaviour:
   isSelected: 0
   powerType: 0
   isPlaced: 0
-  TS: {fileID: 0}
+  TS: {fileID: 4128232648183720984}
   fireColor: {r: 1, g: 0.40782997, b: 0, a: 0}
   WaterColor: {r: 0, g: 0.5279794, b: 1, a: 0}
   plantColor: {r: 0.11532295, g: 1, b: 0, a: 0}

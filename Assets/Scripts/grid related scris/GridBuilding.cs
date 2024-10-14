@@ -175,7 +175,7 @@ public class GridBuilding : MonoBehaviour
             
         }
         temp = Instantiate(building, Vector3.zero, Quaternion.identity).GetComponent<Building>();
-        temp.GetComponentInChildren<TowerType>().powerType = elementTour;
+        temp.GetComponentInChildren<TowerStats>().towerType = elementTour;
         FollowBuilding();
     }
     
