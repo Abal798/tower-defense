@@ -12,6 +12,7 @@ public class Spawn : MonoBehaviour
     public int numberOfMonsterTwo;
     public GameObject monsterTypeOne;
     public GameObject monsterTypeTwo;
+    private bool side;
 
     public float SpawnCircleRadius;
 
@@ -35,32 +36,22 @@ public class Spawn : MonoBehaviour
 
     public void LaunchWave()
     {
+        side = false;
         for(var i = 0; i < numberOfMonsterOne; i++)
         {
-            float x = Random.Range(-1 * SpawnCircleRadius, SpawnCircleRadius);
-            x -= x % 1;
-            if (x - 10 < 0)
+            int x = Random.Range(-25, 24);
+            
+            if (x == -25 || x==24)
             {
-                if (x > 0)
-                {
-                    x += 10;
-                }
-                else
-                {
-                    x -= 10;
-                }
+                side = true;
             }
-            float y = Random.Range(-1 * SpawnCircleRadius, SpawnCircleRadius);
-            y -= y % 1;
-            if (y - 10 < 0)
+            int y = Random.Range(-25, 24);
+            if (!side && (y != -25 && y != 24 ))
             {
-                if (y > 0)
+                while (y != -25 && y != 24 )
                 {
-                    y += 10;
-                }
-                else
-                {
-                    y -= 10;
+                    y = Random.Range(-25, 24);
+                    Debug.Log(y);
                 }
             }
             GameObject newMonster = Instantiate(monsterTypeOne, new Vector2(x,y), Quaternion.identity);
