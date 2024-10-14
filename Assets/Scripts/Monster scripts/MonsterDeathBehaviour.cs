@@ -39,13 +39,13 @@ public class MonsterDeathBehaviour : MonoBehaviour
             {
                 RM.fireSoul += 1;
             }
-            if (other.gameObject.tag == "electric")
+            if (other.gameObject.tag == "water")
             {
-                RM.electricSoul += 1;
+                RM.waterSoul += 1;
             }
-            if (other.gameObject.tag == "ice")
+            if (other.gameObject.tag == "plant")
             {
-                RM.iceSoul += 1;
+                RM.plantSoul += 1;
             }
             Death();
         }
