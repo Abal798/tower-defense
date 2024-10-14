@@ -16,8 +16,8 @@ public class TowerShoot : MonoBehaviour
     public GameObject basicBullet;
 
     public GameObject fireBullet;
-    public GameObject iceBullet;
-    public GameObject electricBullet;
+    public GameObject waterBullet;
+    public GameObject plantBullet;
     public LayerMask ennemyLayer;
     public KeyCode towerShootKey;
     public TowerType TType;
@@ -62,13 +62,13 @@ public class TowerShoot : MonoBehaviour
             if (TType.powerType == 2)
             {
                 actualType = 2;
-                towerTypeBullet = electricBullet;
+                towerTypeBullet = waterBullet;
             }
 
             if (TType.powerType == 3)
             {
                 actualType = 3;
-                towerTypeBullet = iceBullet;
+                towerTypeBullet = plantBullet;
             }
         }
     }

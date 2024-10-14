@@ -313,11 +313,12 @@ MonoBehaviour:
   rotationSpeed: 10
   dammage: 1
   bulletSpeed: 10
+  cadence: 2
   towerSprite: {fileID: 2971200302025878446}
   basicBullet: {fileID: 3102247936313608300, guid: a8c838c3270f40948964b205f61007de, type: 3}
   fireBullet: {fileID: 3102247936313608300, guid: 1388b9f8b6b6a554f9580622e28f3dc4, type: 3}
-  iceBullet: {fileID: 3102247936313608300, guid: 0a7c2aa4ac8c8974a8eef07c77ed6496, type: 3}
-  electricBullet: {fileID: 3102247936313608300, guid: 83dffaab0f206a04b83d691858d714f8, type: 3}
+  waterBullet: {fileID: 0}
+  plantBullet: {fileID: 0}
   ennemyLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -385,7 +386,7 @@ GameObject:
   - component: {fileID: 8288233748294951663}
   - component: {fileID: 1823452180614051}
   m_Layer: 0
-  m_Name: IceButton
+  m_Name: plantButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -448,7 +449,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.8396714, a: 1}
+  m_Color: {r: 0.17243624, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -570,6 +571,10 @@ MonoBehaviour:
   powerType: 0
   isPlaced: 0
   firstTime: 0
+  selectedColor: {r: 0.9468057, g: 1, b: 0, a: 0}
+  fireColor: {r: 1, g: 0, b: 0, a: 0}
+  WaterColor: {r: 0, g: 0.46812057, b: 1, a: 0}
+  plantColor: {r: 0.13399053, g: 1, b: 0, a: 0}
   Building: {fileID: 0}
 --- !u!61 &5485536859388079292
 BoxCollider2D:
@@ -795,7 +800,7 @@ GameObject:
   - component: {fileID: 3301288281941920565}
   - component: {fileID: 6266379675573939935}
   m_Layer: 0
-  m_Name: ElectricButton
+  m_Name: waterButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

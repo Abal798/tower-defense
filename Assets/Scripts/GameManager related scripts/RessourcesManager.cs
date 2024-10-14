@@ -17,6 +17,6 @@ public class RessourcesManager : MonoBehaviour
 
     [Header("souls ressources")] 
     public float fireSoul;
-    public float iceSoul;
-    public float electricSoul;
+    public float waterSoul;
+    public float plantSoul;
 }

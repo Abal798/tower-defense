@@ -712,7 +712,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: spawn une grande maison
+  m_text: spawn tower
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -821,11 +821,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasToSpawn: 0
   isAlreadySpawning: 0
-  waveNumber: 0
   numberOfMonsterOne: 15
   numberOfMonsterTwo: 3
   monsterTypeOne: {fileID: 1791313746008852168, guid: 208d1a2fa46ec174b8c0c0c11578c539, type: 3}
   monsterTypeTwo: {fileID: 1791313746008852168, guid: d06bd98ef2bc15246882e89415279836, type: 3}
+  RM: {fileID: 0}
   SpawnCircleRadius: 50
 --- !u!114 &744501577
 MonoBehaviour:
@@ -845,8 +845,8 @@ MonoBehaviour:
   wood: 0
   stone: 0
   fireSoul: 0
-  iceSoul: 0
-  electricSoul: 0
+  waterSoul: 0
+  plantSoul: 0
 --- !u!4 &744501578
 Transform:
   m_ObjectHideFlags: 0

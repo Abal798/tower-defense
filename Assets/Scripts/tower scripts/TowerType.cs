@@ -13,6 +13,11 @@ public class TowerType : MonoBehaviour
     public bool isPlaced;
     public bool firstTime = true;
 
+    public Color selectedColor;
+    public Color fireColor;
+    public Color WaterColor;
+    public Color plantColor;
+
     public Building Building;
     //public Building Building;
     void Start()
@@ -38,26 +43,26 @@ public class TowerType : MonoBehaviour
         
         if (isSelected == true)
         {
-            towerSpriteCircle.material.color = Color.yellow;
-            towerSpriteSquare.material.color = Color.yellow;
+            towerSpriteCircle.material.color = selectedColor;
+            towerSpriteSquare.material.color = selectedColor;
             towerTypeButtons.SetActive(true);
         }
         else
         {
             if (powerType == 1)
             {
-                towerSpriteCircle.material.color = Color.red;
-                towerSpriteSquare.material.color = Color.red; 
+                towerSpriteCircle.material.color = fireColor;
+                towerSpriteSquare.material.color = fireColor; 
             }
             if (powerType == 2)
             {
-                towerSpriteCircle.material.color = Color.blue;
-                towerSpriteSquare.material.color = Color.blue; 
+                towerSpriteCircle.material.color = WaterColor;
+                towerSpriteSquare.material.color = WaterColor; 
             }
             if (powerType == 3)
             {
-                towerSpriteCircle.material.color = Color.white;
-                towerSpriteSquare.material.color = Color.white; 
+                towerSpriteCircle.material.color = plantColor;
+                towerSpriteSquare.material.color = plantColor; 
             }
             towerTypeButtons.SetActive(false);
         }
