@@ -16,7 +16,6 @@ public class TowerShoot : MonoBehaviour
     public GameObject plantBullet;
     public LayerMask ennemyLayer;
     public KeyCode towerShootKey;
-    public TowerType TType;
 
     [Header("automatique , ne pas toucher")]
     public GameObject towerTypeBullet;
@@ -32,13 +31,15 @@ public class TowerShoot : MonoBehaviour
     
     void Start()
     {
+       
         towerTypeBullet = null;
-        StartCoroutine(ShootAtInterval());
         detectionRadius = TS.radius;
         rotationSpeed = TS.rotationSpeed;
         dammage = TS.dammage;
-        bulletSpeed = TS.rotationSpeed;
+        bulletSpeed = TS.bulletSpeed;
         cadence = TS.cadence;
+        StartCoroutine(ShootAtInterval());
+
     }
     
     void Update()
@@ -58,21 +59,21 @@ public class TowerShoot : MonoBehaviour
             }
         }
         
-        if (TType.powerType != actualType)
+        if (TS.towerType != actualType)
         {
-            if (TType.powerType == 1)
+            if (TS.towerType == 1)
             {
                 actualType = 1;
                 towerTypeBullet = fireBullet;
             }
 
-            if (TType.powerType == 2)
+            if (TS.towerType == 2)
             {
                 actualType = 2;
                 towerTypeBullet = waterBullet;
             }
 
-            if (TType.powerType == 3)
+            if (TS.towerType == 3)
             {
                 actualType = 3;
                 towerTypeBullet = plantBullet;
@@ -125,6 +126,7 @@ public class TowerShoot : MonoBehaviour
     {
         if (target != null)
         {
+            
             GameObject newBullet = Instantiate(towerTypeBullet, transform.position, transform.rotation);
             newBullet.GetComponent<BulletBehaviour>().target = target;
             newBullet.GetComponent<BulletBehaviour>().dammage = dammage;
@@ -137,12 +139,16 @@ public class TowerShoot : MonoBehaviour
     
     IEnumerator ShootAtInterval()
     {
+        
         while (true)
         {
             if (target != null)
             {
+                
                 Shoot();
             }
+            
+            
             yield return new WaitForSeconds(1f / cadence);
         }
     }
