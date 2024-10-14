@@ -41,6 +41,7 @@ public class Spawn : MonoBehaviour
             GameObject newMonster = Instantiate(monsterTypeOne,  GetRandomPositionOnSquareEdge(), Quaternion.identity);
             newMonster.GetComponent<MonsterDeathBehaviour>().RM = this.gameObject.GetComponent<RessourcesManager>();
             newMonster.GetComponent<MonsterMovementBehaviourTemprary>().target = this.gameObject;
+            newMonster.GetComponent<MonsterDeathBehaviour>().deathPrticulesParent = this.transform;
         }
         
         for(var i = 0; i < numberOfMonsterTwo; i++)
