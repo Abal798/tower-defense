@@ -5,23 +5,23 @@ using UnityEngine;
 
 public class TowerType : MonoBehaviour
 {
-    public GameObject towerTypeButtons;
     public Renderer towerSpriteCircle;
     public Renderer towerSpriteSquare;
     public bool isSelected = false;
     public int powerType;
     public bool isPlaced;
-    public bool firstTime = true;
 
-    public Building Building;
-    //public Building Building;
-    void Start()
-    {
-        Building = transform.parent.parent.GetComponent<Building>();
-    }
+    public TowerStats TS;
     
+    public Color fireColor;
+    public Color WaterColor;
+    public Color plantColor;
 
-    // Update is called once per frame
+    public void Start()
+    {
+        powerType = TS.towerType;
+    }
+
     private void OnMouseDown()
     {
         isSelected = !isSelected;
@@ -29,37 +29,20 @@ public class TowerType : MonoBehaviour
 
     void Update()
     {
-        
-        if (Building.Placed && firstTime)
+        if (powerType == 1)
         {
-            isSelected = true;
-            firstTime = false;
+            towerSpriteCircle.material.color = fireColor;
+            towerSpriteSquare.material.color = fireColor; 
         }
-        
-        if (isSelected == true)
+        if (powerType == 2)
         {
-            towerSpriteCircle.material.color = Color.yellow;
-            towerSpriteSquare.material.color = Color.yellow;
-            towerTypeButtons.SetActive(true);
+            towerSpriteCircle.material.color = WaterColor;
+            towerSpriteSquare.material.color = WaterColor; 
         }
-        else
+        if (powerType == 3)
         {
-            if (powerType == 1)
-            {
-                towerSpriteCircle.material.color = Color.red;
-                towerSpriteSquare.material.color = Color.red; 
-            }
-            if (powerType == 2)
-            {
-                towerSpriteCircle.material.color = Color.blue;
-                towerSpriteSquare.material.color = Color.blue; 
-            }
-            if (powerType == 3)
-            {
-                towerSpriteCircle.material.color = Color.white;
-                towerSpriteSquare.material.color = Color.white; 
-            }
-            towerTypeButtons.SetActive(false);
+            towerSpriteCircle.material.color = plantColor;
+            towerSpriteSquare.material.color = plantColor; 
         }
     }
 }

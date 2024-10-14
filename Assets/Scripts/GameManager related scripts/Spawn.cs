@@ -7,11 +7,11 @@ public class Spawn : MonoBehaviour
 {
     public bool hasToSpawn;
     public bool isAlreadySpawning = false;
-    public int waveNumber;
     public int numberOfMonsterOne;
     public int numberOfMonsterTwo;
     public GameObject monsterTypeOne;
     public GameObject monsterTypeTwo;
+    public RessourcesManager RM;
 
     public float SpawnCircleRadius;
 
@@ -27,7 +27,7 @@ public class Spawn : MonoBehaviour
             isAlreadySpawning = true;
             LaunchWave();
             isAlreadySpawning = false;
-            waveNumber++;
+            RM.wave++;
 
         }
         

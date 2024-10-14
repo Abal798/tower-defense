@@ -144,6 +144,26 @@ public class GridBuilding : MonoBehaviour
 
     #region Building Placement
 
+    private int elementTour;
+
+    public void PreInitializeFeu(GameObject building)
+    {
+        elementTour = 1;
+        InitializeWithBuilding(building);
+    }
+    
+    public void PreInitializeEau(GameObject building)
+    {
+        elementTour = 2;
+        InitializeWithBuilding(building);
+    }
+    
+    public void PreInitializeTerre(GameObject building)
+    {
+        elementTour = 3;
+        InitializeWithBuilding(building);
+    }
+
     public void InitializeWithBuilding(GameObject building)
     {
         if (temp != null)
@@ -155,8 +175,11 @@ public class GridBuilding : MonoBehaviour
             
         }
         temp = Instantiate(building, Vector3.zero, Quaternion.identity).GetComponent<Building>();
+        temp.GetComponentInChildren<TowerType>().powerType = elementTour;
         FollowBuilding();
     }
+    
+    
 
     private void ClearArea()
     {
