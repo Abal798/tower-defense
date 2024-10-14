@@ -1115,12 +1115,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasToSpawn: 0
   isAlreadySpawning: 0
-  waveNumber: 0
   numberOfMonsterOne: 15
   numberOfMonsterTwo: 3
   monsterTypeOne: {fileID: 1791313746008852168, guid: 208d1a2fa46ec174b8c0c0c11578c539, type: 3}
   monsterTypeTwo: {fileID: 1791313746008852168, guid: d06bd98ef2bc15246882e89415279836, type: 3}
-  SpawnCircleRadius: 50
+  RM: {fileID: 0}
+  squareSize: 56
 --- !u!114 &744501577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1139,8 +1139,8 @@ MonoBehaviour:
   wood: 0
   stone: 0
   fireSoul: 0
-  iceSoul: 0
-  electricSoul: 0
+  waterSoul: 0
+  plantSoul: 0
 --- !u!4 &744501578
 Transform:
   m_ObjectHideFlags: 0
