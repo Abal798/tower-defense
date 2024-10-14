@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class TowerShoot : MonoBehaviour
 {
-    [Header("stats modifiables")]
-    public float detectionRadius = 10f;
-    public float rotationSpeed = 10f;
-    public float dammage = 1f;
-    public float bulletSpeed = 10f;
-    public float cadence = 2f;
+    
 
     [Header("a renseigner, les GD pas toucher")]
     public GameObject towerSprite;
     public GameObject basicBullet;
+    public TowerStats TS;
 
     public GameObject fireBullet;
     public GameObject waterBullet;
@@ -27,11 +23,22 @@ public class TowerShoot : MonoBehaviour
     public GameObject target;
     public bool targetDetected = false;
     public int actualType;
-
+    public float detectionRadius;
+    public float rotationSpeed;
+    public float dammage;
+    public float bulletSpeed;
+    public float cadence;
+    
+    
     void Start()
     {
         towerTypeBullet = null;
         StartCoroutine(ShootAtInterval());
+        detectionRadius = TS.radius;
+        rotationSpeed = TS.rotationSpeed;
+        dammage = TS.dammage;
+        bulletSpeed = TS.rotationSpeed;
+        cadence = TS.cadence;
     }
     
     void Update()
@@ -112,11 +119,7 @@ public class TowerShoot : MonoBehaviour
         towerSprite.transform.rotation = Quaternion.Slerp(towerSprite.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
     
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, detectionRadius);
-    }
+    
 
     void Shoot()
     {
