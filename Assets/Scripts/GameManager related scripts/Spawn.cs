@@ -40,7 +40,6 @@ public class Spawn : MonoBehaviour
             
             GameObject newMonster = Instantiate(monsterTypeOne,  GetRandomPositionOnSquareEdge(), Quaternion.identity);
             newMonster.GetComponent<MonsterDeathBehaviour>().RM = this.gameObject.GetComponent<RessourcesManager>();
-            newMonster.GetComponent<MonsterDeathBehaviour>().deathPrticulesParent = this.transform;
         }
         
         for(var i = 0; i < numberOfMonsterTwo; i++)
@@ -48,7 +47,6 @@ public class Spawn : MonoBehaviour
             
             GameObject newMonster = Instantiate(monsterTypeTwo, GetRandomPositionOnSquareEdge(), Quaternion.identity);
             newMonster.GetComponent<MonsterDeathBehaviour>().RM = this.gameObject.GetComponent<RessourcesManager>();
-            newMonster.GetComponent<MonsterDeathBehaviour>().deathPrticulesParent = this.transform;
         }
 
         hasToSpawn = false;
