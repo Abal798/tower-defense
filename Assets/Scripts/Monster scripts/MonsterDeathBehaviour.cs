@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -18,7 +19,6 @@ public class MonsterDeathBehaviour : MonoBehaviour
     public float incomingDamage = 0;
     private float totalHealthPoints;
     public RessourcesManager RM;
-    public Transform deathPrticulesParent;
     
     void Start()
     {
@@ -59,9 +59,8 @@ public class MonsterDeathBehaviour : MonoBehaviour
     void Death()
     {
         {
-            GameObject newParticules = Instantiate(deathParticules, transform);
+            GameObject newParticules = Instantiate(deathParticules, transform.position, quaternion.identity);
             Destroy(newParticules,1f);
-            newParticules.transform.SetParent(deathPrticulesParent);
             Destroy(gameObject);
             Destroy(newParticules,0.3f);
         }
