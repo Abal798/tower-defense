@@ -69,6 +69,7 @@ public class GridBuilding : MonoBehaviour
                 if (temp.CanBePlaced())
                 {
                     temp.Place();
+                    // ajouter ici le morceau de script qui permet de donner un cout aux placement de batiments
                 }
             }
             else if (Input.GetMouseButtonDown(1))
