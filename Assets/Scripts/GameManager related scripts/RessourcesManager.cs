@@ -11,10 +11,11 @@ public class RessourcesManager : MonoBehaviour
     [Header("player stats")] 
     public float health;
     
-    [Header("ressources")]
-    public int wood;
-    public int stone;
-
+    [Header("spells")]
+    public List<int> spellSlotOne= new List<int>();
+    public List<int> spellSlotTwo = new List<int>();
+    public List<int> spellSlotThree= new List<int>();
+    
     [Header("souls ressources")] 
     public float fireSoul;
     public float waterSoul;
