@@ -14,12 +14,6 @@ public class SpellsBrewingScripts : MonoBehaviour
     public List<int> brewedSpell = new List<int>();
     
     
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         fireSoulDisplay.text = "fire : " + RM.fireSoul.ToString();
@@ -55,5 +49,71 @@ public class SpellsBrewingScripts : MonoBehaviour
         }
     }
 
+    public void ResetRecipie()
+    {
+        if (brewedSpell.Count > 0)
+        {
+            for (int i = 0; i < brewedSpell.Count; i++)
+            {
+                if (brewedSpell[i] == 1)
+                {
+                    RM.fireSoul += 10;
+                }
+                
+                else if (brewedSpell[i] == 2)
+                {
+                    RM.waterSoul += 10;
+                }
 
+                else
+                {
+                    RM.plantSoul += 10;
+                }
+                
+            }
+            brewedSpell.Clear();
+        }
+    }
+
+    public void SaveSpell()
+    {
+        if (brewedSpell.Count > 1)
+        {
+            if (RM.spellSlotOne.Count == 0)
+            {
+                for (int i = 0; i < brewedSpell.Count; i++)
+                {
+                    RM.spellSlotOne.Add(brewedSpell[i]);
+                }
+                brewedSpell.Clear();
+            }
+            
+            else if (RM.spellSlotTwo.Count == 0)
+            {
+                for (int i = 0; i < brewedSpell.Count; i++)
+                {
+                    RM.spellSlotTwo.Add(brewedSpell[i]);
+                }
+                brewedSpell.Clear();
+            }
+            
+            else if (RM.spellSlotThree.Count == 0)
+            {
+                for (int i = 0; i < brewedSpell.Count; i++)
+                {
+                    RM.spellSlotThree.Add(brewedSpell[i]);
+                }
+                brewedSpell.Clear();
+            }
+
+            else
+            {
+                Debug.Log("aucun slot de libre");
+            }
+        }
+        else
+        {
+            Debug.Log("sort ne contient pas assez d'element");
+        }
+    }
 }
