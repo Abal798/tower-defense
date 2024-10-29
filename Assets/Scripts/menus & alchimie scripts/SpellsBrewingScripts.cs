@@ -55,5 +55,29 @@ public class SpellsBrewingScripts : MonoBehaviour
         }
     }
 
+    public void ResetRecipie()
+    {
+        if (brewedSpell.Count > 0)
+        {
+            for (int i = 0; i < brewedSpell.Count; i++)
+            {
+                if (brewedSpell[i] == 1)
+                {
+                    RM.fireSoul += 10;
+                }
+                
+                else if (brewedSpell[i] == 2)
+                {
+                    RM.waterSoul += 10;
+                }
 
+                else
+                {
+                    RM.plantSoul += 10;
+                }
+                
+            }
+            brewedSpell.Clear();
+        }
+    }
 }
