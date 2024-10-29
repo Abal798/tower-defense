@@ -1136,8 +1136,9 @@ MonoBehaviour:
   chrono: 0
   wave: 0
   health: 0
-  wood: 0
-  stone: 0
+  spellSlotOne: 
+  spellSlotTwo: 
+  spellSlotThree: 
   fireSoul: 0
   waterSoul: 0
   plantSoul: 0
@@ -1380,7 +1381,7 @@ MonoBehaviour:
         m_MethodName: PreInitializeTerre
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 7234503307843581842, guid: 29511a5861e89ce4293b294750d70ba7, type: 3}
+          m_ObjectArgument: {fileID: 3593605898319495790, guid: 461fbc9c2434c4845995e1a2061af584, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -1513,7 +1514,7 @@ MonoBehaviour:
         m_MethodName: PreInitializeFeu
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 7234503307843581842, guid: 29511a5861e89ce4293b294750d70ba7, type: 3}
+          m_ObjectArgument: {fileID: 3471763491458167239, guid: 6f990b6aa68dae44082db982c5592ca1, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
