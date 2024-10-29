@@ -8,7 +8,7 @@ public class TowerType : MonoBehaviour
     public Renderer towerSpriteCircle;
     public Renderer towerSpriteSquare;
     public bool isSelected = false;
-    public int powerType;
+    public int powerType = 1;
     public bool isPlaced;
 
     public TowerStats TS;

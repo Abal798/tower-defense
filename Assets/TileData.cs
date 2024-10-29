@@ -9,4 +9,5 @@ public class TileData : ScriptableObject
     public TileBase[] tiles;
     public int walkingCost;
     public bool buildable;
+    public bool alreadyBuilt;
 }

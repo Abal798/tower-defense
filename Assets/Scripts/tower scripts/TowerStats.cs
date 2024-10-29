@@ -11,10 +11,8 @@ public class TowerStats : MonoBehaviour
     public float dammage = 1f;
     public float bulletSpeed = 10f;
     public float cadence = 2f;
-    void Start()
-    {
-        
-    }
+    public List<int> ameliorations = new List<int>();
+    
 
     // Update is called once per frame
     void Update()

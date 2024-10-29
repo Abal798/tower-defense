@@ -7,6 +7,8 @@ public class Building : MonoBehaviour
     public bool Placed { get; private set; }
     public BoundsInt area;
     private bool isDragging = true;
+    public GameObject tower;
+    private TowerStats temp;
 
     #region Build Methods
 
@@ -24,15 +26,48 @@ public class Building : MonoBehaviour
         return false;
     }
 
-    public void Place()
+    public void Place(int element)
     {
+        
         Vector3Int positionInt = GridBuilding.current.gridLayout.LocalToCell((transform.position));
         BoundsInt areaTemp = area;
         areaTemp.position = positionInt;
         Placed = true; 
         isDragging = false;
         GridBuilding.current.TakeArea(areaTemp);
+        temp = Instantiate(tower, transform.position, Quaternion.identity).GetComponentInChildren<TowerStats>();
+        temp.ameliorations.Add(element);
         
+        Destroy(gameObject);
+        
+    }
+
+    public void Upgrade(int element)
+    {
+        
+        Vector2 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(mouseWorldPosition, 0.001f);
+
+        foreach (var collider in colliders)
+        {
+            Debug.Log(collider.gameObject.transform.position);
+            TowerStats towerStats = collider.GetComponent<TowerStats>();
+            if (towerStats != null && towerStats.ameliorations.Count < 3)
+            {
+                towerStats.ameliorations.Add(element);
+                Debug.Log("Upgraded tower at position: " + collider.transform.position);
+                Placed = true;
+                isDragging = false;
+                Destroy(gameObject);
+            }
+
+            
+        }
+        
+        
+
+
     }
 
     #endregion
@@ -44,9 +79,8 @@ public class Building : MonoBehaviour
         {
             
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePosition.z = 0;  
-            
-            SnapToGrid(mousePosition);
+            mousePosition.z = 0;
+
             SnapToGrid(mousePosition);
         }
     }
@@ -55,15 +89,6 @@ public class Building : MonoBehaviour
     {
        
         Vector3Int cellPosition = GridBuilding.current.gridLayout.WorldToCell(position);
-
-        
-        transform.position = GridBuilding.current.gridLayout.CellToWorld(cellPosition);
-    }
-
-    
-    private void SnapToGrid()
-    {
-        Vector3Int cellPosition = GridBuilding.current.gridLayout.WorldToCell(transform.position);
         transform.position = GridBuilding.current.gridLayout.CellToWorld(cellPosition);
     }
 }
