@@ -11,7 +11,7 @@ public class SpellsBrewingScripts : MonoBehaviour
     public TextMeshProUGUI waterSoulDisplay;
     public TextMeshProUGUI earthSoulDisplay;
 
-    public string brewedSpell = "";
+    public List<int> brewedSpell = new List<int>();
     
     
     void Start()
@@ -29,29 +29,29 @@ public class SpellsBrewingScripts : MonoBehaviour
 
     public void FireButtonSelected()
     {
-        if (brewedSpell.Length < 3)
+        if (brewedSpell.Count < 3 && RM.fireSoul > 10)
         {
             RM.fireSoul -= 10;
-            brewedSpell += "F";
+            brewedSpell.Add(1);
         }
         
     }
 
     public void WaterButtonSelected()
     {
-        if (brewedSpell.Length < 3)
+        if (brewedSpell.Count < 3 && RM.waterSoul > 10)
         {
             RM.waterSoul -= 10;
-            brewedSpell += "W";
+            brewedSpell.Add(2);
         }
     }
 
     public void EarthButtonSelected()
     {
-        if (brewedSpell.Length < 3)
+        if (brewedSpell.Count < 3 && RM.plantSoul > 10)
         {
             RM.plantSoul -= 10;
-            brewedSpell += "E";
+            brewedSpell.Add(3);
         }
     }
 
