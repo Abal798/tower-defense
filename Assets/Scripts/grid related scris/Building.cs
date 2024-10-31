@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Building : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Building : MonoBehaviour
     private bool isDragging = true;
     public GameObject tower;
     private TowerStats temp;
+
+    public UnityEvent towerIsUpgraded;
 
     #region Build Methods
 
@@ -65,6 +68,10 @@ public class Building : MonoBehaviour
 
             
         }
+        
+        towerIsUpgraded.Invoke();
+        
+        
         
         
 

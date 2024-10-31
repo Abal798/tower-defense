@@ -102,6 +102,21 @@ MonoBehaviour:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 1, y: 1, z: 1}
   tower: {fileID: 7234503307843581842, guid: 29511a5861e89ce4293b294750d70ba7, type: 3}
+  towerIsUpgraded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -5377794403072530407, guid: 29511a5861e89ce4293b294750d70ba7, type: 3}
+        m_TargetAssemblyTypeName: TowerParentUpgradeScript, Assembly-CSharp
+        m_MethodName: MustUpgradeChild
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8201059517790227942
 GameObject:
   m_ObjectHideFlags: 0

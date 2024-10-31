@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 
@@ -12,6 +13,8 @@ public class GridBuilding : MonoBehaviour
     public GridLayout gridLayout;
     public Tilemap MainTilemap;
     public Tilemap TempTilemap;
+
+    public UIManager UIM;
 
     private static Dictionary<TileType, TileBase> tileBases = new Dictionary<TileType, TileBase>();
 
@@ -257,8 +260,9 @@ public class GridBuilding : MonoBehaviour
                 if (TilemapManager.TilemapInstance.GetTileData(b).alreadyBuilt)
                 {
                     temp.Upgrade(elementTour);
+                    return false;
                 }
-                Debug.Log("Can't place here");
+                UIM.DisplayAlert("le batiment ne peut pas etre placé ici");
                 return false;
             }
         }
