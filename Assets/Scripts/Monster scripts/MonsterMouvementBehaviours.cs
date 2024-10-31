@@ -1,15 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MonsterMouvementBehaviours : MonoBehaviour
 {
+    public MonsterStats MS;
+    
     public List<Vector3Int> deplacements; // Path positions in grid space
     public Pathfinding pathfinding;
-    public float speed = 1f;
+    public float speed;
     public GridLayout gridLayout;
 
     private List<Vector3> worldPositions; // Path positions in world space
+
+
+    void Awake()
+    {
+        speed = MS.speed;
+    }
 
     private void Start()
     {

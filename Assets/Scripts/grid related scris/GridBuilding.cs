@@ -68,7 +68,7 @@ public class GridBuilding : MonoBehaviour
             {
                 if (temp.CanBePlaced())
                 {
-                    temp.Place();
+                    temp.Place(elementTour);
                     // ajouter ici le morceau de script qui permet de donner un cout aux placement de batiments
                 }
             }
@@ -109,20 +109,18 @@ public class GridBuilding : MonoBehaviour
     #endregion
 
     #region Tilemap Management
-
-    private static TileBase[] GetTilesBlock(BoundsInt area, Tilemap tilemap)
+    private static Vector3Int[] GetTilePositions(BoundsInt area)
     {
-        TileBase[] array = new TileBase[area.size.x * area.size.y * area.size.z];
+        Vector3Int[] positions = new Vector3Int[area.size.x * area.size.y * area.size.z];
         int counter = 0;
 
         foreach (var v in area.allPositionsWithin)
         {
-            Vector3Int pos = new Vector3Int(v.x, v.y, 0);
-            array[counter] = tilemap.GetTile(pos);
+            positions[counter] = new Vector3Int(v.x, v.y, 0);
             counter++;
         }
 
-        return array;
+        return positions;
     }
 
     private static void SetTilesBlock(BoundsInt area, TileType type, Tilemap tilemap)
@@ -145,7 +143,7 @@ public class GridBuilding : MonoBehaviour
 
     #region Building Placement
 
-    private int elementTour;
+    public int elementTour;
 
     public void PreInitializeFeu(GameObject building)
     {
@@ -176,7 +174,7 @@ public class GridBuilding : MonoBehaviour
             
         }
         temp = Instantiate(building, Vector3.zero, Quaternion.identity).GetComponent<Building>();
-        temp.GetComponentInChildren<TowerStats>().towerType = elementTour;
+        Debug.Log(temp);
         FollowBuilding();
     }
     
@@ -198,27 +196,47 @@ public class GridBuilding : MonoBehaviour
         BoundsInt buildingArea = temp.area;
 
         
-        TileBase[] baseArray = GetTilesBlock(buildingArea, MainTilemap);
+        Vector3Int[] posArray = GetTilePositions(buildingArea);
 
         
-        TileBase[] tileArray = new TileBase[baseArray.Length];
+        TileBase[] tileArray = new TileBase[posArray.Length];
 
         
 
         
-        for (int i = 0; i < baseArray.Length; i++)
+        for (int i = 0; i < posArray.Length; i++)
         {
             
-            if (baseArray[i] == tileBases[TileType.White])
+            if (TilemapManager.TilemapInstance.GetTileData(posArray[i]).buildable)
             {
                
                 tileArray[i] = tileBases[TileType.Green];
+                temp.transform.GetChild(0).gameObject.SetActive(false);
+            }
+            else if (TilemapManager.TilemapInstance.GetTileData(posArray[i]).alreadyBuilt)
+            {
+                temp.transform.GetChild(0).gameObject.SetActive(false);
+                
+                Vector2 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Collider2D[] colliders = Physics2D.OverlapCircleAll(mouseWorldPosition, 0.0001f);
+
+                foreach (var collider in colliders)
+                {
+                    TowerStats towerStats = collider.GetComponent<TowerStats>();
+                    if (towerStats != null && towerStats.ameliorations.Count < 3)
+                    {
+                        temp.transform.GetChild(0).gameObject.SetActive(true);
+                        break;
+                    }
+
+            
+                }
+                
             }
             else
             {
-                
                 tileArray[i] = tileBases[TileType.Red];
-                
+                temp.transform.GetChild(0).gameObject.SetActive(false);
             }
         }
 
@@ -231,11 +249,15 @@ public class GridBuilding : MonoBehaviour
 
     public bool CanTakeArea(BoundsInt area)
     {
-        TileBase[] baseArray = GetTilesBlock(area, MainTilemap);
+        Vector3Int[] baseArray = GetTilePositions(area);
         foreach (var b in baseArray)
         {
-            if (b != tileBases[TileType.White])
+            if (!TilemapManager.TilemapInstance.GetTileData(b).buildable)
             {
+                if (TilemapManager.TilemapInstance.GetTileData(b).alreadyBuilt)
+                {
+                    temp.Upgrade(elementTour);
+                }
                 Debug.Log("Can't place here");
                 return false;
             }

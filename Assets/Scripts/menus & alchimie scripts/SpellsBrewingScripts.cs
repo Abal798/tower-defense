@@ -6,6 +6,7 @@ using TMPro;
 public class SpellsBrewingScripts : MonoBehaviour
 {
     public RessourcesManager RM;
+    public UIManager UIM;
     
     public TextMeshProUGUI fireSoulDisplay;
     public TextMeshProUGUI waterSoulDisplay;
@@ -108,12 +109,12 @@ public class SpellsBrewingScripts : MonoBehaviour
 
             else
             {
-                Debug.Log("aucun slot de libre");
+                UIM.DisplayAlert("pas de slot libre");
             }
         }
         else
         {
-            Debug.Log("sort ne contient pas assez d'element");
+            UIM.DisplayAlert("sort ne contient pas assez d'element");
         }
     }
 }

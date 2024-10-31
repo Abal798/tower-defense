@@ -129,7 +129,6 @@ GameObject:
   - component: {fileID: 4136117764412013222}
   - component: {fileID: 4128232648183720984}
   - component: {fileID: 6030858656852846505}
-  - component: {fileID: 5794689373167687733}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -146,7 +145,7 @@ Transform:
   m_GameObject: {fileID: 4612657590819325718}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 1, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -210,12 +209,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ad24e873f3595040b4435852b8ba038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerType: 0
+  towerType: 1
   radius: 10
   rotationSpeed: 10
   dammage: 1
   bulletSpeed: 10
   cadence: 2
+  ameliorations: 
 --- !u!114 &6030858656852846505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,14 +231,10 @@ MonoBehaviour:
   towerSprite: {fileID: 2971200302025878446}
   basicBullet: {fileID: 3102247936313608300, guid: a8c838c3270f40948964b205f61007de, type: 3}
   TS: {fileID: 4128232648183720984}
-  fireBullet: {fileID: 3102247936313608300, guid: 1388b9f8b6b6a554f9580622e28f3dc4, type: 3}
-  waterBullet: {fileID: 3102247936313608300, guid: 83dffaab0f206a04b83d691858d714f8, type: 3}
-  plantBullet: {fileID: 3102247936313608300, guid: 0a7c2aa4ac8c8974a8eef07c77ed6496, type: 3}
   ennemyLayer:
     serializedVersion: 2
     m_Bits: 64
   towerShootKey: 32
-  towerTypeBullet: {fileID: 3102247936313608300, guid: a8c838c3270f40948964b205f61007de, type: 3}
   target: {fileID: 0}
   targetDetected: 0
   actualType: 0
@@ -247,27 +243,6 @@ MonoBehaviour:
   dammage: 0
   bulletSpeed: 0
   cadence: 0
---- !u!114 &5794689373167687733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4612657590819325718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c520f85749c5459479aa9fed6f6d712e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSpriteCircle: {fileID: 4857769606392902754}
-  towerSpriteSquare: {fileID: 3578041062121001066}
-  isSelected: 0
-  powerType: 0
-  isPlaced: 0
-  TS: {fileID: 4128232648183720984}
-  fireColor: {r: 1, g: 0.40782997, b: 0, a: 0}
-  WaterColor: {r: 0, g: 0.5279794, b: 1, a: 0}
-  plantColor: {r: 0.11532295, g: 1, b: 0, a: 0}
 --- !u!1 &7234503307843581842
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +252,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2706600730004984352}
-  - component: {fileID: 4186775333608595203}
   m_Layer: 0
   m_Name: TowerParent
   m_TagString: Untagged
@@ -301,21 +275,6 @@ Transform:
   - {fileID: 587681878492060984}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4186775333608595203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7234503307843581842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da2d98cd3be1db847b0c1c341efb40ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  area:
-    m_Position: {x: 0, y: 0, z: 0}
-    m_Size: {x: 2, y: 2, z: 1}
 --- !u!1 &7687884271457241008
 GameObject:
   m_ObjectHideFlags: 0
