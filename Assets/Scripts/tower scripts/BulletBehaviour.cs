@@ -9,6 +9,7 @@ public class BulletBehaviour : MonoBehaviour
     public float bulletSpeed = 1;
     public float dammage;
     public GameObject target;
+    public List<int> bulletElements = new List<int>();
 
     void Update()
     {

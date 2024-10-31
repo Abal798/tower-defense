@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Building : MonoBehaviour
 {
@@ -57,14 +58,16 @@ public class Building : MonoBehaviour
             if (towerStats != null && towerStats.ameliorations.Count < 3)
             {
                 towerStats.ameliorations.Add(element);
-                Debug.Log("Upgraded tower at position: " + collider.transform.position);
                 Placed = true;
                 isDragging = false;
+                towerStats.recalculateStats();
                 Destroy(gameObject);
             }
-
-            
         }
+        
+        
+        
+        
         
         
 
