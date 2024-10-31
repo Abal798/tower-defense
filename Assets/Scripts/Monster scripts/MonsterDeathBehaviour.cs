@@ -48,7 +48,7 @@ public class MonsterDeathBehaviour : MonoBehaviour
             {
                 RM.waterSoul += 1;
             }
-            if (other.gameObject.tag == "plant")
+            if (other.gameObject.tag == "earth")
             {
                 RM.plantSoul += 1;
             }

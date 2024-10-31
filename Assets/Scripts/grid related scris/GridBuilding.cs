@@ -143,7 +143,7 @@ public class GridBuilding : MonoBehaviour
 
     #region Building Placement
 
-    private int elementTour;
+    public int elementTour;
 
     public void PreInitializeFeu(GameObject building)
     {

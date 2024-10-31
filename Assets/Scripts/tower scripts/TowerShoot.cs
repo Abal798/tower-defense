@@ -10,15 +10,11 @@ public class TowerShoot : MonoBehaviour
     public GameObject towerSprite;
     public GameObject basicBullet;
     public TowerStats TS;
-
-    public GameObject fireBullet;
-    public GameObject waterBullet;
-    public GameObject plantBullet;
+    
     public LayerMask ennemyLayer;
     public KeyCode towerShootKey;
 
     [Header("automatique , ne pas toucher")]
-    public GameObject towerTypeBullet;
     public GameObject target;
     public bool targetDetected = false;
     public int actualType;
@@ -31,8 +27,7 @@ public class TowerShoot : MonoBehaviour
     
     void Start()
     {
-       
-        towerTypeBullet = null;
+        
         detectionRadius = TS.radius;
         rotationSpeed = TS.rotationSpeed;
         dammage = TS.dammage;
@@ -44,39 +39,35 @@ public class TowerShoot : MonoBehaviour
     
     void Update()
     {
-        if(towerTypeBullet != null)
-        {
-            FindClosestTargetWithCircleCast();
-        
-            if (targetDetected && (target != null))
-            {
-                RotateTowardsTarget();
-            }
 
-            if (Input.GetKeyDown(towerShootKey))
-            {
-                Shoot();
-            }
+        FindClosestTargetWithCircleCast();
+    
+        if (targetDetected && (target != null))
+        {
+            RotateTowardsTarget();
         }
+
+        if (Input.GetKeyDown(towerShootKey))
+        {
+            Shoot();
+        }
+
         
         if (TS.towerType != actualType)
         {
             if (TS.towerType == 1)
             {
                 actualType = 1;
-                towerTypeBullet = fireBullet;
             }
 
             if (TS.towerType == 2)
             {
                 actualType = 2;
-                towerTypeBullet = waterBullet;
             }
 
             if (TS.towerType == 3)
             {
                 actualType = 3;
-                towerTypeBullet = plantBullet;
             }
         }
     }
@@ -127,7 +118,20 @@ public class TowerShoot : MonoBehaviour
         if (target != null)
         {
             
-            GameObject newBullet = Instantiate(towerTypeBullet, transform.position, transform.rotation);
+            GameObject newBullet = Instantiate(basicBullet, transform.position, transform.rotation);
+            if (actualType == 1)
+            {
+                newBullet.gameObject.tag = "fire";
+            }
+            else if (actualType == 2)
+            {
+                newBullet.gameObject.tag = "water";
+            }
+            else if (actualType == 3)
+            {
+                newBullet.gameObject.tag = "earth";
+            }
+            
             newBullet.GetComponent<BulletBehaviour>().target = target;
             newBullet.GetComponent<BulletBehaviour>().dammage = dammage;
             newBullet.GetComponent<BulletBehaviour>().bulletSpeed = bulletSpeed;
