@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 public class TowerStats : MonoBehaviour
 {
-    public int towerType;//temporaire
     public float radius;
     public float rotationSpeed;
     public List<int> ameliorations = new List<int>();
@@ -19,10 +18,7 @@ public class TowerStats : MonoBehaviour
     
     public float basicHealth = 1;
     public float health;
-
-    private int nbrOfFireInsuflation;
-    private int nbrOfWaterInsuflation;
-    private int nbrOfEarthInsuflation;
+    
 
     [Header("a renseigner par les GD")] 
     public float FireEffect = 10;
@@ -36,7 +32,6 @@ public class TowerStats : MonoBehaviour
 
     void Start()
     {
-        towerType = ameliorations[0];//temporaire
         recalculateStats();
     }
     
@@ -49,12 +44,16 @@ public class TowerStats : MonoBehaviour
 
     public void recalculateStats()
     {
-        nbrOfFireInsuflation = 0;
-        nbrOfWaterInsuflation = 0;
-        nbrOfEarthInsuflation = 0;
+        int nbrOfFireInsuflation = 0;
+        int nbrOfWaterInsuflation = 0;
+        int nbrOfEarthInsuflation = 0;
+        
+        Debug.Log(ameliorations.Count);
         
         for (int i = 0; i < ameliorations.Count; i++)
         {
+            Debug.Log("amelioration[" + i + "] = " + ameliorations[i]);
+            
             if (ameliorations[i] == 1)
             {
                 nbrOfFireInsuflation++;
@@ -69,11 +68,15 @@ public class TowerStats : MonoBehaviour
             }
         }
 
-        damages = (basicDammage + FireEffect * nbrOfFireInsuflation + waterEffectOne * nbrOfWaterInsuflation);//formule incomplete , manque l'influence du terrain
-        health = basicHealth + waterLifeBonus;//incomplet , manque l'effet de terre , trop impréci pour l'instant
+        damages = basicDammage + FireEffect * nbrOfFireInsuflation + waterEffectOne * nbrOfWaterInsuflation;//formule incomplete , manque l'influence du terrain
+        health = basicHealth + waterLifeBonus * nbrOfWaterInsuflation;//incomplet , manque l'effet de terre , trop impréci pour l'instant
         cadence = basicCadence - waterEffectTwo * nbrOfWaterInsuflation;
         
         statsHasBeenRecalculated.Invoke();
+        
+        Debug.Log("fire :" + nbrOfFireInsuflation);
+        Debug.Log("water :" + nbrOfWaterInsuflation);
+        Debug.Log("earth :" + nbrOfEarthInsuflation);
 
     }
 }

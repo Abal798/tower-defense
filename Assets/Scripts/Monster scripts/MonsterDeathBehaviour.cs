@@ -9,6 +9,7 @@ public class MonsterDeathBehaviour : MonoBehaviour
 {
     [Header("modifiable")]
     public float healthPoints;
+    public float soulReward = 1f;
     
     [Header("a renseigner (les GD, tjr pas toucher)")]
     
@@ -37,24 +38,27 @@ public class MonsterDeathBehaviour : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         healthPoints -= other.gameObject.GetComponent<BulletBehaviour>().dammage;
-        Destroy(other.gameObject);
         
         if (healthPoints <= 0)
         {
-            if (other.gameObject.tag == "fire")
+            for (int i = 0; i < other.gameObject.GetComponent<BulletBehaviour>().bulletElements.Count; i++)
             {
-                RM.fireSoul += 1;
-            }
-            if (other.gameObject.tag == "water")
-            {
-                RM.waterSoul += 1;
-            }
-            if (other.gameObject.tag == "earth")
-            {
-                RM.plantSoul += 1;
+                if (other.gameObject.GetComponent<BulletBehaviour>().bulletElements[i] == 1)
+                {
+                    RM.fireSoul += soulReward;
+                }
+                if (other.gameObject.GetComponent<BulletBehaviour>().bulletElements[i] == 2)
+                {
+                    RM.waterSoul += soulReward;
+                }
+                if (other.gameObject.GetComponent<BulletBehaviour>().bulletElements[i] == 3)
+                {
+                    RM.plantSoul += soulReward;
+                }
             }
             Death();
         }
+        Destroy(other.gameObject);
     }
 
     void Death()

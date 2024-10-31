@@ -10,14 +10,11 @@ public class TowerShoot : MonoBehaviour
     public GameObject towerSprite;
     public GameObject basicBullet;
     public TowerStats TS;
-    
     public LayerMask ennemyLayer;
-    public KeyCode towerShootKey;
 
     [Header("automatique , ne pas toucher")]
     public GameObject target;
     public bool targetDetected = false;
-    public int actualType;
     public float detectionRadius;
     public float rotationSpeed;
     public float dammage;
@@ -49,30 +46,7 @@ public class TowerShoot : MonoBehaviour
         {
             RotateTowardsTarget();
         }
-
-        if (Input.GetKeyDown(towerShootKey))
-        {
-            Shoot();
-        }
-
         
-        if (TS.towerType != actualType)
-        {
-            if (TS.towerType == 1)
-            {
-                actualType = 1;
-            }
-
-            if (TS.towerType == 2)
-            {
-                actualType = 2;
-            }
-
-            if (TS.towerType == 3)
-            {
-                actualType = 3;
-            }
-        }
     }
     void FindClosestTargetWithCircleCast()
     {
@@ -122,19 +96,7 @@ public class TowerShoot : MonoBehaviour
         {
             
             GameObject newBullet = Instantiate(basicBullet, transform.position, transform.rotation);
-            if (actualType == 1)
-            {
-                newBullet.gameObject.tag = "fire";
-            }
-            else if (actualType == 2)
-            {
-                newBullet.gameObject.tag = "water";
-            }
-            else if (actualType == 3)
-            {
-                newBullet.gameObject.tag = "earth";
-            }
-            
+            newBullet.GetComponent<BulletBehaviour>().bulletElements = TS.ameliorations;
             newBullet.GetComponent<BulletBehaviour>().target = target;
             newBullet.GetComponent<BulletBehaviour>().dammage = dammage;
             newBullet.GetComponent<BulletBehaviour>().bulletSpeed = bulletSpeed;
@@ -151,11 +113,8 @@ public class TowerShoot : MonoBehaviour
         {
             if (target != null)
             {
-                
                 Shoot();
             }
-            
-            
             yield return new WaitForSeconds(cadence);
         }
     }

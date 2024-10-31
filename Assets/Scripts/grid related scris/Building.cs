@@ -12,8 +12,6 @@ public class Building : MonoBehaviour
     public GameObject tower;
     private TowerStats temp;
 
-    public UnityEvent towerIsUpgraded;
-
     #region Build Methods
 
     public bool CanBePlaced()
@@ -60,16 +58,14 @@ public class Building : MonoBehaviour
             if (towerStats != null && towerStats.ameliorations.Count < 3)
             {
                 towerStats.ameliorations.Add(element);
-                Debug.Log("Upgraded tower at position: " + collider.transform.position);
                 Placed = true;
                 isDragging = false;
+                towerStats.recalculateStats();
                 Destroy(gameObject);
             }
-
-            
         }
         
-        towerIsUpgraded.Invoke();
+        
         
         
         
