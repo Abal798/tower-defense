@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TowerStats : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class TowerStats : MonoBehaviour
     public float waterEffectOne = 5;
     public float waterEffectTwo = 0.05f;
     public float waterLifeBonus = 5;
+
+    public UnityEvent statsHasBeenRecalculated;
     
 
 
@@ -69,6 +72,8 @@ public class TowerStats : MonoBehaviour
         damages = (basicDammage + FireEffect * nbrOfFireInsuflation + waterEffectOne * nbrOfWaterInsuflation);//formule incomplete , manque l'influence du terrain
         health = basicHealth + waterLifeBonus;//incomplet , manque l'effet de terre , trop impréci pour l'instant
         cadence = basicCadence - waterEffectTwo * nbrOfWaterInsuflation;
+        
+        statsHasBeenRecalculated.Invoke();
 
     }
 }

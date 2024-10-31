@@ -36,8 +36,9 @@ public class MonsterDeathBehaviour : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D other)
     {
+        healthPoints -= other.gameObject.GetComponent<BulletBehaviour>().dammage;
         Destroy(other.gameObject);
-        healthPoints -= 1;
+        
         if (healthPoints <= 0)
         {
             if (other.gameObject.tag == "fire")

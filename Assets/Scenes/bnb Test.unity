@@ -854,7 +854,7 @@ MonoBehaviour:
   gridLayout: {fileID: 338851063}
   MainTilemap: {fileID: 1526346545}
   TempTilemap: {fileID: 1745912376}
-  elementTour: 0
+  UIM: {fileID: 744501579}
 --- !u!1 &379765031
 GameObject:
   m_ObjectHideFlags: 0

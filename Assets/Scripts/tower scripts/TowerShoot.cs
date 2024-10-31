@@ -27,14 +27,17 @@ public class TowerShoot : MonoBehaviour
     
     void Start()
     {
-        
+        UpdateStats();
+        StartCoroutine(ShootAtInterval());
+    }
+
+    public void UpdateStats()
+    {
         detectionRadius = TS.radius;
         rotationSpeed = TS.rotationSpeed;
         dammage = TS.damages;
         bulletSpeed = TS.bulletSpeed;
         cadence = TS.cadence;
-        StartCoroutine(ShootAtInterval());
-
     }
     
     void Update()
