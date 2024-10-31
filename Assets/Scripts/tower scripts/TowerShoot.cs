@@ -30,7 +30,7 @@ public class TowerShoot : MonoBehaviour
         
         detectionRadius = TS.radius;
         rotationSpeed = TS.rotationSpeed;
-        dammage = TS.dammage;
+        dammage = TS.damages;
         bulletSpeed = TS.bulletSpeed;
         cadence = TS.cadence;
         StartCoroutine(ShootAtInterval());
@@ -153,7 +153,7 @@ public class TowerShoot : MonoBehaviour
             }
             
             
-            yield return new WaitForSeconds(1f / cadence);
+            yield return new WaitForSeconds(cadence);
         }
     }
     

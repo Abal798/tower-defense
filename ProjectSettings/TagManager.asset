@@ -6,9 +6,10 @@ TagManager:
   tags:
   - fire
   - DebugText
-  - plant
   - water
   - grid
+  - earth
+  - plant
   layers:
   - Default
   - TransparentFX
