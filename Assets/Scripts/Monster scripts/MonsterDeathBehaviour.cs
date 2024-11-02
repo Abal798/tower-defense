@@ -70,4 +70,32 @@ public class MonsterDeathBehaviour : MonoBehaviour
             Destroy(newParticules,0.3f);
         }
     }
+
+    public void DamageSpell(int damageID)
+    {
+        if (damageID == 1)
+        {
+            totalHealthPoints -= 60;
+            if (totalHealthPoints <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+        else if (damageID == 2)
+        {
+            totalHealthPoints -= 80;
+            if (totalHealthPoints <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+        else if (damageID == 3)
+        {
+            totalHealthPoints -= 100;
+            if (totalHealthPoints <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
 }

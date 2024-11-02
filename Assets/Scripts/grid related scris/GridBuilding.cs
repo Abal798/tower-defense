@@ -16,7 +16,7 @@ public class GridBuilding : MonoBehaviour
 
     public UIManager UIM;
 
-    private static Dictionary<TileType, TileBase> tileBases = new Dictionary<TileType, TileBase>();
+    public static Dictionary<TileType, TileBase> tileBases = new Dictionary<TileType, TileBase>();
 
     private Building temp;
     private Vector3 prevPos;
