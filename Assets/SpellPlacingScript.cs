@@ -21,6 +21,7 @@ public class SpellPlacingScript : MonoBehaviour
     public GameObject boutonSpell1;
     public GameObject boutonSpell2;
     public GameObject boutonSpell3;
+    public bool rotationState;
     
 
     private List<Vector3Int> prevPositions = new List<Vector3Int>();
@@ -85,6 +86,10 @@ public class SpellPlacingScript : MonoBehaviour
     
     void Update()
     {
+        if (Input.GetAxis("Mouse ScrollWheel") != 0f)
+        {
+            rotationState = !rotationState;
+        }
         Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if (placementSpell1)
@@ -263,20 +268,36 @@ public class SpellPlacingScript : MonoBehaviour
 
     private List<Vector3Int> GetLineShape(Vector3Int center)
     {
-        return new List<Vector3Int>
+        List<Vector3Int> positions = new List<Vector3Int>();
+
+        if (rotationState == false) // Horizontal line
         {
-            center + Vector3Int.left * 4,
-            center + Vector3Int.left * 3,
-            center + Vector3Int.left * 2,
-            center + Vector3Int.left,
-            center,
-            center + Vector3Int.right,
-            center + Vector3Int.right * 2,
-            center + Vector3Int.right * 3,
-            center + Vector3Int.right * 4,
-            
-        };
+            positions.Add(center + Vector3Int.left * 4);
+            positions.Add(center + Vector3Int.left * 3);
+            positions.Add(center + Vector3Int.left * 2);
+            positions.Add(center + Vector3Int.left);
+            positions.Add(center);
+            positions.Add(center + Vector3Int.right);
+            positions.Add(center + Vector3Int.right * 2);
+            positions.Add(center + Vector3Int.right * 3);
+            positions.Add(center + Vector3Int.right * 4);
+        }
+        else if (rotationState == true) // Vertical line
+        {
+            positions.Add(center + Vector3Int.down * 4);
+            positions.Add(center + Vector3Int.down * 3);
+            positions.Add(center + Vector3Int.down * 2);
+            positions.Add(center + Vector3Int.down);
+            positions.Add(center);
+            positions.Add(center + Vector3Int.up);
+            positions.Add(center + Vector3Int.up * 2);
+            positions.Add(center + Vector3Int.up * 3);
+            positions.Add(center + Vector3Int.up * 4);
+        }
+
+        return positions;
     }
+    
 
     private List<Vector3Int> GetSquareShape(Vector3Int center)
     {
