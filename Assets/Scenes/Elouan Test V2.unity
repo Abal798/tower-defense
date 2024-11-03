@@ -2412,6 +2412,7 @@ MonoBehaviour:
   boutonSpell1: {fileID: 725449512}
   boutonSpell2: {fileID: 523346659}
   boutonSpell3: {fileID: 2027832275}
+  rotationState: 0
 --- !u!1 &1096521064
 GameObject:
   m_ObjectHideFlags: 0
@@ -3124,6 +3125,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dd81e42cc824a1e43967f2984c2b14bf, type: 2}
   - {fileID: 11400000, guid: 63b6432506282914ca8dd4556e530ba3, type: 2}
   - {fileID: 11400000, guid: ba0253195793edd4fb273c7179962332, type: 2}
+  - {fileID: 11400000, guid: 70765816ef70cef4faa934fbb4240541, type: 2}
 --- !u!4 &1477513368
 Transform:
   m_ObjectHideFlags: 0
