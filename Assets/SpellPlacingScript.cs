@@ -363,6 +363,8 @@ public class SpellPlacingScript : MonoBehaviour
         }
 
         MainTilemap.SetTiles(positions.ToArray(), tiles);
+        
+        Building.UpdatePathfinding.Invoke();
     }
     
     

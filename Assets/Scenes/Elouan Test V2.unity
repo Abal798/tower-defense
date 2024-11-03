@@ -28421,7 +28421,7 @@ Tilemap:
       e33: 1
   m_TileColorArray:
   - m_RefCount: 0
-    m_Data: {r: 3.971e-41, g: 3.971e-41, b: 3.971e-41, a: 3.971e-41}
+    m_Data: {r: 3.536e-41, g: 3.536e-41, b: 3.536e-41, a: 3.536e-41}
   - m_RefCount: 2378
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 122
