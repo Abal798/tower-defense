@@ -13,7 +13,7 @@ public class Spawn : MonoBehaviour
     public GameObject monsterTypeTwo;
     public RessourcesManager RM;
 
-    public float squareSize = 56;
+    public float squareSize = 50;
 
     public void ButtonFonctionLaunchWave()
     {
