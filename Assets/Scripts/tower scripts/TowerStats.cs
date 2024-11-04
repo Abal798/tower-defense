@@ -108,15 +108,15 @@ public class TowerStats : MonoBehaviour
         
         for (int i = 0; i < surroundingTiles.Count; i++)
         {
-            if (GridBuilding.current.MainTilemap.GetTile(surroundingTiles[i]) == GridBuilding.tileBases[TileType.Red])
+            if (GridBuilding.current.MainTilemap.GetTile(surroundingTiles[i]) == GridBuilding.tileBases[TileType.Fire])
             {
                 fireSurrounding++;
             }
-            else if (GridBuilding.current.MainTilemap.GetTile(surroundingTiles[i]) == GridBuilding.tileBases[TileType.Grey])
+            else if (GridBuilding.current.MainTilemap.GetTile(surroundingTiles[i]) == GridBuilding.tileBases[TileType.Water])
             {
                 waterSurrouding++;
             }
-            else if (GridBuilding.current.MainTilemap.GetTile(surroundingTiles[i]) == GridBuilding.tileBases[TileType.Green])
+            else if (GridBuilding.current.MainTilemap.GetTile(surroundingTiles[i]) == GridBuilding.tileBases[TileType.Earth])
             {
                 earthSurrounding++;
             }

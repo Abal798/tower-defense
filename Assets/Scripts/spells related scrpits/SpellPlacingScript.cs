@@ -41,10 +41,10 @@ public class SpellPlacingScript : MonoBehaviour
     {
         return element switch
         {
-            1 => TileType.Red,
-            2 => TileType.Grey,
-            3 => TileType.Green,
-            _ => TileType.Empty
+            1 => TileType.Fire,
+            2 => TileType.Water,
+            3 => TileType.Earth,
+            _ => TileType.Grass
         };
     }
 
@@ -352,7 +352,7 @@ public class SpellPlacingScript : MonoBehaviour
         SpellForm form = GetSpellForm(spellSlot[0]);
         List<Vector3Int> positions = CalculatePreviewPositions(cellPos, form);
 
-        TileType tileEffect = spellSlot.Count >= 2 ? GetTileEffect(spellSlot[1]) : TileType.Grey;
+        TileType tileEffect = spellSlot.Count >= 2 ? GetTileEffect(spellSlot[1]) : TileType.Water;
 
         TileBase tileBase = GridBuilding.tileBases[tileEffect];
         TileBase[] tiles = new TileBase[positions.Count];
