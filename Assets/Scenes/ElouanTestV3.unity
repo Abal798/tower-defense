@@ -2550,6 +2550,21 @@ MonoBehaviour:
   boutonSpell2: {fileID: 523346659}
   boutonSpell3: {fileID: 2027832275}
   rotationState: 0
+  terraSpellJustHasBeenPlaced:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -8620561639708342159, guid: 29511a5861e89ce4293b294750d70ba7, type: 3}
+        m_TargetAssemblyTypeName: ActualizeChild, Assembly-CSharp
+        m_MethodName: AcutalizeChild
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &744501581
 MonoBehaviour:
   m_ObjectHideFlags: 0
