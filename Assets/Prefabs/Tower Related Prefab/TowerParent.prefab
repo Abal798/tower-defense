@@ -219,7 +219,7 @@ MonoBehaviour:
   basicHealth: 1
   health: 0
   basicRadius: 3
-  radius: 3
+  radius: 0
   fireSurrounding: 0
   waterSurrouding: 0
   earthSurrounding: 0
@@ -231,6 +231,8 @@ MonoBehaviour:
   waterEffectFour: 1.0015
   waterLifeBonus: 5
   earthEffectThree: 1
+  earthEffectFour: 1.4
+  earthEffectFive: 1.1
   statsHasBeenRecalculated:
     m_PersistentCalls:
       m_Calls:
