@@ -226,7 +226,7 @@ MonoBehaviour:
   FireEffectOne: 10
   FireEffectTwo: 1.1
   waterEffectOne: 5
-  waterEffectTwo: 0.05
+  waterEffectTwo: 1.0975
   waterEffectTree: 0.05
   waterEffectFour: 1.0015
   waterLifeBonus: 5
