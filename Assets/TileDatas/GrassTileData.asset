@@ -16,3 +16,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5d79f446655dc9043b6ac7ab785104e8, type: 2}
   walkingCost: 1
   buildable: 1
+  alreadyBuilt: 0

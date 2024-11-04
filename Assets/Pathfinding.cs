@@ -245,6 +245,6 @@ public class TilesToVisitClass
 {
     public Vector3Int currentTile;
     public Vector3Int lastTile;
-    
+    public int realWalkingCost;
     public int priority;
 }

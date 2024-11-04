@@ -67,7 +67,6 @@ public class MonsterMouvementBehaviours : MonoBehaviour
 
     void UpdatePathfinding()
     {
-        Debug.Log("AHHHHHHHHHHHHHHHHHHHH");
         Vector3Int startCellPosition = gridLayout.WorldToCell(transform.position);
         deplacements =  pathfinding.PathfindingCalculation(startCellPosition, new Vector3Int(0, 0, 0), false);
         worldPositions = new List<Vector3>();
