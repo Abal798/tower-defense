@@ -75,27 +75,42 @@ public class MonsterDeathBehaviour : MonoBehaviour
     {
         if (damageID == 1)
         {
-            totalHealthPoints -= 60;
-            if (totalHealthPoints <= 0)
-            {
-                Destroy(gameObject);
-            }
+            //healthPoints -= 60;
+
+            FireDot();
+            
+            
         }
         else if (damageID == 2)
         {
-            totalHealthPoints -= 80;
-            if (totalHealthPoints <= 0)
+            healthPoints -= 80;
+            if (healthPoints <= 0)
             {
-                Destroy(gameObject);
+                Death();
             }
         }
         else if (damageID == 3)
         {
-            totalHealthPoints -= 100;
-            if (totalHealthPoints <= 0)
+            healthPoints -= 100;
+            if (healthPoints <= 0)
             {
-                Destroy(gameObject);
+                Death();
             }
+        }
+    }
+
+    IEnumerator FireDot()
+    {
+        while (healthPoints > 0)
+        {
+            healthPoints -= 3;
+            if (healthPoints <= 0)
+            {
+                Death();
+                yield break;
+            }
+
+            yield return new WaitForSeconds(1f);
         }
     }
 }
