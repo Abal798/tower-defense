@@ -15,6 +15,7 @@ public class MonsterDeathBehaviour : MonoBehaviour
     
 
     public GameObject deathParticules;
+
     
     [Header("automatique")]
     public float incomingDamage = 0;
@@ -75,27 +76,36 @@ public class MonsterDeathBehaviour : MonoBehaviour
     {
         if (damageID == 1)
         {
-            totalHealthPoints -= 60;
-            if (totalHealthPoints <= 0)
-            {
-                Destroy(gameObject);
-            }
+            healthPoints -= 60;
+            StartCoroutine(Dot(3f));
         }
         else if (damageID == 2)
         {
-            totalHealthPoints -= 80;
-            if (totalHealthPoints <= 0)
-            {
-                Destroy(gameObject);
-            }
+            healthPoints -= 80;
+            StartCoroutine(Dot(2f));
         }
         else if (damageID == 3)
         {
-            totalHealthPoints -= 100;
-            if (totalHealthPoints <= 0)
+            healthPoints -= 100;
+            if (healthPoints <= 0)
             {
-                Destroy(gameObject);
+                Death();
             }
+        }
+    }
+
+    IEnumerator Dot( float dammages)
+    {
+        while (healthPoints > 0)
+        {
+            healthPoints -= dammages;
+            if (healthPoints <= 0)
+            {
+                Death();
+                yield break;
+            }
+
+            yield return new WaitForSeconds(1f);
         }
     }
 }

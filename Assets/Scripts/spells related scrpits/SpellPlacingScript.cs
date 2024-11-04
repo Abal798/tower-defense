@@ -363,6 +363,8 @@ public class SpellPlacingScript : MonoBehaviour
         }
 
         MainTilemap.SetTiles(positions.ToArray(), tiles);
+        
+        Building.UpdatePathfinding.Invoke();
     }
     
     
@@ -386,7 +388,9 @@ public class SpellPlacingScript : MonoBehaviour
                 if (monsterDeathBehaviour != null)
                 {
                     monsterDeathBehaviour.DamageSpell(spellSlot[1]);
+                    monsterMouvementBehaviours.movementSpell(spellSlot[2]);
                 }
+
             }
         }
         

@@ -11,6 +11,8 @@ public class Building : MonoBehaviour
     private bool isDragging = true;
     public GameObject tower;
     private TowerStats temp;
+    
+    public static UnityEvent UpdatePathfinding = new UnityEvent();
 
     #region Build Methods
 
@@ -40,6 +42,7 @@ public class Building : MonoBehaviour
         temp = Instantiate(tower, transform.position, Quaternion.identity).GetComponentInChildren<TowerStats>();
         temp.ameliorations.Add(element);
         
+        UpdatePathfinding.Invoke();
         Destroy(gameObject);
         
     }
