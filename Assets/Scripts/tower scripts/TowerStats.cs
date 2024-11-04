@@ -38,6 +38,8 @@ public class TowerStats : MonoBehaviour
     public float waterEffectFour = 1.0015f;
     public float waterLifeBonus = 5;
     public float earthEffectThree = 1;
+    public float earthEffectFour = 1.4f;
+    public float earthEffectFive = 1.1f;
 
     public UnityEvent statsHasBeenRecalculated;
     
@@ -80,9 +82,9 @@ public class TowerStats : MonoBehaviour
         }
 
         damages = (basicDammage + FireEffectOne * nbrOfFireInsuflation + waterEffectOne * nbrOfWaterInsuflation)*(Mathf.Pow(FireEffectTwo, fireSurrounding) * Mathf.Pow(waterEffectTwo, waterSurrouding));
-        health = basicHealth + waterLifeBonus * nbrOfWaterInsuflation; //incomplet , manque l'effet de terre , trop impréci pour l'instant
         cadence = basicCadence - (waterEffectTree * nbrOfWaterInsuflation)*(Mathf.Pow(waterEffectFour, waterSurrouding));
         radius = basicRadius + (earthEffectThree * nbrOfEarthInsuflation);
+        health = ((basicHealth + waterLifeBonus * nbrOfWaterInsuflation) * Mathf.Pow(earthEffectFour, nbrOfEarthInsuflation)) * Mathf.Pow(earthEffectFive, earthSurrounding);
 
         statsHasBeenRecalculated.Invoke();
         
