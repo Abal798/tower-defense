@@ -27,12 +27,6 @@ public class MenuManager : MonoBehaviour
         EarthSoulIngameDisplay.text = RM.plantSoul.ToString();
 
     }
-    
-    public void QuitAlchimiePanel()
-    {
-        ingamePanel.SetActive(true);
-        alchimiePanel.SetActive(false);
-    }
 
     public void GoToAlchimiePanel()
     {
