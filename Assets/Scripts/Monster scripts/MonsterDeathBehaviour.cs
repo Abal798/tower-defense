@@ -75,9 +75,9 @@ public class MonsterDeathBehaviour : MonoBehaviour
     {
         if (damageID == 1)
         {
-            //healthPoints -= 60;
-
-            FireDot();
+            healthPoints -= 60;
+            Debug.Log(" je viens de me faire frapper par un sort de tye feu");
+            StartCoroutine(FireDot());
             
             
         }
@@ -103,6 +103,7 @@ public class MonsterDeathBehaviour : MonoBehaviour
     {
         while (healthPoints > 0)
         {
+            Debug.Log(" il me reste " + healthPoints + " de vie");
             healthPoints -= 3;
             if (healthPoints <= 0)
             {
