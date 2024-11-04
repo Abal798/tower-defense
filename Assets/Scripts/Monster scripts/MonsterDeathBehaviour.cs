@@ -77,11 +77,19 @@ public class MonsterDeathBehaviour : MonoBehaviour
         if (damageID == 1)
         {
             healthPoints -= 60;
+            if (healthPoints <= 0)
+            {
+                Death();
+            }
             StartCoroutine(Dot(3f));
         }
         else if (damageID == 2)
         {
             healthPoints -= 80;
+            if (healthPoints <= 0)
+            {
+                Death();
+            }
             StartCoroutine(Dot(2f));
         }
         else if (damageID == 3)
