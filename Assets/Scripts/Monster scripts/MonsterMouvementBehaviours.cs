@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class MonsterMouvementBehaviours : MonoBehaviour
 {
-    public MonsterStats MS;
+    public MonsterStats MStats;
     
     public List<Vector3Int> deplacements; // Path positions in grid space
     public Pathfinding pathfinding;
@@ -19,7 +19,7 @@ public class MonsterMouvementBehaviours : MonoBehaviour
 
     void Awake()
     {
-        speed = MS.speed;
+        speed = MStats.speed;
     }
 
     private void Start()
@@ -81,5 +81,31 @@ public class MonsterMouvementBehaviours : MonoBehaviour
     {
         // Unsubscribe from the event to prevent memory leaks
         Building.UpdatePathfinding.RemoveListener(UpdatePathfinding);
+    }
+    
+    public void movementSpell(int movementID)
+    {
+        if (movementID == 1)
+        {
+            StartCoroutine(SlowEffect(4f, 0.4f));
+        }
+        else if (movementID == 2)
+        {
+            StartCoroutine(SlowEffect(4f, 0.2f));
+        }
+        else if (movementID == 3)
+        {
+            StartCoroutine(SlowEffect(0.5f, 1f));
+        }
+    }
+
+
+
+    IEnumerator SlowEffect(float time, float slowAmount)
+    {
+        float originalSpeed = speed;
+        speed = slowAmount * speed;
+        yield return new WaitForSeconds(4f); 
+        speed = originalSpeed;
     }
 }

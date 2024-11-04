@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa78fdba10acf9c40b0226b3e7c7447c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MS: {fileID: 6012127422834315380}
+  MStats: {fileID: 6012127422834315380}
   deplacements: []
   pathfinding: {fileID: 0}
   speed: 4

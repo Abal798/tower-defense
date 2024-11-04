@@ -15,6 +15,7 @@ public class MonsterDeathBehaviour : MonoBehaviour
     
 
     public GameObject deathParticules;
+
     
     [Header("automatique")]
     public float incomingDamage = 0;
@@ -76,18 +77,12 @@ public class MonsterDeathBehaviour : MonoBehaviour
         if (damageID == 1)
         {
             healthPoints -= 60;
-            Debug.Log(" je viens de me faire frapper par un sort de tye feu");
-            StartCoroutine(FireDot());
-            
-            
+            StartCoroutine(Dot(3f));
         }
         else if (damageID == 2)
         {
             healthPoints -= 80;
-            if (healthPoints <= 0)
-            {
-                Death();
-            }
+            StartCoroutine(Dot(2f));
         }
         else if (damageID == 3)
         {
@@ -99,12 +94,11 @@ public class MonsterDeathBehaviour : MonoBehaviour
         }
     }
 
-    IEnumerator FireDot()
+    IEnumerator Dot( float dammages)
     {
         while (healthPoints > 0)
         {
-            Debug.Log(" il me reste " + healthPoints + " de vie");
-            healthPoints -= 3;
+            healthPoints -= dammages;
             if (healthPoints <= 0)
             {
                 Death();
