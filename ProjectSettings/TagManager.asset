@@ -10,6 +10,7 @@ TagManager:
   - grid
   - earth
   - plant
+  - Ennemy
   layers:
   - Default
   - TransparentFX
