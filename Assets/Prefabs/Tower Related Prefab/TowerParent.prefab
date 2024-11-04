@@ -209,7 +209,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ad24e873f3595040b4435852b8ba038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 10
   rotationSpeed: 10
   ameliorations: 
   bulletSpeed: 10
@@ -219,10 +218,19 @@ MonoBehaviour:
   damages: 0
   basicHealth: 1
   health: 0
-  FireEffect: 10
+  basicRadius: 3
+  radius: 3
+  fireSurrounding: 0
+  waterSurrouding: 0
+  earthSurrounding: 0
+  FireEffectOne: 10
+  FireEffectTwo: 1.1
   waterEffectOne: 5
   waterEffectTwo: 0.05
+  waterEffectTree: 0.05
+  waterEffectFour: 1.0015
   waterLifeBonus: 5
+  earthEffectThree: 1
   statsHasBeenRecalculated:
     m_PersistentCalls:
       m_Calls:

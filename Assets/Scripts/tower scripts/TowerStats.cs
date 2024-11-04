@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 
 public class TowerStats : MonoBehaviour
 {
-    public float radius;
+    
     public float rotationSpeed;
     public List<int> ameliorations = new List<int>();
     public float bulletSpeed = 10f;
@@ -19,6 +19,9 @@ public class TowerStats : MonoBehaviour
     
     public float basicHealth = 1;
     public float health;
+
+    public float basicRadius = 3f;
+    public float radius;
     
     public int fireSurrounding;
     public int waterSurrouding;
@@ -34,6 +37,7 @@ public class TowerStats : MonoBehaviour
     public float waterEffectTree = 0.05f;
     public float waterEffectFour = 1.0015f;
     public float waterLifeBonus = 5;
+    public float earthEffectThree = 1;
 
     public UnityEvent statsHasBeenRecalculated;
     
@@ -78,12 +82,10 @@ public class TowerStats : MonoBehaviour
         damages = (basicDammage + FireEffectOne * nbrOfFireInsuflation + waterEffectOne * nbrOfWaterInsuflation)*(Mathf.Pow(FireEffectTwo, fireSurrounding) * Mathf.Pow(waterEffectTwo, waterSurrouding));
         health = basicHealth + waterLifeBonus * nbrOfWaterInsuflation; //incomplet , manque l'effet de terre , trop impréci pour l'instant
         cadence = basicCadence - (waterEffectTree * nbrOfWaterInsuflation)*(Mathf.Pow(waterEffectFour, waterSurrouding));
+        radius = basicRadius + (earthEffectThree * nbrOfEarthInsuflation);
 
         statsHasBeenRecalculated.Invoke();
-
-        Debug.Log("fire :" + nbrOfFireInsuflation);
-        Debug.Log("water :" + nbrOfWaterInsuflation);
-        Debug.Log("earth :" + nbrOfEarthInsuflation);
+        
 
     }
 
