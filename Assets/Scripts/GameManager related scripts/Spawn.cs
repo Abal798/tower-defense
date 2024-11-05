@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
-    public bool hasToSpawn;
-    public bool isAlreadySpawning = false;
+
     public int numberOfMonsterOne;
     public int numberOfMonsterTwo;
     public GameObject monsterTypeOne;
@@ -17,22 +16,11 @@ public class Spawn : MonoBehaviour
 
     public void ButtonFonctionLaunchWave()
     {
-        hasToSpawn = true;
+        numberOfMonsterOne = Mathf.CeilToInt(2 * Mathf.Sin(RM.wave) + 3 * RM.wave);
+        LaunchWave();
+        RM.wave++;
     }
-
-    void Update()
-    {
-        if (hasToSpawn == true && isAlreadySpawning == false)
-        {
-            isAlreadySpawning = true;
-            LaunchWave();
-            isAlreadySpawning = false;
-            RM.wave++;
-
-        }
-        
-    }
-
+    
     public void LaunchWave()
     {
         for(var i = 0; i < numberOfMonsterOne; i++)
@@ -48,8 +36,7 @@ public class Spawn : MonoBehaviour
             GameObject newMonster = Instantiate(monsterTypeTwo, GetRandomPositionOnSquareEdge(), Quaternion.identity);
             newMonster.GetComponent<MonsterDeathBehaviour>().RM = this.gameObject.GetComponent<RessourcesManager>();
         }
-
-        hasToSpawn = false;
+        
     }
     
     
