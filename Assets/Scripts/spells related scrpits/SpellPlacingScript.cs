@@ -235,7 +235,7 @@ public class SpellPlacingScript : MonoBehaviour
                 }
             }
             spellContent = string.Join(" + ", elements);
-            boutonSpell1.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = spellContent;
+            boutonSpell1.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "sort : " + spellContent;
             boutonSpell1.SetActive(true);
         }
         else if (RM.spellSlotOne != null && RM.spellSlotOne.Count > 0 == false)
@@ -264,7 +264,7 @@ public class SpellPlacingScript : MonoBehaviour
             }
 
             spellContent = string.Join(" + ", elements);
-            boutonSpell2.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = spellContent;
+            boutonSpell2.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "sort : " + spellContent;
             boutonSpell2.SetActive(true);
         }
         else if (RM.spellSlotTwo != null && RM.spellSlotTwo.Count > 0 == false)
@@ -293,7 +293,7 @@ public class SpellPlacingScript : MonoBehaviour
             }
 
             spellContent = string.Join(" + ", elements);
-            boutonSpell3.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = spellContent;
+            boutonSpell3.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "sort : " + spellContent;
             boutonSpell3.SetActive(true);
         }
         else if (RM.spellSlotThree != null && RM.spellSlotThree.Count > 0 == false)
