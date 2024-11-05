@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MonsterDealingDamagesBehaviour : MonoBehaviour
@@ -9,25 +10,59 @@ public class MonsterDealingDamagesBehaviour : MonoBehaviour
 
     public float damages;
     private bool justHited = false;
+    public bool targetTower;
+    public Collider2D tower;
+    private MonsterMouvementBehaviours monsterMouvementBehaviours;
+    public float speedBackup;
 
     private void Awake()
     {
         damages = MS.damages;
     }
 
-    void Start()
+    private void Start()
     {
+        monsterMouvementBehaviours = GetComponent<MonsterMouvementBehaviours>();
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.transform.parent.CompareTag("Tower"))
+        {
+            targetTower = true;
+            tower = collider;
+            speedBackup = monsterMouvementBehaviours.speed;
+            monsterMouvementBehaviours.speed = 0;
+            Debug.Log("je pense de plus en plus au suicide");
+        }
         
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        targetTower = false;
+        tower = null;
+        monsterMouvementBehaviours.speed = speedBackup;
+    }
+
 
     // Update is called once per frame
     void Update()
     {
-        if (justHited == false)
+        if (justHited == false && targetTower)
         {
             justHited = true;
             StartCoroutine(Hited());
-            //ajouter un truc auquel faire des domages
+            if (tower != null)
+            {
+                tower.gameObject.GetComponent<TowerTakingDamage>().TakeDamage(damages);
+            }
+            if (tower == null)
+            {
+                targetTower = false;
+                monsterMouvementBehaviours.speed = speedBackup;
+            
+            }
         }
     }
     
@@ -35,5 +70,6 @@ public class MonsterDealingDamagesBehaviour : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         justHited = false;
+        
     }
 }
