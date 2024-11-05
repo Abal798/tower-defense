@@ -24,9 +24,9 @@ public class TowerStats : MonoBehaviour
     public float basicRadius = 3f;
     public float radius;
     
-    public int fireSurrounding;
-    public int waterSurrouding;
-    public int earthSurrounding;
+    private int fireSurrounding;
+    private int waterSurrouding;
+    private int earthSurrounding;
 
     
 
@@ -41,6 +41,10 @@ public class TowerStats : MonoBehaviour
     public float earthEffectThree = 1;
     public float earthEffectFour = 1.4f;
     public float earthEffectFive = 1.1f;
+
+    public int priceOne;
+    public int priceTwo;
+    public int priceThree;
 
     public UnityEvent statsHasBeenRecalculated;
     

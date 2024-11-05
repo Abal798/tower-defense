@@ -13,7 +13,7 @@ public class GridBuilding : MonoBehaviour
     public GridLayout gridLayout;
     public Tilemap MainTilemap;
     public Tilemap TempTilemap;
-
+    
     public UIManager UIM;
 
     public static Dictionary<TileType, TileBase> tileBases = new Dictionary<TileType, TileBase>();
@@ -77,10 +77,9 @@ public class GridBuilding : MonoBehaviour
             
             if (Input.GetMouseButtonDown(0))
             {
-                if (temp.CanBePlaced())
+                if (temp.CanBePlaced() && temp.Afford(elementTour, 30))//trouver un moyen d'acceder a la valeur de priceOne dans towerstats
                 {
                     temp.Place(elementTour);
-                    // ajouter ici le morceau de script qui permet de donner un cout aux placement de batiments
                 }
             }
             else if (Input.GetMouseButtonDown(1))

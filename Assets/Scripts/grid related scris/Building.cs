@@ -12,8 +12,17 @@ public class Building : MonoBehaviour
     private bool isDragging = true;
     public GameObject tower;
     private TowerStats temp;
+
+    public RessourcesManager RM;
+    public UIManager UIM;
     
     public static UnityEvent UpdatePathfinding = new UnityEvent();
+
+    public void Awake()
+    {
+        UIM = FindObjectOfType<UIManager>();
+        RM = FindObjectOfType<RessourcesManager>();
+    }
 
     #region Build Methods
 
@@ -33,6 +42,7 @@ public class Building : MonoBehaviour
 
     public void Place(int element)
     {
+
         
         Vector3Int positionInt = GridBuilding.current.gridLayout.LocalToCell((transform.position));
         BoundsInt areaTemp = area;
@@ -42,6 +52,8 @@ public class Building : MonoBehaviour
         GridBuilding.current.TakeArea(areaTemp);
         temp = Instantiate(tower, transform.position, Quaternion.identity).GetComponentInChildren<TowerStats>();
         temp.ameliorations.Add(element);
+        
+        
         Profiler.BeginSample("FollowChief");
         
         UpdatePathfinding.Invoke();
@@ -54,6 +66,7 @@ public class Building : MonoBehaviour
     public void Upgrade(int element)
     {
         
+        
         Vector2 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         
         Collider2D[] colliders = Physics2D.OverlapCircleAll(mouseWorldPosition, 0.001f);
@@ -62,13 +75,30 @@ public class Building : MonoBehaviour
         {
             Debug.Log(collider.gameObject.transform.position);
             TowerStats towerStats = collider.GetComponent<TowerStats>();
+            
             if (towerStats != null && towerStats.ameliorations.Count < 3)
             {
-                towerStats.ameliorations.Add(element);
-                Placed = true;
-                isDragging = false;
-                towerStats.recalculateStats();
-                Destroy(gameObject);
+                bool canUpgrade = false;
+                
+                if (towerStats.ameliorations.Count == 1)
+                {
+                    canUpgrade = Afford(element, towerStats.priceTwo);
+                }
+                else if (towerStats.ameliorations.Count == 2)
+                {
+                    canUpgrade = Afford(element, towerStats.priceThree);
+                }
+                
+                Debug.Log("je peux ameliorer" + canUpgrade);
+                
+                if (canUpgrade)
+                {
+                    towerStats.ameliorations.Add(element);
+                    Placed = true;
+                    isDragging = false;
+                    towerStats.recalculateStats();
+                    Destroy(gameObject);
+                }
             }
         }
         
@@ -102,5 +132,49 @@ public class Building : MonoBehaviour
        
         Vector3Int cellPosition = GridBuilding.current.gridLayout.WorldToCell(position);
         transform.position = GridBuilding.current.gridLayout.CellToWorld(cellPosition);
+    }
+
+    public bool Afford(int element, int price)
+    {
+        if (element == 1)
+        {
+            if (RM.fireSoul >= price)
+            {
+                RM.fireSoul -= price;
+                return true;
+            }
+            else
+            {
+                UIM.DisplayAlert("can't afford it");
+                return false;
+            }
+                
+        }
+        if (element == 2)
+        {
+            if (RM.waterSoul >= price)
+            {
+                RM.waterSoul -= price;
+                return true;
+            }
+            else
+            {
+                UIM.DisplayAlert("can't afford it");
+                return false;
+            }
+        }
+        else
+        {
+            if (RM.plantSoul >= price)
+            {
+                RM.plantSoul -= price;
+                return true;
+            }
+            else
+            {
+                UIM.DisplayAlert("can't afford it");
+                return false;
+            }
+        }
     }
 }

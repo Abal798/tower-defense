@@ -220,9 +220,6 @@ MonoBehaviour:
   health: 1
   basicRadius: 3
   radius: 3
-  fireSurrounding: 0
-  waterSurrouding: 0
-  earthSurrounding: 0
   FireEffectOne: 10
   FireEffectTwo: 1.1
   waterEffectOne: 5
@@ -233,6 +230,9 @@ MonoBehaviour:
   earthEffectThree: 1
   earthEffectFour: 1.4
   earthEffectFive: 1.1
+  priceOne: 30
+  priceTwo: 40
+  priceThree: 50
   statsHasBeenRecalculated:
     m_PersistentCalls:
       m_Calls:
