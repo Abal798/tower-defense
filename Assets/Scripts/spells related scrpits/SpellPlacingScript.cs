@@ -21,8 +21,11 @@ public class SpellPlacingScript : MonoBehaviour
     public bool placementSpell3;
     
     public GameObject boutonSpell1;
+    private bool butonSpell1updated = false;
     public GameObject boutonSpell2;
+    private bool butonSpell2updated = false;
     public GameObject boutonSpell3;
+    private bool butonSpell3updated = false;
     public bool rotationState;
     
     public UnityEvent terraSpellJustHasBeenPlaced = new UnityEvent();
@@ -213,9 +216,10 @@ public class SpellPlacingScript : MonoBehaviour
             }
             
         }
-        //les 3 prochains if sont cheum et pas optimisés du tout, ils ont rien a foutre dans un update
-        if (RM.spellSlotOne != null && RM.spellSlotOne.Count > 0 == true)
+
+        if (RM.spellSlotOne != null && RM.spellSlotOne.Count > 0 && butonSpell1updated == false)
         {
+            butonSpell1updated = true;
             string spellContent = "";
             List<string> elements = new List<string>();
 
@@ -240,10 +244,12 @@ public class SpellPlacingScript : MonoBehaviour
         }
         else if (RM.spellSlotOne != null && RM.spellSlotOne.Count > 0 == false)
         {
+            butonSpell1updated = false;
             boutonSpell1.SetActive(false);
         }
-        if (RM.spellSlotTwo != null && RM.spellSlotTwo.Count > 0)
+        if (RM.spellSlotTwo != null && RM.spellSlotTwo.Count > 0 && butonSpell2updated == false)
         {
+            butonSpell2updated = true;
             string spellContent = "";
             List<string> elements = new List<string>();
 
@@ -269,10 +275,12 @@ public class SpellPlacingScript : MonoBehaviour
         }
         else if (RM.spellSlotTwo != null && RM.spellSlotTwo.Count > 0 == false)
         {
+            butonSpell2updated = false;
             boutonSpell2.SetActive(false);
         }
-        if (RM.spellSlotThree != null && RM.spellSlotThree.Count > 0)
+        if (RM.spellSlotThree != null && RM.spellSlotThree.Count > 0 && butonSpell3updated == false)
         {
+            butonSpell3updated = true;
             string spellContent = "";
             List<string> elements = new List<string>();
 
@@ -298,9 +306,9 @@ public class SpellPlacingScript : MonoBehaviour
         }
         else if (RM.spellSlotThree != null && RM.spellSlotThree.Count > 0 == false)
         {
+            butonSpell3updated = false;
             boutonSpell3.SetActive(false);
         }
-        //fin de la periode de cauchemard mais il faut vraiment changer ça
     }
     
     private void DisplaySpellPreview(Vector3 worldPos, List<int> spellSlot)
@@ -458,11 +466,12 @@ public class SpellPlacingScript : MonoBehaviour
         foreach (Vector3Int pos in positions )
         {
             Collider2D[] colliders = Physics2D.OverlapCircleAll(new Vector2(pos.x, pos.y), 0.001f);
+            
             foreach (Collider2D objetDetect in colliders)
             {
                 if(objetDetect.CompareTag("Tower"))
                 {
-                    Destroy(objetDetect.transform.parent.gameObject);
+                    Destroy(objetDetect.gameObject);
                 }
             }
         }
