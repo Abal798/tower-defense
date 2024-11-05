@@ -1,31 +1,88 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PathfindingManager : MonoBehaviour
 {
-    public static PathfindingManager PathfindingManagerInstance;
-    private List<List<Vector3Int>> paths = new List<List<Vector3Int>>();
-    private List<GameObject> monstres;
-    public Pathfinding pathfinding;
+    public delegate void PathResponseDelegate(List<Vector3Int> path);
+    public delegate void PathStaleDelegate();
 
-    private void Start()
+    
+    private Queue<PathRequest> requestQueue = new Queue<PathRequest>();
+    private List<PathRequest> activeRequests = new List<PathRequest>();
+    
+    [SerializeField] private int maxPathsPerFrame = 5;
+
+    public void RequestPath(Vector3Int start, Vector3Int end, PathResponseDelegate onPathFound, PathStaleDelegate onPathStale)
     {
-        pathfinding = GetComponent<Pathfinding>();
+        PathRequest newRequest = new PathRequest(start, end, onPathFound, onPathStale);
+        requestQueue.Enqueue(newRequest);
     }
 
-    public void PathAddToList(List<Vector3Int> path, GameObject monstre)
+    private void Update()
     {
-        paths.Add(path);
-        monstres.Add(monstre);
+        int pathsProcessed = 0;
+
+        while (requestQueue.Count > 0 && pathsProcessed < maxPathsPerFrame)
+        {
+            PathRequest request = requestQueue.Dequeue();
+            List<Vector3Int> path = CalculatePath(request.Start, request.End);
+            
+            if (path != null && path.Count > 0)
+            {
+                request.OnPathFound(path);
+                activeRequests.Add(request);
+            }
+            else
+            {
+                request.OnPathFound(null); // No path found
+            }
+
+            pathsProcessed++;
+        }
     }
 
-    public List<Vector3Int> GetPath(Vector3Int startCellPosition, GameObject monstre)
+    public void NotifyGridChange(Vector3Int gridLocation)
     {
-        List<Vector3Int> path = pathfinding.PathfindingCalculation(startCellPosition, new Vector3Int(0, 0, 0), false);
-        PathAddToList(path, monstre);
+        foreach (var request in activeRequests)
+        {
+            if (IsNearby(request.Start, gridLocation) || IsNearby(request.End, gridLocation))
+            {
+                request.OnPathStale();
+            }
+        }
+    }
 
-        return path;
+    private bool IsNearby(Vector3Int position, Vector3Int gridLocation)
+    {
+        return Vector3Int.Distance(position, gridLocation) < 5; // Adjust the threshold as needed
+    }
+
+    private List<Vector3Int> CalculatePath(Vector3Int start, Vector3Int end)
+    {
+        // Replace this with your pathfinding logic that returns an array of Vector3Int
+        return PathfindingAlgorithm(start, end);
+    }
+
+    private List<Vector3Int> PathfindingAlgorithm(Vector3Int start, Vector3Int end)
+    {
+        // Dummy implementation for pathfinding
+        return new List<Vector3Int> { start, end }; // Replace with actual logic
+    }
+
+    private class PathRequest
+    {
+        public Vector3Int Start;
+        public Vector3Int End;
+        public PathResponseDelegate OnPathFound;
+        public PathStaleDelegate OnPathStale;
+
+        public PathRequest(Vector3Int start, Vector3Int end, PathResponseDelegate onPathFound, PathStaleDelegate onPathStale)
+        {
+            Start = start;
+            End = end;
+            OnPathFound = onPathFound;
+            OnPathStale = onPathStale;
+        }
     }
 }
