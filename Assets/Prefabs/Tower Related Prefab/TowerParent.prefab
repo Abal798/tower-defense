@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 6030858656852846505}
   m_Layer: 0
   m_Name: Tower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -231,6 +231,8 @@ MonoBehaviour:
   waterEffectFour: 1.0015
   waterLifeBonus: 5
   earthEffectThree: 1
+  earthEffectFour: 1.4
+  earthEffectFive: 1.1
   statsHasBeenRecalculated:
     m_PersistentCalls:
       m_Calls:
@@ -282,7 +284,7 @@ GameObject:
   - component: {fileID: 2706600730004984352}
   m_Layer: 0
   m_Name: TowerParent
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
