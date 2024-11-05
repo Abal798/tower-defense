@@ -264,6 +264,7 @@ public class GridBuilding : MonoBehaviour
 
     public bool CanTakeArea(BoundsInt area)
     {
+        
         Vector3Int[] baseArray = GetTilePositions(area);
         foreach (var b in baseArray)
         {
