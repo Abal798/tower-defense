@@ -377,7 +377,7 @@ public class SpellPlacingScript : MonoBehaviour
             {
                 if(objetDetect.CompareTag("Tower"))
                 {
-                    Destroy(objetDetect.transform.parent.gameObject);
+                    Destroy(objetDetect.gameObject);
                 }
             }
         }
