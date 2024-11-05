@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -49,6 +50,7 @@ public class TowerStats : MonoBehaviour
     {
         CalculateSurroundings();
         recalculateStats();
+        Building.UpdatePathfinding.AddListener(CalculateSurroundings);
     }
     
     
@@ -91,6 +93,11 @@ public class TowerStats : MonoBehaviour
 
     }
 
+    private void OnDestroy()
+    {
+        Building.UpdatePathfinding.RemoveListener(CalculateSurroundings);
+    }
+
     public void CalculateSurroundings()
     {
         Vector3Int cellPos = GridBuilding.current.gridLayout.WorldToCell(transform.position);
@@ -124,6 +131,7 @@ public class TowerStats : MonoBehaviour
             }
         }
         
+        recalculateStats();
     }
     
 }
