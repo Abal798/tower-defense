@@ -13,7 +13,7 @@ public class MonsterDealingDamagesBehaviour : MonoBehaviour
     public bool targetTower;
     public Collider2D tower;
     private MonsterMouvementBehaviours monsterMouvementBehaviours;
-    public float speedBackup;
+    
 
     private void Awake()
     {
@@ -31,7 +31,6 @@ public class MonsterDealingDamagesBehaviour : MonoBehaviour
         {
             targetTower = true;
             tower = collider;
-            speedBackup = monsterMouvementBehaviours.speed;
             monsterMouvementBehaviours.speed = 0;
             Debug.Log("je pense de plus en plus au suicide");
         }
@@ -42,7 +41,7 @@ public class MonsterDealingDamagesBehaviour : MonoBehaviour
     {
         targetTower = false;
         tower = null;
-        monsterMouvementBehaviours.speed = speedBackup;
+        monsterMouvementBehaviours.speed = MS.basicSpeed;
     }
 
 
@@ -60,7 +59,7 @@ public class MonsterDealingDamagesBehaviour : MonoBehaviour
             if (tower == null)
             {
                 targetTower = false;
-                monsterMouvementBehaviours.speed = speedBackup;
+                monsterMouvementBehaviours.speed = MS.basicSpeed;
             
             }
         }
@@ -68,6 +67,7 @@ public class MonsterDealingDamagesBehaviour : MonoBehaviour
     
     IEnumerator Hited()
     {
+        
         yield return new WaitForSeconds(1f);
         justHited = false;
         

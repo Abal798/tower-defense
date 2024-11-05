@@ -25,8 +25,10 @@ public class TowerTakingDamage : MonoBehaviour
         {
             List<Vector3Int> placement = new List<Vector3Int>();
             placement.Add(Vector3Int.FloorToInt(transform.parent.transform.position));
-            Destroy(transform.parent.gameObject);
             GridBuilding.current.MainTilemap.SetTile(Vector3Int.FloorToInt(transform.parent.transform.position),GridBuilding.tileBases[TileType.Grass]);
+            Debug.Log("???????????????????????????????????????????????");
+            Destroy(transform.parent.gameObject);
+            
 
         }
     }
