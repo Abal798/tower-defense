@@ -13,6 +13,7 @@ public class ShowInfoOnHover : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        Debug.Log("la sourie est au dessus de moi");
         if (infoPanelManager != null)
         {
             infoPanelManager.ShowInfo(infoText, transform.position);
