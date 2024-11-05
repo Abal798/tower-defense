@@ -2803,8 +2803,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5addf8df650b6124c9be7ceca32161ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasToSpawn: 0
-  isAlreadySpawning: 0
   numberOfMonsterOne: 15
   numberOfMonsterTwo: 30
   monsterTypeOne: {fileID: 1791313746008852168, guid: 208d1a2fa46ec174b8c0c0c11578c539, type: 3}
@@ -2861,6 +2859,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alertDisplayText: {fileID: 1103518714}
   alertDuration: 3
+  infoPanel: {fileID: 2146029778}
+  towerLife: {fileID: 0}
 --- !u!114 &744501580
 MonoBehaviour:
   m_ObjectHideFlags: 0

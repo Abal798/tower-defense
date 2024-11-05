@@ -109,14 +109,14 @@ public class Pathfinding : MonoBehaviour
 
     void AddNeighborToVisit(Vector3Int currentCell, bool doColor)
     {
-        InsertTileInToVisit(currentCell + new Vector3Int(0, 1, 0), currentCell, tilesToVisit[0].priority, doColor);
-        InsertTileInToVisit(currentCell + new Vector3Int(1, 0, 0), currentCell, tilesToVisit[0].priority, doColor);
-        InsertTileInToVisit(currentCell + new Vector3Int(0, -1, 0), currentCell, tilesToVisit[0].priority, doColor);
-        InsertTileInToVisit(currentCell + new Vector3Int(-1, 0, 0), currentCell, tilesToVisit[0].priority, doColor);
-        InsertTileInToVisit(currentCell + new Vector3Int(-1, 1, 0), currentCell, tilesToVisit[0].priority, doColor);
-        InsertTileInToVisit(currentCell + new Vector3Int(1, 1, 0), currentCell, tilesToVisit[0].priority, doColor);
-        InsertTileInToVisit(currentCell + new Vector3Int(-1, -1, 0), currentCell, tilesToVisit[0].priority, doColor);
-        InsertTileInToVisit(currentCell + new Vector3Int(1, -1, 0), currentCell, tilesToVisit[0].priority, doColor);
+        InsertTileInToVisit(currentCell + new Vector3Int(0, 1, 0), currentCell, tilesToVisit[0].realWalkingCost, doColor);
+        InsertTileInToVisit(currentCell + new Vector3Int(1, 0, 0), currentCell, tilesToVisit[0].realWalkingCost, doColor);
+        InsertTileInToVisit(currentCell + new Vector3Int(0, -1, 0), currentCell, tilesToVisit[0].realWalkingCost, doColor);
+        InsertTileInToVisit(currentCell + new Vector3Int(-1, 0, 0), currentCell, tilesToVisit[0].realWalkingCost, doColor);
+        InsertTileInToVisit(currentCell + new Vector3Int(-1, 1, 0), currentCell, tilesToVisit[0].realWalkingCost, doColor);
+        InsertTileInToVisit(currentCell + new Vector3Int(1, 1, 0), currentCell, tilesToVisit[0].realWalkingCost, doColor);
+        InsertTileInToVisit(currentCell + new Vector3Int(-1, -1, 0), currentCell, tilesToVisit[0].realWalkingCost, doColor);
+        InsertTileInToVisit(currentCell + new Vector3Int(1, -1, 0), currentCell, tilesToVisit[0].realWalkingCost, doColor);
     }
 
     bool TileInToVisitList(Vector3Int cellToCheck)
@@ -150,7 +150,9 @@ public class Pathfinding : MonoBehaviour
             {
                 currentTile = cellToInsert,
                 lastTile = parentCell,
-                priority =  tileTheoricalDistanceToEnd[cellToInsert] + TilemapManager.TilemapInstance.GetTileData(cellToInsert).walkingCost + parentWalkingCost
+                priority =  tileTheoricalDistanceToEnd[cellToInsert] + TilemapManager.TilemapInstance.GetTileData(cellToInsert).walkingCost + parentWalkingCost,
+                realWalkingCost = TilemapManager.TilemapInstance.GetTileData(cellToInsert).walkingCost + parentWalkingCost
+                    
             };
 
             if (doColor)
@@ -162,7 +164,7 @@ public class Pathfinding : MonoBehaviour
             if (tilesToVisit.Count == 0)
             {
                 tilesToVisit.Add(insertValue);
-                debugList.Add(insertValue);
+                //debugList.Add(insertValue);
                 //Debug.Log("00");
             }
             else
@@ -174,7 +176,7 @@ public class Pathfinding : MonoBehaviour
                     {
                         tilesToVisit.Insert(i, insertValue);
                         
-                        debugList.Add(insertValue);
+                        //debugList.Add(insertValue);
                         //Debug.Log("22");
                         addToEnd = false;
                         break;
@@ -184,7 +186,7 @@ public class Pathfinding : MonoBehaviour
                 if (addToEnd)
                 {
                     tilesToVisit.Add(insertValue);
-                    debugList.Add(insertValue);
+                    //debugList.Add(insertValue);
                     //Debug.Log("22");
                 }
             }
@@ -247,4 +249,5 @@ public class TilesToVisitClass
     public Vector3Int lastTile;
     public int realWalkingCost;
     public int priority;
+    
 }

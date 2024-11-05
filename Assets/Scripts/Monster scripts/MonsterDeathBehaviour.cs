@@ -38,7 +38,7 @@ public class MonsterDeathBehaviour : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D other)
     {
-        healthPoints -= other.gameObject.GetComponent<BulletBehaviour>().dammage;
+        //healthPoints -= other.gameObject.GetComponent<BulletBehaviour>().dammage;
         
         if (healthPoints <= 0)
         {
