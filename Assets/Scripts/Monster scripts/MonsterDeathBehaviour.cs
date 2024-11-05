@@ -36,30 +36,33 @@ public class MonsterDeathBehaviour : MonoBehaviour
         }
     }
     
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        //healthPoints -= other.gameObject.GetComponent<BulletBehaviour>().dammage;
-        
-        if (healthPoints <= 0)
+        if (other.gameObject.CompareTag("bullets"))
         {
-            for (int i = 0; i < other.gameObject.GetComponent<BulletBehaviour>().bulletElements.Count; i++)
+            healthPoints -= other.gameObject.GetComponent<BulletBehaviour>().dammage;
+                    
+            if (healthPoints <= 0)
             {
-                if (other.gameObject.GetComponent<BulletBehaviour>().bulletElements[i] == 1)
+                for (int i = 0; i < other.gameObject.GetComponent<BulletBehaviour>().bulletElements.Count; i++)
                 {
-                    RM.fireSoul += soulReward;
+                    if (other.gameObject.GetComponent<BulletBehaviour>().bulletElements[i] == 1)
+                    {
+                        RM.fireSoul += soulReward;
+                    }
+                    if (other.gameObject.GetComponent<BulletBehaviour>().bulletElements[i] == 2)
+                    {
+                        RM.waterSoul += soulReward;
+                    }
+                    if (other.gameObject.GetComponent<BulletBehaviour>().bulletElements[i] == 3)
+                    {
+                        RM.plantSoul += soulReward;
+                    }
                 }
-                if (other.gameObject.GetComponent<BulletBehaviour>().bulletElements[i] == 2)
-                {
-                    RM.waterSoul += soulReward;
-                }
-                if (other.gameObject.GetComponent<BulletBehaviour>().bulletElements[i] == 3)
-                {
-                    RM.plantSoul += soulReward;
-                }
+                Death();
             }
-            Death();
+            Destroy(other.gameObject);
         }
-        Destroy(other.gameObject);
     }
 
     void Death()

@@ -27,14 +27,17 @@ public class MonsterDealingDamagesBehaviour : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collider.transform.parent.CompareTag("Tower"))
+
+        if (collider.transform.parent != null)
         {
-            targetTower = true;
-            tower = collider;
-            monsterMouvementBehaviours.speed = 0;
-            Debug.Log("je pense de plus en plus au suicide");
+            if(collider.transform.parent.CompareTag("Tower"))
+            {
+                targetTower = true;
+                tower = collider;
+                monsterMouvementBehaviours.speed = 0;
+                Debug.Log("je pense de plus en plus au suicide");
+            }
         }
-        
     }
 
     private void OnTriggerExit(Collider other)
