@@ -458,11 +458,12 @@ public class SpellPlacingScript : MonoBehaviour
         foreach (Vector3Int pos in positions )
         {
             Collider2D[] colliders = Physics2D.OverlapCircleAll(new Vector2(pos.x, pos.y), 0.001f);
+            
             foreach (Collider2D objetDetect in colliders)
             {
                 if(objetDetect.CompareTag("Tower"))
                 {
-                    Destroy(objetDetect.transform.parent.gameObject);
+                    Destroy(objetDetect.gameObject);
                 }
             }
         }
