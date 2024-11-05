@@ -30,13 +30,15 @@ public class SpellsBrewingScripts : MonoBehaviour
 
     public void FireButtonSelected()
     {
-        if (brewedSpell.Count < 3 && RM.fireSoul > 10)
+        if (brewedSpell.Count < 3)
         {
-            RM.fireSoul -= 10;
-            brewedSpell.Add(1);
-            recipieDisplayAdd(0);
+            if(RM.fireSoul > 10)
+            {
+                RM.fireSoul -= 10;
+                brewedSpell.Add(1);
+                recipieDisplayAdd(0);
+            }
         }
-        
     }
 
     public void WaterButtonSelected()
