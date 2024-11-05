@@ -41,6 +41,10 @@ public class TowerStats : MonoBehaviour
     public float earthEffectThree = 1;
     public float earthEffectFour = 1.4f;
     public float earthEffectFive = 1.1f;
+    
+    public int priceOne = 30;
+    public int priceTwo = 40;
+    public int priceThree = 50;
 
     public UnityEvent statsHasBeenRecalculated;
     

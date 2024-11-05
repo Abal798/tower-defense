@@ -12,6 +12,7 @@ TagManager:
   - plant
   - Ennemy
   - Tower
+  - bullets
   layers:
   - Default
   - TransparentFX

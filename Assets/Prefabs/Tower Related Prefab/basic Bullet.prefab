@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2412140733186534906}
   m_Layer: 8
   m_Name: basic Bullet
-  m_TagString: Untagged
+  m_TagString: bullets
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,6 +102,7 @@ MonoBehaviour:
   bulletSpeed: 0
   dammage: 0
   target: {fileID: 0}
+  bulletElements: 
 --- !u!58 &1234024763031987789
 CircleCollider2D:
   m_ObjectHideFlags: 0
