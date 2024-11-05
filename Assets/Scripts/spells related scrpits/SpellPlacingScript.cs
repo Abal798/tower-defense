@@ -6,6 +6,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
+using TMPro;
 
 public class SpellPlacingScript : MonoBehaviour
 {
@@ -211,10 +213,94 @@ public class SpellPlacingScript : MonoBehaviour
             }
             
         }
+        //les 3 prochains if sont cheum et pas optimisés du tout, ils ont rien a foutre dans un update
+        if (RM.spellSlotOne != null && RM.spellSlotOne.Count > 0 == true)
+        {
+            string spellContent = "";
+            List<string> elements = new List<string>();
 
-        boutonSpell1.SetActive(RM.spellSlotOne != null && RM.spellSlotOne.Count > 0);
-        boutonSpell2.SetActive(RM.spellSlotTwo != null && RM.spellSlotTwo.Count > 0);
-        boutonSpell3.SetActive(RM.spellSlotThree != null && RM.spellSlotThree.Count > 0);
+            for (int i = 0; i < RM.spellSlotOne.Count; i++)
+            {
+                if (RM.spellSlotOne[i] == 1)
+                {
+                    elements.Add("feu");
+                }
+                else if (RM.spellSlotOne[i] == 2)
+                {
+                    elements.Add("eau");
+                }
+                else if (RM.spellSlotOne[i] == 3)
+                {
+                    elements.Add("terre");
+                }
+            }
+            spellContent = string.Join(" + ", elements);
+            boutonSpell1.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = spellContent;
+            boutonSpell1.SetActive(true);
+        }
+        else if (RM.spellSlotOne != null && RM.spellSlotOne.Count > 0 == false)
+        {
+            boutonSpell1.SetActive(false);
+        }
+        if (RM.spellSlotTwo != null && RM.spellSlotTwo.Count > 0)
+        {
+            string spellContent = "";
+            List<string> elements = new List<string>();
+
+            for (int i = 0; i < RM.spellSlotTwo.Count; i++)
+            {
+                if (RM.spellSlotTwo[i] == 1)
+                {
+                    elements.Add("feu");
+                }
+                else if (RM.spellSlotTwo[i] == 2)
+                {
+                    elements.Add("eau");
+                }
+                else if (RM.spellSlotTwo[i] == 3)
+                {
+                    elements.Add("terre");
+                }
+            }
+
+            spellContent = string.Join(" + ", elements);
+            boutonSpell2.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = spellContent;
+            boutonSpell2.SetActive(true);
+        }
+        else if (RM.spellSlotTwo != null && RM.spellSlotTwo.Count > 0 == false)
+        {
+            boutonSpell2.SetActive(false);
+        }
+        if (RM.spellSlotThree != null && RM.spellSlotThree.Count > 0)
+        {
+            string spellContent = "";
+            List<string> elements = new List<string>();
+
+            for (int i = 0; i < RM.spellSlotThree.Count; i++)
+            {
+                if (RM.spellSlotThree[i] == 1)
+                {
+                    elements.Add("feu");
+                }
+                else if (RM.spellSlotThree[i] == 2)
+                {
+                    elements.Add("eau");
+                }
+                else if (RM.spellSlotThree[i] == 3)
+                {
+                    elements.Add("terre");
+                }
+            }
+
+            spellContent = string.Join(" + ", elements);
+            boutonSpell3.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = spellContent;
+            boutonSpell3.SetActive(true);
+        }
+        else if (RM.spellSlotThree != null && RM.spellSlotThree.Count > 0 == false)
+        {
+            boutonSpell3.SetActive(false);
+        }
+        //fin de la periode de cauchemard mais il faut vraiment changer ça
     }
     
     private void DisplaySpellPreview(Vector3 worldPos, List<int> spellSlot)
