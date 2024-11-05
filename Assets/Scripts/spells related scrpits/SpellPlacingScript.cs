@@ -23,6 +23,8 @@ public class SpellPlacingScript : MonoBehaviour
     public GameObject boutonSpell3;
     public bool rotationState;
     
+    public UnityEvent terraSpellJustHasBeenPlaced = new UnityEvent();
+    
 
     private List<Vector3Int> prevPositions = new List<Vector3Int>();
     
@@ -104,6 +106,7 @@ public class SpellPlacingScript : MonoBehaviour
                     PlaceSpellTerra(mouseWorldPos, RM.spellSlotOne);
                     ClearPreview();
                     RM.spellSlotOne.Clear();
+                    terraSpellJustHasBeenPlaced.Invoke();
                 }
 
                 if (Input.GetMouseButtonDown(1))
@@ -142,6 +145,7 @@ public class SpellPlacingScript : MonoBehaviour
                     PlaceSpellTerra(mouseWorldPos, RM.spellSlotTwo);
                     ClearPreview();
                     RM.spellSlotTwo.Clear();
+                    terraSpellJustHasBeenPlaced.Invoke();
                 }
 
                 if (Input.GetMouseButtonDown(1))
@@ -180,6 +184,7 @@ public class SpellPlacingScript : MonoBehaviour
                     PlaceSpellTerra(mouseWorldPos, RM.spellSlotThree);
                     ClearPreview();
                     RM.spellSlotThree.Clear();
+                    terraSpellJustHasBeenPlaced.Invoke();
                 }
 
                 if (Input.GetMouseButtonDown(1))
