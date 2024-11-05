@@ -35,6 +35,7 @@ public class TowerShoot : MonoBehaviour
         dammage = TS.damages;
         bulletSpeed = TS.bulletSpeed;
         cadence = TS.cadence;
+        detectionRadius = TS.radius;
     }
     
     void Update()

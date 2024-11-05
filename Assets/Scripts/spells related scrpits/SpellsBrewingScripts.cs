@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,11 @@ public class SpellsBrewingScripts : MonoBehaviour
     public TextMeshProUGUI earthSoulDisplay;
 
     public List<int> brewedSpell = new List<int>();
+
+    [Header("display")] 
+    public GameObject[] ingredientOne;
+    public GameObject[] ingredientTwo;
+    public GameObject[] ingredientThree;
     
     
     void Update()
@@ -28,6 +34,7 @@ public class SpellsBrewingScripts : MonoBehaviour
         {
             RM.fireSoul -= 10;
             brewedSpell.Add(1);
+            recipieDisplayAdd(0);
         }
         
     }
@@ -38,6 +45,7 @@ public class SpellsBrewingScripts : MonoBehaviour
         {
             RM.waterSoul -= 10;
             brewedSpell.Add(2);
+            recipieDisplayAdd(1);
         }
     }
 
@@ -47,6 +55,7 @@ public class SpellsBrewingScripts : MonoBehaviour
         {
             RM.plantSoul -= 10;
             brewedSpell.Add(3);
+            recipieDisplayAdd(2);
         }
     }
 
@@ -73,6 +82,7 @@ public class SpellsBrewingScripts : MonoBehaviour
                 
             }
             brewedSpell.Clear();
+            RecipieDisplayReset();
         }
     }
 
@@ -87,6 +97,8 @@ public class SpellsBrewingScripts : MonoBehaviour
                     RM.spellSlotOne.Add(brewedSpell[i]);
                 }
                 brewedSpell.Clear();
+                RecipieDisplayReset();
+                UIM.DisplayAlert("spell saved");
             }
             
             else if (RM.spellSlotTwo.Count == 0)
@@ -96,6 +108,8 @@ public class SpellsBrewingScripts : MonoBehaviour
                     RM.spellSlotTwo.Add(brewedSpell[i]);
                 }
                 brewedSpell.Clear();
+                RecipieDisplayReset();
+                UIM.DisplayAlert("spell saved");
             }
             
             else if (RM.spellSlotThree.Count == 0)
@@ -105,6 +119,8 @@ public class SpellsBrewingScripts : MonoBehaviour
                     RM.spellSlotThree.Add(brewedSpell[i]);
                 }
                 brewedSpell.Clear();
+                RecipieDisplayReset();
+                UIM.DisplayAlert("spell saved");
             }
 
             else
@@ -115,6 +131,38 @@ public class SpellsBrewingScripts : MonoBehaviour
         else
         {
             UIM.DisplayAlert("sort ne contient pas assez d'element");
+        }
+    }
+
+    void recipieDisplayAdd(int i)
+    {
+        if (brewedSpell.Count == 1)
+        {
+            ingredientOne[i].SetActive(true);
+        }
+        else if(brewedSpell.Count == 2)
+        {
+            ingredientTwo[i].SetActive(true);
+        }
+        else if(brewedSpell.Count == 3)
+        {
+            ingredientThree[i].SetActive(true);
+        }
+    }
+    
+    void RecipieDisplayReset()
+    {
+        foreach (var VARIABLE in ingredientOne)
+        {
+            VARIABLE.SetActive(false);
+        }
+        foreach (var VARIABLE in ingredientTwo)
+        {
+            VARIABLE.SetActive(false);
+        }
+        foreach (var VARIABLE in ingredientThree)
+        {
+            VARIABLE.SetActive(false);
         }
     }
 }

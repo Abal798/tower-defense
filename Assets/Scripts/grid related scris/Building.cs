@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Profiling;
 
 public class Building : MonoBehaviour
 {
@@ -41,8 +42,11 @@ public class Building : MonoBehaviour
         GridBuilding.current.TakeArea(areaTemp);
         temp = Instantiate(tower, transform.position, Quaternion.identity).GetComponentInChildren<TowerStats>();
         temp.ameliorations.Add(element);
+        Profiler.BeginSample("FollowChief");
         
         UpdatePathfinding.Invoke();
+        
+        Profiler.EndSample();
         Destroy(gameObject);
         
     }

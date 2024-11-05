@@ -37,12 +37,20 @@ public class GridBuilding : MonoBehaviour
         tileBases.Add(TileType.Green, Resources.Load<TileBase>(titlePath + "green"));
         tileBases.Add(TileType.Red, Resources.Load<TileBase>(titlePath + "red"));
         tileBases.Add(TileType.Grey, Resources.Load<TileBase>(titlePath + "grey"));
+        tileBases.Add(TileType.Water, Resources.Load<TileBase>(titlePath + "001"));
+        tileBases.Add(TileType.Grass, Resources.Load<TileBase>(titlePath + "003"));
+        tileBases.Add(TileType.Earth, Resources.Load<TileBase>(titlePath + "004"));
+        tileBases.Add(TileType.Forest, Resources.Load<TileBase>(titlePath + "005"));
+        tileBases.Add(TileType.Fire, Resources.Load<TileBase>(titlePath + "008"));
+        tileBases.Add(TileType.Volcano, Resources.Load<TileBase>(titlePath + "009"));
         
-        Debug.Log("Empty Tile: " + (tileBases[TileType.Empty] == null ? "null" : "Loaded"));
-        Debug.Log("Green Tile: " + (tileBases[TileType.Green] == null ? "Failed to Load" : "Loaded"));
-        Debug.Log("Red Tile: " + (tileBases[TileType.Red] == null ? "Failed to Load" : "Loaded"));
-        Debug.Log("White Tile: " + (tileBases[TileType.White] == null ? "Failed to Load" : "Loaded"));
-        Debug.Log("Grey Tile: " + (tileBases[TileType.Grey] == null ? "Failed to Load" : "Loaded"));
+        
+        Debug.Log("Water Tile: " + (tileBases[TileType.Water] == null ? "null" : "Loaded"));
+        Debug.Log("Grass Tile: " + (tileBases[TileType.Grass] == null ? "Failed to Load" : "Loaded"));
+        Debug.Log("Earth Tile: " + (tileBases[TileType.Earth] == null ? "Failed to Load" : "Loaded"));
+        Debug.Log("Forest Tile: " + (tileBases[TileType.Forest] == null ? "Failed to Load" : "Loaded"));
+        Debug.Log("Fire Tile: " + (tileBases[TileType.Fire] == null ? "Failed to Load" : "Loaded"));
+        Debug.Log("Volcano Tile: " + (tileBases[TileType.Volcano] == null ? "Failed to Load" : "Loaded"));
     }
 
     private void Update()
@@ -285,5 +293,12 @@ public enum TileType
     White,
     Green, 
     Red,
-    Grey
+    Grey,
+    Water,
+    Grass,
+    Earth,
+    Forest,
+    Fire,
+    Volcano
+    
 }
