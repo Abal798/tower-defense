@@ -69,7 +69,7 @@ public class Building : MonoBehaviour
 
         foreach (var collider in colliders)
         {
-            Debug.Log(collider.gameObject.transform.position);
+            Debug.Log(collider.gameObject.transform.position + "gmalaubidou" + Time.timeScale );
             TowerStats towerStats = collider.GetComponent<TowerStats>();
             if (towerStats != null && towerStats.ameliorations.Count < 3)
             {
