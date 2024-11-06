@@ -12,7 +12,7 @@ public class BarycentricDiagram : MonoBehaviour
     public Transform pointMarker;
     
 
-    void CalculatePosition(int weightA, int weightB, int weightC)
+    public void CalculatePosition(int weightA, int weightB, int weightC)
     {
         int totalWeight = weightA + weightB + weightC;
 
