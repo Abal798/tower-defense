@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.69389236, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -152,6 +152,9 @@ MonoBehaviour:
   deathParticules: {fileID: 5132903826172967407, guid: 69e5a0a7244bdad4b9395227de198bcd, type: 3}
   incomingDamage: 0
   RM: {fileID: 0}
+  MS: {fileID: 6012127422834315380}
+  damageFactorbonus: 1.5
+  damageFactorMalus: 0.75
 --- !u!114 &4164270264960268209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,6 +217,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6558944d9a8b4d94ba190e16e880de10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 4
   basicSpeed: 3
   speed: 1
   damages: 1
+  type: 0
+  damageFactorbonus: 1.5
+  damageFactorMalus: 0.75
