@@ -8,22 +8,31 @@ using UnityEngine;
 public class MonsterDeathBehaviour : MonoBehaviour
 {
     [Header("modifiable")]
-    public float healthPoints;
+    
     public float soulReward = 1f;
+    
     
     [Header("a renseigner (les GD, tjr pas toucher)")]
     
-
+    public MonsterStats MS;
     public GameObject deathParticules;
 
     
     [Header("automatique")]
+    public float healthPoints;
     public float incomingDamage = 0;
     private float totalHealthPoints;
     public RessourcesManager RM;
     
+    private float damageFactorbonus;
+    private float damageFactorMalus;
+    
+    
     void Start()
     {
+        damageFactorbonus = MS.damageFactorbonus;
+        damageFactorMalus = MS.damageFactorMalus;
+        healthPoints = MS.health;
         totalHealthPoints = healthPoints;
         gameObject.layer = LayerMask.NameToLayer("Ennemy");
     }
@@ -32,7 +41,7 @@ public class MonsterDeathBehaviour : MonoBehaviour
         if (incomingDamage >= totalHealthPoints)
         {
             gameObject.layer = LayerMask.NameToLayer("deadEnnemy");
-            Destroy(gameObject,5f);
+            Destroy(gameObject,2f);
         }
     }
     
@@ -40,7 +49,7 @@ public class MonsterDeathBehaviour : MonoBehaviour
     {
         if (other.gameObject.CompareTag("bullets"))
         {
-            healthPoints -= other.gameObject.GetComponent<BulletBehaviour>().dammage;
+            TakeDamages(other);
                     
             if (healthPoints <= 0)
             {
@@ -118,5 +127,69 @@ public class MonsterDeathBehaviour : MonoBehaviour
 
             yield return new WaitForSeconds(1f);
         }
+    }
+
+    void TakeDamages(Collider2D other)
+    {
+        float damages = other.gameObject.GetComponent<BulletBehaviour>().dammage;
+        List<int> bulletType = other.gameObject.GetComponent<BulletBehaviour>().bulletElements;
+        
+        if (MS.type == 0)
+        {
+            healthPoints -= damages;
+        }
+
+        if (MS.type == 1)
+        {
+            foreach (var i in bulletType)
+            {
+                if (i == 3)
+                {
+                    damages *= damageFactorbonus;
+                }
+
+                if (i == 2)
+                {
+                    damages *= damageFactorMalus;
+                }
+            }
+
+            healthPoints -= damages;
+        }
+        if (MS.type == 2)
+        {
+            foreach (var i in bulletType)
+            {
+                if (i == 1)
+                {
+                    damages *= damageFactorbonus;
+                }
+
+                if (i == 3)
+                {
+                    damages *= damageFactorMalus;
+                }
+            }
+
+            healthPoints -= damages;
+        }
+        if (MS.type == 3)
+        {
+            foreach (var i in bulletType)
+            {
+                if (i == 2)
+                {
+                    damages *= damageFactorbonus;
+                }
+
+                if (i == 1)
+                {
+                    damages *= damageFactorMalus;
+                }
+            }
+
+            healthPoints -= damages;
+        }
+        
     }
 }

@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Spawn : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class Spawn : MonoBehaviour
     public GameObject monsterTypeOne;
     public GameObject monsterTypeTwo;
     public RessourcesManager RM;
+    public float chanceDeSpawnElementaireEntreZeroEtUn;
+    public int vagueDapparitionDesElementaires;
 
     public float squareSize = 50;
 
@@ -28,6 +32,15 @@ public class Spawn : MonoBehaviour
             
             GameObject newMonster = Instantiate(monsterTypeOne,  GetRandomPositionOnSquareEdge(), Quaternion.identity);
             newMonster.GetComponent<MonsterDeathBehaviour>().RM = this.gameObject.GetComponent<RessourcesManager>();
+            if (RM.wave >= vagueDapparitionDesElementaires)
+            {
+                newMonster.GetComponent<MonsterStats>().type = GetMonsterType();
+            }
+            else
+            {
+                newMonster.GetComponent<MonsterStats>().type = 0;
+            }
+            
         }
         
         for(var i = 0; i < numberOfMonsterTwo; i++)
@@ -35,6 +48,7 @@ public class Spawn : MonoBehaviour
             
             GameObject newMonster = Instantiate(monsterTypeTwo, GetRandomPositionOnSquareEdge(), Quaternion.identity);
             newMonster.GetComponent<MonsterDeathBehaviour>().RM = this.gameObject.GetComponent<RessourcesManager>();
+            
         }
         
     }
@@ -64,6 +78,16 @@ public class Spawn : MonoBehaviour
         }
 
         return position;
+    }
+
+    int GetMonsterType()
+    {
+        if (Random.Range(0, Convert.ToInt32(1/chanceDeSpawnElementaireEntreZeroEtUn)) == 1)
+        {
+            return Random.Range(1, 4);
+        }
+
+        return 0;
     }
     
     

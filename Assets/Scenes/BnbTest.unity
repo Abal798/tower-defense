@@ -2803,13 +2803,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5addf8df650b6124c9be7ceca32161ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasToSpawn: 0
-  isAlreadySpawning: 0
   numberOfMonsterOne: 15
-  numberOfMonsterTwo: 30
+  numberOfMonsterTwo: 0
   monsterTypeOne: {fileID: 1791313746008852168, guid: 208d1a2fa46ec174b8c0c0c11578c539, type: 3}
   monsterTypeTwo: {fileID: 1791313746008852168, guid: d06bd98ef2bc15246882e89415279836, type: 3}
   RM: {fileID: 744501577}
+  chanceDeSpawnElementaireEntreZeroEtUn: 0.25
+  vagueDapparitionDesElementaires: 0
   squareSize: 49
 --- !u!114 &744501577
 MonoBehaviour:
@@ -2824,7 +2824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chrono: 0
-  wave: 0
+  wave: 1
   health: 0
   spellSlotOne: 
   spellSlotTwo: 
