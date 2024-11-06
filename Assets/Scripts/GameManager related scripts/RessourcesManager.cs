@@ -33,7 +33,15 @@ public class RessourcesManager : MonoBehaviour
 
     private void Start()
     {
-        BD.CalculatePosition(nbrOfFireTile, nbrOfWaterTile, nbrOfEarthTile);
+        //BD.CalculatePosition(nbrOfFireTile, nbrOfWaterTile, nbrOfEarthTile);
+
+        for (int i = -20; i < 20; i = i+1)
+        {
+            for (int j = -20; j < 20; j++)
+            {
+                UpdateTileNumber(new Vector3Int(i,j,0), 1, true);
+            }
+        }
     }
 
 
@@ -73,6 +81,6 @@ public class RessourcesManager : MonoBehaviour
             }
         }
         
-        BD.CalculatePosition(nbrOfFireTile, nbrOfWaterTile, nbrOfEarthTile);
+        //BD.CalculatePosition(nbrOfFireTile, nbrOfWaterTile, nbrOfEarthTile);
     }
 }
