@@ -2892,6 +2892,7 @@ MonoBehaviour:
   RM: {fileID: 744501577}
   chanceDeSpawnElementaireEntreZeroEtUn: 0.25
   vagueDapparitionDesElementaires: 0
+  basicWaveDuration: 3
   squareSize: 49
 --- !u!114 &744501577
 MonoBehaviour:
