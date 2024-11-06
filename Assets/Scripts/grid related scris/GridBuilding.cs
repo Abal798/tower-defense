@@ -39,8 +39,8 @@ public class GridBuilding : MonoBehaviour
         tileBases.Add(TileType.Grey, Resources.Load<TileBase>(titlePath + "grey"));
         tileBases.Add(TileType.Water, Resources.Load<TileBase>(titlePath + "001"));
         tileBases.Add(TileType.Grass, Resources.Load<TileBase>(titlePath + "003"));
-        tileBases.Add(TileType.Earth, Resources.Load<TileBase>(titlePath + "004"));
-        tileBases.Add(TileType.Forest, Resources.Load<TileBase>(titlePath + "005"));
+        tileBases.Add(TileType.Earth, Resources.Load<TileBase>(titlePath + "005"));
+        tileBases.Add(TileType.Moutain, Resources.Load<TileBase>(titlePath + "004"));
         tileBases.Add(TileType.Fire, Resources.Load<TileBase>(titlePath + "008"));
         tileBases.Add(TileType.Volcano, Resources.Load<TileBase>(titlePath + "009"));
         
@@ -48,7 +48,7 @@ public class GridBuilding : MonoBehaviour
         Debug.Log("Water Tile: " + (tileBases[TileType.Water] == null ? "null" : "Loaded"));
         Debug.Log("Grass Tile: " + (tileBases[TileType.Grass] == null ? "Failed to Load" : "Loaded"));
         Debug.Log("Earth Tile: " + (tileBases[TileType.Earth] == null ? "Failed to Load" : "Loaded"));
-        Debug.Log("Forest Tile: " + (tileBases[TileType.Forest] == null ? "Failed to Load" : "Loaded"));
+        Debug.Log("Forest Tile: " + (tileBases[TileType.Moutain] == null ? "Failed to Load" : "Loaded"));
         Debug.Log("Fire Tile: " + (tileBases[TileType.Fire] == null ? "Failed to Load" : "Loaded"));
         Debug.Log("Volcano Tile: " + (tileBases[TileType.Volcano] == null ? "Failed to Load" : "Loaded"));
     }
@@ -302,7 +302,7 @@ public enum TileType
     Water,
     Grass,
     Earth,
-    Forest,
+    Moutain,
     Fire,
     Volcano
     
