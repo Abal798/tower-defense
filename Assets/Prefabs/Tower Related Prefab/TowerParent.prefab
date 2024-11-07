@@ -174,8 +174,8 @@ MonoBehaviour:
   damages: 1
   basicHealth: 10
   health: 1
-  basicRadius: 3
-  radius: 3
+  basicRadius: 6
+  radius: 6
   fireSurrounding: 0
   waterSurrouding: 0
   earthSurrounding: 0
@@ -207,6 +207,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  upgradeParticules: {fileID: 5620730739656655620, guid: b641dd45ce3b9544b92c214b7b561786, type: 3}
 --- !u!114 &6030858656852846505
 MonoBehaviour:
   m_ObjectHideFlags: 0

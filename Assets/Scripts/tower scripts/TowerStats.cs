@@ -1,12 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Tilemaps;
 
 public class TowerStats : MonoBehaviour
 {
+    
+    [Header("stats")]
     
     public float rotationSpeed;
     public List<int> ameliorations = new List<int>();
@@ -47,6 +50,9 @@ public class TowerStats : MonoBehaviour
     public int priceThree = 50;
 
     public UnityEvent statsHasBeenRecalculated;
+
+    [Header("a renseigner par les prog")] 
+    public GameObject upgradeParticules;
     
 
 
@@ -91,10 +97,13 @@ public class TowerStats : MonoBehaviour
         cadence = basicCadence - (waterEffectTree * nbrOfWaterInsuflation)*(Mathf.Pow(waterEffectFour, waterSurrouding));
         radius = basicRadius + (earthEffectThree * nbrOfEarthInsuflation);
         health = basicHealth + ((waterLifeBonus * nbrOfWaterInsuflation) * Mathf.Pow(earthEffectFour, nbrOfEarthInsuflation)) * Mathf.Pow(earthEffectFive, earthSurrounding);
-
-        statsHasBeenRecalculated.Invoke();
         
-
+        statsHasBeenRecalculated.Invoke();
+        if (ameliorations.Count > 1)
+        {
+            GameObject newParticules = Instantiate(upgradeParticules, transform.position, new Quaternion(-0.707106829f,0,0,0.707106829f));
+            Destroy(newParticules, 0.5f);
+        }
     }
 
     private void OnDestroy()

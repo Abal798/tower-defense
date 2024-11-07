@@ -90,5 +90,6 @@ public class RessourcesManager : MonoBehaviour
         }
         
         BD.CalculatePosition(nbrOfFireTile, nbrOfWaterTile, nbrOfEarthTile);
+        
     }
 }
