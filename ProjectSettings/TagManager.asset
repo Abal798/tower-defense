@@ -13,6 +13,7 @@ TagManager:
   - Ennemy
   - Tower
   - bullets
+  - Base
   layers:
   - Default
   - TransparentFX

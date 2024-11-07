@@ -79,7 +79,7 @@ public class Spawn : MonoBehaviour
 
     int GetMonsterType()
     {
-        return Random.Range(0, Convert.ToInt32(1 / chanceDeSpawnElementaireEntreZeroEtUn)) == 1
+        return Random.Range(0, Mathf.Round(1 / chanceDeSpawnElementaireEntreZeroEtUn)) == 1
             ? Random.Range(1, 4)
             : 0;
     }

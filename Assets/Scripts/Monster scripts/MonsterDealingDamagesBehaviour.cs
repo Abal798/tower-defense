@@ -12,6 +12,7 @@ public class MonsterDealingDamagesBehaviour : MonoBehaviour
     private bool justHited = false;
     public bool targetTower;
     public Collider2D tower;
+    public Collider2D baseTower;
     private MonsterMouvementBehaviours monsterMouvementBehaviours;
     
 
@@ -38,12 +39,20 @@ public class MonsterDealingDamagesBehaviour : MonoBehaviour
                 Debug.Log("je pense de plus en plus au suicide");
             }
         }
+        
+        if(collider.CompareTag("Base"))
+        {
+            targetTower = true;
+            baseTower = collider;
+            monsterMouvementBehaviours.speed = 0;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         targetTower = false;
         tower = null;
+        baseTower = null;
         monsterMouvementBehaviours.speed = MS.basicSpeed;
     }
 
@@ -51,7 +60,7 @@ public class MonsterDealingDamagesBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (justHited == false && targetTower)
+        if (justHited == false && targetTower && tower != null)
         {
             justHited = true;
             StartCoroutine(Hited());
@@ -59,7 +68,23 @@ public class MonsterDealingDamagesBehaviour : MonoBehaviour
             {
                 tower.gameObject.GetComponent<TowerTakingDamage>().TakeDamage(damages);
             }
-            if (tower == null)
+            if (tower == null && baseTower == null)
+            {
+                targetTower = false;
+                monsterMouvementBehaviours.speed = MS.basicSpeed;
+            
+            }
+        }
+        
+        if (justHited == false && targetTower && baseTower != null)
+        {
+            justHited = true;
+            StartCoroutine(Hited());
+            if (baseTower != null)
+            {
+                baseTower.gameObject.GetComponent<BaseScript>().TakeDamage(damages);
+            }
+            if (tower == null && baseTower == null)
             {
                 targetTower = false;
                 monsterMouvementBehaviours.speed = MS.basicSpeed;
