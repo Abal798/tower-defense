@@ -142,6 +142,7 @@ public class Building : MonoBehaviour
             }
             else
             {
+                UIM.DisplayAlert("cannot afford this");
                 return false;
             }
                 
@@ -155,6 +156,7 @@ public class Building : MonoBehaviour
             }
             else
             {
+                UIM.DisplayAlert("cannot afford this");
                 return false;
             }
         }
@@ -167,6 +169,7 @@ public class Building : MonoBehaviour
             }
             else
             {
+                UIM.DisplayAlert("cannot afford this");
                 return false;
             }
         }
