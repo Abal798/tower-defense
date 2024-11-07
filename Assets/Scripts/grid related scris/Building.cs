@@ -96,6 +96,8 @@ public class Building : MonoBehaviour
                     Destroy(gameObject);
                 }
                 
+                UIM.DisplayAlert("cannot upgrade");
+                
             }
         }
         

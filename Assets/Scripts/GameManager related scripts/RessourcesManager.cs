@@ -22,6 +22,12 @@ public class RessourcesManager : MonoBehaviour
     public List<int> spellSlotOne= new List<int>();
     public List<int> spellSlotTwo = new List<int>();
     public List<int> spellSlotThree= new List<int>();
+
+    public int basicFireDosePrice;
+    public int basicWaterDosePrice;
+    public int basicEarthDosePrice;
+    
+    
     
     [Header("souls ressources")] 
     public float fireSoul;
