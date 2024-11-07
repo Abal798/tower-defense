@@ -24,9 +24,10 @@ public class Spawn : MonoBehaviour
 
     public void ButtonFonctionLaunchWave()
     {
+        RM.wave++;
         numberOfMonsterOne = Mathf.CeilToInt(2 * Mathf.Sin(RM.wave) + 3 * RM.wave);
         StartCoroutine(LaunchWave());
-        RM.wave++;
+        
     }
 
     private IEnumerator LaunchWave()

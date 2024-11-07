@@ -9,7 +9,8 @@ public class MenuManager : MonoBehaviour
     
     public GameObject ingamePanel;
     public GameObject alchimiePanel;
-    
+
+    public TextMeshProUGUI waveDisplay;
     public TextMeshProUGUI fireSoulIngameDisplay;
     public TextMeshProUGUI WaterSoulIngameDisplay;
     public TextMeshProUGUI EarthSoulIngameDisplay;
@@ -25,7 +26,9 @@ public class MenuManager : MonoBehaviour
         fireSoulIngameDisplay.text = RM.fireSoul.ToString();
         WaterSoulIngameDisplay.text = RM.waterSoul.ToString();
         EarthSoulIngameDisplay.text = RM.plantSoul.ToString();
-
+        
+        
+        waveDisplay.text = "wave : " + RM.wave.ToString();
     }
 
     public void GoToAlchimiePanel()
