@@ -50,6 +50,7 @@ public class Building : MonoBehaviour
         isDragging = false;
         GridBuilding.current.TakeArea(areaTemp);
         temp = Instantiate(tower, transform.position, Quaternion.identity).GetComponentInChildren<TowerStats>();
+        GridBuilding.current.listeTowerCo.Add(area.position,temp.gameObject);
         temp.ameliorations.Add(element);
         Profiler.BeginSample("FollowChief");
         
