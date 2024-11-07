@@ -3711,6 +3711,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: triangleDiagrame
       objectReference: {fileID: 0}
+    - target: {fileID: 5225130572876779992, guid: 5725b13dbe6216545b9dec3129dc75b4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
