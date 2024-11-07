@@ -8,7 +8,6 @@ using UnityEngine.Tilemaps;
 
 public class TowerStats : MonoBehaviour
 {
-    
     [Header("stats")]
     
     public float rotationSpeed;
@@ -60,7 +59,7 @@ public class TowerStats : MonoBehaviour
     {
         CalculateSurroundings();
         recalculateStats();
-        Building.UpdatePathfinding.AddListener(CalculateSurroundings);
+        Building.UpdatePathfinding.AddListener(CalculateSurroundings); //attention a cette ligne , elle fait recalculate stats a chaque fois qu'une nouvelle toure est posée, c'est chiant pour les visuels
     }
     
     
