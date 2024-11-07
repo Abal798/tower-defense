@@ -26,6 +26,8 @@ public class RessourcesManager : MonoBehaviour
     public int basicFireDosePrice;
     public int basicWaterDosePrice;
     public int basicEarthDosePrice;
+
+    public float spellAugmentationPriceFactor;
     
     
     
