@@ -26,8 +26,8 @@ public class CameraManager : MonoBehaviour
         Vector3 targetPosition = transform.position;
         Vector3 mousePosition = Input.mousePosition;
 
-        maxPosition = (new Vector2((15 - camera.orthographicSize) * 1.85f , (15 - camera.orthographicSize) + 12.5f));
-        minPosition = (new Vector2((15 - camera.orthographicSize) * -1.85f ,   -12.5f - (15 - camera.orthographicSize)));        
+        maxPosition = (new Vector2(-1.8f * camera.orthographicSize + 21.6f, (- 1.01f* camera.orthographicSize)  + 21.23f));
+        minPosition = (new Vector2(1.8f * camera.orthographicSize - 21.6f ,   ( 1.01f* camera.orthographicSize)  - 21.23f));        
         
         moveSpeed = (camera.orthographicSize * 5) + speedFactor;
 

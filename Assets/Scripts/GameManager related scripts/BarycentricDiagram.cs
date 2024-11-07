@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using UnityEngine;
-
 public class BarycentricDiagram : MonoBehaviour
 {
     public Transform pointA;
@@ -12,7 +10,7 @@ public class BarycentricDiagram : MonoBehaviour
     public Transform pointMarker;
     
 
-    void CalculatePosition(int weightA, int weightB, int weightC)
+    public void CalculatePosition(int weightA, int weightB, int weightC)
     {
         int totalWeight = weightA + weightB + weightC;
 

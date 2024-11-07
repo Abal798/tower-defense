@@ -7,7 +7,6 @@ using Random = UnityEngine.Random;
 
 public class Spawn : MonoBehaviour
 {
-
     public int numberOfMonsterOne;
     public int numberOfMonsterTwo;
     public GameObject monsterTypeOne;
@@ -16,22 +15,33 @@ public class Spawn : MonoBehaviour
     public float chanceDeSpawnElementaireEntreZeroEtUn;
     public int vagueDapparitionDesElementaires;
 
+    public float basicWaveDuration;
+
+    private int ennemyToSpawn;
+    private float timeBetweenSpawn;
+
     public float squareSize = 50;
 
     public void ButtonFonctionLaunchWave()
     {
         numberOfMonsterOne = Mathf.CeilToInt(2 * Mathf.Sin(RM.wave) + 3 * RM.wave);
-        LaunchWave();
+        StartCoroutine(LaunchWave());
         RM.wave++;
     }
-    
-    public void LaunchWave()
+
+    private IEnumerator LaunchWave()
     {
-        for(var i = 0; i < numberOfMonsterOne; i++)
+        ennemyToSpawn = numberOfMonsterOne;
+        float waveDuration = basicWaveDuration + 2 * RM.wave;
+        timeBetweenSpawn = waveDuration / numberOfMonsterOne;
+
+        // Spawn des monstres de type un avec intervalle de temps
+        for (int i = 0; i < numberOfMonsterOne; i++)
         {
-            
-            GameObject newMonster = Instantiate(monsterTypeOne,  GetRandomPositionOnSquareEdge(), Quaternion.identity);
-            newMonster.GetComponent<MonsterDeathBehaviour>().RM = this.gameObject.GetComponent<RessourcesManager>();
+            ennemyToSpawn--;
+            GameObject newMonster = Instantiate(monsterTypeOne, GetRandomPositionOnSquareEdge(), Quaternion.identity);
+            newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;
+
             if (RM.wave >= vagueDapparitionDesElementaires)
             {
                 newMonster.GetComponent<MonsterStats>().type = GetMonsterType();
@@ -40,55 +50,37 @@ public class Spawn : MonoBehaviour
             {
                 newMonster.GetComponent<MonsterStats>().type = 0;
             }
-            
+
+            yield return new WaitForSeconds(timeBetweenSpawn); // Pause entre chaque apparition
         }
-        
-        for(var i = 0; i < numberOfMonsterTwo; i++)
+
+        // Spawn des monstres de type deux
+        for (int i = 0; i < numberOfMonsterTwo; i++)
         {
-            
             GameObject newMonster = Instantiate(monsterTypeTwo, GetRandomPositionOnSquareEdge(), Quaternion.identity);
-            newMonster.GetComponent<MonsterDeathBehaviour>().RM = this.gameObject.GetComponent<RessourcesManager>();
-            
+            newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;
         }
-        
     }
-    
-    
+
     Vector3 GetRandomPositionOnSquareEdge()
     {
         float halfSize = squareSize / 2;
-        // Choose a random side: 0 = Top, 1 = Bottom, 2 = Left, 3 = Right
         int side = Random.Range(0, 4);
 
-        Vector3 position = Vector3.zero;
-        switch (side)
+        return side switch
         {
-            case 0: // Top
-                position = new Vector3(Random.Range(-halfSize, halfSize), halfSize, 0);
-                break;
-            case 1: // Bottom
-                position = new Vector3(Random.Range(-halfSize, halfSize), -halfSize, 0);
-                break;
-            case 2: // Left
-                position = new Vector3(-halfSize, Random.Range(-halfSize, halfSize), 0);
-                break;
-            case 3: // Right
-                position = new Vector3(halfSize, Random.Range(-halfSize, halfSize), 0);
-                break;
-        }
-
-        return position;
+            0 => new Vector3(Random.Range(-halfSize, halfSize), halfSize, 0),
+            1 => new Vector3(Random.Range(-halfSize, halfSize), -halfSize, 0),
+            2 => new Vector3(-halfSize, Random.Range(-halfSize, halfSize), 0),
+            3 => new Vector3(halfSize, Random.Range(-halfSize, halfSize), 0),
+            _ => Vector3.zero
+        };
     }
 
     int GetMonsterType()
     {
-        if (Random.Range(0, Convert.ToInt32(1/chanceDeSpawnElementaireEntreZeroEtUn)) == 1)
-        {
-            return Random.Range(1, 4);
-        }
-
-        return 0;
+        return Random.Range(0, Mathf.Round(1 / chanceDeSpawnElementaireEntreZeroEtUn)) == 1
+            ? Random.Range(1, 4)
+            : 0;
     }
-    
-    
 }

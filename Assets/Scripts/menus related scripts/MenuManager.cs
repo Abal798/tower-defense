@@ -33,4 +33,9 @@ public class MenuManager : MonoBehaviour
         ingamePanel.SetActive(false);
         alchimiePanel.SetActive(true);
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
