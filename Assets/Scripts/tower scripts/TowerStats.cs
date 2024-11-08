@@ -21,6 +21,8 @@ public class TowerStats : MonoBehaviour
     public float damages;
     
     public float basicHealth = 1;
+    public float maxHealth;
+    private float previousMaxHealth;
     public float health;
 
     public float basicRadius = 3f;
@@ -52,11 +54,15 @@ public class TowerStats : MonoBehaviour
 
     [Header("a renseigner par les prog")] 
     public GameObject upgradeParticules;
+
+    public GameObject healthBar;
     
 
 
     void Start()
     {
+        maxHealth = basicHealth;
+        previousMaxHealth = 1;
         CalculateSurroundings();
         recalculateStats();
         Building.UpdatePathfinding.AddListener(CalculateSurroundings); //attention a cette ligne , elle fait recalculate stats a chaque fois qu'une nouvelle toure est posée, c'est chiant pour les visuels
@@ -95,13 +101,24 @@ public class TowerStats : MonoBehaviour
         damages = (basicDammage + (FireEffectOne * nbrOfFireInsuflation + waterEffectOne * nbrOfWaterInsuflation)) * (Mathf.Pow(FireEffectTwo, fireSurrounding) * Mathf.Pow(waterEffectTwo, waterSurrouding)); 
         cadence = basicCadence - (waterEffectTree * nbrOfWaterInsuflation)*(Mathf.Pow(waterEffectFour, waterSurrouding));
         radius = basicRadius + (earthEffectThree * nbrOfEarthInsuflation);
-        health = basicHealth + ((waterLifeBonus * nbrOfWaterInsuflation) * Mathf.Pow(earthEffectFour, nbrOfEarthInsuflation)) * Mathf.Pow(earthEffectFive, earthSurrounding);
+        maxHealth = basicHealth + ((waterLifeBonus * nbrOfWaterInsuflation) * Mathf.Pow(earthEffectFour, nbrOfEarthInsuflation)) * Mathf.Pow(earthEffectFive, earthSurrounding);
+        health += maxHealth - previousMaxHealth;
+        previousMaxHealth = maxHealth;
         
         statsHasBeenRecalculated.Invoke();
         if (ameliorations.Count > 1)
         {
             GameObject newParticules = Instantiate(upgradeParticules, transform.position, new Quaternion(-0.707106829f,0,0,0.707106829f));
             Destroy(newParticules, 0.5f);
+        }
+
+        if (maxHealth != health)
+        {
+            healthBar.SetActive(true);
+        }
+        else
+        {
+            healthBar.SetActive(false);
         }
     }
 
