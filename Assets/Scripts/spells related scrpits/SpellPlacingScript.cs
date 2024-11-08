@@ -460,16 +460,22 @@ public class SpellPlacingScript : MonoBehaviour
         {
             tiles[i] = tileBase;
         }
-
-        MainTilemap.SetTiles(positions.ToArray(), tiles);
-
+        
         foreach (Vector3Int pos in positions )
         {
+            RM.UpdateTileNumber(pos, 1, false);
             if (GridBuilding.current.listeTowerCo.ContainsKey(pos))
             {
                 Destroy(GridBuilding.current.listeTowerCo[pos]);
             }
         }
+        
+        
+        
+        MainTilemap.SetTiles(positions.ToArray(), tiles);
+        RM.UpdateTileNumber(cellPos, 9, true);
+
+        
         
         
         Building.UpdatePathfinding.Invoke();

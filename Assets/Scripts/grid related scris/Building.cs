@@ -48,10 +48,13 @@ public class Building : MonoBehaviour
         areaTemp.position = positionInt;
         Placed = true; 
         isDragging = false;
+        RM.UpdateTileNumber(area.position, 1, false);
         GridBuilding.current.TakeArea(areaTemp);
         temp = Instantiate(tower, transform.position, Quaternion.identity).GetComponentInChildren<TowerStats>();
         GridBuilding.current.listeTowerCo.Add(area.position,temp.gameObject);
         temp.ameliorations.Add(element);
+        
+        
         Profiler.BeginSample("FollowChief");
         
         UpdatePathfinding.Invoke();
@@ -65,48 +68,36 @@ public class Building : MonoBehaviour
     {
         
         Vector2 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3Int cellPos = GridBuilding.current.gridLayout.WorldToCell(mouseWorldPosition);
         
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(mouseWorldPosition, 0.001f);
-
-        foreach (var collider in colliders)
+        if (GridBuilding.current.listeTowerCo.ContainsKey(cellPos))
         {
-            Debug.Log(collider.gameObject.transform.position + "gmalaubidou" + Time.timeScale );
-            TowerStats towerStats = collider.GetComponent<TowerStats>();
-            if (towerStats != null && towerStats.ameliorations.Count < 3)
+            TowerStats towerStats = GridBuilding.current.listeTowerCo[cellPos].GetComponent<TowerStats>();
+            bool canUpgrade = false;
+                
+            if (towerStats.ameliorations.Count == 1)
             {
-                bool canUpgrade = false;
-                
-                if (towerStats.ameliorations.Count == 1)
-                {
-                    canUpgrade = Afford(element, towerStats.priceTwo);
-                }
-                else if (towerStats.ameliorations.Count == 2)
-                {
-                    canUpgrade = Afford(element, towerStats.priceThree);
-                }
-                
-                Debug.Log("je peux ameliorer" + canUpgrade);
-
-                if (canUpgrade)
-                {
-                    towerStats.ameliorations.Add(element);
-                    Placed = true;
-                    isDragging = false;
-                    towerStats.recalculateStats();
-                    Destroy(gameObject);
-                }
-                
-                UIM.DisplayAlert("cannot upgrade");
-                
+                canUpgrade = Afford(element, towerStats.priceTwo);
             }
+            else if (towerStats.ameliorations.Count == 2)
+            {
+                canUpgrade = Afford(element, towerStats.priceThree);
+            }
+                
+            Debug.Log("je peux ameliorer" + canUpgrade);
+
+            if (canUpgrade)
+            {
+                towerStats.ameliorations.Add(element);
+                Placed = true;
+                isDragging = false;
+                towerStats.recalculateStats();
+                Destroy(gameObject);
+            }
+                
+            UIM.DisplayAlert("cannot upgrade");
         }
         
-        
-        
-        
-        
-        
-
 
     }
 
