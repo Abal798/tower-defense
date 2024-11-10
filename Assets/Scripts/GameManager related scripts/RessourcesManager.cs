@@ -22,6 +22,14 @@ public class RessourcesManager : MonoBehaviour
     public List<int> spellSlotOne= new List<int>();
     public List<int> spellSlotTwo = new List<int>();
     public List<int> spellSlotThree= new List<int>();
+
+    public int basicFireDosePrice;
+    public int basicWaterDosePrice;
+    public int basicEarthDosePrice;
+
+    public float spellAugmentationPriceFactor;
+    
+    
     
     [Header("souls ressources")] 
     public float fireSoul;
@@ -82,5 +90,6 @@ public class RessourcesManager : MonoBehaviour
         }
         
         BD.CalculatePosition(nbrOfFireTile, nbrOfWaterTile, nbrOfEarthTile);
+        
     }
 }

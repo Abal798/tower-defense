@@ -460,21 +460,22 @@ public class SpellPlacingScript : MonoBehaviour
         {
             tiles[i] = tileBase;
         }
-
-        MainTilemap.SetTiles(positions.ToArray(), tiles);
-
+        
         foreach (Vector3Int pos in positions )
         {
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(new Vector2(pos.x, pos.y), 0.001f);
-            
-            foreach (Collider2D objetDetect in colliders)
+            RM.UpdateTileNumber(pos, 1, false);
+            if (GridBuilding.current.listeTowerCo.ContainsKey(pos))
             {
-                if(objetDetect.CompareTag("Tower"))
-                {
-                    Destroy(objetDetect.gameObject);
-                }
+                Destroy(GridBuilding.current.listeTowerCo[pos]);
             }
         }
+        
+        
+        
+        MainTilemap.SetTiles(positions.ToArray(), tiles);
+        RM.UpdateTileNumber(cellPos, 9, true);
+
+        
         
         
         Building.UpdatePathfinding.Invoke();

@@ -13,19 +13,43 @@ public class SpellsBrewingScripts : MonoBehaviour
     public TextMeshProUGUI waterSoulDisplay;
     public TextMeshProUGUI earthSoulDisplay;
 
+    public TextMeshProUGUI firePriceDisplay;
+    public TextMeshProUGUI waterPriceDisplay;
+    public TextMeshProUGUI earthPriceDisplay;
+
     public List<int> brewedSpell = new List<int>();
 
     [Header("display")] 
     public GameObject[] ingredientOne;
     public GameObject[] ingredientTwo;
     public GameObject[] ingredientThree;
+
+    private int fireDosePrice;
+    private int waterDosePrice;
+    private int earthDosePrice;
+
+    private int fireDoseUtilisation;
+    private int waterDoseUtilisation;
+    private int earthDoseUtilisation;
     
-    
+
+    private void Start()
+    {
+        fireDosePrice = RM.basicFireDosePrice;
+        waterDosePrice = RM.basicWaterDosePrice;
+        earthDosePrice = RM.basicEarthDosePrice;
+    }
+
+
     void Update()
     {
         fireSoulDisplay.text = "fire : " + RM.fireSoul.ToString();
         waterSoulDisplay.text = "water : " + RM.waterSoul.ToString();
         earthSoulDisplay.text = "earth : " + RM.plantSoul.ToString();
+
+        firePriceDisplay.text = "price : " + fireDosePrice.ToString();
+        waterPriceDisplay.text = "price : " + waterDosePrice.ToString();
+        earthPriceDisplay.text = "price : " + earthDosePrice.ToString();
     }
 
     public void FireButtonSelected()
@@ -34,9 +58,11 @@ public class SpellsBrewingScripts : MonoBehaviour
         {
             if(RM.fireSoul > 10)
             {
-                RM.fireSoul -= 10;
+                fireDoseUtilisation++;
+                RM.fireSoul -= fireDosePrice;
                 brewedSpell.Add(1);
                 recipieDisplayAdd(0);
+                RecalculateSpellPrice();
             }
         }
     }
@@ -45,9 +71,11 @@ public class SpellsBrewingScripts : MonoBehaviour
     {
         if (brewedSpell.Count < 3 && RM.waterSoul > 10)
         {
-            RM.waterSoul -= 10;
+            waterDoseUtilisation++;
+            RM.waterSoul -= waterDosePrice;
             brewedSpell.Add(2);
             recipieDisplayAdd(1);
+            RecalculateSpellPrice();
         }
     }
 
@@ -55,9 +83,11 @@ public class SpellsBrewingScripts : MonoBehaviour
     {
         if (brewedSpell.Count < 3 && RM.plantSoul > 10)
         {
-            RM.plantSoul -= 10;
+            earthDoseUtilisation++;
+            RM.plantSoul -= earthDosePrice;
             brewedSpell.Add(3);
             recipieDisplayAdd(2);
+            RecalculateSpellPrice();
         }
     }
 
@@ -69,17 +99,23 @@ public class SpellsBrewingScripts : MonoBehaviour
             {
                 if (brewedSpell[i] == 1)
                 {
-                    RM.fireSoul += 10;
+                    RM.fireSoul += fireDosePrice;
+                    fireDoseUtilisation--;
+                    RecalculateSpellPrice();
                 }
                 
                 else if (brewedSpell[i] == 2)
                 {
-                    RM.waterSoul += 10;
+                    RM.waterSoul +=  waterDosePrice;
+                    waterDoseUtilisation--;
+                    RecalculateSpellPrice();
                 }
 
                 else
                 {
-                    RM.plantSoul += 10;
+                    RM.plantSoul += earthDosePrice;
+                    earthDoseUtilisation--;
+                    RecalculateSpellPrice();
                 }
                 
             }
@@ -101,6 +137,7 @@ public class SpellsBrewingScripts : MonoBehaviour
                 brewedSpell.Clear();
                 RecipieDisplayReset();
                 UIM.DisplayAlert("spell saved");
+                
             }
             
             else if (RM.spellSlotTwo.Count == 0)
@@ -112,6 +149,7 @@ public class SpellsBrewingScripts : MonoBehaviour
                 brewedSpell.Clear();
                 RecipieDisplayReset();
                 UIM.DisplayAlert("spell saved");
+                
             }
             
             else if (RM.spellSlotThree.Count == 0)
@@ -123,7 +161,9 @@ public class SpellsBrewingScripts : MonoBehaviour
                 brewedSpell.Clear();
                 RecipieDisplayReset();
                 UIM.DisplayAlert("spell saved");
+                
             }
+            
 
             else
             {
@@ -166,5 +206,12 @@ public class SpellsBrewingScripts : MonoBehaviour
         {
             VARIABLE.SetActive(false);
         }
+    }
+
+    void RecalculateSpellPrice()
+    {
+        fireDosePrice = Mathf.RoundToInt((fireDoseUtilisation * RM.spellAugmentationPriceFactor) + RM.basicFireDosePrice);
+        waterDosePrice = Mathf.RoundToInt((waterDoseUtilisation * RM.spellAugmentationPriceFactor) + RM.basicWaterDosePrice);
+        earthDosePrice = Mathf.RoundToInt((earthDoseUtilisation * RM.spellAugmentationPriceFactor) + RM.basicEarthDosePrice);
     }
 }

@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: -8921919925880211811}
   - component: {fileID: 2506851809912509483}
   m_Layer: 0
-  m_Name: IconeEauSquare
+  m_Name: IconeFeuSquare 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,7 +161,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2169793c5d413ce4e8468c0da564ab01, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a03343141fc49d747a252d44b73a05f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
