@@ -57,6 +57,7 @@ public class TowerStats : MonoBehaviour
 
     public GameObject healthBar;
     
+    
 
 
     void Start()
@@ -106,11 +107,7 @@ public class TowerStats : MonoBehaviour
         previousMaxHealth = maxHealth;
         
         statsHasBeenRecalculated.Invoke();
-        if (ameliorations.Count > 1)
-        {
-            GameObject newParticules = Instantiate(upgradeParticules, transform.position, new Quaternion(-0.707106829f,0,0,0.707106829f));
-            Destroy(newParticules, 0.5f);
-        }
+
 
         if (maxHealth != health)
         {
@@ -161,6 +158,13 @@ public class TowerStats : MonoBehaviour
         }
         
         recalculateStats();
+    }
+
+    public void LaunchUpgradeEffects()
+    {
+        GameObject newParticules = Instantiate(upgradeParticules, transform.position, new Quaternion(-0.707106829f,0,0,0.707106829f));
+        Destroy(newParticules, 0.5f);
+        gameObject.transform.GetChild(0).GetComponent<TowerSpriteAppearence>().UpdateSize(0.5f, 1.2f, transform);
     }
     
 }
