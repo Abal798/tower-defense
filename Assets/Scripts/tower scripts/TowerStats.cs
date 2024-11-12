@@ -20,7 +20,7 @@ public class TowerStats : MonoBehaviour
     public float basicDammage = 1f;
     public float damages;
     
-    public float basicHealth = 1;
+    public float basicHealth = 10;
     public float maxHealth;
     private float previousMaxHealth;
     public float health;
@@ -63,7 +63,8 @@ public class TowerStats : MonoBehaviour
     void Start()
     {
         maxHealth = basicHealth;
-        previousMaxHealth = 1;
+        previousMaxHealth = basicHealth;
+        health = maxHealth;
         CalculateSurroundings();
         recalculateStats();
         Building.UpdatePathfinding.AddListener(CalculateSurroundings); //attention a cette ligne , elle fait recalculate stats a chaque fois qu'une nouvelle toure est posée, c'est chiant pour les visuels
