@@ -91,11 +91,10 @@ public class Building : MonoBehaviour
                 towerStats.ameliorations.Add(element);
                 Placed = true;
                 isDragging = false;
+                towerStats.LaunchUpgradeEffects();
                 towerStats.recalculateStats();
                 Destroy(gameObject);
             }
-                
-            UIM.DisplayAlert("cannot upgrade");
         }
         
 
