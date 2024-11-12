@@ -1604,6 +1604,7 @@ GameObject:
   - component: {fileID: 659902633}
   - component: {fileID: 659902635}
   - component: {fileID: 659902634}
+  - component: {fileID: 659902636}
   m_Layer: 5
   m_Name: SoulConverterPanel
   m_TagString: Untagged
@@ -1678,6 +1679,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 659902632}
   m_CullTransparentMesh: 1
+--- !u!114 &659902636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659902632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e8bed8b194fd694c9d834999aa9f25c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireIcon: {fileID: 1164062432}
+  waterIcon: {fileID: 1773862350}
+  earthIcon: {fileID: 835086719}
+  fireSlotParent: {fileID: 431987420}
+  waterSlotParent: {fileID: 1198336739}
+  earthSlotParent: {fileID: 447272237}
+  ingredientSlotOne: {fileID: 220490681}
+  ingredientSlotTwo: {fileID: 1714600556}
+  resultSlot: {fileID: 1702479749}
+  sliderValueDisplay: {fileID: 211938649}
+  numberOfIngredient: {fileID: 561231281}
 --- !u!1 &835086719
 GameObject:
   m_ObjectHideFlags: 0
