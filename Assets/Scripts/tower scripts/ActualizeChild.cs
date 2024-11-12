@@ -1,24 +1,32 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ActualizeChild : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public TowerStats towerStats;
+
+    private void Start()
     {
-        
+        towerStats = transform.GetChild(0).gameObject.GetComponent<TowerStats>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnMouseOver()
     {
-        
+        Debug.Log("fonctionne po");
+        Tooltip.ShowToolTip_Static("C'est une tour (11 septembre lol)\nses stats dont :\n" + towerStats.damages + " de dégats\n" + towerStats.health + " pvs\n elle a actuellement " + towerStats.ameliorations.Count + " améliorations\n Ce sont : " + towerStats.ameliorations[0]);
+    }
+
+    private void OnMouseExit()
+    {
+        Tooltip.HideTooltip_Static();
     }
 
     public void AcutalizeChild()
     {
         Debug.Log("AcutalizeChild");
-        transform.GetChild(0).gameObject.GetComponent<TowerStats>().recalculateStats();
+        towerStats.recalculateStats();
     }
 }
