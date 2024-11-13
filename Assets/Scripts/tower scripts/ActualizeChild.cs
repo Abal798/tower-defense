@@ -16,7 +16,7 @@ public class ActualizeChild : MonoBehaviour
     private void OnMouseOver()
     {
         Debug.Log("fonctionne po");
-        Tooltip.ShowToolTip_Static("C'est une tour (11 septembre lol)\nses stats dont :\n" + towerStats.damages + " de dégats\n" + towerStats.health + " pvs\n elle a actuellement " + towerStats.ameliorations.Count + " améliorations\n Ce sont : " + towerStats.ameliorations[0]);
+        Tooltip.ShowToolTip_Static("C'est une tour <color=#ff0000>(11 septembre lol)</color>\nses stats dont :\n" + towerStats.damages + " de dégats\n" + towerStats.health + " pvs\n elle a actuellement " + towerStats.ameliorations.Count + " améliorations\n Ce sont : " + towerStats.ameliorations[0]);
     }
 
     private void OnMouseExit()

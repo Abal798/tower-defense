@@ -127,6 +127,10 @@ public class TowerStats : MonoBehaviour
 
     public void CalculateSurroundings()
     {
+        fireSurrounding = 0;
+        waterSurrouding = 0;
+        earthSurrounding = 0;
+        
         Vector3Int cellPos = GridBuilding.current.gridLayout.WorldToCell(transform.position);
         
         List<Vector3Int> surroundingTiles = new List<Vector3Int>
