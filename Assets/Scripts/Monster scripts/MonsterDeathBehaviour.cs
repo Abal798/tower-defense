@@ -9,7 +9,7 @@ public class MonsterDeathBehaviour : MonoBehaviour
 {
     [Header("modifiable")]
     
-    public float soulReward = 1f;
+    public int soulReward = 6;
     
     
     [Header("a renseigner (les GD, tjr pas toucher)")]
@@ -50,22 +50,24 @@ public class MonsterDeathBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("bullets"))
         {
             TakeDamages(other);
+            
                     
             if (healthPoints <= 0)
             {
+                float bonusPerElement = soulReward / other.gameObject.GetComponent<BulletBehaviour>().bulletElements.Count;
                 for (int i = 0; i < other.gameObject.GetComponent<BulletBehaviour>().bulletElements.Count; i++)
                 {
                     if (other.gameObject.GetComponent<BulletBehaviour>().bulletElements[i] == 1)
                     {
-                        RM.fireSoul += soulReward;
+                        RM.fireSoul += bonusPerElement;
                     }
                     if (other.gameObject.GetComponent<BulletBehaviour>().bulletElements[i] == 2)
                     {
-                        RM.waterSoul += soulReward;
+                        RM.waterSoul += bonusPerElement;
                     }
                     if (other.gameObject.GetComponent<BulletBehaviour>().bulletElements[i] == 3)
                     {
-                        RM.plantSoul += soulReward;
+                        RM.plantSoul += bonusPerElement;
                     }
                 }
                 Death();
