@@ -12,6 +12,8 @@ public class Building : MonoBehaviour
     private bool isDragging = true;
     public GameObject tower;
     private TowerStats temp;
+    
+    
 
     public RessourcesManager RM;
     public UIManager UIM;
@@ -61,6 +63,19 @@ public class Building : MonoBehaviour
         
         Profiler.EndSample();
         Destroy(gameObject);
+
+        if (element == 1)
+        {
+            RM.nbrOfFireTower++;
+        }
+        else if (element == 2)
+        {
+            RM.nbrOfWaterTower++;
+        }
+        else if (element == 3)
+        {
+            RM.nbrOfEarthTower++;
+        }
         
     }
 
@@ -77,11 +92,34 @@ public class Building : MonoBehaviour
                 
             if (towerStats.ameliorations.Count == 1)
             {
-                canUpgrade = Afford(element, towerStats.priceTwo);
+                if (element == 1)
+                {
+                    canUpgrade = Afford(element, Mathf.FloorToInt(RM.GetTowerPrice(element, RM.nbrOfFireTower, 1)));
+                }
+                else if (element == 2)
+                {
+                    canUpgrade = Afford(element, Mathf.FloorToInt(RM.GetTowerPrice(element, RM.nbrOfWaterTower, 1)));
+                }
+                else if (element == 3)
+                {
+                    canUpgrade = Afford(element, Mathf.FloorToInt(RM.GetTowerPrice(element, RM.nbrOfEarthTower, 1)));
+                }
+                
             }
             else if (towerStats.ameliorations.Count == 2)
             {
-                canUpgrade = Afford(element, towerStats.priceThree);
+                if (element == 1)
+                {
+                    canUpgrade = Afford(element, Mathf.FloorToInt(RM.GetTowerPrice(element, RM.nbrOfFireTower, 2)));
+                }
+                else if (element == 2)
+                {
+                    canUpgrade = Afford(element, Mathf.FloorToInt(RM.GetTowerPrice(element, RM.nbrOfWaterTower, 2)));
+                }
+                else if (element == 3)
+                {
+                    canUpgrade = Afford(element, Mathf.FloorToInt(RM.GetTowerPrice(element, RM.nbrOfEarthTower, 2)));
+                }
             }
                 
             Debug.Log("je peux ameliorer" + canUpgrade);
@@ -94,6 +132,18 @@ public class Building : MonoBehaviour
                 towerStats.LaunchUpgradeEffects();
                 towerStats.recalculateStats();
                 Destroy(gameObject);
+                if (element == 1)
+                {
+                    RM.nbrOfFireTower++;
+                }
+                else if (element == 2)
+                {
+                    RM.nbrOfWaterTower++;
+                }
+                else if (element == 3)
+                {
+                    RM.nbrOfEarthTower++;
+                }
             }
         }
         

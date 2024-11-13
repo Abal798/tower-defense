@@ -29,8 +29,6 @@ public class RessourcesManager : MonoBehaviour
 
     public float spellAugmentationPriceFactor;
     
-    
-    
     [Header("souls ressources")] 
     public float fireSoul;
     public float waterSoul;
@@ -39,10 +37,29 @@ public class RessourcesManager : MonoBehaviour
     [Header("main tilemap")] 
     public Tilemap mainTilemap;
 
+    [Header("tower price")] 
+    public float priceScaleFactor;
+    public float basicFireTowerPrice = 100f;
+    public float basicWaterTowerPrice = 100f;
+    public float basicEarthTowerPrice = 100f;
+    
+    public float fireTowerPrice;
+    public float waterTowerPrice;
+    public float earthTowerPrice;
+    
+    public int nbrOfFireTower = 0;
+    public int nbrOfWaterTower = 0;
+    public int nbrOfEarthTower = 0;
+
     private void Start()
     {
         BD.CalculatePosition(nbrOfFireTile, nbrOfWaterTile, nbrOfEarthTile);
 
+        fireTowerPrice = basicFireTowerPrice;
+        waterTowerPrice = basicWaterTowerPrice;
+        earthTowerPrice = basicEarthTowerPrice;
+        
+        
         for (int i = -20; i < 20; i = i+1)
         {
             for (int j = -20; j < 20; j++)
@@ -92,4 +109,44 @@ public class RessourcesManager : MonoBehaviour
         BD.CalculatePosition(nbrOfFireTile, nbrOfWaterTile, nbrOfEarthTile);
         
     }
+    
+    public float GetTowerPrice(int towerElement, int numberOfTowerPlaced, int numberOfUpgrade)
+    {
+        float finalPrice = 0;
+        if (towerElement == 1)
+        {
+            fireTowerPrice = basicFireTowerPrice + priceScaleFactor * numberOfTowerPlaced;
+            Debug.Log("fTowerPrice" + fireTowerPrice + "number of tower placed" + numberOfTowerPlaced);
+            finalPrice = fireTowerPrice;
+            if (numberOfUpgrade > 0)
+            {
+                finalPrice += 10 * numberOfUpgrade;
+            }
+            return finalPrice;
+        }
+        if (towerElement == 2)
+        {
+            waterTowerPrice = basicWaterTowerPrice + priceScaleFactor * numberOfTowerPlaced;
+            finalPrice = waterTowerPrice;
+            if (numberOfUpgrade > 0)
+            {
+                finalPrice += 10 * numberOfUpgrade;
+            }
+            return finalPrice;
+        }
+        if (towerElement == 3)
+        {
+            earthTowerPrice = basicEarthTowerPrice + priceScaleFactor * numberOfTowerPlaced;
+            finalPrice = earthTowerPrice;
+            if (numberOfUpgrade > 0)
+            {
+                finalPrice += 10 * numberOfUpgrade;
+            }
+            return finalPrice;
+        }
+
+        return 0f;
+    }
+
+
 }
