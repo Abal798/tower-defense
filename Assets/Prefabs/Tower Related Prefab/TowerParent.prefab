@@ -685,6 +685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerStats: {fileID: 4128232648183720984}
+  tooltipDelay: 0.3
 --- !u!50 &-5276712508291468662
 Rigidbody2D:
   serializedVersion: 4

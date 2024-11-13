@@ -189,7 +189,9 @@ public class GridBuilding : MonoBehaviour
             }
             
         }
-        temp = Instantiate(building, Vector3.zero, Quaternion.identity).GetComponent<Building>();
+        Vector2 touchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3Int cellPos = gridLayout.LocalToCell(touchPos);
+        temp = Instantiate(building, cellPos, Quaternion.identity).GetComponent<Building>();
         Debug.Log(temp);
         FollowBuilding();
     }
@@ -290,6 +292,10 @@ public class GridBuilding : MonoBehaviour
         SetTilesBlock(area, TileType.Grey, MainTilemap);
     }
 
+    public bool tempEmpty()
+    {
+        return !temp;
+    }
     #endregion
 }
 
