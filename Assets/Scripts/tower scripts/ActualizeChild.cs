@@ -16,12 +16,13 @@ public class ActualizeChild : MonoBehaviour
     private void OnMouseOver()
     {
         Debug.Log("fonctionne po");
-        Tooltip.ShowToolTip_Static("C'est une tour <color=#ff0000>(11 septembre lol)</color>\nses stats dont :\n" + towerStats.damages + " de dégats\n" + towerStats.health + " pvs\n elle a actuellement " + towerStats.ameliorations.Count + " améliorations\n Ce sont : " + towerStats.ameliorations[0]);
+        TooltipComplet.ShowToolTip_Static(towerStats.ameliorations.Count, towerStats.ameliorations, towerStats.health + "/" + towerStats.basicHealth, towerStats.damages, towerStats.cadence, towerStats.radius);
+        //TooltipComplet.ShowToolTip_Static("C'est une tour <color=#ff0000>(11 septembre lol)</color>\nses stats dont :\n" + towerStats.damages + " de dégats\n" + towerStats.health + " pvs\n elle a actuellement " + towerStats.ameliorations.Count + " améliorations\n Ce sont : " + towerStats.ameliorations[0]);
     }
 
     private void OnMouseExit()
     {
-        Tooltip.HideTooltip_Static();
+        TooltipComplet.HideTooltip_Static();
     }
 
     public void AcutalizeChild()
