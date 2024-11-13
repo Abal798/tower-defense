@@ -3402,9 +3402,9 @@ MonoBehaviour:
   spellSlotOne: 
   spellSlotTwo: 
   spellSlotThree: 
-  basicFireDosePrice: 10
-  basicWaterDosePrice: 10
-  basicEarthDosePrice: 10
+  basicFireDosePrice: 60
+  basicWaterDosePrice: 60
+  basicEarthDosePrice: 60
   spellAugmentationPriceFactor: 1.2
   fireSoul: 100
   waterSoul: 100

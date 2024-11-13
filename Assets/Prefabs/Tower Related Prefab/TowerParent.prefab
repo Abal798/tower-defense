@@ -311,9 +311,9 @@ MonoBehaviour:
   earthEffectThree: 1
   earthEffectFour: 1.4
   earthEffectFive: 1.1
-  priceOne: 30
-  priceTwo: 40
-  priceThree: 50
+  priceOne: 180
+  priceTwo: 240
+  priceThree: 300
   statsHasBeenRecalculated:
     m_PersistentCalls:
       m_Calls:
