@@ -291,9 +291,9 @@ MonoBehaviour:
   bulletSpeed: 10
   basicCadence: 1
   cadence: 1
-  basicDammage: 1
+  basicDammage: 30
   damages: 1
-  basicHealth: 10
+  basicHealth: 100
   maxHealth: 0
   health: 1
   basicRadius: 6
@@ -305,15 +305,15 @@ MonoBehaviour:
   FireEffectTwo: 1.1
   waterEffectOne: 5
   waterEffectTwo: 1.0975
-  waterEffectTree: 0.05
+  waterEffectTree: 0.15
   waterEffectFour: 1.0015
   waterLifeBonus: 5
   earthEffectThree: 1
   earthEffectFour: 1.4
   earthEffectFive: 1.1
-  priceOne: 30
-  priceTwo: 40
-  priceThree: 50
+  priceOne: 180
+  priceTwo: 240
+  priceThree: 300
   statsHasBeenRecalculated:
     m_PersistentCalls:
       m_Calls:
@@ -684,7 +684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8c83a2e2afee342b4c6c97448c2b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerStats: {fileID: 0}
+  towerStats: {fileID: 4128232648183720984}
 --- !u!50 &-5276712508291468662
 Rigidbody2D:
   serializedVersion: 4

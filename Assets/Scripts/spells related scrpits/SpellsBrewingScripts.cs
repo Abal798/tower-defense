@@ -24,9 +24,9 @@ public class SpellsBrewingScripts : MonoBehaviour
     public GameObject[] ingredientTwo;
     public GameObject[] ingredientThree;
 
-    private int fireDosePrice;
-    private int waterDosePrice;
-    private int earthDosePrice;
+    private int fireDosePrice = 60;
+    private int waterDosePrice = 60;
+    private int earthDosePrice = 60;
 
     private int fireDoseUtilisation;
     private int waterDoseUtilisation;
