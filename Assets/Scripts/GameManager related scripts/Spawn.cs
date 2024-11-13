@@ -25,13 +25,21 @@ public class Spawn : MonoBehaviour
     public void ButtonFonctionLaunchWave()
     {
         RM.wave++;
-        if (RM.wave < 20)
+        if (RM.wave < 6)
         {
             numberOfMonsterOne = Mathf.CeilToInt(Mathf.Pow(RM.wave, 2) + 5 * RM.wave + 10);
         }
+        else if (RM.wave > 5 && RM.wave < 9)
+        {
+            numberOfMonsterOne = Mathf.CeilToInt(Mathf.Pow(RM.wave, 3) - 4 * Mathf.Pow(RM.wave, 2) + 5);
+        }
+        else if (RM.wave > 9 && RM.wave < 20)
+        {
+            numberOfMonsterOne =  Mathf.CeilToInt(Mathf.Pow(RM.wave, 2) + 5 * RM.wave + 135);
+        }
         else
         {
-            numberOfMonsterOne = Mathf.CeilToInt(Mathf.Pow(RM.wave, 2) * 0.25f + 430);
+            numberOfMonsterOne = Mathf.CeilToInt(Mathf.Pow(RM.wave, 2) * 0.25f + 546);
         }
         
         StartCoroutine(LaunchWave());
