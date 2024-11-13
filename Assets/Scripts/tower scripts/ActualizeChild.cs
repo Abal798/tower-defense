@@ -44,7 +44,7 @@ public class ActualizeChild : MonoBehaviour
         TooltipComplet.ShowToolTip_Static(
             towerStats.ameliorations.Count,
             towerStats.ameliorations,
-            towerStats.health + "/" + towerStats.maxHealth,
+            Mathf.RoundToInt(towerStats.health) + "/" + Mathf.RoundToInt(towerStats.maxHealth),
             towerStats.damages,
             towerStats.cadence,
             towerStats.radius

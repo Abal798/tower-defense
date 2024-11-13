@@ -73,7 +73,7 @@ public class TooltipComplet : MonoBehaviour
         
     }
 
-    private void ShowToolTip(int ameliorations, List<int>element, string pv, float degats, float cadence, float portee)
+    private void ShowToolTip(int ameliorations, List<int>element, string pv, int degats, float cadence, float portee)
     {
         gameObject.SetActive(true);
         ameliorationsText.SetText(ameliorations.ToString());
@@ -114,7 +114,7 @@ public class TooltipComplet : MonoBehaviour
 
     public static void ShowToolTip_Static(int ameliorations, List<int>element, string pv, float degats, float cadence, float portee)
     {
-        TooltipCompletInstance.ShowToolTip(ameliorations, element,  pv, degats,  cadence,  portee);
+        TooltipCompletInstance.ShowToolTip(ameliorations, element,  pv, Mathf.FloorToInt(degats),  cadence,  portee);
     }
 
     public static void HideTooltip_Static()
