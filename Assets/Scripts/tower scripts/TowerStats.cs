@@ -45,10 +45,6 @@ public class TowerStats : MonoBehaviour
     public float earthEffectThree = 1;
     public float earthEffectFour = 1.4f;
     public float earthEffectFive = 1.1f;
-    
-    public int priceOne = 30;
-    public int priceTwo = 40;
-    public int priceThree = 50;
 
     public UnityEvent statsHasBeenRecalculated;
 
@@ -171,5 +167,7 @@ public class TowerStats : MonoBehaviour
         Destroy(newParticules, 0.5f);
         gameObject.transform.GetChild(0).GetComponent<TowerSpriteAppearence>().UpdateSize(0.5f, 1.2f, transform);
     }
+
+    
     
 }

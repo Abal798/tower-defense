@@ -1639,6 +1639,7 @@ MonoBehaviour:
   MainTilemap: {fileID: 1526346545}
   TempTilemap: {fileID: 1745912376}
   UIM: {fileID: 744501579}
+  RM: {fileID: 0}
 --- !u!1 &379765031
 GameObject:
   m_ObjectHideFlags: 0
@@ -3861,10 +3862,20 @@ MonoBehaviour:
   basicWaterDosePrice: 60
   basicEarthDosePrice: 60
   spellAugmentationPriceFactor: 1.2
-  fireSoul: 180
-  waterSoul: 180
-  plantSoul: 180
+  fireSoul: 1000
+  waterSoul: 1000
+  plantSoul: 1000
   mainTilemap: {fileID: 1526346545}
+  priceScaleFactor: 10
+  basicFireTowerPrice: 100
+  basicWaterTowerPrice: 100
+  basicEarthTowerPrice: 100
+  fireTowerPrice: 0
+  waterTowerPrice: 0
+  earthTowerPrice: 0
+  nbrOfFireTower: 0
+  nbrOfWaterTower: 0
+  nbrOfEarthTower: 0
 --- !u!4 &744501578
 Transform:
   m_ObjectHideFlags: 0
