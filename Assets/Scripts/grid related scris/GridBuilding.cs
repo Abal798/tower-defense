@@ -80,7 +80,7 @@ public class GridBuilding : MonoBehaviour
             {
                 if (temp.CanBePlaced())
                 {
-                    if (temp.Afford(elementTour, 180))// ajouter ici le morceau de script qui permet de recuperer le prix de placement d'une tour
+                    if (temp.Afford(elementTour, 100))// ajouter ici le morceau de script qui permet de recuperer le prix de placement d'une tour
                     {
                         temp.Place(elementTour);
                     }
