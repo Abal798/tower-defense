@@ -25,6 +25,8 @@ public class Spawn : MonoBehaviour
     public void ButtonFonctionLaunchWave()
     {
         RM.wave++;
+        
+        //pour le monstre 1
         if (RM.wave < 6)
         {
             numberOfMonsterOne = Mathf.CeilToInt(Mathf.Pow(RM.wave, 2) + 5 * RM.wave + 10);
@@ -42,41 +44,61 @@ public class Spawn : MonoBehaviour
             numberOfMonsterOne = Mathf.CeilToInt(Mathf.Pow(RM.wave, 2) * 0.25f + 546);
         }
         
+        //pour le monstre 2
+        if (RM.wave > 3)
+        {
+            numberOfMonsterTwo = Mathf.CeilToInt(RM.wave - 3);
+        }
+        
+        
         StartCoroutine(LaunchWave());
         
     }
 
     private IEnumerator LaunchWave()
     {
-        ennemyToSpawn = numberOfMonsterOne;
+        ennemyToSpawn = numberOfMonsterOne + numberOfMonsterTwo;
         float waveDuration = basicWaveDuration + 2 * RM.wave;
-        timeBetweenSpawn = waveDuration / numberOfMonsterOne;
+        timeBetweenSpawn = waveDuration / ennemyToSpawn;
 
         // Spawn des monstres de type un avec intervalle de temps
-        for (int i = 0; i < numberOfMonsterOne; i++)
+        for (int i = 0; i < ennemyToSpawn; i++)
         {
-            ennemyToSpawn--;
-            GameObject newMonster = Instantiate(monsterTypeOne, GetRandomPositionOnSquareEdge(), Quaternion.identity);
-            newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;
-
-            if (RM.wave >= vagueDapparitionDesElementaires)
+            if (Random.Range(1, ennemyToSpawn+1) < numberOfMonsterOne)
             {
-                newMonster.GetComponent<MonsterStats>().type = GetMonsterType();
+                numberOfMonsterOne--;
+                GameObject newMonster = Instantiate(monsterTypeOne, GetRandomPositionOnSquareEdge(), Quaternion.identity);
+                newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;
+                if (RM.wave >= vagueDapparitionDesElementaires)
+                {
+                    newMonster.GetComponent<MonsterStats>().type = GetMonsterType();
+                }
+                else
+                {
+                    newMonster.GetComponent<MonsterStats>().type = 0;
+                }
+                
             }
             else
             {
-                newMonster.GetComponent<MonsterStats>().type = 0;
+                numberOfMonsterTwo--;
+                GameObject newMonster = Instantiate(monsterTypeTwo, GetRandomPositionOnSquareEdge(), Quaternion.identity);
+                newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;
+                if (RM.wave >= vagueDapparitionDesElementaires)
+                {
+                    newMonster.GetComponent<MonsterStats>().type = GetMonsterType();
+                }
+                else
+                {
+                    newMonster.GetComponent<MonsterStats>().type = 0;
+                }
+                
             }
-
+            ennemyToSpawn--;
             yield return new WaitForSeconds(timeBetweenSpawn); // Pause entre chaque apparition
+            
         }
-
-        // Spawn des monstres de type deux
-        for (int i = 0; i < numberOfMonsterTwo; i++)
-        {
-            GameObject newMonster = Instantiate(monsterTypeTwo, GetRandomPositionOnSquareEdge(), Quaternion.identity);
-            newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;
-        }
+        
     }
 
     Vector3 GetRandomPositionOnSquareEdge()
