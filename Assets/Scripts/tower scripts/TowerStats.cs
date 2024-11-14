@@ -45,10 +45,6 @@ public class TowerStats : MonoBehaviour
     public float earthEffectThree = 1;
     public float earthEffectFour = 1.4f;
     public float earthEffectFive = 1.1f;
-    
-    public int priceOne = 30;
-    public int priceTwo = 40;
-    public int priceThree = 50;
 
     public UnityEvent statsHasBeenRecalculated;
 
@@ -103,7 +99,7 @@ public class TowerStats : MonoBehaviour
         damages = (basicDammage + (FireEffectOne * nbrOfFireInsuflation + waterEffectOne * nbrOfWaterInsuflation)) * (Mathf.Pow(FireEffectTwo, fireSurrounding) * Mathf.Pow(waterEffectTwo, waterSurrouding)); 
         cadence = basicCadence - (waterEffectTree * nbrOfWaterInsuflation)*(Mathf.Pow(waterEffectFour, waterSurrouding));
         radius = basicRadius + (earthEffectThree * nbrOfEarthInsuflation);
-        maxHealth = basicHealth + ((waterLifeBonus * nbrOfWaterInsuflation) * Mathf.Pow(earthEffectFour, nbrOfEarthInsuflation)) * Mathf.Pow(earthEffectFive, earthSurrounding);
+        maxHealth = basicHealth + ((waterLifeBonus * nbrOfWaterInsuflation) + Mathf.Pow(earthEffectFour, nbrOfEarthInsuflation)) * Mathf.Pow(earthEffectFive, earthSurrounding);
         health += maxHealth - previousMaxHealth;
         previousMaxHealth = maxHealth;
         
@@ -171,5 +167,7 @@ public class TowerStats : MonoBehaviour
         Destroy(newParticules, 0.5f);
         gameObject.transform.GetChild(0).GetComponent<TowerSpriteAppearence>().UpdateSize(0.5f, 1.2f, transform);
     }
+
+    
     
 }

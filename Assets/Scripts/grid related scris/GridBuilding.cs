@@ -15,18 +15,23 @@ public class GridBuilding : MonoBehaviour
     public Tilemap TempTilemap;
 
     public UIManager UIM;
-
+    public RessourcesManager RM;
+    
     public static Dictionary<TileType, TileBase> tileBases = new Dictionary<TileType, TileBase>();
     public Dictionary<Vector3Int, GameObject> listeTowerCo = new Dictionary<Vector3Int, GameObject>();
 
     private Building temp;
     private Vector3 prevPos;
     private BoundsInt prevArea;
+
+    
+    
     
     #region Unity Methods
 
     private void Awake()
     {
+        RM = FindObjectOfType<RessourcesManager>();
         current = this;
     }
 
@@ -80,8 +85,23 @@ public class GridBuilding : MonoBehaviour
             {
                 if (temp.CanBePlaced())
                 {
-                    if (temp.Afford(elementTour, 180))// ajouter ici le morceau de script qui permet de recuperer le prix de placement d'une tour
+                    int price = 0;
+                    if (elementTour == 1)
                     {
+                        price = Mathf.FloorToInt(RM.GetTowerPrice(elementTour, RM.nbrOfFireTower, 0));
+                        Debug.Log("price" + price);
+                    }
+                    else if (elementTour == 2)
+                    {
+                        price = Mathf.FloorToInt(RM.GetTowerPrice(elementTour, RM.nbrOfWaterTower, 0));
+                    }
+                    else if (elementTour == 3)
+                    {
+                        price = Mathf.FloorToInt(RM.GetTowerPrice(elementTour, RM.nbrOfEarthTower, 0));
+                    }
+                    if (temp.Afford(elementTour, price))// ajouter ici le morceau de script qui permet de recuperer le prix de placement d'une tour
+                    {
+                        
                         temp.Place(elementTour);
                     }
                         
@@ -189,7 +209,9 @@ public class GridBuilding : MonoBehaviour
             }
             
         }
-        temp = Instantiate(building, Vector3.zero, Quaternion.identity).GetComponent<Building>();
+        Vector2 touchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3Int cellPos = gridLayout.LocalToCell(touchPos);
+        temp = Instantiate(building, cellPos, Quaternion.identity).GetComponent<Building>();
         Debug.Log(temp);
         FollowBuilding();
     }
@@ -290,6 +312,10 @@ public class GridBuilding : MonoBehaviour
         SetTilesBlock(area, TileType.Grey, MainTilemap);
     }
 
+    public bool tempEmpty()
+    {
+        return !temp;
+    }
     #endregion
 }
 

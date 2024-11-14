@@ -12,8 +12,12 @@ public class MenuManager : MonoBehaviour
 
     public TextMeshProUGUI waveDisplay;
     public TextMeshProUGUI fireSoulIngameDisplay;
-    public TextMeshProUGUI WaterSoulIngameDisplay;
-    public TextMeshProUGUI EarthSoulIngameDisplay;
+    public TextMeshProUGUI waterSoulIngameDisplay;
+    public TextMeshProUGUI earthSoulIngameDisplay;
+    
+    public TextMeshProUGUI fireTowerPriceDisplay;
+    public TextMeshProUGUI waterTowerPriceDisplay;
+    public TextMeshProUGUI earthTowerPriceDisplay;
     void Start()
     {
         ingamePanel.SetActive(true);
@@ -23,12 +27,16 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        fireSoulIngameDisplay.text = RM.fireSoul.ToString();
-        WaterSoulIngameDisplay.text = RM.waterSoul.ToString();
-        EarthSoulIngameDisplay.text = RM.plantSoul.ToString();
+        fireSoulIngameDisplay.text = "" + RM.fireSoul;
+        waterSoulIngameDisplay.text = "" + RM.waterSoul;
+        earthSoulIngameDisplay.text = "" + RM.plantSoul;
+
+        fireTowerPriceDisplay.text = "" + RM.fireTowerPrice;
+        waterTowerPriceDisplay.text = "" + RM.waterTowerPrice;
+        earthTowerPriceDisplay.text = "" + RM.earthTowerPrice;
         
         
-        waveDisplay.text = "wave : " + RM.wave.ToString();
+        waveDisplay.text = "wave : " + RM.wave;
     }
 
     public void GoToAlchimiePanel()

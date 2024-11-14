@@ -311,9 +311,9 @@ MonoBehaviour:
   earthEffectThree: 1
   earthEffectFour: 1.4
   earthEffectFive: 1.1
-  priceOne: 180
-  priceTwo: 240
-  priceThree: 300
+  priceOne: 100
+  priceTwo: 130
+  priceThree: 160
   statsHasBeenRecalculated:
     m_PersistentCalls:
       m_Calls:
@@ -685,6 +685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerStats: {fileID: 4128232648183720984}
+  tooltipDelay: 0.3
 --- !u!50 &-5276712508291468662
 Rigidbody2D:
   serializedVersion: 4
