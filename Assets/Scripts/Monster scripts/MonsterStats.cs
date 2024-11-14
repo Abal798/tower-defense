@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,12 +6,18 @@ using UnityEngine;
 public class MonsterStats : MonoBehaviour
 {
     public int health;
-    public float basicSpeed = 3;
+    public float basicSpeed;
     public float speed;
     public float damages;
     public int type;
     public float damageFactorbonus = 1.5f;
     public float damageFactorMalus = 0.75f;
+
+    private void Awake()
+    {
+        speed = basicSpeed;
+    }
+
     void Start()
     {
         Renderer renderer = GetComponent<Renderer>();
@@ -28,11 +35,5 @@ public class MonsterStats : MonoBehaviour
         {
             renderer.material.color = Color.green;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
