@@ -26,6 +26,16 @@ public class ActualizeChild : MonoBehaviour
         //TooltipComplet.ShowToolTip_Static("C'est une tour <color=#ff0000>(11 septembre lol)</color>\nses stats dont :\n" + towerStats.damages + " de dégats\n" + towerStats.health + " pvs\n elle a actuellement " + towerStats.ameliorations.Count + " améliorations\n Ce sont : " + towerStats.ameliorations[0]);
     }
 
+    private void EndTooltipEarly()
+    {
+        TooltipComplet.HideTooltip_Static();
+        if (tooltipCoroutine != null)
+        {
+            StopCoroutine(tooltipCoroutine);
+            tooltipCoroutine = null;
+        }
+    }
+    
     private void OnMouseExit()
     {
         TooltipComplet.HideTooltip_Static();
@@ -59,5 +69,12 @@ public class ActualizeChild : MonoBehaviour
     {
         Debug.Log("AcutalizeChild");
         towerStats.recalculateStats();
+    }
+
+    private void OnDestroy()
+    {
+        EndTooltipEarly();
+        GridBuilding.current.listeTowerCo.Remove(Vector3Int.FloorToInt(transform.position));
+        
     }
 }
