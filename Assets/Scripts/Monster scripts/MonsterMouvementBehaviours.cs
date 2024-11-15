@@ -15,15 +15,11 @@ public class MonsterMouvementBehaviours : MonoBehaviour
     
 
     private List<Vector3> worldPositions; // Path positions in world space
-
-
-    void Awake()
-    {
-        speed = MStats.speed;
-    }
+    
 
     private void Start()
     {
+        speed = MStats.speed;
         gridLayout = GameObject.FindGameObjectWithTag("grid").GetComponent<Grid>();
         pathfinding = GetComponent<Pathfinding>();
         

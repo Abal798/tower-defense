@@ -56,7 +56,7 @@ public class SpellsBrewingScripts : MonoBehaviour
     {
         if (brewedSpell.Count < 3)
         {
-            if(RM.fireSoul > 10)
+            if(RM.fireSoul > fireDosePrice)
             {
                 fireDoseUtilisation++;
                 RM.fireSoul -= fireDosePrice;
@@ -64,30 +64,60 @@ public class SpellsBrewingScripts : MonoBehaviour
                 recipieDisplayAdd(0);
                 RecalculateSpellPrice();
             }
+            else
+            {
+                UIM.DisplayAlert("cannot afford this");
+            }
+        }
+        else
+        {
+            UIM.DisplayAlert("3 is the maximum ingredient you can fit");
         }
     }
 
     public void WaterButtonSelected()
     {
-        if (brewedSpell.Count < 3 && RM.waterSoul > 10)
+        if (brewedSpell.Count < 3)
         {
-            waterDoseUtilisation++;
-            RM.waterSoul -= waterDosePrice;
-            brewedSpell.Add(2);
-            recipieDisplayAdd(1);
-            RecalculateSpellPrice();
+            if(RM.waterSoul > waterDosePrice)
+            {
+                waterDoseUtilisation++;
+                RM.waterSoul -= waterDosePrice;
+                brewedSpell.Add(2);
+                recipieDisplayAdd(1);
+                RecalculateSpellPrice();
+            }
+            else
+            {
+                UIM.DisplayAlert("cannot afford this");
+            }
+        }
+        else
+        {
+            UIM.DisplayAlert("3 is the maximum ingredient you can fit");
         }
     }
 
     public void EarthButtonSelected()
     {
-        if (brewedSpell.Count < 3 && RM.plantSoul > 10)
+        if (brewedSpell.Count < 3)
         {
-            earthDoseUtilisation++;
-            RM.plantSoul -= earthDosePrice;
-            brewedSpell.Add(3);
-            recipieDisplayAdd(2);
-            RecalculateSpellPrice();
+            if(RM.plantSoul > earthDosePrice)
+            {
+                earthDoseUtilisation++;
+                RM.plantSoul -= earthDosePrice;
+                brewedSpell.Add(3);
+                recipieDisplayAdd(2);
+                RecalculateSpellPrice();
+            }
+            else
+            {
+                UIM.DisplayAlert("cannot afford this");
+            }
+        }
+        else
+        {
+            UIM.DisplayAlert("3 is the maximum ingredient you can fit");
         }
     }
 
