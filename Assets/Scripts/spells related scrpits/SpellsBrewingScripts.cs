@@ -51,10 +51,14 @@ public class SpellsBrewingScripts : MonoBehaviour
         waterPriceDisplay.text = "price : " + waterDosePrice.ToString();
         earthPriceDisplay.text = "price : " + earthDosePrice.ToString();
 
-        if (gameObject.activeSelf && Input.GetMouseButtonDown(1))
+        if (gameObject.activeSelf)
         {
-            ResetRecipie();
+            if (Input.GetMouseButtonDown(1))
+            {
+                ResetRecipie();
+            }
         }
+            
     }
 
     public void FireButtonSelected()
