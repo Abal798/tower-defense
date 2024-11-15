@@ -24,7 +24,11 @@ public class AlchimieMenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(gameObject.activeSelf)
+            if (Input.GetKeyDown(KeyCode.Escape))
+            { 
+                QuitAlchimiePanel();
+            }
     }
     
     public void QuitAlchimiePanel()

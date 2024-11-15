@@ -41,6 +41,8 @@ public class MenuManager : MonoBehaviour
         
         
         waveDisplay.text = "wave : " + RM.wave;
+        
+        
     }
 
     public void GoToAlchimiePanel()
