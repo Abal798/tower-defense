@@ -33078,6 +33078,11 @@ MonoBehaviour:
   - {fileID: 1911310587}
   - {fileID: 704472455}
   - {fileID: 1228899938}
+  fireIngredientKey: 49
+  waterIngredientKey: 50
+  earthIngredientKey: 51
+  saveSpellKey: 9
+  resetRecipieKey: 324
 --- !u!114 &2146029780
 MonoBehaviour:
   m_ObjectHideFlags: 0
