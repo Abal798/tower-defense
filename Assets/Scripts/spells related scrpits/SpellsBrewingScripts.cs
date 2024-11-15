@@ -50,6 +50,11 @@ public class SpellsBrewingScripts : MonoBehaviour
         firePriceDisplay.text = "price : " + fireDosePrice.ToString();
         waterPriceDisplay.text = "price : " + waterDosePrice.ToString();
         earthPriceDisplay.text = "price : " + earthDosePrice.ToString();
+
+        if (gameObject.activeSelf && Input.GetMouseButtonDown(1))
+        {
+            ResetRecipie();
+        }
     }
 
     public void FireButtonSelected()
@@ -129,21 +134,21 @@ public class SpellsBrewingScripts : MonoBehaviour
             {
                 if (brewedSpell[i] == 1)
                 {
-                    RM.fireSoul += fireDosePrice;
+                    RM.fireSoul += fireDosePrice - 1;
                     fireDoseUtilisation--;
                     RecalculateSpellPrice();
                 }
                 
                 else if (brewedSpell[i] == 2)
                 {
-                    RM.waterSoul +=  waterDosePrice;
+                    RM.waterSoul +=  waterDosePrice - 1;
                     waterDoseUtilisation--;
                     RecalculateSpellPrice();
                 }
 
                 else
                 {
-                    RM.plantSoul += earthDosePrice;
+                    RM.plantSoul += earthDosePrice - 1;
                     earthDoseUtilisation--;
                     RecalculateSpellPrice();
                 }
