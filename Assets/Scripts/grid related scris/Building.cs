@@ -53,7 +53,7 @@ public class Building : MonoBehaviour
         RM.UpdateTileNumber(area.position, 1, false);
         GridBuilding.current.TakeArea(areaTemp);
         temp = Instantiate(tower, transform.position, Quaternion.identity).GetComponentInChildren<TowerStats>();
-        GridBuilding.current.listeTowerCo.Add(area.position,temp.gameObject);
+        GridBuilding.current.listeTowerCo.Add(area.position,temp.gameObject.transform.parent.gameObject);
         temp.ameliorations.Add(element);
         
         
@@ -87,7 +87,7 @@ public class Building : MonoBehaviour
         
         if (GridBuilding.current.listeTowerCo.ContainsKey(cellPos))
         {
-            TowerStats towerStats = GridBuilding.current.listeTowerCo[cellPos].GetComponent<TowerStats>();
+            TowerStats towerStats = GridBuilding.current.listeTowerCo[cellPos].transform.GetChild(0).GetComponent<TowerStats>();
             bool canUpgrade = false;
                 
             if (towerStats.ameliorations.Count == 1)
