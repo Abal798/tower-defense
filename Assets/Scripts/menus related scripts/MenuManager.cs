@@ -27,9 +27,9 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float fireTowerPriceDisplayValue = RM.fireTowerPrice + 10;
-        float waterTowerPriceDisplayValue = RM.waterTowerPrice + 10;
-        float earthTowerPriceDisplayValue = RM.earthTowerPrice + 10;
+        float fireTowerPriceDisplayValue = RM.fireTowerPrice;
+        float waterTowerPriceDisplayValue = RM.waterTowerPrice;
+        float earthTowerPriceDisplayValue = RM.earthTowerPrice;
         
         fireSoulIngameDisplay.text = "" + RM.fireSoul;
         waterSoulIngameDisplay.text = "" + RM.waterSoul;
@@ -41,8 +41,6 @@ public class MenuManager : MonoBehaviour
         
         
         waveDisplay.text = "wave : " + RM.wave;
-        
-        
     }
 
     public void GoToAlchimiePanel()
