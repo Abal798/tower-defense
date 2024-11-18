@@ -31,6 +31,13 @@ public class SpellsBrewingScripts : MonoBehaviour
     private int fireDoseUtilisation;
     private int waterDoseUtilisation;
     private int earthDoseUtilisation;
+
+    [Header("shortcut")] 
+    public KeyCode fireIngredientKey;
+    public KeyCode waterIngredientKey;
+    public KeyCode earthIngredientKey;
+    public KeyCode saveSpellKey;
+    public KeyCode resetRecipieKey;
     
 
     private void Start()
@@ -53,12 +60,27 @@ public class SpellsBrewingScripts : MonoBehaviour
 
         if (gameObject.activeSelf)
         {
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetKeyDown(fireIngredientKey))
+            {
+                FireButtonSelected();
+            }
+            if (Input.GetKeyDown(waterIngredientKey))
+            {
+                WaterButtonSelected();
+            }
+            if (Input.GetKeyDown(earthIngredientKey))
+            {
+                EarthButtonSelected();
+            }
+            if (Input.GetKeyDown(saveSpellKey))
+            {
+                SaveSpell();
+            }
+            if (Input.GetKeyDown(resetRecipieKey))
             {
                 ResetRecipie();
             }
         }
-            
     }
 
     public void FireButtonSelected()

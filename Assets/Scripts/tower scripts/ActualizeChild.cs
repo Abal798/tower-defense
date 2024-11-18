@@ -28,12 +28,16 @@ public class ActualizeChild : MonoBehaviour
 
     private void EndTooltipEarly()
     {
-        TooltipComplet.HideTooltip_Static();
-        if (tooltipCoroutine != null)
+        if (TooltipComplet.TooltipCompletInstance != null)
         {
-            StopCoroutine(tooltipCoroutine);
-            tooltipCoroutine = null;
+            TooltipComplet.HideTooltip_Static();
+            if (tooltipCoroutine != null)
+            {
+                StopCoroutine(tooltipCoroutine);
+                tooltipCoroutine = null;
+            }
         }
+        
     }
     
     private void OnMouseExit()
