@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 public class Spawn : MonoBehaviour
@@ -23,12 +22,9 @@ public class Spawn : MonoBehaviour
 
     public float squareSize = 50;
 
-    public UnityEvent onLaunchWave;
-
     public void ButtonFonctionLaunchWave()
     {
         RM.wave++;
-        onLaunchWave.Invoke();
         
         //pour le monstre 1
         if (RM.wave < 6)

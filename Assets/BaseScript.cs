@@ -2,34 +2,23 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BaseScript : MonoBehaviour
 {
-    public float basicBaseHealth;
-    public float baseHealth;
+    public float baseHP;
     public GameObject panelGameOver;
     public GameObject panelSort;
     public GameObject ingamePanel;
-    public Image healthBar;
 
-    void Start()
-    {
-        baseHealth = basicBaseHealth;
-        transform.GetChild(0).gameObject.SetActive(false);
-    }
-    
     public void TakeDamage(float damage)
     {
 
-        baseHealth -= damage;
-
-        healthBar.fillAmount = baseHealth / basicBaseHealth;
-        
-        transform.GetChild(0).gameObject.SetActive(true);
+        baseHP -= damage;
 
 
-        if (baseHealth <= 0)
+
+
+        if (baseHP <= 0)
         {
             Time.timeScale = 0;
             panelGameOver.SetActive(true);
