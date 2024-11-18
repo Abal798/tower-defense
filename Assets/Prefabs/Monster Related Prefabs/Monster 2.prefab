@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 624125c9e150c554eb88ef8f6e7a4c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soulReward: 1
+  soulReward: 48
   MS: {fileID: 4423026053618790021}
   deathParticules: {fileID: 5132903826172967407, guid: 69e5a0a7244bdad4b9395227de198bcd, type: 3}
   healthPoints: 1000
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6558944d9a8b4d94ba190e16e880de10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
+  health: 500
   basicSpeed: 0.5
   speed: 0
   damages: 50
