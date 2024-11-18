@@ -916,7 +916,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 60a830824a8aaf3489fc8e38c55b69a5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1944,7 +1944,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: a03343141fc49d747a252d44b73a05f2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2980,7 +2980,7 @@ GameObject:
   - component: {fileID: 550154221}
   - component: {fileID: 550154220}
   m_Layer: 5
-  m_Name: 'SyrroundingsEarthText '
+  m_Name: 'SurroundingsEarthText '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5554,7 +5554,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 968544121}
-  - component: {fileID: 968544122}
   m_Layer: 5
   m_Name: ToolTipExtented
   m_TagString: Untagged
@@ -5605,22 +5604,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1391, y: 805}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &968544122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 968544120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5af7dad73f194d048a4acf342cbbdbc8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvasRectTransform: {fileID: 906547827}
-  feuSprite: {fileID: 21300000, guid: a03343141fc49d747a252d44b73a05f2, type: 3}
-  waterSprite: {fileID: 21300000, guid: 2169793c5d413ce4e8468c0da564ab01, type: 3}
-  earthSprite: {fileID: 21300000, guid: 60a830824a8aaf3489fc8e38c55b69a5, type: 3}
 --- !u!1 &1020804258
 GameObject:
   m_ObjectHideFlags: 0
@@ -33716,7 +33699,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 2169793c5d413ce4e8468c0da564ab01, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

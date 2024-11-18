@@ -18,13 +18,13 @@ public class TowerRemover : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (gameObject.CompareTag("Tower"))
+        if (gameObject.CompareTag("Tower") && GridBuilding.current.tempEmpty())
         {
             transform.GetChild(1).gameObject.SetActive(!transform.GetChild(1).gameObject.activeSelf);
         }
         
 
-        if (!gameObject.CompareTag("Tower"))
+        if (!gameObject.CompareTag("Tower")&& GridBuilding.current.tempEmpty())
         {
             GridBuilding.current.MainTilemap.SetTile(Vector3Int.FloorToInt(transform.parent.position), GridBuilding.tileBases[TileType.Grass]);
             GridBuilding.current.listeTowerCo.Remove(Vector3Int.FloorToInt(transform.parent.position));
