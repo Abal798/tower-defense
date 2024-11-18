@@ -87,6 +87,9 @@ public class TooltipExtented : MonoBehaviour
         degatsTextExtented.SetText(""+ degats);
         cadenceTextExtented.SetText(""+ cadence);
         porteeTextExtented.SetText(""+ portee);
+        surrEarthTextExtented.SetText("" + surrEarth);
+        surrFireTextExtented.SetText("" + surrFire);
+        surrWaterTextExtented.SetText("" + surrWater);
 
         for (int i = 0; i < listImage.Count; i++)
         {
