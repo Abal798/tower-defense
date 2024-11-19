@@ -47,9 +47,9 @@ public class RessourcesManager : MonoBehaviour
     public float waterTowerPrice;
     public float earthTowerPrice;
     
-    public int nbrOfFireTower = 0;
-    public int nbrOfWaterTower = 0;
-    public int nbrOfEarthTower = 0;
+    public int nbrOfFireTower = 1;
+    public int nbrOfWaterTower = 1;
+    public int nbrOfEarthTower = 1;
 
     private void Start()
     {
