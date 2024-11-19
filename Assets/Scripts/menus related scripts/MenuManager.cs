@@ -27,6 +27,9 @@ public class MenuManager : MonoBehaviour
     public KeyCode shortcutWaterTower;
     public KeyCode shortcutEarthTower;
     public KeyCode shortcutLaunchWave;
+    public KeyCode shortcutPotion1;
+    public KeyCode shortcutPotion2;
+    public KeyCode shortcutPotion3;
     
     void Start()
     {
@@ -64,11 +67,23 @@ public class MenuManager : MonoBehaviour
             }
             if (Input.GetKeyDown(shortcutWaterTower))
             {
-                GridBuilding.current.PreInitializeFeu(IconEau);
+                GridBuilding.current.PreInitializeEau(IconEau);
             }
             if (Input.GetKeyDown(shortcutEarthTower))
             {
-                GridBuilding.current.PreInitializeFeu(IconTerre);
+                GridBuilding.current.PreInitializeTerre(IconTerre);
+            }
+            if (Input.GetKeyDown(shortcutPotion1))
+            {
+                RM.gameObject.GetComponent<SpellPlacingScript>().Spell1();
+            }
+            if (Input.GetKeyDown(shortcutPotion2))
+            {
+                RM.gameObject.GetComponent<SpellPlacingScript>().Spell2();
+            }
+            if (Input.GetKeyDown(shortcutPotion3))
+            {
+                RM.gameObject.GetComponent<SpellPlacingScript>().Spell3();
             }
         }
     }
