@@ -14,6 +14,7 @@ public class MenuManager : MonoBehaviour
     public GameObject IconFeu;
     public GameObject IconEau;
     public GameObject IconTerre;
+    public static GameObject activePanel;
 
     public TextMeshProUGUI waveDisplay;
     public TextMeshProUGUI fireSoulIngameDisplay;
@@ -37,6 +38,7 @@ public class MenuManager : MonoBehaviour
         ingamePanel.SetActive(true);
         alchimiePanel.SetActive(false);
         keyRebindingPanel.SetActive(false);
+        activePanel = ingamePanel;
     }
     
     void Update()
@@ -87,12 +89,24 @@ public class MenuManager : MonoBehaviour
                 RM.gameObject.GetComponent<SpellPlacingScript>().Spell3();
             }
         }
+
+        if (activePanel != ingamePanel)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                ingamePanel.SetActive(true);
+                alchimiePanel.SetActive(false);
+                keyRebindingPanel.SetActive(false);
+                activePanel = ingamePanel;
+            }
+        }
     }
 
     public void GoToAlchimiePanel()
     {
         ingamePanel.SetActive(false);
         alchimiePanel.SetActive(true);
+        activePanel = alchimiePanel;
     }
 
     public void Quit()
@@ -104,11 +118,13 @@ public class MenuManager : MonoBehaviour
     {
         ingamePanel.SetActive(true);
         keyRebindingPanel.SetActive(false);
+        activePanel = ingamePanel;
     }
 
     public void GoToKeyPanel()
     {
         ingamePanel.SetActive(false);
         keyRebindingPanel.SetActive(true);
+        activePanel = keyRebindingPanel;
     }
 }
