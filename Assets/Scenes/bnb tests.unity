@@ -2111,6 +2111,9 @@ MonoBehaviour:
   RM: {fileID: 744501577}
   ingamePanel: {fileID: 1683755030}
   alchimiePanel: {fileID: 2146029778}
+  IconFeu: {fileID: 5657167784407187815, guid: fd286c31837951a4ca6a6912755be04d, type: 3}
+  IconEau: {fileID: 5657167784407187815, guid: 246ea394b82605148bf32bf2bad98375, type: 3}
+  IconTerre: {fileID: 5657167784407187815, guid: d20f845796467674e8135e7514c32839, type: 3}
   waveDisplay: {fileID: 1745722892}
   fireSoulIngameDisplay: {fileID: 1908181283}
   waterSoulIngameDisplay: {fileID: 1619591959}
@@ -2118,6 +2121,11 @@ MonoBehaviour:
   fireTowerPriceDisplay: {fileID: 1988244491}
   waterTowerPriceDisplay: {fileID: 1809247908}
   earthTowerPriceDisplay: {fileID: 786595751}
+  shortcutAlchimiePanel: 303
+  shortcutFireTower: 49
+  shortcutWaterTower: 50
+  shortcutEarthTower: 51
+  shortcutLaunchWave: 32
 --- !u!1 &380434145
 GameObject:
   m_ObjectHideFlags: 0
