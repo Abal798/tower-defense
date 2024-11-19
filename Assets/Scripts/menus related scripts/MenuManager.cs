@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class MenuManager : MonoBehaviour
     
     public GameObject ingamePanel;
     public GameObject alchimiePanel;
+    public GameObject keyRebindingPanel;
     public GameObject IconFeu;
     public GameObject IconEau;
     public GameObject IconTerre;
@@ -22,22 +24,21 @@ public class MenuManager : MonoBehaviour
     public TextMeshProUGUI waterTowerPriceDisplay;
     public TextMeshProUGUI earthTowerPriceDisplay;
 
-    public KeyCode shortcutAlchimiePanel;
-    public KeyCode shortcutFireTower;
-    public KeyCode shortcutWaterTower;
-    public KeyCode shortcutEarthTower;
-    public KeyCode shortcutLaunchWave;
-    public KeyCode shortcutPotion1;
-    public KeyCode shortcutPotion2;
-    public KeyCode shortcutPotion3;
-    
+    public KeyRebinding keyRebinder;
+
+    private void Awake()
+    {
+        keyRebinder = FindObjectOfType<KeyRebinding>();
+    }
+
+
     void Start()
     {
         ingamePanel.SetActive(true);
         alchimiePanel.SetActive(false);
+        keyRebindingPanel.SetActive(false);
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         fireSoulIngameDisplay.text = "" + RM.fireSoul;
@@ -53,35 +54,35 @@ public class MenuManager : MonoBehaviour
 
         if (ingamePanel.activeSelf)
         {
-            if (Input.GetKeyDown(shortcutAlchimiePanel))
+            if (Input.GetKeyDown(keyRebinder.GetKeyForAction("shortcutAlchimiePanel")))
             {
                 GoToAlchimiePanel();
             }
-            if (Input.GetKeyDown(shortcutLaunchWave))
+            if (Input.GetKeyDown(keyRebinder.GetKeyForAction("shortcutLaunchWave")))
             {
                 FindObjectOfType<Spawn>().ButtonFonctionLaunchWave();
             }
-            if (Input.GetKeyDown(shortcutFireTower))
+            if (Input.GetKeyDown(keyRebinder.GetKeyForAction("shortcutFireTower")))
             {
                 GridBuilding.current.PreInitializeFeu(IconFeu);
             }
-            if (Input.GetKeyDown(shortcutWaterTower))
+            if (Input.GetKeyDown(keyRebinder.GetKeyForAction("shortcutWaterTower")))
             {
                 GridBuilding.current.PreInitializeEau(IconEau);
             }
-            if (Input.GetKeyDown(shortcutEarthTower))
+            if (Input.GetKeyDown(keyRebinder.GetKeyForAction("shortcutEarthTower")))
             {
                 GridBuilding.current.PreInitializeTerre(IconTerre);
             }
-            if (Input.GetKeyDown(shortcutPotion1))
+            if (Input.GetKeyDown(keyRebinder.GetKeyForAction("shortcutPotion1")))
             {
                 RM.gameObject.GetComponent<SpellPlacingScript>().Spell1();
             }
-            if (Input.GetKeyDown(shortcutPotion2))
+            if (Input.GetKeyDown(keyRebinder.GetKeyForAction("shortcutPotion2")))
             {
                 RM.gameObject.GetComponent<SpellPlacingScript>().Spell2();
             }
-            if (Input.GetKeyDown(shortcutPotion3))
+            if (Input.GetKeyDown(keyRebinder.GetKeyForAction("shortcutPotion3")))
             {
                 RM.gameObject.GetComponent<SpellPlacingScript>().Spell3();
             }
@@ -97,5 +98,17 @@ public class MenuManager : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void QuitKeyPanel()
+    {
+        ingamePanel.SetActive(true);
+        keyRebindingPanel.SetActive(false);
+    }
+
+    public void GoToKeyPanel()
+    {
+        ingamePanel.SetActive(false);
+        keyRebindingPanel.SetActive(true);
     }
 }
