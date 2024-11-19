@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3032873582191874610
 Transform:
   m_ObjectHideFlags: 0
@@ -285,7 +285,7 @@ MonoBehaviour:
   damages: 1
   basicHealth: 100
   maxHealth: 0
-  health: 1
+  health: 0
   basicRadius: 6
   radius: 6
   fireSurrounding: 0
