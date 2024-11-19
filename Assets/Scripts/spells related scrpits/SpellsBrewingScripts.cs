@@ -8,6 +8,7 @@ public class SpellsBrewingScripts : MonoBehaviour
 {
     public RessourcesManager RM;
     public UIManager UIM;
+    public KeyRebinding keyRebinder;
     
     public TextMeshProUGUI fireSoulDisplay;
     public TextMeshProUGUI waterSoulDisplay;
@@ -31,13 +32,11 @@ public class SpellsBrewingScripts : MonoBehaviour
     private int fireDoseUtilisation;
     private int waterDoseUtilisation;
     private int earthDoseUtilisation;
-
-    [Header("shortcut")] 
-    public KeyCode fireIngredientKey;
-    public KeyCode waterIngredientKey;
-    public KeyCode earthIngredientKey;
-    public KeyCode saveSpellKey;
-    public KeyCode resetRecipieKey;
+    
+    private void Awake()
+    {
+        keyRebinder = FindObjectOfType<KeyRebinding>();
+    }
     
 
     private void Start()
@@ -60,23 +59,23 @@ public class SpellsBrewingScripts : MonoBehaviour
 
         if (gameObject.activeSelf)
         {
-            if (Input.GetKeyDown(fireIngredientKey))
+            if (Input.GetKeyDown(keyRebinder.GetKeyForAction("fireIngredientKey")))
             {
                 FireButtonSelected();
             }
-            if (Input.GetKeyDown(waterIngredientKey))
+            if (Input.GetKeyDown(keyRebinder.GetKeyForAction("waterIngredientKey")))
             {
                 WaterButtonSelected();
             }
-            if (Input.GetKeyDown(earthIngredientKey))
+            if (Input.GetKeyDown(keyRebinder.GetKeyForAction("earthIngredientKey")))
             {
                 EarthButtonSelected();
             }
-            if (Input.GetKeyDown(saveSpellKey))
+            if (Input.GetKeyDown(keyRebinder.GetKeyForAction("saveSpellKey")))
             {
                 SaveSpell();
             }
-            if (Input.GetKeyDown(resetRecipieKey))
+            if (Input.GetKeyDown(keyRebinder.GetKeyForAction("resetRecipieKey")))
             {
                 ResetRecipie();
             }
