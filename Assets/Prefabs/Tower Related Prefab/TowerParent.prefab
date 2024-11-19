@@ -164,6 +164,16 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 404790f70196be747b28215118ffac00, type: 3}
   - {fileID: 21300000, guid: 389a436bf477b6943822e06bb08bd503, type: 3}
   - {fileID: 21300000, guid: 5a6fb188867dcbe4b8f4f2d4135d490d, type: 3}
+  - {fileID: 21300000, guid: 9878bfbc58fdf0a419dbbb4075fae58a, type: 3}
+  - {fileID: 21300000, guid: 22af44f077385e64290672c2231a660b, type: 3}
+  - {fileID: 21300000, guid: d343bb149b0830341a0025c9d96c770e, type: 3}
+  - {fileID: 21300000, guid: 6bbd4235fa61fa645aa500671e3452aa, type: 3}
+  - {fileID: 21300000, guid: bad1a2ff12b663f41a172bb9f6443ff8, type: 3}
+  - {fileID: 21300000, guid: e5e8d1595411b5b428d158685266256d, type: 3}
+  - {fileID: 21300000, guid: 05038060a2372b5459a61432e74079e7, type: 3}
+  - {fileID: 21300000, guid: 3008400eb4ce2fe49931565ac1b53928, type: 3}
+  - {fileID: 21300000, guid: 5bc67372d34232649b616d49edcec8b2, type: 3}
+  - {fileID: 21300000, guid: 984ac5dd27216714ebab2740e74b4e24, type: 3}
   currentSprite: 0
 --- !u!212 &1257000877767414463
 SpriteRenderer:
