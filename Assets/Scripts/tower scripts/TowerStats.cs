@@ -99,7 +99,7 @@ public class TowerStats : MonoBehaviour
         damages = (basicDammage + (FireEffectOne * nbrOfFireInsuflation + waterEffectOne * nbrOfWaterInsuflation)) * (Mathf.Pow(FireEffectTwo, fireSurrounding) * Mathf.Pow(waterEffectTwo, waterSurrouding)); 
         cadence = basicCadence - (waterEffectTree * nbrOfWaterInsuflation)*(Mathf.Pow(waterEffectFour, waterSurrouding));
         radius = basicRadius + (earthEffectThree * nbrOfEarthInsuflation);
-        maxHealth = basicHealth + ((waterLifeBonus * nbrOfWaterInsuflation) + Mathf.Pow(earthEffectFour, nbrOfEarthInsuflation)) * Mathf.Pow(earthEffectFive, earthSurrounding);
+        maxHealth = basicHealth + ((waterLifeBonus * nbrOfWaterInsuflation) + Mathf.Pow(earthEffectFour, nbrOfEarthInsuflation)) * (Mathf.Pow(earthEffectFive, earthSurrounding) - 1);
         health += maxHealth - previousMaxHealth;
         previousMaxHealth = maxHealth;
         
@@ -166,6 +166,12 @@ public class TowerStats : MonoBehaviour
         GameObject newParticules = Instantiate(upgradeParticules, transform.position, new Quaternion(-0.707106829f,0,0,0.707106829f));
         Destroy(newParticules, 0.5f);
         gameObject.transform.GetChild(0).GetComponent<TowerSpriteAppearence>().UpdateSize(0.5f, 1.2f, transform);
+    }
+
+    public void Heal()
+    {
+        health = maxHealth;
+        healthBar.SetActive(false);
     }
 
     

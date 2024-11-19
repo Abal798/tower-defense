@@ -105,7 +105,6 @@ public class ActualizeChild : MonoBehaviour
 
     public void AcutalizeChild() // Fixed method name
     {
-        Debug.Log("ActualizeChild");
         towerStats.recalculateStats();
     }
 
@@ -113,6 +112,11 @@ public class ActualizeChild : MonoBehaviour
     {
         StopCurrentTooltipCoroutine();
         GridBuilding.current.listeTowerCo.Remove(Vector3Int.FloorToInt(transform.position));
+    }
+
+    public void HealTower()
+    {
+        towerStats.Heal();
     }
 }
 
