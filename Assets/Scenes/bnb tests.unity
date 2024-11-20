@@ -3888,6 +3888,7 @@ RectTransform:
   - {fileID: 2146029782}
   - {fileID: 336479885}
   - {fileID: 9733173}
+  - {fileID: 1103518713}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -10027,11 +10028,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 379765035}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 1526.53, y: 25}
+  m_AnchoredPosition: {x: -393.46997, y: 25}
   m_SizeDelta: {x: 786.9453, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1103518714
@@ -42634,7 +42635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RM: {fileID: 744501577}
   UIM: {fileID: 744501579}
-  keyRebinder: {fileID: 0}
+  keyRebinder: {fileID: 336479884}
   fireSoulDisplay: {fileID: 146031505}
   waterSoulDisplay: {fileID: 1877919564}
   earthSoulDisplay: {fileID: 1876298742}
@@ -42741,7 +42742,6 @@ SceneRoots:
   - {fileID: 672754177}
   - {fileID: 338851064}
   - {fileID: 379765035}
-  - {fileID: 1103518713}
   - {fileID: 1516928700}
   - {fileID: 1477513368}
   - {fileID: 1809393144}
