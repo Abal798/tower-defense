@@ -56,7 +56,7 @@ public class RessourcesManager : MonoBehaviour
     public float waterEffectOne = 0.05f;
     public float earthEffectFour = 1.4f;
     public float earthEffectThree = 1;
-    public float fireEffectTwo = 1.1f;
+    public float fireEffectTwo = 1.5f;
     public float waterEffectTwo = 1.0015f;
     public float earthEffectFive = 1.1f;
 
@@ -130,6 +130,13 @@ public class RessourcesManager : MonoBehaviour
         fireEffectTwo *= 1 / (1 + Mathf.Exp((weightA - 35) / 3.6f));
         waterEffectTwo *= 1 / (1 + Mathf.Exp((weightB - 35) / 3.6f));
         earthEffectFive *= 1 / (1 + Mathf.Exp((weightC - 35) / 3.6f));
+
+        foreach (var tower in GridBuilding.current.listeTowerCo)
+        {
+            if(tower.Value.gameObject != null)tower.Value.gameObject.GetComponent<ActualizeChild>().AcutalizeChild();
+            
+        }
+        
     }
     
     public float GetTowerPrice(int towerElement, int numberOfTowerPlaced, int numberOfUpgrade)
