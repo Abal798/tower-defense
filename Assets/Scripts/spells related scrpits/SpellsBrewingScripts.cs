@@ -35,7 +35,9 @@ public class SpellsBrewingScripts : MonoBehaviour
     
     private void Awake()
     {
-        keyRebinder = FindObjectOfType<KeyRebinding>();
+        if (RM == null) RM = FindObjectOfType<RessourcesManager>();
+        if (UIM == null) UIM = FindObjectOfType<UIManager>();
+        if (keyRebinder == null) keyRebinder = FindObjectOfType<KeyRebinding>();
     }
     
 
@@ -57,7 +59,7 @@ public class SpellsBrewingScripts : MonoBehaviour
         waterPriceDisplay.text = "price : " + waterDosePrice.ToString();
         earthPriceDisplay.text = "price : " + earthDosePrice.ToString();
 
-        if (gameObject.activeSelf)
+        if (MenuManager.activePanel == gameObject)
         {
             if (Input.GetKeyDown(keyRebinder.GetKeyForAction("fireIngredientKey")))
             {
