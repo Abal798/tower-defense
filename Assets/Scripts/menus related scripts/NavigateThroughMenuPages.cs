@@ -6,6 +6,7 @@ public class NavigateThroughMenuPages : MonoBehaviour
 {
     public List<GameObject> pages = new List<GameObject>();
     private int index = 0;
+    public bool loop = false;
     
     // Start is called before the first frame update
     void Start()
@@ -31,7 +32,12 @@ public class NavigateThroughMenuPages : MonoBehaviour
             index++;
             pages[index].SetActive(true);
         }
-        
+        else if(loop)
+        {
+            pages[index].SetActive(false);
+            index = 0;
+            pages[index].SetActive(true);
+        }
     }
     
     public void PreviousPage()
@@ -40,6 +46,12 @@ public class NavigateThroughMenuPages : MonoBehaviour
         {
             pages[index].SetActive(false);
             index--;
+            pages[index].SetActive(true);
+        }
+        else if(loop)
+        {
+            pages[index].SetActive(false);
+            index = pages.Count - 1;
             pages[index].SetActive(true);
         }
     }

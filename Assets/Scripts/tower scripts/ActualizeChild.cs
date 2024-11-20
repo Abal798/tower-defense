@@ -105,7 +105,7 @@ public class ActualizeChild : MonoBehaviour
 
     public void AcutalizeChild() // Fixed method name
     {
-        towerStats.recalculateStats();
+        if (towerStats != null) towerStats.recalculateStats();
     }
 
     private void OnDestroy()
