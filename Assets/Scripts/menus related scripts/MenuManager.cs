@@ -29,7 +29,7 @@ public class MenuManager : MonoBehaviour
 
     private void Awake()
     {
-        keyRebinder = FindObjectOfType<KeyRebinding>();
+        if (keyRebinder == null) keyRebinder = transform.GetChild(2).gameObject.GetComponent<KeyRebinding>();
     }
 
 
