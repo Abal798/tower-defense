@@ -3323,6 +3323,7 @@ MonoBehaviour:
   pages:
   - {fileID: 1214427999}
   - {fileID: 576609831}
+  loop: 0
 --- !u!1 &338851062
 GameObject:
   m_ObjectHideFlags: 0
@@ -7263,7 +7264,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BD: {fileID: 1672103508}
-  chrono: 0
+  tileNumberRecalculated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -8620561639708342159, guid: 29511a5861e89ce4293b294750d70ba7, type: 3}
+        m_TargetAssemblyTypeName: ActualizeChild, Assembly-CSharp
+        m_MethodName: AcutalizeChild
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   wave: 0
   nbrOfFireTile: 0
   nbrOfWaterTile: 0
@@ -7290,6 +7305,13 @@ MonoBehaviour:
   nbrOfFireTower: 0
   nbrOfWaterTower: 0
   nbrOfEarthTower: 0
+  fireEffectOne: 10
+  waterEffectOne: 0.05
+  earthEffectFour: 1.4
+  earthEffectThree: 1
+  fireEffectTwo: 1.1
+  waterEffectTwo: 1.0015
+  earthEffectFive: 1.1
 --- !u!4 &744501578
 Transform:
   m_ObjectHideFlags: 0
@@ -37124,6 +37146,7 @@ MonoBehaviour:
   pointB: {fileID: 1396918054}
   pointC: {fileID: 1601212323}
   pointMarker: {fileID: 2026143571}
+  influenceFactor: 10
 --- !u!1 &1673326854
 GameObject:
   m_ObjectHideFlags: 0

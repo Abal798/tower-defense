@@ -8,6 +8,8 @@ using UnityEngine.Tilemaps;
 
 public class TowerStats : MonoBehaviour
 {
+    private RessourcesManager RM;
+    
     [Header("stats")]
     
     public float rotationSpeed;
@@ -35,17 +37,19 @@ public class TowerStats : MonoBehaviour
     
 
     [Header("a renseigner par les GD")] 
-    public float FireEffectOne = 10;
-    public float FireEffectTwo = 1.1f;
-    public float waterEffectOne = 5;
-    public float waterEffectTwo = 1.0975f;
-    public float waterEffectTree = 0.05f;
-    public float waterEffectFour = 1.0015f;
-    public float waterLifeBonus = 5;
-    public float earthEffectThree = 1;
-    public float earthEffectFour = 1.4f;
-    public float earthEffectFive = 1.1f;
-
+    private float fireEffectOne = 10;
+    private float waterEffectOne = 0.05f;
+    private float earthEffectFour = 1.4f;
+    private float earthEffectThree = 1;
+    
+    
+    
+    
+    private float fireEffectTwo = 1.1f;
+    private float waterEffectTwo = 1.0015f;
+    private float earthEffectFive = 1.1f;
+    
+    
     public UnityEvent statsHasBeenRecalculated;
 
     [Header("a renseigner par les prog")] 
@@ -58,12 +62,14 @@ public class TowerStats : MonoBehaviour
 
     void Start()
     {
+        RM = FindObjectOfType<RessourcesManager>();
         maxHealth = basicHealth;
         previousMaxHealth = basicHealth;
         health = maxHealth;
         CalculateSurroundings();
         recalculateStats();
         Building.UpdatePathfinding.AddListener(CalculateSurroundings); //attention a cette ligne , elle fait recalculate stats a chaque fois qu'une nouvelle toure est posée, c'est chiant pour les visuels
+        
     }
     
     
@@ -95,11 +101,20 @@ public class TowerStats : MonoBehaviour
                 nbrOfEarthInsuflation++;
             }
         }
-
-        damages = (basicDammage + (FireEffectOne * nbrOfFireInsuflation + waterEffectOne * nbrOfWaterInsuflation)) * (Mathf.Pow(FireEffectTwo, fireSurrounding) * Mathf.Pow(waterEffectTwo, waterSurrouding)); 
-        cadence = basicCadence - (waterEffectTree * nbrOfWaterInsuflation)*(Mathf.Pow(waterEffectFour, waterSurrouding));
+        
+        Debug.Log("pk ya tower stats" + gameObject.transform.position);
+        fireEffectOne = RM.fireEffectOne;
+        waterEffectOne = RM.waterEffectOne;
+        earthEffectFour = RM.earthEffectFour;
+        earthEffectThree = RM.earthEffectThree;
+        fireEffectTwo = RM.fireEffectTwo;
+        waterEffectTwo = RM.waterEffectTwo;
+        earthEffectFive = RM.earthEffectFive;
+        
+        damages = basicDammage + (fireEffectOne * nbrOfFireInsuflation) * Mathf.Pow(fireEffectTwo, fireSurrounding); 
+        cadence = basicCadence - (waterEffectOne * nbrOfWaterInsuflation)*(Mathf.Pow(waterEffectTwo, waterSurrouding));
         radius = basicRadius + (earthEffectThree * nbrOfEarthInsuflation);
-        maxHealth = basicHealth + ((waterLifeBonus * nbrOfWaterInsuflation) + Mathf.Pow(earthEffectFour, nbrOfEarthInsuflation)) * (Mathf.Pow(earthEffectFive, earthSurrounding) - 1);
+        maxHealth = basicHealth + (Mathf.Pow(earthEffectFour, nbrOfEarthInsuflation)) * (Mathf.Pow(earthEffectFive, earthSurrounding) - 1);
         health += maxHealth - previousMaxHealth;
         previousMaxHealth = maxHealth;
         
@@ -114,6 +129,7 @@ public class TowerStats : MonoBehaviour
         {
             healthBar.SetActive(false);
         }
+        
     }
 
     private void OnDestroy()

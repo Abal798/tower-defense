@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Tilemaps;
 
 public class RessourcesManager : MonoBehaviour
@@ -9,7 +10,6 @@ public class RessourcesManager : MonoBehaviour
     public BarycentricDiagram BD;
     
     [Header("game stats")] 
-    public float chrono;
     public float wave;
     public int nbrOfFireTile;
     public int nbrOfWaterTile;
@@ -50,6 +50,15 @@ public class RessourcesManager : MonoBehaviour
     public int nbrOfFireTower = 1;
     public int nbrOfWaterTower = 1;
     public int nbrOfEarthTower = 1;
+
+    [Header("tiles effects")] 
+    public float fireEffectOne = 10;
+    public float waterEffectOne = 0.05f;
+    public float earthEffectFour = 1.4f;
+    public float earthEffectThree = 1;
+    public float fireEffectTwo = 1.5f;
+    public float waterEffectTwo = 1.0015f;
+    public float earthEffectFive = 1.1f;
 
     private void Start()
     {
@@ -105,8 +114,28 @@ public class RessourcesManager : MonoBehaviour
                 nbrOfEarthTile -= nbrOfTile;
             }
         }
+
+        int weightA = nbrOfFireTile;
+        int weightB = nbrOfWaterTile;
+        int weightC = nbrOfEarthTower;
+        
+        int minValue = Mathf.Min(weightA, weightB, weightC);
+        
+        weightA -= minValue ;
+        weightB -= minValue ;
+        weightC -= minValue ;
         
         BD.CalculatePosition(nbrOfFireTile, nbrOfWaterTile, nbrOfEarthTile);
+        
+        fireEffectTwo *= 1 / (1 + Mathf.Exp((weightA - 35) / 3.6f));
+        waterEffectTwo *= 1 / (1 + Mathf.Exp((weightB - 35) / 3.6f));
+        earthEffectFive *= 1 / (1 + Mathf.Exp((weightC - 35) / 3.6f));
+
+        foreach (var tower in GridBuilding.current.listeTowerCo)
+        {
+            if(tower.Value.gameObject != null)tower.Value.gameObject.GetComponent<ActualizeChild>().AcutalizeChild();
+            
+        }
         
     }
     
