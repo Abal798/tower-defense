@@ -56,10 +56,16 @@ public class RessourcesManager : MonoBehaviour
     public float waterEffectOne = 0.05f;
     public float earthEffectFour = 1.4f;
     public float earthEffectThree = 1;
-    public float fireEffectTwo = 1.5f;
-    public float waterEffectTwo = 1.0015f;
-    public float earthEffectFive = 1.1f;
-
+    public float basicFireEffectTwo = 1.5f;
+    public float basicWaterEffectTwo = 1.0015f;
+    public float basicEarthEffectFive = 1.1f;
+    public float fireEffectTwo = 1f;
+    public float waterEffectTwo = 1f;
+    public float earthEffectFive = 1f;
+    public float consanteA;
+    public float consanteK;
+    
+    
     private void Start()
     {
         BD.CalculatePosition(nbrOfFireTile, nbrOfWaterTile, nbrOfEarthTile);
@@ -117,19 +123,25 @@ public class RessourcesManager : MonoBehaviour
 
         int weightA = nbrOfFireTile;
         int weightB = nbrOfWaterTile;
-        int weightC = nbrOfEarthTower;
-        
-        int minValue = Mathf.Min(weightA, weightB, weightC);
-        
+        int weightC = nbrOfEarthTile;
+
+        List<int> trie = new List<int> {weightA, weightB, weightC };
+        int minValue = trie[0];
+        foreach (var nbrDeCases in trie)
+        {
+            if (nbrDeCases < minValue) minValue = nbrDeCases;
+        }
         weightA -= minValue ;
         weightB -= minValue ;
         weightC -= minValue ;
         
-        BD.CalculatePosition(nbrOfFireTile, nbrOfWaterTile, nbrOfEarthTile);
+        Debug.Log("weightFeu : " + weightA + " weightEau : " + weightB + " weightTerre : " + weightC);
         
-        fireEffectTwo *= 1 / (1 + Mathf.Exp((weightA - 35) / 3.6f));
-        waterEffectTwo *= 1 / (1 + Mathf.Exp((weightB - 35) / 3.6f));
-        earthEffectFive *= 1 / (1 + Mathf.Exp((weightC - 35) / 3.6f));
+        BD.CalculatePosition(nbrOfFireTile, nbrOfWaterTile, nbrOfEarthTile);
+
+        fireEffectTwo = basicFireEffectTwo * (1 / (1 + Mathf.Exp((weightA - consanteA) / consanteK)));
+        waterEffectTwo = basicWaterEffectTwo * (1 / (1 + Mathf.Exp((weightB - consanteA) / consanteK)));
+        earthEffectFive = basicEarthEffectFive * (1 / (1 + Mathf.Exp((weightC - consanteA) / consanteK)));
 
         foreach (var tower in GridBuilding.current.listeTowerCo)
         {
