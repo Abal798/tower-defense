@@ -7276,9 +7276,9 @@ MonoBehaviour:
   basicWaterDosePrice: 60
   basicEarthDosePrice: 60
   spellAugmentationPriceFactor: 1.2
-  fireSoul: 1000
-  waterSoul: 1000
-  plantSoul: 1000
+  fireSoul: 200
+  waterSoul: 200
+  plantSoul: 200
   mainTilemap: {fileID: 1526346545}
   priceScaleFactor: 10
   basicFireTowerPrice: 100
