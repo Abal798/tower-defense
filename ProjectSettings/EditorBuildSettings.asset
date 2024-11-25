@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/OutDatedScene/Elouan Test 4.unity
     guid: 3dec89b34c29f4e4588f50288bcc2c81
+  - enabled: 1
+    path: Assets/Scenes/bnb tests.unity
+    guid: 5e3825c133d530348ae70536beb3834b
   m_configObjects: {}
