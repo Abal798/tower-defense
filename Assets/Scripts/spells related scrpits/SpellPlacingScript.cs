@@ -108,6 +108,7 @@ public class SpellPlacingScript : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     placementSpell1 = false;
+                    PlaySpellSound(RM.spellSlotOne[1]);
                     PlaceSpellTerra(mouseWorldPos, RM.spellSlotOne);
                     ClearPreview();
                     RM.spellSlotOne.Clear();
@@ -151,6 +152,7 @@ public class SpellPlacingScript : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     placementSpell2 = false;
+                    PlaySpellSound(RM.spellSlotOne[1]);
                     PlaceSpellTerra(mouseWorldPos, RM.spellSlotTwo);
                     ClearPreview();
                     RM.spellSlotTwo.Clear();
@@ -194,6 +196,7 @@ public class SpellPlacingScript : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     placementSpell3 = false;
+                    PlaySpellSound(RM.spellSlotOne[1]);
                     PlaceSpellTerra(mouseWorldPos, RM.spellSlotThree);
                     ClearPreview();
                     RM.spellSlotThree.Clear();
@@ -520,6 +523,25 @@ public class SpellPlacingScript : MonoBehaviour
             }
         }
         
+    }
+
+    private void PlaySpellSound(int spellType)
+    {
+        if (spellType == 1)
+        {
+            AudioManager.AM.PlaySfx(AudioManager.AM.fireSpellplacing);
+        }
+        else if (spellType == 2)
+        {
+            AudioManager.AM.PlaySfx(AudioManager.AM.waterSpellplacing);
+        }
+        
+        /*
+         else if (spellType == 3)
+        {
+            AudioManager.AM.PlaySfx(AudioManager.AM.waterSpellplacing);
+        }
+        */
     }
     public enum SpellForm { Ligne, Croix, Carre }
     public enum SecondaryEffect { SlowAS, Slow, Stun }

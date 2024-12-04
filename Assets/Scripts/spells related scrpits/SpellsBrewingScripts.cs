@@ -93,6 +93,7 @@ public class SpellsBrewingScripts : MonoBehaviour
         {
             if(RM.fireSoul > fireDosePrice)
             {
+                AudioManager.AM.PlaySfx(AudioManager.AM.addFireIngredient);
                 fireDoseUtilisation++;
                 RM.fireSoul -= fireDosePrice;
                 brewedSpell.Add(1);
@@ -101,13 +102,13 @@ public class SpellsBrewingScripts : MonoBehaviour
             }
             else
             {
-                AudioManager.AM.PlaySfx(AudioManager.AM.AlertDisplay);
+                AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
                 UIM.DisplayAlert("cannot afford this");
             }
         }
         else
         {
-            AudioManager.AM.PlaySfx(AudioManager.AM.AlertDisplay);
+            AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
             UIM.DisplayAlert("3 is the maximum ingredient you can fit");
         }
     }
@@ -126,13 +127,13 @@ public class SpellsBrewingScripts : MonoBehaviour
             }
             else
             {
-                AudioManager.AM.PlaySfx(AudioManager.AM.AlertDisplay);
+                AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
                 UIM.DisplayAlert("cannot afford this");
             }
         }
         else
         {
-            AudioManager.AM.PlaySfx(AudioManager.AM.AlertDisplay);
+            AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
             UIM.DisplayAlert("3 is the maximum ingredient you can fit");
         }
     }
@@ -143,6 +144,7 @@ public class SpellsBrewingScripts : MonoBehaviour
         {
             if(RM.plantSoul > earthDosePrice)
             {
+                AudioManager.AM.PlaySfx(AudioManager.AM.addEarthIngredient);
                 earthDoseUtilisation++;
                 RM.plantSoul -= earthDosePrice;
                 brewedSpell.Add(3);
@@ -151,13 +153,13 @@ public class SpellsBrewingScripts : MonoBehaviour
             }
             else
             {
-                AudioManager.AM.PlaySfx(AudioManager.AM.AlertDisplay);
+                AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
                 UIM.DisplayAlert("cannot afford this");
             }
         }
         else
         {
-            AudioManager.AM.PlaySfx(AudioManager.AM.AlertDisplay);
+            AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
             UIM.DisplayAlert("3 is the maximum ingredient you can fit");
         }
     }
@@ -208,7 +210,7 @@ public class SpellsBrewingScripts : MonoBehaviour
                 brewedSpell.Clear();
                 RecipieDisplayReset();
                 UIM.DisplayAlert("spell saved");
-                
+                AudioManager.AM.PlaySfx(AudioManager.AM.cook);
             }
             
             else if (RM.spellSlotTwo.Count == 0)
@@ -220,6 +222,7 @@ public class SpellsBrewingScripts : MonoBehaviour
                 brewedSpell.Clear();
                 RecipieDisplayReset();
                 UIM.DisplayAlert("spell saved");
+                AudioManager.AM.PlaySfx(AudioManager.AM.cook);
                 
             }
             
@@ -232,17 +235,18 @@ public class SpellsBrewingScripts : MonoBehaviour
                 brewedSpell.Clear();
                 RecipieDisplayReset();
                 UIM.DisplayAlert("spell saved");
-                
+                AudioManager.AM.PlaySfx(AudioManager.AM.cook);
             }
-            
 
             else
             {
+                AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
                 UIM.DisplayAlert("pas de slot libre");
             }
         }
         else
         {
+            AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
             UIM.DisplayAlert("sort ne contient pas assez d'element");
         }
     }
