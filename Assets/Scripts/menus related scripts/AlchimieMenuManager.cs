@@ -33,7 +33,6 @@ public class AlchimieMenuManager : MonoBehaviour
     
     public void QuitAlchimiePanel()
     {
-        AudioManager.AM.PlaySfx(AudioManager.AM.buttonClick);
         SB.ResetRecipie();
         ingamePanel.SetActive(true);
         alchimiePanel.SetActive(false);

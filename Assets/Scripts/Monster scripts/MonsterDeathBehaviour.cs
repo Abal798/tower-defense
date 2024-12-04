@@ -98,6 +98,7 @@ public class MonsterDeathBehaviour : MonoBehaviour
     void Death()
     {
         {
+            AudioManager.AM.PlaySfx(AudioManager.AM.enemyDie);
             GameObject newParticules = Instantiate(deathParticules, transform.position, quaternion.identity);
             Destroy(newParticules,1f);
             Destroy(gameObject);
