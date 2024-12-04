@@ -243,6 +243,7 @@ public class SpellsBrewingScripts : MonoBehaviour
         if (brewedSpell.Count == 1)
         {
             ingredientOne[i].SetActive(true);
+            ingredientOne[i + 3].SetActive(true);
         }
         else if(brewedSpell.Count == 2)
         {
