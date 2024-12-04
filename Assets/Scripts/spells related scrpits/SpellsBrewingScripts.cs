@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class SpellsBrewingScripts : MonoBehaviour
 {
@@ -32,6 +33,8 @@ public class SpellsBrewingScripts : MonoBehaviour
     private int fireDoseUtilisation;
     private int waterDoseUtilisation;
     private int earthDoseUtilisation;
+
+    public GameObject currentSpellShape;
     
     private void Awake()
     {
@@ -98,11 +101,13 @@ public class SpellsBrewingScripts : MonoBehaviour
             }
             else
             {
+                AudioManager.AM.PlaySfx(AudioManager.AM.AlertDisplay);
                 UIM.DisplayAlert("cannot afford this");
             }
         }
         else
         {
+            AudioManager.AM.PlaySfx(AudioManager.AM.AlertDisplay);
             UIM.DisplayAlert("3 is the maximum ingredient you can fit");
         }
     }
@@ -121,11 +126,13 @@ public class SpellsBrewingScripts : MonoBehaviour
             }
             else
             {
+                AudioManager.AM.PlaySfx(AudioManager.AM.AlertDisplay);
                 UIM.DisplayAlert("cannot afford this");
             }
         }
         else
         {
+            AudioManager.AM.PlaySfx(AudioManager.AM.AlertDisplay);
             UIM.DisplayAlert("3 is the maximum ingredient you can fit");
         }
     }
@@ -144,11 +151,13 @@ public class SpellsBrewingScripts : MonoBehaviour
             }
             else
             {
+                AudioManager.AM.PlaySfx(AudioManager.AM.AlertDisplay);
                 UIM.DisplayAlert("cannot afford this");
             }
         }
         else
         {
+            AudioManager.AM.PlaySfx(AudioManager.AM.AlertDisplay);
             UIM.DisplayAlert("3 is the maximum ingredient you can fit");
         }
     }
@@ -243,11 +252,29 @@ public class SpellsBrewingScripts : MonoBehaviour
         if (brewedSpell.Count == 1)
         {
             ingredientOne[i].SetActive(true);
-            ingredientOne[i + 3].SetActive(true);
+            currentSpellShape = ingredientOne[i + 3];
+            currentSpellShape.GetComponent<Image>().color = Color.grey;
+            currentSpellShape.SetActive(true);
         }
         else if(brewedSpell.Count == 2)
         {
             ingredientTwo[i].SetActive(true);
+        
+            if (i == 0)
+            {
+                currentSpellShape.GetComponent<Image>().color = Color.red;
+            }
+            else if (i == 1)
+            {
+                currentSpellShape.GetComponent<Image>().color = Color.blue;
+            }
+            else if (i == 2)
+            {
+                currentSpellShape.GetComponent<Image>().color = Color.green;
+            }
+                
+        
+            
         }
         else if(brewedSpell.Count == 3)
         {
@@ -269,6 +296,8 @@ public class SpellsBrewingScripts : MonoBehaviour
         {
             VARIABLE.SetActive(false);
         }
+
+        currentSpellShape = null;
     }
 
     void RecalculateSpellPrice()
