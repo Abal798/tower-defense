@@ -43,15 +43,15 @@ public class TooltipManager : MonoBehaviour
                 { 
                     
                     case var value when value == GridBuilding.tileBases[TileType.Fire]: //Case Feu
-                        TooltipCases.ShowToolTip_Static("<b>TileFeu</b> \n (j'ai pas le budget de créer un tooltip");
+                        TooltipCases.ShowToolTip_Static("<b>Tile Feu</b> \n Augmente les dégâts des tours adjacentes.");
                         break;
                     
                     case var value when value == GridBuilding.tileBases[TileType.Water]: //Case Eau
-                        TooltipCases.ShowToolTip_Static("<b>TileEau</b> \n (j'ai pas le budget de créer un tooltip");
+                        TooltipCases.ShowToolTip_Static("<b>Tile Eau</b> \n Augmente la cadence des tours adjacentes.");
                         break;
                     
                     case var value when value == GridBuilding.tileBases[TileType.Earth]: //Case Earth
-                        TooltipCases.ShowToolTip_Static("<b>TileEarth</b> \n (j'ai pas le budget de créer un tooltip");
+                        TooltipCases.ShowToolTip_Static("<b>Tile Terre</b> \n Augmente la portée des tours adjacentes.");
                         break;
                     
                     case var value when value == GridBuilding.tileBases[TileType.Grey]: //Case Batiment
