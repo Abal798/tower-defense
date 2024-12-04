@@ -86,6 +86,7 @@ public class SpellsBrewingScripts : MonoBehaviour
 
     public void FireButtonSelected()
     {
+        AudioManager.AM.PlaySfx(AudioManager.AM.buttonClick);
         if (brewedSpell.Count < 3)
         {
             if(RM.fireSoul > fireDosePrice)
@@ -109,6 +110,7 @@ public class SpellsBrewingScripts : MonoBehaviour
 
     public void WaterButtonSelected()
     {
+        AudioManager.AM.PlaySfx(AudioManager.AM.buttonClick);
         if (brewedSpell.Count < 3)
         {
             if(RM.waterSoul > waterDosePrice)
@@ -132,6 +134,7 @@ public class SpellsBrewingScripts : MonoBehaviour
 
     public void EarthButtonSelected()
     {
+        AudioManager.AM.PlaySfx(AudioManager.AM.buttonClick);
         if (brewedSpell.Count < 3)
         {
             if(RM.plantSoul > earthDosePrice)
