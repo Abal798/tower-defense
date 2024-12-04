@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class TooltipManager : MonoBehaviour
 {
+    //public GameObject ingamePanel;
     public float tooltipDelay = 0.5f;
     private Vector3 lastMousePosition;
     private float timer;
@@ -18,7 +19,7 @@ public class TooltipManager : MonoBehaviour
     
     void Update()
     {
-        
+        if (MenuManager.activePanel.name != "IngamePanel") return;
         if (Input.mousePosition != lastMousePosition)
         {
             timer = 0f;                      
@@ -56,7 +57,8 @@ public class TooltipManager : MonoBehaviour
                     
                     case var value when value == GridBuilding.tileBases[TileType.Grey]: //Case Batiment
                         
-                        TowerStats towerStats = (GridBuilding.current.listeTowerCo[Vector3Int.FloorToInt(GridBuilding.current.gridLayout.LocalToCell(touchPos))] != null) ? GridBuilding.current.listeTowerCo[Vector3Int.FloorToInt(GridBuilding.current.gridLayout.LocalToCell(touchPos))].GetComponentInChildren<TowerStats>() : null;
+                        GridBuilding.current.listeTowerCo.TryGetValue(Vector3Int.FloorToInt(GridBuilding.current.gridLayout.LocalToCell(touchPos)), out var tower);
+                        TowerStats towerStats = tower?.GetComponentInChildren<TowerStats>();
                         if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
                         {
                             if (towerStats != null)

@@ -18,6 +18,7 @@ public class TowerRemover : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (MenuManager.activePanel.name != "IngamePanel") return;  
         if (gameObject.CompareTag("Tower") && GridBuilding.current.tempEmpty())
         {
             transform.GetChild(1).gameObject.SetActive(!transform.GetChild(1).gameObject.activeSelf);

@@ -28,7 +28,6 @@ public class MonsterDealingDamagesBehaviour : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-
         if (collider.transform.parent != null)
         {
             if(collider.transform.parent.CompareTag("Tower"))
@@ -48,18 +47,10 @@ public class MonsterDealingDamagesBehaviour : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        targetTower = false;
-        tower = null;
-        baseTower = null;
-        monsterMouvementBehaviours.speed = MS.basicSpeed;
-    }
-
-
     // Update is called once per frame
     void Update()
     {
+        
         if (justHited == false && targetTower && tower != null)
         {
             justHited = true;
@@ -90,6 +81,14 @@ public class MonsterDealingDamagesBehaviour : MonoBehaviour
                 monsterMouvementBehaviours.speed = MS.basicSpeed;
             
             }
+        }
+        
+        if (targetTower && (tower == null && baseTower == null))
+        {
+            targetTower = false;
+            tower = null;
+            baseTower = null;
+            monsterMouvementBehaviours.speed = MS.basicSpeed;
         }
     }
     

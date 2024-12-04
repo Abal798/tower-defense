@@ -45,6 +45,7 @@ public class Building : MonoBehaviour
 
     public void Place(int element)
     {
+        AudioManager.AM.PlaySfx(AudioManager.AM.towerSpawn);
         Vector3Int positionInt = GridBuilding.current.gridLayout.LocalToCell((transform.position));
         BoundsInt areaTemp = area;
         areaTemp.position = positionInt;
@@ -184,6 +185,7 @@ public class Building : MonoBehaviour
             }
             else
             {
+                AudioManager.AM.PlaySfx(AudioManager.AM.AlertDisplay);
                 UIM.DisplayAlert("cannot afford this");
                 return false;
             }
@@ -198,6 +200,7 @@ public class Building : MonoBehaviour
             }
             else
             {
+                AudioManager.AM.PlaySfx(AudioManager.AM.AlertDisplay);
                 UIM.DisplayAlert("cannot afford this");
                 return false;
             }
@@ -211,6 +214,7 @@ public class Building : MonoBehaviour
             }
             else
             {
+                AudioManager.AM.PlaySfx(AudioManager.AM.AlertDisplay);
                 UIM.DisplayAlert("cannot afford this");
                 return false;
             }
