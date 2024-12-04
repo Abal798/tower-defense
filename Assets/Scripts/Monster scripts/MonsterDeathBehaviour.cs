@@ -26,6 +26,8 @@ public class MonsterDeathBehaviour : MonoBehaviour
     
     private float damageFactorbonus;
     private float damageFactorMalus;
+
+    private List<int> elementTouched = new List<int>();
     
     
     void Start()
@@ -50,32 +52,49 @@ public class MonsterDeathBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("bullets"))
         {
             TakeDamages(other);
-            
+            ElementTouchedCheck(other.gameObject);
                     
             if (healthPoints <= 0)
             {
-                float bonusPerElement = soulReward / other.gameObject.GetComponent<BulletBehaviour>().bulletElements.Count;
-                for (int i = 0; i < other.gameObject.GetComponent<BulletBehaviour>().bulletElements.Count; i++)
+                if (elementTouched.Count > 0)
                 {
-                    if (other.gameObject.GetComponent<BulletBehaviour>().bulletElements[i] == 1)
-                    {
-                        RM.fireSoul += bonusPerElement;
-                    }
-                    if (other.gameObject.GetComponent<BulletBehaviour>().bulletElements[i] == 2)
-                    {
-                        RM.waterSoul += bonusPerElement;
-                    }
-                    if (other.gameObject.GetComponent<BulletBehaviour>().bulletElements[i] == 3)
-                    {
-                        RM.plantSoul += bonusPerElement;
-                    }
+                    float bonusPerElement = soulReward / elementTouched.Count;   
+                    
+                    for (int i = 0; i < elementTouched.Count; i++) 
+                    {                                                                                               
+                        if (elementTouched[i] == 1)                
+                        {                                                                                           
+                            RM.fireSoul += bonusPerElement;                                                         
+                        }                                                                                           
+                        if (elementTouched[i] == 2)                
+                        {                                                                                           
+                            RM.waterSoul += bonusPerElement;                                                        
+                        }                                                                                           
+                        if (elementTouched[i] == 3)                
+                        {                                                                                           
+                            RM.plantSoul += bonusPerElement;                                                        
+                        }                                                                                           
+                    }                                                                                               
                 }
+                
+                
                 Death();
             }
             Destroy(other.gameObject);
         }
     }
 
+    void ElementTouchedCheck(GameObject bullet)
+    {
+        foreach (var elements in bullet.gameObject.GetComponent<BulletBehaviour>().bulletElements)
+        {
+            if (!elementTouched.Contains(elements))
+            {
+                elementTouched.Add(elements);
+            }
+        }
+    }
+    
     void Death()
     {
         {
