@@ -12,6 +12,8 @@ public class AudioManager : MonoBehaviour
     
     public AudioClip enemyDie;
     public AudioClip buttonClick;
+    public AudioClip towerSpawn;
+    public AudioClip AlertDisplay;
 
 
     private void Awake()
