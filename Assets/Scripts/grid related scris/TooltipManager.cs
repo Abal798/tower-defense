@@ -56,7 +56,8 @@ public class TooltipManager : MonoBehaviour
                     
                     case var value when value == GridBuilding.tileBases[TileType.Grey]: //Case Batiment
                         
-                        TowerStats towerStats = (GridBuilding.current.listeTowerCo[Vector3Int.FloorToInt(GridBuilding.current.gridLayout.LocalToCell(touchPos))] != null) ? GridBuilding.current.listeTowerCo[Vector3Int.FloorToInt(GridBuilding.current.gridLayout.LocalToCell(touchPos))].GetComponentInChildren<TowerStats>() : null;
+                        GridBuilding.current.listeTowerCo.TryGetValue(Vector3Int.FloorToInt(GridBuilding.current.gridLayout.LocalToCell(touchPos)), out var tower);
+                        TowerStats towerStats = tower?.GetComponentInChildren<TowerStats>();
                         if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
                         {
                             if (towerStats != null)
