@@ -6,10 +6,13 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager AM;
     
+    [Header("audio sources")]
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource SFXSource;
     [SerializeField] private AudioSource menusSoundsSource;
     
+    
+    [Header("----------Audio Clip----------")]
     public AudioClip enemyDie;
     public AudioClip buttonClick;
     public AudioClip towerSpawn;
