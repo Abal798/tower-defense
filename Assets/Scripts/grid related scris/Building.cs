@@ -56,7 +56,7 @@ public class Building : MonoBehaviour
         temp = Instantiate(tower, transform.position, Quaternion.identity).GetComponentInChildren<TowerStats>();
         GridBuilding.current.listeTowerCo.Add(area.position,temp.gameObject.transform.parent.gameObject);
         temp.ameliorations.Add(element);
-        
+        AudioManager.AM.PlaySfx(AudioManager.AM.towerSpawn);
         
         Profiler.BeginSample("FollowChief");
         
@@ -185,7 +185,7 @@ public class Building : MonoBehaviour
             }
             else
             {
-                AudioManager.AM.PlaySfx(AudioManager.AM.AlertDisplay);
+                AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
                 UIM.DisplayAlert("cannot afford this");
                 return false;
             }
@@ -200,7 +200,7 @@ public class Building : MonoBehaviour
             }
             else
             {
-                AudioManager.AM.PlaySfx(AudioManager.AM.AlertDisplay);
+                AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
                 UIM.DisplayAlert("cannot afford this");
                 return false;
             }
@@ -214,7 +214,7 @@ public class Building : MonoBehaviour
             }
             else
             {
-                AudioManager.AM.PlaySfx(AudioManager.AM.AlertDisplay);
+                AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
                 UIM.DisplayAlert("cannot afford this");
                 return false;
             }
