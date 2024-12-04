@@ -127,4 +127,11 @@ public class MenuManager : MonoBehaviour
         keyRebindingPanel.SetActive(true);
         activePanel = keyRebindingPanel;
     }
+
+    public void FastButtonPressed()
+    {
+        FindObjectOfType<GameManager>().ChangeTimeScale();
+    }
+    
+    
 }
