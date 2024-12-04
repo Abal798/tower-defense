@@ -183,18 +183,21 @@ public class GridBuilding : MonoBehaviour
 
     public void PreInitializeFeu(GameObject building)
     {
+        AudioManager.AM.PlaySfx(AudioManager.AM.buttonClick);
         elementTour = 1;
         InitializeWithBuilding(building);
     }
     
     public void PreInitializeEau(GameObject building)
     {
+        AudioManager.AM.PlaySfx(AudioManager.AM.buttonClick);
         elementTour = 2;
         InitializeWithBuilding(building);
     }
     
     public void PreInitializeTerre(GameObject building)
     {
+        AudioManager.AM.PlaySfx(AudioManager.AM.buttonClick);
         elementTour = 3;
         InitializeWithBuilding(building);
     }
