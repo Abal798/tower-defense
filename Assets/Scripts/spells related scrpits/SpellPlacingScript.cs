@@ -70,7 +70,6 @@ public class SpellPlacingScript : MonoBehaviour
     {
         if (RM.spellSlotOne.Count >= 2)
         {
-            AudioManager.AM.PlaySfx(AudioManager.AM.buttonClick);
             placementSpell1 = true;
         }
     }
@@ -79,7 +78,6 @@ public class SpellPlacingScript : MonoBehaviour
     {
         if (RM.spellSlotTwo.Count >= 2)
         {
-            AudioManager.AM.PlaySfx(AudioManager.AM.buttonClick);
             placementSpell2 = true;
         }
     }
@@ -88,7 +86,6 @@ public class SpellPlacingScript : MonoBehaviour
     {
         if (RM.spellSlotThree.Count >= 2)
         {
-            AudioManager.AM.PlaySfx(AudioManager.AM.buttonClick);
             placementSpell3 = true;
         }
     }

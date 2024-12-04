@@ -8,7 +8,7 @@ public class AudioManager : MonoBehaviour
     
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource SFXSource;
-    [SerializeField] private AudioSource MenusSounds;
+    [SerializeField] private AudioSource menusSoundsSource;
     
     public AudioClip enemyDie;
     public AudioClip buttonClick;
@@ -20,10 +20,14 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    public void PlaySfx(AudioClip clip, float volume = 1f)
+    public void PlaySfx(AudioClip clip)
     {
-        SFXSource.volume = volume;
         SFXSource.PlayOneShot(clip);
+    }
+
+    public void PlayButtonClickSound()
+    {
+        menusSoundsSource.PlayOneShot(buttonClick);
     }
 
 }

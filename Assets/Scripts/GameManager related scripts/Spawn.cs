@@ -27,7 +27,6 @@ public class Spawn : MonoBehaviour
 
     public void ButtonFonctionLaunchWave()
     {
-        AudioManager.AM.PlaySfx(AudioManager.AM.buttonClick);
         RM.wave++;
         waveLaunched.Invoke();
         

@@ -104,7 +104,6 @@ public class MenuManager : MonoBehaviour
 
     public void GoToAlchimiePanel()
     {
-        AudioManager.AM.PlaySfx(AudioManager.AM.buttonClick);
         ingamePanel.SetActive(false);
         alchimiePanel.SetActive(true);
         activePanel = alchimiePanel;
@@ -112,13 +111,11 @@ public class MenuManager : MonoBehaviour
 
     public void Quit()
     {
-        AudioManager.AM.PlaySfx(AudioManager.AM.buttonClick);
         Application.Quit();
     }
 
     public void QuitKeyPanel()
     {
-        AudioManager.AM.PlaySfx(AudioManager.AM.buttonClick);
         ingamePanel.SetActive(true);
         keyRebindingPanel.SetActive(false);
         activePanel = ingamePanel;
@@ -126,7 +123,6 @@ public class MenuManager : MonoBehaviour
 
     public void GoToKeyPanel()
     {
-        AudioManager.AM.PlaySfx(AudioManager.AM.buttonClick);
         ingamePanel.SetActive(false);
         keyRebindingPanel.SetActive(true);
         activePanel = keyRebindingPanel;
@@ -134,7 +130,6 @@ public class MenuManager : MonoBehaviour
 
     public void FastButtonPressed()
     {
-        AudioManager.AM.PlaySfx(AudioManager.AM.buttonClick);
         FindObjectOfType<GameManager>().ChangeTimeScale();
     }
     
