@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class TooltipManager : MonoBehaviour
 {
+    //public GameObject ingamePanel;
     public float tooltipDelay = 0.5f;
     private Vector3 lastMousePosition;
     private float timer;
@@ -18,7 +19,7 @@ public class TooltipManager : MonoBehaviour
     
     void Update()
     {
-        
+        if (MenuManager.activePanel.name != "IngamePanel") return;
         if (Input.mousePosition != lastMousePosition)
         {
             timer = 0f;                      
