@@ -2785,7 +2785,7 @@ MonoBehaviour:
   nbrOfEarthTower: 0
   fireEffectOne: 60
   waterEffectOne: 0.25
-  earthEffectFour: 1.4
+  earthEffectFour: 100
   earthEffectThree: 4
   basicFireEffectTwo: 1.25
   basicWaterEffectTwo: 0.9
