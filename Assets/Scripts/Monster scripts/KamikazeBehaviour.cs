@@ -1,28 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class KamikazeBehaviour : MonsterMouvementBehaviours
 {
-
     public bool objectifTargeted = false;
     public Vector3Int nearestTower;
 
-// Start is called before the first frame update
     void Start()
     {
+        if (gridLayout == null)
+        {
+            GameObject gridObject = GameObject.FindGameObjectWithTag("grid");
+            if (gridObject == null)
+            {
+                Debug.LogError("No object with tag 'grid' found in the scene!");
+                return;
+            }
+
+            gridLayout = gridObject.GetComponent<Grid>();
+            if (gridLayout == null)
+            {
+                Debug.LogError("The object with tag 'grid' does not have a Grid component!");
+                return;
+            }
+        }
         UpdateObjectif();
     }
 
     void UpdateObjectif()
     {
         float minDistance = Mathf.Infinity;
-        
+
         foreach (var tower in GridBuilding.current.listeTowerCo)
         {
             float sqrDistance = (transform.position - (Vector3)tower.Key).sqrMagnitude;
-            
+
             if (sqrDistance < minDistance)
             {
                 minDistance = sqrDistance;
@@ -40,16 +53,15 @@ public class KamikazeBehaviour : MonsterMouvementBehaviours
             objectifTargeted = false;
             objectif = new Vector3Int(0, 0, 0);
         }
-        
+
         UpdatePathfinding();
     }
 
     void Update()
     {
-        if (GridBuilding.current.listeTowerCo[objectif] == null)
+        if (!GridBuilding.current.listeTowerCo.ContainsKey(objectif) || GridBuilding.current.listeTowerCo[objectif] == null)
         {
             UpdateObjectif();
         }
     }
-    
 }
