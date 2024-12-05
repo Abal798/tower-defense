@@ -2769,9 +2769,9 @@ MonoBehaviour:
   basicWaterDosePrice: 60
   basicEarthDosePrice: 60
   spellAugmentationPriceFactor: 1.2
-  fireSoul: 200
-  waterSoul: 200
-  plantSoul: 200
+  fireSoul: 10000
+  waterSoul: 10000
+  plantSoul: 10000
   mainTilemap: {fileID: 1526346545}
   priceScaleFactor: 10
   basicFireTowerPrice: 100
@@ -2783,16 +2783,16 @@ MonoBehaviour:
   nbrOfFireTower: 0
   nbrOfWaterTower: 0
   nbrOfEarthTower: 0
-  fireEffectOne: 10
-  waterEffectOne: 0.05
+  fireEffectOne: 60
+  waterEffectOne: 0.25
   earthEffectFour: 1.4
-  earthEffectThree: 1
-  basicFireEffectTwo: 1.5
-  basicWaterEffectTwo: 1.0015
+  earthEffectThree: 4
+  basicFireEffectTwo: 1.25
+  basicWaterEffectTwo: 0.9
   basicEarthEffectFive: 1.1
   fireEffectTwo: 1.1
   waterEffectTwo: 1.0015
-  earthEffectFive: 1.1
+  earthEffectFive: 1.25
   consanteA: 35.1
   consanteK: 3.6
 --- !u!4 &744501578
