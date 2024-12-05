@@ -102,7 +102,6 @@ public class TowerStats : MonoBehaviour
             }
         }
         
-        Debug.Log("pk ya tower stats" + gameObject.transform.position);
         fireEffectOne = RM.fireEffectOne;
         waterEffectOne = RM.waterEffectOne;
         earthEffectFour = RM.earthEffectFour;
@@ -111,10 +110,10 @@ public class TowerStats : MonoBehaviour
         waterEffectTwo = RM.waterEffectTwo;
         earthEffectFive = RM.earthEffectFive;
         
-        damages = basicDammage + (fireEffectOne * nbrOfFireInsuflation) * Mathf.Pow(fireEffectTwo, fireSurrounding); 
-        cadence = basicCadence - (waterEffectOne * nbrOfWaterInsuflation)*(Mathf.Pow(waterEffectTwo, waterSurrouding));
+        damages = (basicDammage + (fireEffectOne * nbrOfFireInsuflation)) * Mathf.Pow(fireEffectTwo, fireSurrounding); 
+        cadence = (basicCadence - (waterEffectOne * nbrOfWaterInsuflation))*(Mathf.Pow(waterEffectTwo, waterSurrouding));
         radius = basicRadius + (earthEffectThree * nbrOfEarthInsuflation);
-        maxHealth = basicHealth + (Mathf.Pow(earthEffectFour, nbrOfEarthInsuflation)) * (Mathf.Pow(earthEffectFive, earthSurrounding) - 1);
+        maxHealth = (basicHealth + ((Mathf.Pow(earthEffectFour, nbrOfEarthInsuflation)))) * (Mathf.Pow(earthEffectFive, earthSurrounding))-1;
         health += maxHealth - previousMaxHealth;
         previousMaxHealth = maxHealth;
         
