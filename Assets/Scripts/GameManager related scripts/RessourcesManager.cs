@@ -140,7 +140,7 @@ public class RessourcesManager : MonoBehaviour
         BD.CalculatePosition(nbrOfFireTile, nbrOfWaterTile, nbrOfEarthTile);
 
         fireEffectTwo = basicFireEffectTwo * (1 / (1 + Mathf.Exp((weightA - consanteA) / consanteK)));
-        waterEffectTwo = basicWaterEffectTwo * (1 / (1 + Mathf.Exp((weightB - consanteA) / consanteK)));
+        waterEffectTwo = basicWaterEffectTwo + (1 / (1 + Mathf.Exp((weightB - consanteA) / -consanteK)));
         earthEffectFive = basicEarthEffectFive * (1 / (1 + Mathf.Exp((weightC - consanteA) / consanteK)));
 
         foreach (var tower in GridBuilding.current.listeTowerCo)

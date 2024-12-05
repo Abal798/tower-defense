@@ -2788,7 +2788,7 @@ MonoBehaviour:
   earthEffectFour: 1.4
   earthEffectThree: 2
   basicFireEffectTwo: 1.25
-  basicWaterEffectTwo: 1.0015
+  basicWaterEffectTwo: 0.9
   basicEarthEffectFive: 1.1
   fireEffectTwo: 1.1
   waterEffectTwo: 1.0015
