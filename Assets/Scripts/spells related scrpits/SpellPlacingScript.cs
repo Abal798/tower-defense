@@ -152,7 +152,7 @@ public class SpellPlacingScript : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     placementSpell2 = false;
-                    PlaySpellSound(RM.spellSlotOne[1]);
+                    PlaySpellSound(RM.spellSlotTwo[1]);
                     PlaceSpellTerra(mouseWorldPos, RM.spellSlotTwo);
                     ClearPreview();
                     RM.spellSlotTwo.Clear();
@@ -196,7 +196,7 @@ public class SpellPlacingScript : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     placementSpell3 = false;
-                    PlaySpellSound(RM.spellSlotOne[1]);
+                    PlaySpellSound(RM.spellSlotThree[1]);
                     PlaceSpellTerra(mouseWorldPos, RM.spellSlotThree);
                     ClearPreview();
                     RM.spellSlotThree.Clear();
