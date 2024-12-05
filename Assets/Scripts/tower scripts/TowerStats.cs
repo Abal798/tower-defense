@@ -118,6 +118,9 @@ public class TowerStats : MonoBehaviour
         maxHealth = (basicHealth + earthEffectFour * nbrOfEarthInsuflation) * (Mathf.Pow(earthEffectFive, earthSurrounding));
         health += maxHealth - previousMaxHealth;
         previousMaxHealth = maxHealth;
+
+        Vector3 radiusDisplayScale = new Vector3(radius * 2, radius * 2, 1);
+        transform.parent.GetChild(2).localScale = radiusDisplayScale;
         
         statsHasBeenRecalculated.Invoke();
 
