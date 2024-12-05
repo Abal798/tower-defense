@@ -265,9 +265,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 391cf5f6219ca114ea6f3fe0f81e0439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MStats: {fileID: 0}
+  MStats: {fileID: 6012127422834315380}
   deplacements: []
-  pathfinding: {fileID: 0}
+  pathfinding: {fileID: 4164270264960268209}
   speed: 0
   gridLayout: {fileID: 0}
   objectif: {x: 0, y: 0, z: 0}
