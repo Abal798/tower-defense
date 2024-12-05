@@ -97,6 +97,9 @@ public class TowerShoot : MonoBehaviour
         {
             
             GameObject newBullet = Instantiate(basicBullet, transform.position, transform.rotation);
+            Vector3 originalSize = newBullet.transform.localScale;
+            Vector3 targetScale = originalSize * (Mathf.Log(dammage * 0.07f) * 0.5f);
+            newBullet.transform.localScale = targetScale;
             newBullet.GetComponent<BulletBehaviour>().bulletElements = TS.ameliorations;
             newBullet.GetComponent<BulletBehaviour>().target = target;
             newBullet.GetComponent<BulletBehaviour>().dammage = dammage;
