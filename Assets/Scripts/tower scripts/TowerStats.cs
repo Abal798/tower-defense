@@ -115,9 +115,12 @@ public class TowerStats : MonoBehaviour
         cadence = (basicCadence - (waterEffectOne * nbrOfWaterInsuflation))*(Mathf.Pow(waterEffectTwo, waterSurrouding));
         if (cadence > basicCadence - (waterEffectOne * nbrOfWaterInsuflation)) cadence = (basicCadence - (waterEffectOne * nbrOfWaterInsuflation));
         radius = basicRadius + (earthEffectThree * nbrOfEarthInsuflation);
-        maxHealth = (basicHealth + ((Mathf.Pow(earthEffectFour, nbrOfEarthInsuflation)))) * (Mathf.Pow(earthEffectFive, earthSurrounding))-1;
+        maxHealth = (basicHealth + earthEffectFour * nbrOfEarthInsuflation) * (Mathf.Pow(earthEffectFive, earthSurrounding));
         health += maxHealth - previousMaxHealth;
         previousMaxHealth = maxHealth;
+
+        Vector3 radiusDisplayScale = new Vector3(radius * 2, radius * 2, 1);
+        transform.parent.GetChild(2).localScale = radiusDisplayScale;
         
         statsHasBeenRecalculated.Invoke();
 

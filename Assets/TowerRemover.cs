@@ -12,6 +12,7 @@ public class TowerRemover : MonoBehaviour
         if (gameObject.CompareTag("Tower"))
         {
             transform.GetChild(1).gameObject.SetActive(false);
+            transform.GetChild(2).gameObject.SetActive(false);
         }
         
     }
@@ -22,6 +23,7 @@ public class TowerRemover : MonoBehaviour
         if (gameObject.CompareTag("Tower") && GridBuilding.current.tempEmpty())
         {
             transform.GetChild(1).gameObject.SetActive(!transform.GetChild(1).gameObject.activeSelf);
+            transform.GetChild(2).gameObject.SetActive(!transform.GetChild(2).gameObject.activeSelf);
         }
         
 
