@@ -1,6 +1,6 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class AudioManager : MonoBehaviour
 {
@@ -13,26 +13,51 @@ public class AudioManager : MonoBehaviour
     
     
     [Header("----------Audio Clip----------")]
+    [Header("----------SFX----------")]
+    [Header("ennemis")]
     public AudioClip enemyDie;
+    
+    [Header("menus")]
     public AudioClip buttonClick;
-    public AudioClip towerSpawn;
-    public AudioClip AlertDisplay;
+    public AudioClip alertDisplay;
+    public AudioClip pageTurn;
+    public List<AudioClip> menusSounds;
 
+    [Header("spells")] 
+    public AudioClip addFireIngredient;
+    public AudioClip addEarthIngredient;
+    public AudioClip fireSpellplacing;
+    public AudioClip waterSpellplacing;
+    public AudioClip cook;
+    
+    [Header("tower")]
+    public AudioClip towerSpawn;
+    public AudioClip towerSelect;
 
     private void Awake()
     {
         AM = this;
     }
 
+    private void Start()
+    {
+        menusSounds = new List<AudioClip> { buttonClick, pageTurn};
+    }
 
     public void PlaySfx(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);
     }
 
-    public void PlayButtonClickSound()
+    public void PlayMenuSound(int i = 0)
     {
-        menusSoundsSource.PlayOneShot(buttonClick);
+        if (i >= 0 && i < menusSounds.Count)
+        {
+            menusSoundsSource.PlayOneShot(menusSounds[i]);
+        }
+        else
+        {
+            Debug.LogWarning("Index invalide pour PlayMenuSound : " + i);
+        }
     }
-
 }

@@ -12,6 +12,7 @@ public class MonsterMouvementBehaviours : MonoBehaviour
     public Pathfinding pathfinding;
     public float speed;
     public GridLayout gridLayout;
+    public Vector3Int objectif = Vector3Int.zero;
     
 
     private List<Vector3> worldPositions; // Path positions in world space
@@ -27,7 +28,7 @@ public class MonsterMouvementBehaviours : MonoBehaviour
         
         Vector3Int startCellPosition = gridLayout.WorldToCell(transform.position);
         
-        deplacements = pathfinding.PathfindingCalculation(startCellPosition, new Vector3Int(0, 0, 0), false);
+        deplacements = pathfinding.PathfindingCalculation(startCellPosition, objectif, false);
         
         worldPositions = new List<Vector3>();
         foreach (Vector3Int cellPosition in deplacements)
@@ -61,10 +62,10 @@ public class MonsterMouvementBehaviours : MonoBehaviour
         }
     }
 
-    void UpdatePathfinding()
+    public void UpdatePathfinding()
     {
         Vector3Int startCellPosition = gridLayout.WorldToCell(transform.position);
-        deplacements =  pathfinding.PathfindingCalculation(startCellPosition, new Vector3Int(0, 0, 0), false);
+        deplacements =  pathfinding.PathfindingCalculation(startCellPosition, objectif, false);
         worldPositions = new List<Vector3>();
         foreach (Vector3Int cellPosition in deplacements)
         {
