@@ -110,9 +110,10 @@ public class TowerStats : MonoBehaviour
         waterEffectTwo = RM.waterEffectTwo;
         earthEffectFive = RM.earthEffectFive;
         
-        damages = (basicDammage + (fireEffectOne * nbrOfFireInsuflation)) * Mathf.Pow(fireEffectTwo, fireSurrounding); 
+        damages = (basicDammage + (fireEffectOne * nbrOfFireInsuflation)) * Mathf.Pow(fireEffectTwo, fireSurrounding);
+        if (damages < basicDammage + (fireEffectOne * nbrOfFireInsuflation)) damages = basicDammage + (fireEffectOne * nbrOfFireInsuflation);
         cadence = (basicCadence - (waterEffectOne * nbrOfWaterInsuflation))*(Mathf.Pow(waterEffectTwo, waterSurrouding));
-        if (cadence > (basicCadence - (waterEffectOne * nbrOfWaterInsuflation))) cadence = (basicCadence - (waterEffectOne * nbrOfWaterInsuflation));
+        if (cadence > basicCadence - (waterEffectOne * nbrOfWaterInsuflation)) cadence = (basicCadence - (waterEffectOne * nbrOfWaterInsuflation));
         radius = basicRadius + (earthEffectThree * nbrOfEarthInsuflation);
         maxHealth = (basicHealth + ((Mathf.Pow(earthEffectFour, nbrOfEarthInsuflation)))) * (Mathf.Pow(earthEffectFive, earthSurrounding))-1;
         health += maxHealth - previousMaxHealth;

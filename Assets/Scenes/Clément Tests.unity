@@ -2786,13 +2786,13 @@ MonoBehaviour:
   fireEffectOne: 60
   waterEffectOne: 0.25
   earthEffectFour: 1.4
-  earthEffectThree: 2
+  earthEffectThree: 4
   basicFireEffectTwo: 1.25
   basicWaterEffectTwo: 0.9
   basicEarthEffectFive: 1.1
   fireEffectTwo: 1.1
   waterEffectTwo: 1.0015
-  earthEffectFive: 1.1
+  earthEffectFive: 1.25
   consanteA: 35.1
   consanteK: 3.6
 --- !u!4 &744501578
