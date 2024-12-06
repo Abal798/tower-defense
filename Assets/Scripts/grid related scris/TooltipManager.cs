@@ -19,7 +19,14 @@ public class TooltipManager : MonoBehaviour
     
     void Update()
     {
-        if (MenuManager.activePanel.name != "IngamePanel") return;
+        if (MenuManager.activePanel.name != "IngamePanel")
+        {
+            TooltipExtented.HideTooltip_Static();
+            TooltipComplet.HideTooltip_Static();
+            TooltipCases.HideTooltip_Static();
+            return;
+        }
+        
         if (Input.mousePosition != lastMousePosition)
         {
             timer = 0f;                      
