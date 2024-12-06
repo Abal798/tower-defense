@@ -33,11 +33,11 @@ public class Spawn : MonoBehaviour
         //pour le monstre 1
         if (RM.wave < 6)
         {
-            numberOfMonsterOne = Mathf.CeilToInt(Mathf.Pow(RM.wave, 2) + 5 * RM.wave + 10);
+            numberOfMonsterOne = Mathf.CeilToInt(Mathf.Pow(RM.wave, 3) + 7 * RM.wave + 10);
         }
         else if (RM.wave > 5 && RM.wave < 9)
         {
-            numberOfMonsterOne = Mathf.CeilToInt(Mathf.Pow(RM.wave, 3) - 4 * Mathf.Pow(RM.wave, 2) + 5);
+            numberOfMonsterOne = Mathf.CeilToInt(Mathf.Pow(RM.wave, 3) - 4 * Mathf.Pow(RM.wave, 2) + 100);
         }
         else if (RM.wave > 9 && RM.wave < 20)
         {
@@ -49,9 +49,13 @@ public class Spawn : MonoBehaviour
         }
         
         //pour le monstre 2
-        if (RM.wave > 3)
+        if (RM.wave > 4)
         {
-            numberOfMonsterTwo = Mathf.CeilToInt(RM.wave - 3);
+            numberOfMonsterTwo = Mathf.CeilToInt(RM.wave - 4);
+        }
+        else
+        {
+            numberOfMonsterTwo = 0;
         }
         
         
