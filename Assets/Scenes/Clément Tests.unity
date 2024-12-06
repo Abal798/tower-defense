@@ -2769,9 +2769,9 @@ MonoBehaviour:
   basicWaterDosePrice: 60
   basicEarthDosePrice: 60
   spellAugmentationPriceFactor: 1.2
-  fireSoul: 10000
-  waterSoul: 10000
-  plantSoul: 10000
+  fireSoul: 190
+  waterSoul: 190
+  plantSoul: 190
   mainTilemap: {fileID: 1526346545}
   priceScaleFactor: 10
   basicFireTowerPrice: 100
@@ -2785,6 +2785,7 @@ MonoBehaviour:
   nbrOfEarthTower: 0
   fireEffectOne: 60
   waterEffectOne: 0.25
+  earthEffectTwo: 1
   earthEffectFour: 100
   earthEffectThree: 4
   basicFireEffectTwo: 1.25
@@ -29267,7 +29268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 361903337417157930, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 379720308355675225, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

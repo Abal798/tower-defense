@@ -183,7 +183,7 @@ public class TowerSpriteAppearence : MonoBehaviour
                     }
                     else if (currentAmeliration[2] == 3)
                     {
-                        currentSprite = 15;
+                        currentSprite = 14;
                     }
                 }
                 else if (currentAmeliration[1] == 3)
