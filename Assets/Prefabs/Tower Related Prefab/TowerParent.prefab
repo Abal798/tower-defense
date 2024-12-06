@@ -281,7 +281,7 @@ MonoBehaviour:
   bulletSpeed: 10
   basicCadence: 1
   cadence: 1
-  basicDammage: 30
+  basicDammage: 35
   damages: 1
   basicHealth: 100
   maxHealth: 0
