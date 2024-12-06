@@ -16,6 +16,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7d5339d22205d7b45b96aba49ead18f9, type: 2}
   - {fileID: 11400000, guid: 85c554fdcb10d25408721bd254c20815, type: 2}
   - {fileID: 11400000, guid: 919f04e34af7d5f419f3eb05afbe7d5a, type: 2}
+  - {fileID: 11400000, guid: aeca637d7ab8b6c4aa33afa592eac06e, type: 2}
+  - {fileID: 11400000, guid: e7c4fb42dde02674e903d63d8e3f2350, type: 2}
+  - {fileID: 11400000, guid: d8b6fb7eea377ab4e894a3a9f8f302a3, type: 2}
   walkingCost: 1000000
   buildable: 0
   alreadyBuilt: 0
