@@ -10,7 +10,7 @@ public class RessourcesManager : MonoBehaviour
     public BarycentricDiagram BD;
     
     [Header("game stats")] 
-    public float wave;
+    public int wave;
     public int nbrOfFireTile;
     public int nbrOfWaterTile;
     public int nbrOfEarthTile;
