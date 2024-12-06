@@ -32,18 +32,13 @@ public class BaseScript : MonoBehaviour
         {
             Time.timeScale = 0;
             panelGameOver.SetActive(true);
-
+            panelSort.SetActive(false);
+            ingamePanel.SetActive(false);
 
         }
         healthBar.fillAmount = baseHP / basicBaseHP;
         
         transform.GetChild(1).gameObject.SetActive(true);
     }
-
-
-    private void OnMouseDown()
-    {
-        panelSort.SetActive(true);
-        ingamePanel.SetActive(false);
-    }
+    
 }

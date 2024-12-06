@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class MenuManager : MonoBehaviour
     public TextMeshProUGUI earthTowerPriceDisplay;
 
     public KeyRebinding keyRebinder;
+    public GameManager gameManager;
 
     private void Awake()
     {
@@ -128,9 +130,9 @@ public class MenuManager : MonoBehaviour
         activePanel = keyRebindingPanel;
     }
 
-    public void FastButtonPressed()
+    public void FastButtonPressed(Button button)
     {
-        FindObjectOfType<GameManager>().ChangeTimeScale();
+        gameManager.ChangeTimeScale(button);
     }
     
     

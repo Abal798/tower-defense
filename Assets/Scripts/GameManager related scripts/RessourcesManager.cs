@@ -54,6 +54,7 @@ public class RessourcesManager : MonoBehaviour
     [Header("tiles effects")] 
     public float fireEffectOne = 10;
     public float waterEffectOne = 0.05f;
+    public float earthEffectTwo = 1f;
     public float earthEffectFour = 1.4f;
     public float earthEffectThree = 1;
     public float basicFireEffectTwo = 1.5f;
