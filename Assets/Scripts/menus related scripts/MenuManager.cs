@@ -45,6 +45,8 @@ public class MenuManager : MonoBehaviour
     
     void Update()
     {
+        Debug.Log("active panel " + activePanel);
+        
         fireSoulIngameDisplay.text = "" + RM.fireSoul;
         waterSoulIngameDisplay.text = "" + RM.waterSoul;
         earthSoulIngameDisplay.text = "" + RM.plantSoul;

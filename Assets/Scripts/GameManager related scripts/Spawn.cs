@@ -15,6 +15,8 @@ public class Spawn : MonoBehaviour
     public RessourcesManager RM;
     public float chanceDeSpawnElementaireEntreZeroEtUn;
     public int vagueDapparitionDesElementaires;
+    public int[] monsterOneWaveList;
+    public int[] monsterTwoWaveList;
 
     public float basicWaveDuration;
 
@@ -29,34 +31,10 @@ public class Spawn : MonoBehaviour
     {
         RM.wave++;
         waveLaunched.Invoke();
+
+        numberOfMonsterOne = monsterOneWaveList[RM.wave];
+        numberOfMonsterTwo = monsterTwoWaveList[RM.wave];
         
-        //pour le monstre 1
-        if (RM.wave < 6)
-        {
-            numberOfMonsterOne = Mathf.CeilToInt(Mathf.Pow(RM.wave, 3) + 7 * RM.wave + 10);
-        }
-        else if (RM.wave > 5 && RM.wave < 9)
-        {
-            numberOfMonsterOne = Mathf.CeilToInt(Mathf.Pow(RM.wave, 3) - 4 * Mathf.Pow(RM.wave, 2) + 100);
-        }
-        else if (RM.wave > 9 && RM.wave < 20)
-        {
-            numberOfMonsterOne =  Mathf.CeilToInt(Mathf.Pow(RM.wave, 2) + 5 * RM.wave + 135);
-        }
-        else
-        {
-            numberOfMonsterOne = Mathf.CeilToInt(Mathf.Pow(RM.wave, 2) * 0.25f + 546);
-        }
-        
-        //pour le monstre 2
-        if (RM.wave > 4)
-        {
-            numberOfMonsterTwo = Mathf.CeilToInt(RM.wave - 4);
-        }
-        else
-        {
-            numberOfMonsterTwo = 0;
-        }
         
         
         StartCoroutine(LaunchWave());
@@ -66,13 +44,13 @@ public class Spawn : MonoBehaviour
     private IEnumerator LaunchWave()
     {
         ennemyToSpawn = numberOfMonsterOne + numberOfMonsterTwo;
-        float waveDuration = basicWaveDuration + 2 * RM.wave;
+        float waveDuration = basicWaveDuration + 4 * RM.wave;
         timeBetweenSpawn = waveDuration / ennemyToSpawn;
 
         // Spawn des monstres de type un avec intervalle de temps
         for (int i = 0; i < ennemyToSpawn; i++)
         {
-            if (Random.Range(1, ennemyToSpawn+1) < numberOfMonsterOne)
+            if (Random.Range(1, ennemyToSpawn+1) <= numberOfMonsterOne)
             {
                 numberOfMonsterOne--;
                 GameObject newMonster = Instantiate(monsterTypeOne, GetRandomPositionOnSquareEdge(), Quaternion.identity);

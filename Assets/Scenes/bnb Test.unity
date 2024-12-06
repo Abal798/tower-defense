@@ -2727,6 +2727,8 @@ MonoBehaviour:
   RM: {fileID: 744501577}
   chanceDeSpawnElementaireEntreZeroEtUn: 0
   vagueDapparitionDesElementaires: 0
+  monsterOneWaveList: 0000000000000000000000000100000000000000000000000000000000000000000000000000000000000000
+  monsterTwoWaveList: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   basicWaveDuration: 0
   squareSize: 39
   waveLaunched:
@@ -2785,6 +2787,7 @@ MonoBehaviour:
   nbrOfEarthTower: 0
   fireEffectOne: 60
   waterEffectOne: 0.25
+  earthEffectTwo: 1
   earthEffectFour: 1.4
   earthEffectThree: 4
   basicFireEffectTwo: 1.25
@@ -2861,6 +2864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInFstMode: 0
   accelerationFactor: 3
+  fastForwardSprites: []
 --- !u!114 &744501582
 MonoBehaviour:
   m_ObjectHideFlags: 0
