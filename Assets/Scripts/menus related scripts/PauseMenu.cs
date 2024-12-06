@@ -18,6 +18,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (MenuManager.activePanel != ingamePanel) return;
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
@@ -37,6 +38,7 @@ public class PauseMenu : MonoBehaviour
         ingamePanel.SetActive(false);
         Time.timeScale = 0;
         isPaused = true;
+        MenuManager.activePanel = pausePanel;
     }
 
     public void ResumeGame()
@@ -45,6 +47,7 @@ public class PauseMenu : MonoBehaviour
         ingamePanel.SetActive(true);
         Time.timeScale = (gameManager.isInFstMode) ? gameManager.accelerationFactor : 1;
         isPaused = false;
+        MenuManager.activePanel = ingamePanel;
     }
 
     public void MainMenu()
@@ -52,5 +55,6 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
         isPaused = false;
         SceneManager.LoadScene(0);
+        
     }   
 }
