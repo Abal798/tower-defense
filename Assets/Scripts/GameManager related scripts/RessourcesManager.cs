@@ -60,6 +60,7 @@ public class RessourcesManager : MonoBehaviour
     public float basicFireEffectTwo = 1.5f;
     public float basicWaterEffectTwo = 1.0015f;
     public float basicEarthEffectFive = 1.1f;
+    public float basicEarthEffectTwo = 1f;
     public float fireEffectTwo = 1f;
     public float waterEffectTwo = 1f;
     public float earthEffectFive = 1f;
@@ -143,6 +144,7 @@ public class RessourcesManager : MonoBehaviour
         fireEffectTwo = basicFireEffectTwo * (1 / (1 + Mathf.Exp((weightA - consanteA) / consanteK)));
         waterEffectTwo = basicWaterEffectTwo + (1 / (1 + Mathf.Exp((weightB - consanteA) / -consanteK)));
         earthEffectFive = basicEarthEffectFive * (1 / (1 + Mathf.Exp((weightC - consanteA) / consanteK)));
+        earthEffectTwo = basicEarthEffectTwo * (1 / (1 + Mathf.Exp((weightC - consanteA) / consanteK)));
 
         foreach (var tower in GridBuilding.current.listeTowerCo)
         {
