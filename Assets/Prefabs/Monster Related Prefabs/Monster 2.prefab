@@ -103,10 +103,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 624125c9e150c554eb88ef8f6e7a4c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soulReward: 48
+  soulReward: 36
   MS: {fileID: 4423026053618790021}
   deathParticules: {fileID: 5132903826172967407, guid: 69e5a0a7244bdad4b9395227de198bcd, type: 3}
-  healthPoints: 1000
+  healthPoints: 0
   incomingDamage: 0
   RM: {fileID: 0}
 --- !u!114 &795280816224040712
@@ -143,6 +143,7 @@ MonoBehaviour:
   pathfinding: {fileID: 0}
   speed: 0
   gridLayout: {fileID: 0}
+  objectif: {x: 0, y: 0, z: 0}
 --- !u!114 &4423026053618790021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,10 +156,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6558944d9a8b4d94ba190e16e880de10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 500
-  basicSpeed: 0.5
+  health: 1750
+  basicSpeed: 1.5
   speed: 0
-  damages: 50
+  damages: 45
   type: 0
   damageFactorbonus: 1.5
   damageFactorMalus: 0.75
