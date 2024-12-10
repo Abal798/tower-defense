@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class TowerRemover : MonoBehaviour
 {
+    
 
     private void Start()
     {
@@ -39,6 +40,7 @@ public class TowerRemover : MonoBehaviour
     {
         transform.GetChild(1).gameObject.SetActive(!transform.GetChild(1).gameObject.activeSelf);
         transform.GetChild(2).gameObject.SetActive(!transform.GetChild(2).gameObject.activeSelf);
+        if(transform.GetChild(1).gameObject.activeSelf) AudioManager.AM.PlaySfx(AudioManager.AM.towerSelect);
     }
     
     public void UnSelectTower()

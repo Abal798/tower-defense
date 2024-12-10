@@ -133,6 +133,7 @@ public class Building : MonoBehaviour
                 towerStats.LaunchUpgradeEffects();
                 towerStats.recalculateStats();
                 Destroy(gameObject);
+                AudioManager.AM.PlaySfx(AudioManager.AM.towerUpgrade);
                 if (element == 1)
                 {
                     RM.nbrOfFireTower++;

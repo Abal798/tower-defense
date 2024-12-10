@@ -29,7 +29,7 @@ public class TowerTakingDamage : MonoBehaviour
             placement.Add(Vector3Int.FloorToInt(transform.parent.transform.position));
             GridBuilding.current.MainTilemap.SetTile(Vector3Int.FloorToInt(transform.parent.transform.position),GridBuilding.tileBases[TileType.Grass]);
             Destroy(transform.parent.gameObject);
-            
+            AudioManager.AM.PlaySfx(AudioManager.AM.towerDeath);
 
         }
 
