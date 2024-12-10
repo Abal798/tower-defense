@@ -2820,6 +2820,7 @@ MonoBehaviour:
   moveSpeed: 50
   speedFactor: 75
   edgeThreshold: 10
+  dragSpeedReductor: 0.02
   minPosition: {x: -18.5, y: -22.5}
   maxPosition: {x: 18.5, y: 22.5}
   zoomSpeed: 2
@@ -3635,7 +3636,7 @@ MonoBehaviour:
   waterSoul: 190
   plantSoul: 190
   mainTilemap: {fileID: 1526346545}
-  priceScaleFactor: 10
+  priceScaleFactor: 20
   basicFireTowerPrice: 100
   basicWaterTowerPrice: 100
   basicEarthTowerPrice: 100
