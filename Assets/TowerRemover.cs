@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class TowerRemover : MonoBehaviour
 {
+    
 
     private void Start()
     {
@@ -22,8 +23,7 @@ public class TowerRemover : MonoBehaviour
         if (MenuManager.activePanel.name != "IngamePanel") return;  
         if (gameObject.CompareTag("Tower") && GridBuilding.current.tempEmpty())
         {
-            transform.GetChild(1).gameObject.SetActive(!transform.GetChild(1).gameObject.activeSelf);
-            transform.GetChild(2).gameObject.SetActive(!transform.GetChild(2).gameObject.activeSelf);
+            SelectTower();
         }
         
 
@@ -34,6 +34,19 @@ public class TowerRemover : MonoBehaviour
             Destroy(transform.parent.gameObject);
             
         }
+    }
+
+    public void SelectTower()
+    {
+        transform.GetChild(1).gameObject.SetActive(!transform.GetChild(1).gameObject.activeSelf);
+        transform.GetChild(2).gameObject.SetActive(!transform.GetChild(2).gameObject.activeSelf);
+        if(transform.GetChild(1).gameObject.activeSelf) AudioManager.AM.PlaySfx(AudioManager.AM.towerSelect);
+    }
+    
+    public void UnSelectTower()
+    {
+        transform.GetChild(1).gameObject.SetActive(false);
+        transform.GetChild(2).gameObject.SetActive(false);
     }
     
     

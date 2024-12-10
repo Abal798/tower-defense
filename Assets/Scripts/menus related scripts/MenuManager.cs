@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
@@ -102,6 +103,14 @@ public class MenuManager : MonoBehaviour
                 alchimiePanel.SetActive(false);
                 keyRebindingPanel.SetActive(false);
                 activePanel = ingamePanel;
+            }
+        }
+
+        if (Input.GetMouseButtonDown(1) && activePanel == ingamePanel)
+        {
+            foreach (var tower in GridBuilding.current.listeTowerCo)
+            {
+                tower.Value.GetComponent<TowerRemover>().UnSelectTower();
             }
         }
     }

@@ -33,6 +33,8 @@ public class AudioManager : MonoBehaviour
     [Header("tower")]
     public AudioClip towerSpawn;
     public AudioClip towerSelect;
+    public AudioClip towerDeath;
+    public AudioClip towerUpgrade;
 
     private void Awake()
     {
