@@ -7,6 +7,7 @@ public class CameraManager : MonoBehaviour
     public float moveSpeed = 50f; // Speed at which the camera moves
     public float speedFactor = 50f;
     public float edgeThreshold = 500f; // Distance from the edge of the screen to trigger movement
+    public float dragSpeedReductor = 0.1f;
     
     public Vector2 minPosition; // Minimum bounds for the camera
     public Vector2 maxPosition; // Maximum bounds for the camera
@@ -17,19 +18,31 @@ public class CameraManager : MonoBehaviour
     
     private  new Camera camera;
     
+    
+    
+    private Vector2 previousMousePosition; // Stocke la position de la souris au frame précédent
+    private Vector2 mouseDelta;           // Stocke le déplacement de la souris
+
+    private bool isDragging = false; 
+    
+    
+    
     private void Start()
     {
         camera = GetComponent<Camera>();
     }
+
     private void Update()
     {
         Vector3 targetPosition = transform.position;
         Vector3 mousePosition = Input.mousePosition;
 
-        maxPosition = (new Vector2(-1.8f * camera.orthographicSize + 21.6f, (- 1.01f* camera.orthographicSize)  + 21.23f));
-        minPosition = (new Vector2(1.8f * camera.orthographicSize - 21.6f ,   ( 1.01f* camera.orthographicSize)  - 21.23f));        
-        
+        maxPosition =
+            (new Vector2(-1.8f * camera.orthographicSize + 21.6f, (-1.01f * camera.orthographicSize) + 21.23f));
+        minPosition = (new Vector2(1.8f * camera.orthographicSize - 21.6f, (1.01f * camera.orthographicSize) - 21.23f));
+
         moveSpeed = (camera.orthographicSize * 5) + speedFactor;
+        
 
         if (mousePosition.x < edgeThreshold)
         {
@@ -50,16 +63,57 @@ public class CameraManager : MonoBehaviour
         {
             targetPosition += Vector3.up * moveSpeed * Time.deltaTime;
         }
+        if (Input.GetMouseButtonDown(0) && MenuManager.activePanel.name == "IngamePanel")
+        {
+             isDragging = true;
+             previousMousePosition = Input.mousePosition; 
+        }
+
+         
+        if (isDragging && Input.GetMouseButton(0))
+        {
+             Vector2 currentMousePosition = Input.mousePosition;
+             mouseDelta = currentMousePosition - previousMousePosition; 
+             previousMousePosition = currentMousePosition;
+
+             
+             Debug.Log($"Mouse Delta: {mouseDelta}");
+        }
+
         
+        if (Input.GetMouseButtonUp(0))
+        {
+             isDragging = false;
+             mouseDelta = Vector2.zero;
+        }
+
+        if (isDragging)
+        {
+            targetPosition.x -= GetMouseDelta().x * (dragSpeedReductor * camera.orthographicSize);
+            targetPosition.y -= GetMouseDelta().y * (dragSpeedReductor * camera.orthographicSize);
+        }
+
         targetPosition.x = Mathf.Clamp(targetPosition.x, minPosition.x, maxPosition.x);
         targetPosition.y = Mathf.Clamp(targetPosition.y, minPosition.y, maxPosition.y);
-        
+
         float scrollInput = Input.GetAxis("Mouse ScrollWheel");
         camera.orthographicSize -= scrollInput * zoomSpeed;
         camera.orthographicSize = Mathf.Clamp(camera.orthographicSize, minZoom, maxZoom);
-        
+
         targetPosition.z = transform.position.z;
 
-        transform.position = Vector3.Lerp(transform.position, targetPosition, 0.1f); // Adjust the smoothing factor as needed
+        
+
+        
+        
+        
+        transform.position = Vector3.Lerp(transform.position, targetPosition, 0.1f);
     }
+    
+    public Vector2 GetMouseDelta()
+    {
+        return mouseDelta;
+    }
+
 }
+

@@ -156,37 +156,20 @@ public class RessourcesManager : MonoBehaviour
     
     public float GetTowerPrice(int towerElement, int numberOfTowerPlaced, int numberOfUpgrade)
     {
-        float finalPrice = 0;
         if (towerElement == 1)
         {
             fireTowerPrice = basicFireTowerPrice + priceScaleFactor * numberOfTowerPlaced;
-            Debug.Log("fTowerPrice" + fireTowerPrice + "number of tower placed" + numberOfTowerPlaced);
-            finalPrice = fireTowerPrice;
-            if (numberOfUpgrade > 0)
-            {
-                finalPrice += 10 * numberOfUpgrade;
-            }
-            return finalPrice;
+            return fireTowerPrice;
         }
         if (towerElement == 2)
         {
             waterTowerPrice = basicWaterTowerPrice + priceScaleFactor * numberOfTowerPlaced;
-            finalPrice = waterTowerPrice;
-            if (numberOfUpgrade > 0)
-            {
-                finalPrice += 10 * numberOfUpgrade;
-            }
-            return finalPrice;
+            return waterTowerPrice;
         }
         if (towerElement == 3)
         {
             earthTowerPrice = basicEarthTowerPrice + priceScaleFactor * numberOfTowerPlaced;
-            finalPrice = earthTowerPrice;
-            if (numberOfUpgrade > 0)
-            {
-                finalPrice += 10 * numberOfUpgrade;
-            }
-            return finalPrice;
+            return earthTowerPrice;
         }
 
         return 0f;
