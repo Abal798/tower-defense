@@ -643,7 +643,7 @@ MonoBehaviour:
   menusSoundsSource: {fileID: 1985097464}
   enemyDie: {fileID: 8300000, guid: 02c05c60aad54e04297e13dccff08d2f, type: 3}
   buttonClick: {fileID: 8300000, guid: 6210828b5936a4348ba930454ad4f4f9, type: 3}
-  alertDisplay: {fileID: 8300000, guid: f523b9df4eb373d459433e9c4006159d, type: 3}
+  alertDisplay: {fileID: 8300000, guid: 17b6e835815b1034c87a129d45d561cb, type: 3}
   pageTurn: {fileID: 8300000, guid: 80ac5e14d176e7140a1c4004c55e6d8e, type: 3}
   menusSounds: []
   addFireIngredient: {fileID: 8300000, guid: 4e086af21417a98448eb5294d7257cd0, type: 3}
@@ -653,6 +653,8 @@ MonoBehaviour:
   cook: {fileID: 8300000, guid: bb4107916ca892645ad6e8cb3fc47441, type: 3}
   towerSpawn: {fileID: 8300000, guid: 60f8ed7ad34840a448c6800ea5c8cb5e, type: 3}
   towerSelect: {fileID: 8300000, guid: affdcbfb0221df245886c490473c8e9c, type: 3}
+  towerDeath: {fileID: 8300000, guid: a105befc4bd72584fa1a3caf317a5cf9, type: 3}
+  towerUpgrade: {fileID: 8300000, guid: 0f4ac9fca82c4e9449c8d6527b9e73fa, type: 3}
 --- !u!4 &64261803
 Transform:
   m_ObjectHideFlags: 0
@@ -2818,6 +2820,7 @@ MonoBehaviour:
   moveSpeed: 50
   speedFactor: 75
   edgeThreshold: 10
+  dragSpeedReductor: 0.02
   minPosition: {x: -18.5, y: -22.5}
   maxPosition: {x: 18.5, y: 22.5}
   zoomSpeed: 2
@@ -3651,6 +3654,7 @@ MonoBehaviour:
   basicFireEffectTwo: 1.25
   basicWaterEffectTwo: 0.9
   basicEarthEffectFive: 1.1
+  basicEarthEffectTwo: 1
   fireEffectTwo: 1.1
   waterEffectTwo: 1.0015
   earthEffectFive: 1.25
@@ -28233,7 +28237,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1ae4af75020757a489b6d4d67c9399e2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -28637,7 +28641,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1583516127
 RectTransform:
   m_ObjectHideFlags: 0
