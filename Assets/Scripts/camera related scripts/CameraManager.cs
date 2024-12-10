@@ -43,7 +43,6 @@ public class CameraManager : MonoBehaviour
 
         moveSpeed = (camera.orthographicSize * 5) + speedFactor;
         
-        Debug.Log(camera.orthographicSize);
 
         if (mousePosition.x < edgeThreshold)
         {
@@ -64,28 +63,28 @@ public class CameraManager : MonoBehaviour
         {
             targetPosition += Vector3.up * moveSpeed * Time.deltaTime;
         }
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && MenuManager.activePanel.name == "IngamePanel")
         {
              isDragging = true;
-             previousMousePosition = Input.mousePosition; // Initialise la position précédente
+             previousMousePosition = Input.mousePosition; 
         }
 
-         // Si le bouton gauche de la souris est maintenu
+         
         if (isDragging && Input.GetMouseButton(0))
         {
-             Vector2 currentMousePosition = Input.mousePosition; // Position actuelle de la souris
-             mouseDelta = currentMousePosition - previousMousePosition; // Calcul du déplacement
-             previousMousePosition = currentMousePosition; // Mise à jour de la position précédente
+             Vector2 currentMousePosition = Input.mousePosition;
+             mouseDelta = currentMousePosition - previousMousePosition; 
+             previousMousePosition = currentMousePosition;
 
-             // Affiche le déplacement dans la console
+             
              Debug.Log($"Mouse Delta: {mouseDelta}");
         }
 
-         // Si le bouton gauche de la souris est relâché
+        
         if (Input.GetMouseButtonUp(0))
         {
              isDragging = false;
-             mouseDelta = Vector2.zero; // Réinitialise le déplacement
+             mouseDelta = Vector2.zero;
         }
 
         if (isDragging)
@@ -108,7 +107,7 @@ public class CameraManager : MonoBehaviour
         
         
         
-        transform.position = Vector3.Lerp(transform.position, targetPosition, 0.1f); // Adjust the smoothing factor as needed
+        transform.position = Vector3.Lerp(transform.position, targetPosition, 0.1f);
     }
     
     public Vector2 GetMouseDelta()
