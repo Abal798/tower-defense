@@ -8,6 +8,8 @@ using Random = UnityEngine.Random;
 
 public class Spawn : MonoBehaviour
 {
+    public GameObject victoryPanel;
+    
     public int numberOfMonsterOne;
     public int numberOfMonsterTwo;
     public GameObject monsterTypeOne;
@@ -15,8 +17,12 @@ public class Spawn : MonoBehaviour
     public RessourcesManager RM;
     public float chanceDeSpawnElementaireEntreZeroEtUn;
     public int vagueDapparitionDesElementaires;
+
+    public int endWaveNumber;
     public int[] monsterOneWaveList;
     public int[] monsterTwoWaveList;
+
+    public List<GameObject> monstersAlive;
 
     public float basicWaveDuration;
 
@@ -27,15 +33,26 @@ public class Spawn : MonoBehaviour
 
     public UnityEvent waveLaunched;
 
+
+    private void Start()
+    {
+        victoryPanel.SetActive(false);
+    }
+
     public void ButtonFonctionLaunchWave()
     {
+        CleanMonstersAlive();
         RM.wave++;
         waveLaunched.Invoke();
 
-        numberOfMonsterOne = monsterOneWaveList[RM.wave];
-        numberOfMonsterTwo = monsterTwoWaveList[RM.wave];
+        if (RM.wave < monsterOneWaveList.Length)
+        {
+            numberOfMonsterOne = monsterOneWaveList[RM.wave];
+            numberOfMonsterTwo = monsterTwoWaveList[RM.wave];
+        }
         
         
+        if(RM.wave > endWaveNumber && monstersAlive.Count == 0) victoryPanel.SetActive(true);
         
         StartCoroutine(LaunchWave());
         
@@ -64,6 +81,8 @@ public class Spawn : MonoBehaviour
                     newMonster.GetComponent<MonsterStats>().type = 0;
                 }
                 
+                monstersAlive.Add(newMonster);
+                
             }
             else
             {
@@ -78,7 +97,7 @@ public class Spawn : MonoBehaviour
                 {
                     newMonster.GetComponent<MonsterStats>().type = 0;
                 }
-                
+                monstersAlive.Add(newMonster);
             }
             ennemyToSpawn--;
             yield return new WaitForSeconds(timeBetweenSpawn); // Pause entre chaque apparition
@@ -107,5 +126,10 @@ public class Spawn : MonoBehaviour
         return Random.Range(0, Mathf.Round(1 / chanceDeSpawnElementaireEntreZeroEtUn)) == 1
             ? Random.Range(1, 4)
             : 0;
+    }
+    
+    private void CleanMonstersAlive()
+    {
+        monstersAlive.RemoveAll(monster => monster == null);
     }
 }
