@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1750
-  basicSpeed: 1.5
+  basicSpeed: 0.75
   speed: 0
   damages: 45
   type: 0
