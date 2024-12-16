@@ -67,14 +67,14 @@ public class CameraManager : MonoBehaviour
             }
         }
         
-        if (Input.GetMouseButtonDown(0) && MenuManager.activePanel.name == "IngamePanel")
+        if (Input.GetMouseButtonDown(2) && MenuManager.activePanel.name == "IngamePanel")
         {
              isDragging = true;
              previousMousePosition = Input.mousePosition; 
         }
 
          
-        if (isDragging && Input.GetMouseButton(0))
+        if (isDragging && Input.GetMouseButton(2))
         {
              Vector2 currentMousePosition = Input.mousePosition;
              mouseDelta = currentMousePosition - previousMousePosition; 
@@ -85,7 +85,7 @@ public class CameraManager : MonoBehaviour
         }
 
         
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(2))
         {
              isDragging = false;
              mouseDelta = Vector2.zero;
