@@ -50,6 +50,8 @@ public class GridBuilding : MonoBehaviour
         tileBases.Add(TileType.Moutain, Resources.Load<TileBase>(titlePath + "004"));
         tileBases.Add(TileType.Fire, Resources.Load<TileBase>(titlePath + "008"));
         tileBases.Add(TileType.Volcano, Resources.Load<TileBase>(titlePath + "009"));
+        tileBases.Add(TileType.Base, Resources.Load<TileBase>(titlePath + "BaseTile"));
+        
         
         
         Debug.Log("Water Tile: " + (tileBases[TileType.Water] == null ? "null" : "Loaded"));
@@ -102,7 +104,7 @@ public class GridBuilding : MonoBehaviour
                     }
                     if (temp.Afford(elementTour, price))// ajouter ici le morceau de script qui permet de recuperer le prix de placement d'une tour
                     {
-                        
+                        EndGameStats.EGS.nombreDinsuflationsTotal++;
                         temp.Place(elementTour);
                     }
                         
@@ -335,6 +337,7 @@ public enum TileType
     Earth,
     Moutain,
     Fire,
-    Volcano
+    Volcano,
+    Base
     
 }

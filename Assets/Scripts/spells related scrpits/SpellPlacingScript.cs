@@ -117,6 +117,8 @@ public class SpellPlacingScript : MonoBehaviour
                         if(tower.Value.gameObject != null)tower.Value.gameObject.GetComponent<ActualizeChild>().AcutalizeChild();
             
                     }
+
+                    EndGameStats.EGS.nombreDeSortsPlaces++;
                 }
 
                 if (Input.GetMouseButtonDown(1))
@@ -161,6 +163,7 @@ public class SpellPlacingScript : MonoBehaviour
                         if(tower.Value.gameObject != null)tower.Value.gameObject.GetComponent<ActualizeChild>().AcutalizeChild();
             
                     }
+                    EndGameStats.EGS.nombreDeSortsPlaces++;
                 }
 
                 if (Input.GetMouseButtonDown(1))
@@ -205,6 +208,7 @@ public class SpellPlacingScript : MonoBehaviour
                         if(tower.Value.gameObject != null)tower.Value.gameObject.GetComponent<ActualizeChild>().AcutalizeChild();
             
                     }
+                    EndGameStats.EGS.nombreDeSortsPlaces++;
                 }
 
                 if (Input.GetMouseButtonDown(1))
@@ -470,10 +474,19 @@ public class SpellPlacingScript : MonoBehaviour
 
         TileBase tileBase = GridBuilding.tileBases[tileEffect];
         TileBase[] tiles = new TileBase[positions.Count];
-
+        int numberToAdd = 0;
+        
         for (int i = 0; i < positions.Count; i++)
         {
-            tiles[i] = tileBase;
+            if (GridBuilding.current.MainTilemap.GetTile(positions[i]) != GridBuilding.tileBases[TileType.Base])
+            {
+                tiles[i] = tileBase;
+                numberToAdd += 1;
+            }
+            else
+            {
+                tiles[i] = GridBuilding.tileBases[TileType.Base];
+            }
         }
         
         foreach (Vector3Int pos in positions )
@@ -488,7 +501,7 @@ public class SpellPlacingScript : MonoBehaviour
         
         
         MainTilemap.SetTiles(positions.ToArray(), tiles);
-        RM.UpdateTileNumber(cellPos, 9, true);
+        RM.UpdateTileNumber(cellPos, numberToAdd, true);
 
         
         
