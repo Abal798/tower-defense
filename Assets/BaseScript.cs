@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class BaseScript : MonoBehaviour
 {
+    
     public float baseHP;
     public float basicBaseHP;
     public GameObject panelGameOver;
@@ -15,6 +16,7 @@ public class BaseScript : MonoBehaviour
 
     private void Start()
     {
+        panelGameOver.SetActive(false);
         baseHP = basicBaseHP;
         transform.GetChild(1).gameObject.SetActive(false);
     }
@@ -34,6 +36,8 @@ public class BaseScript : MonoBehaviour
             panelGameOver.SetActive(true);
             panelSort.SetActive(false);
             ingamePanel.SetActive(false);
+            EndGameStats.EGS.displayGameStats();
+            
 
         }
         healthBar.fillAmount = baseHP / basicBaseHP;
