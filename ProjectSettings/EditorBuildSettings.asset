@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 5a3d2fb2f0d1f624a815e33c6a2cd325
   - enabled: 1
-    path: Assets/Scenes/ElouanBeta.unity
-    guid: e5c549150968ab54b9d9fdce378ab8ff
+    path: Assets/Scenes/bnb tests.unity
+    guid: eef53647dadfec14eb3b51e3d7c9da27
   m_configObjects: {}
