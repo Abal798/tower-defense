@@ -172,21 +172,21 @@ public class SpellsBrewingScripts : MonoBehaviour
             {
                 if (brewedSpell[i] == 1)
                 {
-                    RM.fireSoul += fireDosePrice - 1;
+                    RM.fireSoul += fireDosePrice - RM.spellAugmentationPriceFactor;
                     fireDoseUtilisation--;
                     RecalculateSpellPrice();
                 }
                 
                 else if (brewedSpell[i] == 2)
                 {
-                    RM.waterSoul +=  waterDosePrice - 1;
+                    RM.waterSoul +=  waterDosePrice - RM.spellAugmentationPriceFactor;
                     waterDoseUtilisation--;
                     RecalculateSpellPrice();
                 }
 
                 else
                 {
-                    RM.plantSoul += earthDosePrice - 1;
+                    RM.plantSoul += earthDosePrice - RM.spellAugmentationPriceFactor;
                     earthDoseUtilisation--;
                     RecalculateSpellPrice();
                 }
