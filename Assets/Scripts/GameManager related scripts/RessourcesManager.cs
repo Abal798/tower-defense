@@ -127,6 +127,10 @@ public class RessourcesManager : MonoBehaviour
         int weightB = nbrOfWaterTile;
         int weightC = nbrOfEarthTile;
 
+        EndGameStats.EGS.numberOfFireTiles = nbrOfFireTile;
+        EndGameStats.EGS.numberOfWaterTiles = nbrOfWaterTile;
+        EndGameStats.EGS.numberOfEarthTiles = nbrOfEarthTile;
+
         List<int> trie = new List<int> {weightA, weightB, weightC };
         int minValue = trie[0];
         foreach (var nbrDeCases in trie)
@@ -175,5 +179,8 @@ public class RessourcesManager : MonoBehaviour
         return 0f;
     }
 
-
+    private void Update()
+    {
+        EndGameStats.EGS.nombreDameRestants = nbrOfFireTile + nbrOfWaterTile + nbrOfEarthTile;
+    }
 }
