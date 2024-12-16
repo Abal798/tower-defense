@@ -104,7 +104,7 @@ public class GridBuilding : MonoBehaviour
                     }
                     if (temp.Afford(elementTour, price))// ajouter ici le morceau de script qui permet de recuperer le prix de placement d'une tour
                     {
-                        
+                        EndGameStats.EGS.nombreDinsuflationsTotal++;
                         temp.Place(elementTour);
                     }
                         
