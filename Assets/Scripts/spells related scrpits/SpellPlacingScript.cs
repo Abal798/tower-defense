@@ -117,6 +117,8 @@ public class SpellPlacingScript : MonoBehaviour
                         if(tower.Value.gameObject != null)tower.Value.gameObject.GetComponent<ActualizeChild>().AcutalizeChild();
             
                     }
+
+                    EndGameStats.EGS.nombreDeSortsPlaces++;
                 }
 
                 if (Input.GetMouseButtonDown(1))
@@ -161,6 +163,7 @@ public class SpellPlacingScript : MonoBehaviour
                         if(tower.Value.gameObject != null)tower.Value.gameObject.GetComponent<ActualizeChild>().AcutalizeChild();
             
                     }
+                    EndGameStats.EGS.nombreDeSortsPlaces++;
                 }
 
                 if (Input.GetMouseButtonDown(1))
@@ -205,6 +208,7 @@ public class SpellPlacingScript : MonoBehaviour
                         if(tower.Value.gameObject != null)tower.Value.gameObject.GetComponent<ActualizeChild>().AcutalizeChild();
             
                     }
+                    EndGameStats.EGS.nombreDeSortsPlaces++;
                 }
 
                 if (Input.GetMouseButtonDown(1))
