@@ -37,6 +37,7 @@ public class GridBuilding : MonoBehaviour
 
     private void Start()
     {
+        if(tileBases.Count != 0) return;
         string titlePath = "Tiles/";
         tileBases.Add(TileType.Empty, null);
         tileBases.Add(TileType.White, Resources.Load<TileBase>(titlePath + "white"));
