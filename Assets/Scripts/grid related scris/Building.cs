@@ -12,13 +12,32 @@ public class Building : MonoBehaviour
     private bool isDragging = true;
     public GameObject tower;
     private TowerStats temp;
-    
+    public int elementToPlace = 3;
     
 
     public RessourcesManager RM;
     public UIManager UIM;
     
     public static UnityEvent UpdatePathfinding = new UnityEvent();
+
+
+    private void Start()
+    {
+        transform.GetChild(2).gameObject.SetActive(true);
+        if (elementToPlace == 3)
+        {
+            float radius = (6 + (RM.earthEffectThree ));
+            Vector3 radiusDisplayScale = new Vector3(radius * 2, radius * 2, 1);
+            transform.GetChild(2).localScale = radiusDisplayScale;
+        }
+        else
+        {
+            float radius = 6;
+            Vector3 radiusDisplayScale = new Vector3(radius * 2, radius * 2, 1);
+            transform.GetChild(2).localScale = radiusDisplayScale;
+        }
+        
+    }
 
     #region Build Methods
 
@@ -58,7 +77,7 @@ public class Building : MonoBehaviour
         temp.ameliorations.Add(element);
         AudioManager.AM.PlaySfx(AudioManager.AM.towerSpawn);
         
-        Profiler.BeginSample("FollowChief");
+        Profiler.BeginSample("InvokePathfinding");
         
         UpdatePathfinding.Invoke();
         
@@ -165,6 +184,74 @@ public class Building : MonoBehaviour
             mousePosition.z = 0;
 
             SnapToGrid(mousePosition);
+        }
+
+        Vector3 lastpos = transform.position;
+        if (lastpos == transform.position)
+        {
+            Debug.Log("ahhhhhhh");
+            Vector2 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3Int cellPos = GridBuilding.current.gridLayout.WorldToCell(mouseWorldPosition);
+
+            if (GridBuilding.current.listeTowerCo.ContainsKey(cellPos))
+            {
+                GameObject towerToPreview = GridBuilding.current.listeTowerCo[cellPos];
+                TowerStats towerStatsToPreview = towerToPreview.transform.GetChild(0).GetComponent<TowerStats>();
+                if (towerStatsToPreview.ameliorations.Count < 3)
+                {
+                    int nbrOfEarthInsuflation = 0;
+                    for (int i = 0; i < towerStatsToPreview.ameliorations.Count; i++)
+                    {
+                        if (towerStatsToPreview.ameliorations[i] == 3)
+                        {
+                            nbrOfEarthInsuflation++;
+                        }
+                    }
+                    if (elementToPlace == 3) nbrOfEarthInsuflation += 1;
+
+                    float radius = (6 + (RM.earthEffectThree * nbrOfEarthInsuflation)) + (RM.earthEffectTwo * towerStatsToPreview.earthSurrounding);
+                    Vector3 radiusDisplayScale = new Vector3(radius * 2, radius * 2, 1);
+                    transform.GetChild(2).localScale = radiusDisplayScale;
+                }
+                else
+                {
+                    transform.GetChild(2).localScale = Vector3.zero;
+                }
+                
+            }
+            else
+            {
+                int earthSurrounding = 0;
+        
+                List<Vector3Int> surroundingTiles = new List<Vector3Int>
+                {
+                    cellPos + Vector3Int.up,
+                    cellPos + Vector3Int.up + Vector3Int.right,
+                    cellPos + Vector3Int.up + Vector3Int.left,
+                    cellPos + Vector3Int.down,
+                    cellPos + Vector3Int.down + Vector3Int.left,
+                    cellPos + Vector3Int.down + Vector3Int.right,
+                    cellPos + Vector3Int.left,
+                    cellPos + Vector3Int.right,
+            
+                };
+        
+                for (int i = 0; i < surroundingTiles.Count; i++)
+                {
+                    if (GridBuilding.current.MainTilemap.GetTile(surroundingTiles[i]) == GridBuilding.tileBases[TileType.Earth])
+                    {
+                        earthSurrounding++;
+                    }
+                }
+
+                int nbrOfEarthInsuflation = 0;
+                if (elementToPlace == 3) nbrOfEarthInsuflation++;
+                float radius = (6 + (RM.earthEffectThree * nbrOfEarthInsuflation)) + (RM.earthEffectTwo * earthSurrounding);
+                Vector3 radiusDisplayScale = new Vector3(radius * 2, radius * 2, 1);
+                transform.GetChild(2).localScale = radiusDisplayScale;
+            }
+            
+            
         }
     }
 

@@ -40,7 +40,7 @@ public class BarycentricDiagram : MonoBehaviour
         }
         else
         {
-            Debug.Log("Total weight is zero; unable to calculate position.");
+            //Debug.Log("Total weight is zero; unable to calculate position.");
         }
     }
 }

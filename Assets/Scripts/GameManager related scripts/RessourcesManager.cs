@@ -137,7 +137,7 @@ public class RessourcesManager : MonoBehaviour
         weightB -= minValue ;
         weightC -= minValue ;
         
-        Debug.Log("weightFeu : " + weightA + " weightEau : " + weightB + " weightTerre : " + weightC);
+        //Debug.Log("weightFeu : " + weightA + " weightEau : " + weightB + " weightTerre : " + weightC);
         
         BD.CalculatePosition(nbrOfFireTile, nbrOfWaterTile, nbrOfEarthTile);
 
