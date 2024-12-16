@@ -42,27 +42,31 @@ public class CameraManager : MonoBehaviour
         minPosition = (new Vector2(1.8f * camera.orthographicSize - 21.6f, (1.01f * camera.orthographicSize) - 21.23f));
 
         moveSpeed = (camera.orthographicSize * 5) + speedFactor;
+
+
+        if (isDragging == false)
+        {
+            if (mousePosition.x < edgeThreshold)
+            {
+                targetPosition += Vector3.left * moveSpeed * Time.deltaTime;
+            }
+    
+            if (mousePosition.x > Screen.width - edgeThreshold)
+            {
+                targetPosition += Vector3.right * moveSpeed * Time.deltaTime;
+            }
+    
+            if (mousePosition.y < edgeThreshold)
+            {
+                targetPosition += Vector3.down * moveSpeed * Time.deltaTime;
+            }
+    
+            if (mousePosition.y > Screen.height - edgeThreshold)
+            {
+                targetPosition += Vector3.up * moveSpeed * Time.deltaTime;
+            }
+        }
         
-
-        if (mousePosition.x < edgeThreshold)
-        {
-            targetPosition += Vector3.left * moveSpeed * Time.deltaTime;
-        }
-
-        if (mousePosition.x > Screen.width - edgeThreshold)
-        {
-            targetPosition += Vector3.right * moveSpeed * Time.deltaTime;
-        }
-
-        if (mousePosition.y < edgeThreshold)
-        {
-            targetPosition += Vector3.down * moveSpeed * Time.deltaTime;
-        }
-
-        if (mousePosition.y > Screen.height - edgeThreshold)
-        {
-            targetPosition += Vector3.up * moveSpeed * Time.deltaTime;
-        }
         if (Input.GetMouseButtonDown(0) && MenuManager.activePanel.name == "IngamePanel")
         {
              isDragging = true;
