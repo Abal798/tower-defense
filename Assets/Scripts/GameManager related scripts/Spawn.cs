@@ -39,6 +39,12 @@ public class Spawn : MonoBehaviour
         victoryPanel.SetActive(false);
     }
 
+    private void FixedUpdate()
+    {
+        monstersAlive.RemoveAll(monster => monster == null);
+        if(RM.wave >= endWaveNumber && monstersAlive.Count == 0) victoryPanel.SetActive(true);
+    }
+
     public void ButtonFonctionLaunchWave()
     {
         CleanMonstersAlive();
