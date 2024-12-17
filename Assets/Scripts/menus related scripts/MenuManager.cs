@@ -16,6 +16,7 @@ public class MenuManager : MonoBehaviour
     public GameObject keyRebindingPanel;
     public GameObject gameStatsPanel;
     public GameObject pausePanel;
+    public GameObject SoulConverterPanel;
     public GameObject IconFeu;
     public GameObject IconEau;
     public GameObject IconTerre;
@@ -42,6 +43,7 @@ public class MenuManager : MonoBehaviour
     void Start()
     {
         ingamePanel.SetActive(true);
+        SoulConverterPanel.SetActive(false);
         alchimiePanel.SetActive(false);
         keyRebindingPanel.SetActive(false);
         gameStatsPanel.SetActive(false);
@@ -141,15 +143,30 @@ public class MenuManager : MonoBehaviour
         }
         
     }
+    
+    public void GoToSoulConverterPanel()
+    {
+        if (SoulConverterPanel.activeSelf == false)
+        {
+            SoulConverterPanel.SetActive(true);
+            activePanel = SoulConverterPanel;
+        }
+        else
+        {
+            SoulConverterPanel.SetActive(false);
+            activePanel = ingamePanel;
+        }
+        
+    }
 
     public void Quit()
     {
         Application.Quit();
     }
 
-    public void QuitKeyPanel()
+    public void QuitThisPanel(GameObject panel)
     {
-        pausePanel.SetActive(true);
+        panel.SetActive(true);
         keyRebindingPanel.SetActive(false);
         activePanel = ingamePanel;
     }
