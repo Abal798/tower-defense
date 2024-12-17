@@ -106,16 +106,19 @@ public class MenuManager : MonoBehaviour
                 gameStatsPanel.SetActive(!gameStatsPanel.activeSelf);
                 EndGameStats.EGS.DisplayGameStats();
             }
+            
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                pausePanel.SetActive(true);
+                activePanel = pausePanel;
+            }
         }
 
         if (activePanel != ingamePanel)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                ingamePanel.SetActive(true);
-                alchimiePanel.SetActive(false);
-                keyRebindingPanel.SetActive(false);
-                pausePanel.SetActive(false);
+                QuitThisPanel(activePanel);
                 activePanel = ingamePanel;
             }
         }
@@ -134,6 +137,7 @@ public class MenuManager : MonoBehaviour
         if (alchimiePanel.activeSelf == false)
         {
             alchimiePanel.SetActive(true);
+            SoulConverterPanel.SetActive(false);
             activePanel = alchimiePanel;
         }
         else
@@ -148,6 +152,7 @@ public class MenuManager : MonoBehaviour
     {
         if (SoulConverterPanel.activeSelf == false)
         {
+            alchimiePanel.SetActive(false);
             SoulConverterPanel.SetActive(true);
             activePanel = SoulConverterPanel;
         }
@@ -166,8 +171,8 @@ public class MenuManager : MonoBehaviour
 
     public void QuitThisPanel(GameObject panel)
     {
-        panel.SetActive(true);
-        keyRebindingPanel.SetActive(false);
+        panel.SetActive(false);
+        ingamePanel.SetActive(true);
         activePanel = ingamePanel;
     }
 

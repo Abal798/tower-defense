@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,11 +7,15 @@ using UnityEngine.Events;
 
 public class UIManager : MonoBehaviour
 {
-    
+    public static UIManager UIM;
     public TextMeshProUGUI alertDisplayText;
     public float alertDuration = 5f;
 
-    
+    private void Awake()
+    {
+        UIM = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
