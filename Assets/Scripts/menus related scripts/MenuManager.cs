@@ -15,6 +15,8 @@ public class MenuManager : MonoBehaviour
     public GameObject alchimiePanel;
     public GameObject keyRebindingPanel;
     public GameObject gameStatsPanel;
+    public GameObject pausePanel;
+    public GameObject SoulConverterPanel;
     public GameObject IconFeu;
     public GameObject IconEau;
     public GameObject IconTerre;
@@ -31,6 +33,8 @@ public class MenuManager : MonoBehaviour
 
     public KeyRebinding keyRebinder;
     public GameManager gameManager;
+    
+    public bool isPaused;
 
     private void Awake()
     {
@@ -41,14 +45,17 @@ public class MenuManager : MonoBehaviour
     void Start()
     {
         ingamePanel.SetActive(true);
+        SoulConverterPanel.SetActive(false);
         alchimiePanel.SetActive(false);
         keyRebindingPanel.SetActive(false);
         gameStatsPanel.SetActive(false);
+        pausePanel.SetActive(false);
         activePanel = ingamePanel;
     }
     
     void Update()
     {
+        Debug.Log("ahhhhhhhhhh" + pausePanel.activeSelf);
         //Debug.Log("active panel " + activePanel);
         
         fireSoulIngameDisplay.text = "" + RM.fireSoul;
@@ -102,18 +109,28 @@ public class MenuManager : MonoBehaviour
                 gameStatsPanel.SetActive(!gameStatsPanel.activeSelf);
                 EndGameStats.EGS.DisplayGameStats();
             }
+            
+            
         }
 
-        if (activePanel != ingamePanel)
+        if (activePanel == ingamePanel)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                ingamePanel.SetActive(true);
-                alchimiePanel.SetActive(false);
-                keyRebindingPanel.SetActive(false);
-                activePanel = ingamePanel;
+                if (isPaused)
+                {
+                    ResumeGame();
+
+                }
+                else
+                {
+                    PauseGame();
+
+                }
             }
         }
+
+
 
         if (Input.GetMouseButtonDown(1) && activePanel == ingamePanel)
         {
@@ -126,9 +143,34 @@ public class MenuManager : MonoBehaviour
 
     public void GoToAlchimiePanel()
     {
-        ingamePanel.SetActive(false);
-        alchimiePanel.SetActive(true);
-        activePanel = alchimiePanel;
+        if (alchimiePanel.activeSelf == false)
+        {
+            alchimiePanel.SetActive(true);
+            SoulConverterPanel.SetActive(false);
+            activePanel = alchimiePanel;
+        }
+        else
+        {
+            alchimiePanel.SetActive(false);
+            activePanel = ingamePanel;
+        }
+        
+    }
+    
+    public void GoToSoulConverterPanel()
+    {
+        if (SoulConverterPanel.activeSelf == false)
+        {
+            alchimiePanel.SetActive(false);
+            SoulConverterPanel.SetActive(true);
+            activePanel = SoulConverterPanel;
+        }
+        else
+        {
+            SoulConverterPanel.SetActive(false);
+            activePanel = ingamePanel;
+        }
+        
     }
 
     public void Quit()
@@ -136,16 +178,17 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void QuitKeyPanel()
+    public void QuitThisPanel(GameObject panel)
     {
+        panel.SetActive(false);
         ingamePanel.SetActive(true);
-        keyRebindingPanel.SetActive(false);
         activePanel = ingamePanel;
     }
 
     public void GoToKeyPanel()
     {
         ingamePanel.SetActive(false);
+        pausePanel.SetActive(false);
         keyRebindingPanel.SetActive(true);
         activePanel = keyRebindingPanel;
     }
@@ -159,4 +202,30 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void PauseGame()
+    {
+        pausePanel.SetActive(true);
+        ingamePanel.SetActive(false);
+        Time.timeScale = 0;
+        isPaused = true;
+        activePanel = pausePanel;
+    }
+
+    public void ResumeGame()
+    {
+        QuitThisPanel(pausePanel);
+        Time.timeScale = (gameManager.isInFstMode) ? gameManager.accelerationFactor : 1;
+        isPaused = false;
+        activePanel = ingamePanel;
+    }
+
+    public void MainMenu()
+    {
+        Time.timeScale = 1;
+        isPaused = false;
+        SceneManager.LoadScene(0);
+        
+    }
+
 }
