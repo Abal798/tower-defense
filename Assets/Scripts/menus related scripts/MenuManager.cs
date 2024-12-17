@@ -120,12 +120,12 @@ public class MenuManager : MonoBehaviour
                 if (isPaused)
                 {
                     ResumeGame();
-                    Debug.Log("je reprend le jeu");
+
                 }
                 else
                 {
                     PauseGame();
-                    Debug.Log("je met en pause");
+
                 }
             }
         }
@@ -210,7 +210,6 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 0;
         isPaused = true;
         activePanel = pausePanel;
-        Debug.Log("le jeu est en pause");
     }
 
     public void ResumeGame()
@@ -219,7 +218,6 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = (gameManager.isInFstMode) ? gameManager.accelerationFactor : 1;
         isPaused = false;
         activePanel = ingamePanel;
-        Debug.Log("le jeu est repris");
     }
 
     public void MainMenu()
