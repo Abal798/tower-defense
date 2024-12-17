@@ -33,6 +33,8 @@ public class MenuManager : MonoBehaviour
 
     public KeyRebinding keyRebinder;
     public GameManager gameManager;
+    
+    public bool isPaused;
 
     private void Awake()
     {
@@ -53,6 +55,7 @@ public class MenuManager : MonoBehaviour
     
     void Update()
     {
+        Debug.Log("ahhhhhhhhhh" + pausePanel.activeSelf);
         //Debug.Log("active panel " + activePanel);
         
         fireSoulIngameDisplay.text = "" + RM.fireSoul;
@@ -107,21 +110,27 @@ public class MenuManager : MonoBehaviour
                 EndGameStats.EGS.DisplayGameStats();
             }
             
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                pausePanel.SetActive(true);
-                activePanel = pausePanel;
-            }
+            
         }
 
-        if (activePanel != ingamePanel)
+        if (activePanel == ingamePanel)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                QuitThisPanel(activePanel);
-                activePanel = ingamePanel;
+                if (isPaused)
+                {
+                    ResumeGame();
+
+                }
+                else
+                {
+                    PauseGame();
+
+                }
             }
         }
+
+
 
         if (Input.GetMouseButtonDown(1) && activePanel == ingamePanel)
         {
@@ -193,4 +202,30 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void PauseGame()
+    {
+        pausePanel.SetActive(true);
+        ingamePanel.SetActive(false);
+        Time.timeScale = 0;
+        isPaused = true;
+        activePanel = pausePanel;
+    }
+
+    public void ResumeGame()
+    {
+        QuitThisPanel(pausePanel);
+        Time.timeScale = (gameManager.isInFstMode) ? gameManager.accelerationFactor : 1;
+        isPaused = false;
+        activePanel = ingamePanel;
+    }
+
+    public void MainMenu()
+    {
+        Time.timeScale = 1;
+        isPaused = false;
+        SceneManager.LoadScene(0);
+        
+    }
+
 }
