@@ -55,6 +55,7 @@ public class MenuManager : MonoBehaviour
     
     void Update()
     {
+        Debug.Log("ahhhhhhhhhh" + pausePanel.activeSelf);
         //Debug.Log("active panel " + activePanel);
         
         fireSoulIngameDisplay.text = "" + RM.fireSoul;
@@ -129,14 +130,7 @@ public class MenuManager : MonoBehaviour
             }
         }
 
-        if (activePanel != ingamePanel)
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                QuitThisPanel(activePanel);
-                activePanel = ingamePanel;
-            }
-        }
+
 
         if (Input.GetMouseButtonDown(1) && activePanel == ingamePanel)
         {
