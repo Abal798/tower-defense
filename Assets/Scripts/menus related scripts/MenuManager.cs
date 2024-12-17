@@ -33,6 +33,8 @@ public class MenuManager : MonoBehaviour
 
     public KeyRebinding keyRebinder;
     public GameManager gameManager;
+    
+    public bool isPaused;
 
     private void Awake()
     {
@@ -107,10 +109,23 @@ public class MenuManager : MonoBehaviour
                 EndGameStats.EGS.DisplayGameStats();
             }
             
+            
+        }
+
+        if (activePanel == ingamePanel)
+        {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                pausePanel.SetActive(true);
-                activePanel = pausePanel;
+                if (isPaused)
+                {
+                    ResumeGame();
+                    Debug.Log("je reprend le jeu");
+                }
+                else
+                {
+                    PauseGame();
+                    Debug.Log("je met en pause");
+                }
             }
         }
 
@@ -193,4 +208,32 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void PauseGame()
+    {
+        pausePanel.SetActive(true);
+        ingamePanel.SetActive(false);
+        Time.timeScale = 0;
+        isPaused = true;
+        activePanel = pausePanel;
+        Debug.Log("le jeu est en pause");
+    }
+
+    public void ResumeGame()
+    {
+        QuitThisPanel(pausePanel);
+        Time.timeScale = (gameManager.isInFstMode) ? gameManager.accelerationFactor : 1;
+        isPaused = false;
+        activePanel = ingamePanel;
+        Debug.Log("le jeu est repris");
+    }
+
+    public void MainMenu()
+    {
+        Time.timeScale = 1;
+        isPaused = false;
+        SceneManager.LoadScene(0);
+        
+    }
+
 }
