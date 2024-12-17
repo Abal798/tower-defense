@@ -14,6 +14,7 @@ public class MenuManager : MonoBehaviour
     public GameObject ingamePanel;
     public GameObject alchimiePanel;
     public GameObject keyRebindingPanel;
+    public GameObject gameStatsPanel;
     public GameObject IconFeu;
     public GameObject IconEau;
     public GameObject IconTerre;
@@ -42,6 +43,7 @@ public class MenuManager : MonoBehaviour
         ingamePanel.SetActive(true);
         alchimiePanel.SetActive(false);
         keyRebindingPanel.SetActive(false);
+        gameStatsPanel.SetActive(false);
         activePanel = ingamePanel;
     }
     
@@ -93,6 +95,12 @@ public class MenuManager : MonoBehaviour
             if (Input.GetKeyDown(keyRebinder.GetKeyForAction("shortcutPotion3")))
             {
                 RM.gameObject.GetComponent<SpellPlacingScript>().Spell3();
+            }
+
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                gameStatsPanel.SetActive(!gameStatsPanel.activeSelf);
+                EndGameStats.EGS.DisplayGameStats();
             }
         }
 

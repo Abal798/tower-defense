@@ -3950,7 +3950,7 @@ MonoBehaviour:
   basicFireDosePrice: 60
   basicWaterDosePrice: 60
   basicEarthDosePrice: 60
-  spellAugmentationPriceFactor: 1.2
+  spellAugmentationPriceFactor: 5
   fireSoul: 190
   waterSoul: 190
   plantSoul: 190

@@ -43,7 +43,6 @@ public class Spawn : MonoBehaviour
     {
         monstersAlive.RemoveAll(monster => monster == null);
         if(RM.wave >= endWaveNumber && monstersAlive.Count == 0) victoryPanel.SetActive(true);
-        EndGameStats.EGS.displayGameStats();
     }
 
     public void ButtonFonctionLaunchWave()

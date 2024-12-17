@@ -36,7 +36,7 @@ public class BaseScript : MonoBehaviour
             panelGameOver.SetActive(true);
             panelSort.SetActive(false);
             ingamePanel.SetActive(false);
-            EndGameStats.EGS.displayGameStats();
+            EndGameStats.EGS.DisplayGameStats();
             
 
         }
