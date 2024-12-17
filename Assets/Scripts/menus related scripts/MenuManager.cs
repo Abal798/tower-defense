@@ -15,6 +15,7 @@ public class MenuManager : MonoBehaviour
     public GameObject alchimiePanel;
     public GameObject keyRebindingPanel;
     public GameObject gameStatsPanel;
+    public GameObject pausePanel;
     public GameObject IconFeu;
     public GameObject IconEau;
     public GameObject IconTerre;
@@ -44,6 +45,7 @@ public class MenuManager : MonoBehaviour
         alchimiePanel.SetActive(false);
         keyRebindingPanel.SetActive(false);
         gameStatsPanel.SetActive(false);
+        pausePanel.SetActive(false);
         activePanel = ingamePanel;
     }
     
@@ -111,6 +113,7 @@ public class MenuManager : MonoBehaviour
                 ingamePanel.SetActive(true);
                 alchimiePanel.SetActive(false);
                 keyRebindingPanel.SetActive(false);
+                pausePanel.SetActive(false);
                 activePanel = ingamePanel;
             }
         }
@@ -126,9 +129,17 @@ public class MenuManager : MonoBehaviour
 
     public void GoToAlchimiePanel()
     {
-        ingamePanel.SetActive(false);
-        alchimiePanel.SetActive(true);
-        activePanel = alchimiePanel;
+        if (alchimiePanel.activeSelf == false)
+        {
+            alchimiePanel.SetActive(true);
+            activePanel = alchimiePanel;
+        }
+        else
+        {
+            alchimiePanel.SetActive(false);
+            activePanel = ingamePanel;
+        }
+        
     }
 
     public void Quit()
@@ -138,7 +149,7 @@ public class MenuManager : MonoBehaviour
 
     public void QuitKeyPanel()
     {
-        ingamePanel.SetActive(true);
+        pausePanel.SetActive(true);
         keyRebindingPanel.SetActive(false);
         activePanel = ingamePanel;
     }
@@ -146,6 +157,7 @@ public class MenuManager : MonoBehaviour
     public void GoToKeyPanel()
     {
         ingamePanel.SetActive(false);
+        pausePanel.SetActive(false);
         keyRebindingPanel.SetActive(true);
         activePanel = keyRebindingPanel;
     }

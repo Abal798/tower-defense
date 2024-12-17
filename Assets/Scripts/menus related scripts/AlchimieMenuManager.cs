@@ -9,6 +9,8 @@ public class AlchimieMenuManager : MonoBehaviour
 
     public GameObject ingamePanel;
     public GameObject alchimiePanel;
+
+    public Animation openMenu;
     
     // Start is called before the first frame update
     private void Awake()
@@ -29,5 +31,10 @@ public class AlchimieMenuManager : MonoBehaviour
         ingamePanel.SetActive(true);
         alchimiePanel.SetActive(false);
         MenuManager.activePanel = ingamePanel;
+    }
+
+    private void OnEnable()
+    {
+        openMenu.Play();
     }
 }
