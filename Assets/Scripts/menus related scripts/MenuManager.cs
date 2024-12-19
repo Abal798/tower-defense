@@ -228,4 +228,9 @@ public class MenuManager : MonoBehaviour
         
     }
 
+    public void TimeScaleActive()
+    {
+        Time.timeScale = gameManager.isInFstMode ? gameManager.accelerationFactor : 1;
+    }
+
 }
