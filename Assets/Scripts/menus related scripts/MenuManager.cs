@@ -103,13 +103,6 @@ public class MenuManager : MonoBehaviour
             {
                 RM.gameObject.GetComponent<SpellPlacingScript>().Spell3();
             }
-
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                gameStatsPanel.SetActive(!gameStatsPanel.activeSelf);
-                EndGameStats.EGS.DisplayGameStats();
-            }
-            
             
         }
 
@@ -129,6 +122,11 @@ public class MenuManager : MonoBehaviour
                 }
             }
         }
+        
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            OpenStats();
+        }
 
 
 
@@ -139,6 +137,12 @@ public class MenuManager : MonoBehaviour
                 tower.Value.GetComponent<TowerRemover>().UnSelectTower();
             }
         }
+    }
+
+    public void OpenStats()
+    {
+        gameStatsPanel.SetActive(!gameStatsPanel.activeSelf);
+        EndGameStats.EGS.DisplayGameStats();
     }
 
     public void GoToAlchimiePanel()
@@ -172,6 +176,8 @@ public class MenuManager : MonoBehaviour
         }
         
     }
+
+
 
     public void Quit()
     {
