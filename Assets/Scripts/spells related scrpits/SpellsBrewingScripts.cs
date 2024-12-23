@@ -52,7 +52,7 @@ public class SpellsBrewingScripts : MonoBehaviour
     }
 
 
-    void Update()
+    private void Update()
     {
         fireSoulDisplay.text = "fire : " + RM.fireSoul.ToString();
         waterSoulDisplay.text = "water : " + RM.waterSoul.ToString();
@@ -251,7 +251,7 @@ public class SpellsBrewingScripts : MonoBehaviour
         }
     }
 
-    void recipieDisplayAdd(int i)
+    private void recipieDisplayAdd(int i)
     {
         if (brewedSpell.Count == 1)
         {
@@ -285,8 +285,8 @@ public class SpellsBrewingScripts : MonoBehaviour
             ingredientThree[i].SetActive(true);
         }
     }
-    
-    void RecipieDisplayReset()
+
+    private void RecipieDisplayReset()
     {
         foreach (var VARIABLE in ingredientOne)
         {
@@ -304,7 +304,7 @@ public class SpellsBrewingScripts : MonoBehaviour
         currentSpellShape = null;
     }
 
-    void RecalculateSpellPrice()
+    private void RecalculateSpellPrice()
     {
         fireDosePrice = Mathf.RoundToInt((fireDoseUtilisation * RM.spellAugmentationPriceFactor) + RM.basicFireDosePrice);
         waterDosePrice = Mathf.RoundToInt((waterDoseUtilisation * RM.spellAugmentationPriceFactor) + RM.basicWaterDosePrice);

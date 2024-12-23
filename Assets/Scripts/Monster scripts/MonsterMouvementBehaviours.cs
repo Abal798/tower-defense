@@ -48,7 +48,7 @@ public class MonsterMouvementBehaviours : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
         if (worldPositions == null || worldPositions.Count == 0) return;
 
@@ -101,7 +101,7 @@ public class MonsterMouvementBehaviours : MonoBehaviour
         }
     }
 
-    IEnumerator SlowEffect(float time, float slowAmount)
+    private IEnumerator SlowEffect(float time, float slowAmount)
     {
         float originalSpeed = speed;
         speed = slowAmount * speed;

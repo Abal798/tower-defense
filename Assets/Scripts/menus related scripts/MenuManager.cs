@@ -42,7 +42,7 @@ public class MenuManager : MonoBehaviour
     }
 
 
-    void Start()
+    private void Start()
     {
         ingamePanel.SetActive(true);
         SoulConverterPanel.SetActive(false);
@@ -52,8 +52,8 @@ public class MenuManager : MonoBehaviour
         pausePanel.SetActive(false);
         activePanel = ingamePanel;
     }
-    
-    void Update()
+
+    private void Update()
     {
         Debug.Log("ahhhhhhhhhh" + pausePanel.activeSelf);
         //Debug.Log("active panel " + activePanel);

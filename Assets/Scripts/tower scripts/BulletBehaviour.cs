@@ -11,7 +11,7 @@ public class BulletBehaviour : MonoBehaviour
     public GameObject target;
     public List<int> bulletElements = new List<int>();
 
-    void Update()
+    private void Update()
     {
         if (target != null)
         {
@@ -22,8 +22,8 @@ public class BulletBehaviour : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
-    void MoveTowardsTarget()
+
+    private void MoveTowardsTarget()
     {
         Vector3 TargetDirection = new Vector3(transform.position.x - target.transform.position.x,
             transform.position.y - target.transform.position.y, 0).normalized;

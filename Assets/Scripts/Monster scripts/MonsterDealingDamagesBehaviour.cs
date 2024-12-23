@@ -26,7 +26,7 @@ public class MonsterDealingDamagesBehaviour : MonoBehaviour
         monsterMouvementBehaviours = GetComponent<MonsterMouvementBehaviours>();
     }
 
-    void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.transform.parent != null)
         {
@@ -48,7 +48,7 @@ public class MonsterDealingDamagesBehaviour : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         
         if (justHited == false && targetTower && tower != null)
@@ -91,8 +91,8 @@ public class MonsterDealingDamagesBehaviour : MonoBehaviour
             monsterMouvementBehaviours.speed = MS.basicSpeed;
         }
     }
-    
-    IEnumerator Hited()
+
+    private IEnumerator Hited()
     {
         
         yield return new WaitForSeconds(1f);

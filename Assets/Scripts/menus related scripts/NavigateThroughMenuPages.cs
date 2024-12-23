@@ -6,10 +6,10 @@ public class NavigateThroughMenuPages : MonoBehaviour
 {
     public List<GameObject> pages = new List<GameObject>();
     private int index = 0;
-    public bool loop = false;
+    [SerializeField]private bool loop = false;
     
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         foreach (var page in pages)
         {
@@ -19,7 +19,7 @@ public class NavigateThroughMenuPages : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         
     }

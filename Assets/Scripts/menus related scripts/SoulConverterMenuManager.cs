@@ -19,7 +19,7 @@ public class SoulConverterMenuManager : MonoBehaviour
     
     
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         
     }
@@ -31,7 +31,7 @@ public class SoulConverterMenuManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         fireSoulAmount.text = "" + RM.fireSoul;
         waterSoulAmount.text = "" + RM.waterSoul;

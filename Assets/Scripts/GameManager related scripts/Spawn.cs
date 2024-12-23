@@ -113,7 +113,7 @@ public class Spawn : MonoBehaviour
         
     }
 
-    Vector3 GetRandomPositionOnSquareEdge()
+    private Vector3 GetRandomPositionOnSquareEdge()
     {
         float halfSize = squareSize / 2;
         int side = Random.Range(0, 4);
@@ -128,7 +128,7 @@ public class Spawn : MonoBehaviour
         };
     }
 
-    int GetMonsterType()
+    private int GetMonsterType()
     {
         return Random.Range(0, Mathf.Round(1 / chanceDeSpawnElementaireEntreZeroEtUn)) == 1
             ? Random.Range(1, 4)

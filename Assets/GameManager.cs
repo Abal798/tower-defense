@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public Sprite[] fastForwardSprites;
     
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         Cursor.lockState = CursorLockMode.Confined;
     }

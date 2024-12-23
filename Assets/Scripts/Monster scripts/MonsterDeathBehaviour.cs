@@ -28,9 +28,9 @@ public class MonsterDeathBehaviour : MonoBehaviour
     private float damageFactorMalus;
 
     private List<int> elementTouched = new List<int>();
-    
-    
-    void Start()
+
+
+    private void Start()
     {
         damageFactorbonus = MS.damageFactorbonus;
         damageFactorMalus = MS.damageFactorMalus;
@@ -84,7 +84,7 @@ public class MonsterDeathBehaviour : MonoBehaviour
         }
     }
 
-    void ElementTouchedCheck(GameObject bullet)
+    private void ElementTouchedCheck(GameObject bullet)
     {
         foreach (var elements in bullet.gameObject.GetComponent<BulletBehaviour>().bulletElements)
         {
@@ -94,8 +94,8 @@ public class MonsterDeathBehaviour : MonoBehaviour
             }
         }
     }
-    
-    void Death()
+
+    private void Death()
     {
         {
             AudioManager.AM.PlaySfx(AudioManager.AM.enemyDie);
@@ -136,7 +136,7 @@ public class MonsterDeathBehaviour : MonoBehaviour
         }
     }
 
-    IEnumerator Dot( float dammages)
+    private IEnumerator Dot( float dammages)
     {
         while (healthPoints > 0)
         {
@@ -151,7 +151,7 @@ public class MonsterDeathBehaviour : MonoBehaviour
         }
     }
 
-    void TakeDamages(Collider2D other)
+    private void TakeDamages(Collider2D other)
     {
         float damages = other.gameObject.GetComponent<BulletBehaviour>().dammage;
         List<int> bulletType = other.gameObject.GetComponent<BulletBehaviour>().bulletElements;

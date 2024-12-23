@@ -20,9 +20,9 @@ public class TowerShoot : MonoBehaviour
     public float dammage;
     public float bulletSpeed;
     public float cadence;
-    
-    
-    void Start()
+
+
+    private void Start()
     {
         UpdateStats();
         StartCoroutine(ShootAtInterval());
@@ -37,8 +37,8 @@ public class TowerShoot : MonoBehaviour
         cadence = TS.cadence;
         detectionRadius = TS.radius;
     }
-    
-    void Update()
+
+    private void Update()
     {
 
         FindClosestTargetWithCircleCast();
@@ -49,7 +49,8 @@ public class TowerShoot : MonoBehaviour
         }
         
     }
-    void FindClosestTargetWithCircleCast()
+
+    private void FindClosestTargetWithCircleCast()
     {
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, detectionRadius, ennemyLayer);
         
@@ -79,8 +80,8 @@ public class TowerShoot : MonoBehaviour
             targetDetected = true;
         }
     }
-    
-    void RotateTowardsTarget()
+
+    private void RotateTowardsTarget()
     {
         Vector2 direction = (target.transform.position - towerSprite.transform.position).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -88,10 +89,9 @@ public class TowerShoot : MonoBehaviour
         Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, angle));
         towerSprite.transform.rotation = Quaternion.Slerp(towerSprite.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
-    
-    
 
-    void Shoot()
+
+    private void Shoot()
     {
         if (target != null)
         {
@@ -109,8 +109,8 @@ public class TowerShoot : MonoBehaviour
             Destroy(newBullet, 5f);
         }
     }
-    
-    IEnumerator ShootAtInterval()
+
+    private IEnumerator ShootAtInterval()
     {
         
         while (true)

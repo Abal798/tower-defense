@@ -107,7 +107,7 @@ public class Pathfinding : MonoBehaviour
         }
     }
 
-    void AddNeighborToVisit(Vector3Int currentCell, bool doColor)
+    private void AddNeighborToVisit(Vector3Int currentCell, bool doColor)
     {
         InsertTileInToVisit(currentCell + new Vector3Int(0, 1, 0), currentCell, tilesToVisit[0].realWalkingCost, doColor);
         InsertTileInToVisit(currentCell + new Vector3Int(1, 0, 0), currentCell, tilesToVisit[0].realWalkingCost, doColor);
@@ -119,7 +119,7 @@ public class Pathfinding : MonoBehaviour
         InsertTileInToVisit(currentCell + new Vector3Int(1, -1, 0), currentCell, tilesToVisit[0].realWalkingCost, doColor);
     }
 
-    bool TileInToVisitList(Vector3Int cellToCheck)
+    private bool TileInToVisitList(Vector3Int cellToCheck)
     {
         foreach (TilesToVisitClass tileToVisit in tilesToVisit)
         {
@@ -130,7 +130,8 @@ public class Pathfinding : MonoBehaviour
         }
         return false;
     }
-    void RemoveTileFromToVisit(Vector3Int cellToCheck)
+
+    private void RemoveTileFromToVisit(Vector3Int cellToCheck)
     {
         foreach (TilesToVisitClass tileToVisit in tilesToVisit)
         {
@@ -142,7 +143,7 @@ public class Pathfinding : MonoBehaviour
         }
     }
 
-    void InsertTileInToVisit(Vector3Int cellToInsert, Vector3Int parentCell, int parentWalkingCost, bool doColor)
+    private void InsertTileInToVisit(Vector3Int cellToInsert, Vector3Int parentCell, int parentWalkingCost, bool doColor)
     {
         if(TilemapManager.TilemapInstance.tilemap.HasTile(cellToInsert) && !(visitedTiles.ContainsKey(cellToInsert)) && !TileInToVisitList(cellToInsert))
         {
@@ -193,7 +194,7 @@ public class Pathfinding : MonoBehaviour
         }
     }
 
-    void AddTileToVisited(Vector3Int tileToAdd, Vector3Int tileToAddPrevious, bool doColor)
+    private void AddTileToVisited(Vector3Int tileToAdd, Vector3Int tileToAddPrevious, bool doColor)
     {
         visitedTiles.Add(tileToAdd, tileToAddPrevious);
         if (doColor)

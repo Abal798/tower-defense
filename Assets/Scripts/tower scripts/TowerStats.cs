@@ -53,11 +53,9 @@ public class TowerStats : MonoBehaviour
     public GameObject upgradeParticules;
 
     public GameObject healthBar;
-    
-    
 
 
-    void Start()
+    private void Start()
     {
         RM = FindObjectOfType<RessourcesManager>();
         maxHealth = basicHealth;
@@ -68,9 +66,9 @@ public class TowerStats : MonoBehaviour
         Building.UpdatePathfinding.AddListener(CalculateSurroundings); //attention a cette ligne , elle fait recalculate stats a chaque fois qu'une nouvelle toure est posée, c'est chiant pour les visuels
         
     }
-    
-    
-    void OnDrawGizmosSelected()
+
+
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, radius);
