@@ -76,6 +76,7 @@ public class Spawn : MonoBehaviour
         {
             if (Random.Range(1, ennemyToSpawn+1) <= numberOfMonsterOne)
             {
+                BookManager.instance.monsterSwarmerEncountered = true;
                 numberOfMonsterOne--;
                 GameObject newMonster = Instantiate(monsterTypeOne, GetRandomPositionOnSquareEdge(), Quaternion.identity);
                 newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;
@@ -93,6 +94,7 @@ public class Spawn : MonoBehaviour
             }
             else
             {
+                BookManager.instance.monsterGiantEncountered = true;
                 numberOfMonsterTwo--;
                 GameObject newMonster = Instantiate(monsterTypeTwo, GetRandomPositionOnSquareEdge(), Quaternion.identity);
                 newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;

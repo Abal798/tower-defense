@@ -8,25 +8,21 @@ public class BookManager : MonoBehaviour
     public static BookManager instance;
     
     public GameObject[] paragraphs;
+    
+    public bool monsterSwarmerEncountered = false;
+    public bool monsterGiantEncountered = false;
+    
 
     private void Awake()
     {
         instance = this;
     }
 
-    private void OnEnable()
+    void OnEnable()
     {
-        
+        paragraphs[0].gameObject.SetActive(monsterSwarmerEncountered); 
+        paragraphs[1].gameObject.SetActive(monsterGiantEncountered); 
     }
-
-    private void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
-        
-    }
+    
+    
 }

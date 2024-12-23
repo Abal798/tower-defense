@@ -7,21 +7,13 @@ public class NavigateThroughMenuPages : MonoBehaviour
     public List<GameObject> pages = new List<GameObject>();
     private int index = 0;
     [SerializeField]private bool loop = false;
-    
-    // Start is called before the first frame update
-    private void Start()
+    public void OnEnable()
     {
         foreach (var page in pages)
         {
             page.SetActive(false);
         }
         pages[index].SetActive(true);
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
-        
     }
 
     public void NextPage()

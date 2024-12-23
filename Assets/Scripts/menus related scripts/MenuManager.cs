@@ -17,6 +17,7 @@ public class MenuManager : MonoBehaviour
     public GameObject gameStatsPanel;
     public GameObject pausePanel;
     public GameObject SoulConverterPanel;
+    public GameObject bookPanel;
     public GameObject IconFeu;
     public GameObject IconEau;
     public GameObject IconTerre;
@@ -50,14 +51,12 @@ public class MenuManager : MonoBehaviour
         keyRebindingPanel.SetActive(false);
         gameStatsPanel.SetActive(false);
         pausePanel.SetActive(false);
+        bookPanel.SetActive(false);
         activePanel = ingamePanel;
     }
 
     private void Update()
     {
-        Debug.Log("ahhhhhhhhhh" + pausePanel.activeSelf);
-        //Debug.Log("active panel " + activePanel);
-        
         fireSoulIngameDisplay.text = "" + RM.fireSoul;
         waterSoulIngameDisplay.text = "" + RM.waterSoul;
         earthSoulIngameDisplay.text = "" + RM.plantSoul;
@@ -121,6 +120,19 @@ public class MenuManager : MonoBehaviour
 
                 }
             }
+
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                GoToBookPanel();
+            }
+        }
+
+        if (activePanel == bookPanel)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                QuitThisPanel(bookPanel);
+            }
         }
         
         if (Input.GetKeyDown(KeyCode.S))
@@ -176,6 +188,15 @@ public class MenuManager : MonoBehaviour
         }
         
     }
+    
+    public void GoToBookPanel()
+    {
+        ingamePanel.SetActive(false);
+        pausePanel.SetActive(false);
+        bookPanel.SetActive(true);
+        activePanel = bookPanel;
+    }
+
 
 
 
