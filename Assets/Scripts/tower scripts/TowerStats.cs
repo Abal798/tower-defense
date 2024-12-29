@@ -116,7 +116,7 @@ public class TowerStats : MonoBehaviour
         previousMaxHealth = maxHealth;
 
         Vector3 radiusDisplayScale = new Vector3(radius * 2, radius * 2, 1);
-        transform.parent.GetChild(2).localScale = radiusDisplayScale;
+        transform.parent.GetChild(1).localScale = radiusDisplayScale;
         
         statsHasBeenRecalculated.Invoke();
 

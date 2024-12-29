@@ -146,7 +146,7 @@ public class MenuManager : MonoBehaviour
         {
             foreach (var tower in GridBuilding.current.listeTowerCo)
             {
-                tower.Value.GetComponent<TowerRemover>().UnSelectTower();
+                //tower.Value.GetComponent<TowerRemover>().UnSelectTower();
             }
         }
     }

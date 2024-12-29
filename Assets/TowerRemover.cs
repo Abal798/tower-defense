@@ -7,47 +7,55 @@ using UnityEngine;
 public class TowerRemover : MonoBehaviour
 {
     
+    private bool isDragging = true;
+    private GameObject overlayRemover;
 
-    private void Start()
+    private void Update()
     {
-        if (gameObject.CompareTag("Tower"))
+        if (isDragging && (overlayRemover != null))
         {
-            transform.GetChild(1).gameObject.SetActive(false);
-            transform.GetChild(2).gameObject.SetActive(false);
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.z = 0;
+
+            overlayRemover.transform.position = new Vector3(SnapToGrid(mousePosition).x + 0.5f,
+                SnapToGrid(mousePosition).y + 0.5f, mousePosition.z);
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                Vector3Int pos = (Vector3Int.FloorToInt(SnapToGrid(mousePosition)));
+                if (GridBuilding.current.listeTowerCo.ContainsKey(pos))
+                {
+                    Destroy(GridBuilding.current.listeTowerCo[pos]);
+                    GridBuilding.current.listeTowerCo.Remove(pos);
+                    GridBuilding.current.MainTilemap.SetTile(pos, GridBuilding.tileBases[TileType.Grass]);
+
+                }
+
+                Destroy(overlayRemover);
+
+            }
+
+
+            if (Input.GetMouseButtonDown(1))
+            {
+                Destroy(overlayRemover);
+            }
+
         }
-        
+
     }
 
-    private void OnMouseDown()
+    public void CreateOverlayRemover(GameObject overlayRemoverGameObject)
     {
-        if (MenuManager.activePanel.name != "IngamePanel") return;  
-        if (gameObject.CompareTag("Tower") && GridBuilding.current.tempEmpty())
-        {
-            SelectTower();
-        }
-        
+        overlayRemover = Instantiate(overlayRemoverGameObject, Input.mousePosition, Quaternion.identity);
 
-        if (!gameObject.CompareTag("Tower")&& GridBuilding.current.tempEmpty())
-        {
-            GridBuilding.current.MainTilemap.SetTile(Vector3Int.FloorToInt(transform.parent.position), GridBuilding.tileBases[TileType.Grass]);
-            GridBuilding.current.listeTowerCo.Remove(Vector3Int.FloorToInt(transform.parent.position));
-            Destroy(transform.parent.gameObject);
-            
-        }
     }
-
-    public void SelectTower()
+    private Vector3 SnapToGrid(Vector3 position)
     {
-        transform.GetChild(1).gameObject.SetActive(!transform.GetChild(1).gameObject.activeSelf);
-        transform.GetChild(2).gameObject.SetActive(!transform.GetChild(2).gameObject.activeSelf);
-        if(transform.GetChild(1).gameObject.activeSelf) AudioManager.AM.PlaySfx(AudioManager.AM.towerSelect);
+       
+        Vector3Int cellPosition = GridBuilding.current.gridLayout.WorldToCell(position);
+        return GridBuilding.current.gridLayout.CellToWorld(cellPosition);
     }
     
-    public void UnSelectTower()
-    {
-        transform.GetChild(1).gameObject.SetActive(false);
-        transform.GetChild(2).gameObject.SetActive(false);
-    }
-    
-    
+   
 }
