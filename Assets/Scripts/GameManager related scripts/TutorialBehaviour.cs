@@ -8,6 +8,7 @@ public class TutorialBehaviour : MonoBehaviour
 {
     
     public int tutorielStep;
+    
     public static bool isInTutorial = true;
     public static float tutorialTimeScale = 1f;
     
@@ -23,15 +24,6 @@ public class TutorialBehaviour : MonoBehaviour
         ModifySpeakingCharacter(1);
         HideCharacter(2);
         ShowTextBox();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            nextStep();
-        }
     }
     
     public void ShowTextBox() //affiche toute la textboxe , personnages compris
@@ -59,9 +51,20 @@ public class TutorialBehaviour : MonoBehaviour
         textBox.transform.position = newPosition;
     }
 
+    public void ModifyTextBoxScale(float newWidth = 650f, float newHeight = 155f) // modifie la taille de la zone de texte selon une largeure puis une hauteur. ne change pas l'emplacement des personnages
+    {
+        textBox.transform.GetChild(0).gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(newWidth, newHeight);
+        textBox.transform.GetChild(1).gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(newWidth, newHeight);
+    }
+
     public void DesactivateGameObject(GameObject gameObjectToDesactivate) //désactive n'importe quel gameobject, peut etre utilisé pour désactiver des boutons que le joueur pourrait activer avant d'y etre introduit
     {
         gameObjectToDesactivate.SetActive(false);
+    }
+
+    public void ActivateGameobject(GameObject gameObjectToActivate)
+    {
+        gameObjectToActivate.SetActive(true);
     }
 
     public void ModifySpeakingCharacter(int newSpeakingCharacter) //change l'intensité du personnage selectionné pour 1 et met en semi-transparent le deuxieme. le personnage de gauche est désigné par 1 et celui de droite par 2
@@ -104,13 +107,55 @@ public class TutorialBehaviour : MonoBehaviour
         else if (characterToShow == 2) textBox.transform.GetChild(3).gameObject.SetActive(true);
     }
 
-    public void modifyTimeScale(float newTimeScale = 1f) // change la vitesse de l'écoulement du temps (bypass l'option de fast mode du gameManager)
+    public void PlaceCharacterInCenter(int characterToPlace) // place le personnage désigné seul au centre de la textboxe. le personnage de gauche est désigné par 1 et celui de droite par 2
+    {
+        if (characterToPlace == 1)
+        {
+            HideCharacter(2);
+            textBox.transform.GetChild(2).position = new Vector3(textBox.transform.position.x, textBox.transform.position.y + 130, textBox.transform.position.z);
+        }
+        else
+        {
+            HideCharacter(1);
+            textBox.transform.GetChild(3).position = new Vector3(textBox.transform.position.x, textBox.transform.position.y + 130, textBox.transform.position.z);
+        }
+    }
+
+    public void BackToDialogue() //utile uniquement si on a emplyé la fonction "PlaceCharacterInCenter(characterToPlace)". replace les deux personnages a leurs positions d'origine
+    {
+        if (textBox.transform.GetChild(2).gameObject.activeSelf)
+        {
+            ShowCharacter(2);
+            textBox.transform.GetChild(2).position = new Vector3(textBox.transform.position.x - 255, textBox.transform.position.y + 130, textBox.transform.position.z);
+        }
+        
+        if (textBox.transform.GetChild(3).gameObject.activeSelf)
+        {
+            ShowCharacter(1);
+            textBox.transform.GetChild(3).position = new Vector3(textBox.transform.position.x + 255, textBox.transform.position.y + 130, textBox.transform.position.z);
+        }
+    }
+
+    public void ModifyTimeScale(float newTimeScale = 1f) // change la vitesse de l'écoulement du temps (bypass l'option de fast mode du gameManager)
     {
         tutorialTimeScale = newTimeScale;
         Time.timeScale = newTimeScale;
     }
 
-    public void nextStep()
+    public void StopTutorial()
+    {
+        isInTutorial = false;
+        HideTextBox();
+        tutorialTimeScale = 1f;
+    }
+
+    public void ResumeTutorial()
+    {
+        isInTutorial = true;
+        ShowTextBox();
+    }
+
+    public void NextStep()
     {
         tutorielStep++;
         switch (tutorielStep)
@@ -130,11 +175,21 @@ public class TutorialBehaviour : MonoBehaviour
                 break;
             
             case 3:
-                ModifyToCurentText();
+                ModifyToCurentText(); 
                 break;
             
             case 4:
-                HideTextBox();
+                ModifySpeakingCharacter(2);
+                ModifyToCurentText();
+                break;
+            
+            case 5:
+                ModifySpeakingCharacter(1);
+                ModifyToCurentText();
+                break;
+            
+            case 6:
+                StopTutorial();
                 break;
         }
     }
