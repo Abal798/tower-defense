@@ -68,7 +68,7 @@ public class MenuManager : MonoBehaviour
         
         waveDisplay.text = "wave : " + RM.wave;
 
-        if (ingamePanel.activeSelf)
+        if (ingamePanel.activeSelf && TutorialBehaviour.isInTutorial == false)
         {
             if (Input.GetKeyDown(keyRebinder.GetKeyForAction("shortcutAlchimiePanel")))
             {
@@ -142,13 +142,14 @@ public class MenuManager : MonoBehaviour
 
 
 
-        if (Input.GetMouseButtonDown(1) && activePanel == ingamePanel)
+        /*if (Input.GetMouseButtonDown(1) && activePanel == ingamePanel)
         {
             foreach (var tower in GridBuilding.current.listeTowerCo)
             {
                 //tower.Value.GetComponent<TowerRemover>().UnSelectTower();
             }
         }
+        */
     }
 
     public void OpenStats()
@@ -242,7 +243,11 @@ public class MenuManager : MonoBehaviour
     public void ResumeGame()
     {
         QuitThisPanel(pausePanel);
-        Time.timeScale = (gameManager.isInFstMode) ? gameManager.accelerationFactor : 1;
+        if (TutorialBehaviour.isInTutorial == false) Time.timeScale = (gameManager.isInFstMode) ? gameManager.accelerationFactor : 1;
+        else
+        {
+            Time.timeScale = TutorialBehaviour.tutorialTimeScale;
+        }
         isPaused = false;
         activePanel = ingamePanel;
     }
