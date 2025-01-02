@@ -17,6 +17,7 @@ public class TutorialBehaviour : MonoBehaviour
     public GameObject textBox;
     public GameObject highLighter;
     public Sprite[] tomSprites;
+    public Sprite[] arthurSprites;
     
     [Header("espace GD")]
     public GameObject bottomPosition;
@@ -164,12 +165,10 @@ public class TutorialBehaviour : MonoBehaviour
         }
     }
 
-    public void ChangeExpression(int characterToChange, int newExpression)
+    public void ChangeExpression(int characterToChange, int newExpression) // change l'expression de visage du personnage sélectionné selon un indice. les expressions sont dans l'ordre dans les dossiers dans lesquelles elles sont référencées. le personnage de gauche est désigné par 1 et celui de droite par 2
     {
-        if (characterToChange == 1)
-        {
-            textBox.transform.GetChild(2).gameObject.GetComponent<Image>().sprite = tomSprites[newExpression];
-        }
+        if (characterToChange == 1 && newExpression <= tomSprites.Length) textBox.transform.GetChild(2).gameObject.GetComponent<Image>().sprite = tomSprites[newExpression];
+        if (characterToChange == 2 && newExpression <= arthurSprites.Length) textBox.transform.GetChild(3).gameObject.GetComponent<Image>().sprite = arthurSprites[newExpression];
     }
 
     public void Highlight(Vector2 highLightPosition, Vector2 highLightScale) // affiche un cadre roue clignotant la la position indiquée en parametre 1 (coordonées x/y) et de la taille indiquée en parametre 2 (largeur/hauteur)
@@ -221,6 +220,7 @@ public class TutorialBehaviour : MonoBehaviour
                 break;
             
             case 1:
+                ChangeExpression(2, 2);
                 ShowCharacter(2);
                 ModifySpeakingCharacter(2);
                 ChangeExpression(1,10);
