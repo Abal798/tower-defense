@@ -56,6 +56,9 @@ public class Spawn : MonoBehaviour
         {
             numberOfMonsterOne = monsterOneWaveList[RM.wave];
             numberOfMonsterTwo = monsterTwoWaveList[RM.wave];
+            
+            //if(numberOfMonsterOne > 0) BookManager.instance.monsterSwarmerEncountered = true;
+            //if(numberOfMonsterTwo > 0) BookManager.instance.monsterGiantEncountered = true;
         }
         
         
@@ -76,7 +79,7 @@ public class Spawn : MonoBehaviour
         {
             if (Random.Range(1, ennemyToSpawn+1) <= numberOfMonsterOne)
             {
-                BookManager.instance.monsterSwarmerEncountered = true;
+                
                 numberOfMonsterOne--;
                 GameObject newMonster = Instantiate(monsterTypeOne, GetRandomPositionOnSquareEdge(), Quaternion.identity);
                 newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;
