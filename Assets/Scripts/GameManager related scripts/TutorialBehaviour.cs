@@ -12,6 +12,7 @@ public class TutorialBehaviour : MonoBehaviour
     public int tutorialStep = 0;
     
     public static bool isInTutorial;
+    public static bool cameraLocked = false;
     public static float tutorialTimeScale = 1f;
 
     public GameObject textBox;
@@ -194,6 +195,16 @@ public class TutorialBehaviour : MonoBehaviour
     {
         tutorialTimeScale = newTimeScale;
         Time.timeScale = newTimeScale;
+    }
+
+    public void LockCamera()
+    {
+        cameraLocked = true;
+    }
+
+    public void UnlockCamera()
+    {
+        cameraLocked = false;
     }
 
     public void StopTutorial() // arrete le tutoriel, retire la texteboxe, retire le carde clignotant, permet au joueur d'utiliser les raccourcis et le fast mode. réactive tout les gameObject du tableau "objectsToHideAndShow"

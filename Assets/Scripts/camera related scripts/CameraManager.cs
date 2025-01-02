@@ -44,7 +44,7 @@ public class CameraManager : MonoBehaviour
         moveSpeed = (camera.orthographicSize * 5) + speedFactor;
 
 
-        if (isDragging == false)
+        if (isDragging == false && TutorialBehaviour.cameraLocked == false)
         {
             if (mousePosition.x < edgeThreshold)
             {
@@ -91,7 +91,7 @@ public class CameraManager : MonoBehaviour
              mouseDelta = Vector2.zero;
         }
 
-        if (isDragging)
+        if (isDragging && TutorialBehaviour.cameraLocked == false)
         {
             targetPosition.x -= GetMouseDelta().x * (dragSpeedReductor * camera.orthographicSize);
             targetPosition.y -= GetMouseDelta().y * (dragSpeedReductor * camera.orthographicSize);
@@ -100,7 +100,8 @@ public class CameraManager : MonoBehaviour
         targetPosition.x = Mathf.Clamp(targetPosition.x, minPosition.x, maxPosition.x);
         targetPosition.y = Mathf.Clamp(targetPosition.y, minPosition.y, maxPosition.y);
 
-        float scrollInput = Input.GetAxis("Mouse ScrollWheel");
+        float scrollInput = 0f;
+        if (TutorialBehaviour.cameraLocked == false) scrollInput = Input.GetAxis("Mouse ScrollWheel");
         camera.orthographicSize -= scrollInput * zoomSpeed;
         camera.orthographicSize = Mathf.Clamp(camera.orthographicSize, minZoom, maxZoom);
 
