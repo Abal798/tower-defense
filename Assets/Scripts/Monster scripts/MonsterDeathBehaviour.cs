@@ -228,5 +228,6 @@ public class MonsterDeathBehaviour : MonoBehaviour
     {
         GameObject newFloatingText = Instantiate(monsterDamagesEffectPrefab, transform.position, Quaternion.identity, transform);
         newFloatingText.GetComponent<TextMesh>().text = damagesAmount.ToString();
+        newFloatingText.GetComponent<TextMesh>().color = new Color(255, 255 / damagesAmount, 0, 255);
     }
 }
