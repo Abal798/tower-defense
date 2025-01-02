@@ -23,7 +23,7 @@ public class KeyRebinding : MonoBehaviour
         LoadBindings();
     }
 
-    void Start()
+    private void Start()
     {
         
 
@@ -37,7 +37,7 @@ public class KeyRebinding : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
         // Si une réassignation est en cours, capter la touche pressée
         if (currentBinding != null)
@@ -58,7 +58,7 @@ public class KeyRebinding : MonoBehaviour
         }
     }
 
-    void StartRebind(KeyBinding binding)
+    private void StartRebind(KeyBinding binding)
     {
         // Indique que ce binding est en cours de modification
         currentBinding = binding;
@@ -72,7 +72,7 @@ public class KeyRebinding : MonoBehaviour
         return binding != null ? binding.key : KeyCode.None;
     }
 
-    void LoadBindings()
+    private void LoadBindings()
     {
         foreach (var binding in keyBindings)
         {
@@ -90,7 +90,7 @@ public class KeyRebinding : MonoBehaviour
         SaveBindings();
     }
 
-    void SaveBindings()
+    private void SaveBindings()
     {
         foreach (var binding in keyBindings)
         {

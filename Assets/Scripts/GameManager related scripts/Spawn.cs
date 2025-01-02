@@ -76,6 +76,7 @@ public class Spawn : MonoBehaviour
         {
             if (Random.Range(1, ennemyToSpawn+1) <= numberOfMonsterOne)
             {
+                BookManager.instance.monsterSwarmerEncountered = true;
                 numberOfMonsterOne--;
                 GameObject newMonster = Instantiate(monsterTypeOne, GetRandomPositionOnSquareEdge(), Quaternion.identity);
                 newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;
@@ -93,6 +94,7 @@ public class Spawn : MonoBehaviour
             }
             else
             {
+                BookManager.instance.monsterGiantEncountered = true;
                 numberOfMonsterTwo--;
                 GameObject newMonster = Instantiate(monsterTypeTwo, GetRandomPositionOnSquareEdge(), Quaternion.identity);
                 newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;
@@ -113,7 +115,7 @@ public class Spawn : MonoBehaviour
         
     }
 
-    Vector3 GetRandomPositionOnSquareEdge()
+    private Vector3 GetRandomPositionOnSquareEdge()
     {
         float halfSize = squareSize / 2;
         int side = Random.Range(0, 4);
@@ -128,7 +130,7 @@ public class Spawn : MonoBehaviour
         };
     }
 
-    int GetMonsterType()
+    private int GetMonsterType()
     {
         return Random.Range(0, Mathf.Round(1 / chanceDeSpawnElementaireEntreZeroEtUn)) == 1
             ? Random.Range(1, 4)

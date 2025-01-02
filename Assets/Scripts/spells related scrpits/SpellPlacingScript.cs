@@ -89,9 +89,9 @@ public class SpellPlacingScript : MonoBehaviour
             placementSpell3 = true;
         }
     }
-    
-    
-    void Update()
+
+
+    private void Update()
     {
         if (Input.GetAxis("Mouse ScrollWheel") != 0f)
         {

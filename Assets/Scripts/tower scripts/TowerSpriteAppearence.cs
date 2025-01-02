@@ -28,7 +28,7 @@ public class TowerSpriteAppearence : MonoBehaviour
         ChangeSprite();
     }
 
-    IEnumerator ScaleOverTime(float time, float scaleFactor,Transform objectToChange)
+    private IEnumerator ScaleOverTime(float time, float scaleFactor,Transform objectToChange)
     {
         originalSize = objectToChange.localScale;
         targetSize = originalSize * scaleFactor;
@@ -49,7 +49,7 @@ public class TowerSpriteAppearence : MonoBehaviour
         isChangingSize = false;
     }
 
-    void ChangeSprite()
+    private void ChangeSprite()
     {
         List<int> currentAmeliration = transform.GetComponentInParent<TowerStats>().ameliorations;
         if (currentAmeliration.Count == 1)

@@ -17,6 +17,7 @@ public class MenuManager : MonoBehaviour
     public GameObject gameStatsPanel;
     public GameObject pausePanel;
     public GameObject SoulConverterPanel;
+    public GameObject bookPanel;
     public GameObject IconFeu;
     public GameObject IconEau;
     public GameObject IconTerre;
@@ -42,7 +43,7 @@ public class MenuManager : MonoBehaviour
     }
 
 
-    void Start()
+    private void Start()
     {
         ingamePanel.SetActive(true);
         SoulConverterPanel.SetActive(false);
@@ -50,14 +51,12 @@ public class MenuManager : MonoBehaviour
         keyRebindingPanel.SetActive(false);
         gameStatsPanel.SetActive(false);
         pausePanel.SetActive(false);
+        bookPanel.SetActive(false);
         activePanel = ingamePanel;
     }
-    
-    void Update()
+
+    private void Update()
     {
-        Debug.Log("ahhhhhhhhhh" + pausePanel.activeSelf);
-        //Debug.Log("active panel " + activePanel);
-        
         fireSoulIngameDisplay.text = "" + RM.fireSoul;
         waterSoulIngameDisplay.text = "" + RM.waterSoul;
         earthSoulIngameDisplay.text = "" + RM.plantSoul;
@@ -69,7 +68,7 @@ public class MenuManager : MonoBehaviour
         
         waveDisplay.text = "wave : " + RM.wave;
 
-        if (ingamePanel.activeSelf)
+        if (ingamePanel.activeSelf && TutorialBehaviour.isInTutorial == false)
         {
             if (Input.GetKeyDown(keyRebinder.GetKeyForAction("shortcutAlchimiePanel")))
             {
@@ -103,13 +102,6 @@ public class MenuManager : MonoBehaviour
             {
                 RM.gameObject.GetComponent<SpellPlacingScript>().Spell3();
             }
-
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                gameStatsPanel.SetActive(!gameStatsPanel.activeSelf);
-                EndGameStats.EGS.DisplayGameStats();
-            }
-            
             
         }
 
@@ -128,17 +120,42 @@ public class MenuManager : MonoBehaviour
 
                 }
             }
+
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                GoToBookPanel();
+            }
+        }
+
+        if (activePanel == bookPanel)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                QuitThisPanel(bookPanel);
+            }
+        }
+        
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            OpenStats();
         }
 
 
 
-        if (Input.GetMouseButtonDown(1) && activePanel == ingamePanel)
+        /*if (Input.GetMouseButtonDown(1) && activePanel == ingamePanel)
         {
             foreach (var tower in GridBuilding.current.listeTowerCo)
             {
-                tower.Value.GetComponent<TowerRemover>().UnSelectTower();
+                //tower.Value.GetComponent<TowerRemover>().UnSelectTower();
             }
         }
+        */
+    }
+
+    public void OpenStats()
+    {
+        gameStatsPanel.SetActive(!gameStatsPanel.activeSelf);
+        EndGameStats.EGS.DisplayGameStats();
     }
 
     public void GoToAlchimiePanel()
@@ -172,6 +189,17 @@ public class MenuManager : MonoBehaviour
         }
         
     }
+    
+    public void GoToBookPanel()
+    {
+        ingamePanel.SetActive(false);
+        pausePanel.SetActive(false);
+        bookPanel.SetActive(true);
+        activePanel = bookPanel;
+    }
+
+
+
 
     public void Quit()
     {
@@ -215,7 +243,11 @@ public class MenuManager : MonoBehaviour
     public void ResumeGame()
     {
         QuitThisPanel(pausePanel);
-        Time.timeScale = (gameManager.isInFstMode) ? gameManager.accelerationFactor : 1;
+        if (TutorialBehaviour.isInTutorial == false) Time.timeScale = (gameManager.isInFstMode) ? gameManager.accelerationFactor : 1;
+        else
+        {
+            Time.timeScale = TutorialBehaviour.tutorialTimeScale;
+        }
         isPaused = false;
         activePanel = ingamePanel;
     }
@@ -226,6 +258,11 @@ public class MenuManager : MonoBehaviour
         isPaused = false;
         SceneManager.LoadScene(0);
         
+    }
+
+    public void TimeScaleActive()
+    {
+        Time.timeScale = gameManager.isInFstMode ? gameManager.accelerationFactor : 1;
     }
 
 }

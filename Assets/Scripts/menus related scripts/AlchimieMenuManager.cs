@@ -18,7 +18,7 @@ public class AlchimieMenuManager : MonoBehaviour
         alchimiePanel = gameObject;
     }
 
-    void Start()
+    private void Start()
     {
         
     }

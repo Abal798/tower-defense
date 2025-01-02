@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         alertDisplayText.gameObject.SetActive(false);
     }
@@ -29,7 +29,7 @@ public class UIManager : MonoBehaviour
         StartCoroutine(TextIsDisplayed());
     }
 
-    IEnumerator TextIsDisplayed()
+    private IEnumerator TextIsDisplayed()
     {
         yield return new WaitForSeconds(alertDuration);
         alertDisplayText.gameObject.SetActive(false);

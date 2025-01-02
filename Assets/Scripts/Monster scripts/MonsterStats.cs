@@ -18,7 +18,7 @@ public class MonsterStats : MonoBehaviour
         speed = basicSpeed;
     }
 
-    void Start()
+    private void Start()
     {
         Renderer renderer = GetComponent<Renderer>();
         speed = basicSpeed;

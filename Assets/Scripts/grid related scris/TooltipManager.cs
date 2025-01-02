@@ -11,13 +11,14 @@ public class TooltipManager : MonoBehaviour
     private float timer;
     private bool tooltipActive;
     public Tilemap mainTilemap;
-    void Start()
+
+    private void Start()
     {
         lastMousePosition = Input.mousePosition; 
         timer = 0f;                          
     }
-    
-    void Update()
+
+    private void Update()
     {
         if (MenuManager.activePanel.name != "IngamePanel")
         {

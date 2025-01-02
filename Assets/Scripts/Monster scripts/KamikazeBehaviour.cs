@@ -7,7 +7,7 @@ public class KamikazeBehaviour : MonsterMouvementBehaviours
     public bool objectifTargeted = false;
     public Vector3Int nearestTower;
 
-    void Start()
+    private void Start()
     {
         if (gridLayout == null)
         {
@@ -28,7 +28,7 @@ public class KamikazeBehaviour : MonsterMouvementBehaviours
         UpdateObjectif();
     }
 
-    void UpdateObjectif()
+    private void UpdateObjectif()
     {
         float minDistance = Mathf.Infinity;
 
@@ -57,7 +57,7 @@ public class KamikazeBehaviour : MonsterMouvementBehaviours
         UpdatePathfinding();
     }
 
-    void Update()
+    private void Update()
     {
         if (!GridBuilding.current.listeTowerCo.ContainsKey(objectif) || GridBuilding.current.listeTowerCo[objectif] == null)
         {
