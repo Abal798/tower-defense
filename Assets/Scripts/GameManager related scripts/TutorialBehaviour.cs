@@ -9,9 +9,9 @@ public class TutorialBehaviour : MonoBehaviour
 {
     
     [Header("GD ne pas toucher")]
-    public int tutorialStep;
+    public int tutorialStep = 0;
     
-    public static bool isInTutorial = true;
+    public static bool isInTutorial;
     public static float tutorialTimeScale = 1f;
 
     public GameObject textBox;
@@ -30,6 +30,7 @@ public class TutorialBehaviour : MonoBehaviour
     
     void Start() //étape 0 du tutoriel
     {
+        ResumeTutorial();
         MoveTextBox(bottomPosition.transform.position);
         ModifyTextBox(tutorialText[tutorialStep]);
         ModifySpeakingCharacter(1);

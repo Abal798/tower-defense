@@ -253,15 +253,15 @@ RectTransform:
   m_GameObject: {fileID: 330612895}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 394081086}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 255, y: 130}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 255, y: 175}
+  m_SizeDelta: {x: 100, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &330612897
 MonoBehaviour:
@@ -517,6 +517,58 @@ MonoBehaviour:
   tutorialStep: 0
   textBox: {fileID: 394081085}
   highLighter: {fileID: 1895679506}
+  tomSprites:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 5245a90754a952f4a982a44a5e79b950, type: 3}
+  - {fileID: 21300000, guid: ef943f52df447fb49ab0ab6fda28f2a3, type: 3}
+  - {fileID: 21300000, guid: c0aa05b3adfd07a48a08ebc42fc9deae, type: 3}
+  - {fileID: 21300000, guid: 261d87b4d7c4bd841aaf693035c8fb3d, type: 3}
+  - {fileID: 21300000, guid: 150a6aca4df28eb4e828bdbeb2b12c70, type: 3}
+  - {fileID: 21300000, guid: 5df56682a2cdd8243b6a904c1095ae9f, type: 3}
+  - {fileID: 21300000, guid: 5b57619d80550f542a1057ffda451768, type: 3}
+  - {fileID: 21300000, guid: 5793640bb3547c146b3d957b2475d86c, type: 3}
+  - {fileID: 21300000, guid: b9fb4aa098b3b1044a54143ab9af07fe, type: 3}
+  - {fileID: 21300000, guid: 7c294002d66c24a429a3399306dc0573, type: 3}
+  - {fileID: 21300000, guid: 85f0292e0e609e54c86f4093d9156866, type: 3}
+  - {fileID: 21300000, guid: a32ded7075e9a72438c9c2d3984badb9, type: 3}
+  - {fileID: 21300000, guid: 39b694f031c063d47808ad974b733016, type: 3}
+  - {fileID: 21300000, guid: 544e8e550a3ec314bbbe1f8c380e58c8, type: 3}
+  - {fileID: 21300000, guid: 00aa15f028218e74aa8477dabebc6533, type: 3}
+  - {fileID: 21300000, guid: e9ef773ae4478944d811cd87a5081dc3, type: 3}
+  - {fileID: 21300000, guid: 0e2466d0a91e81e41abeb4a4594437a5, type: 3}
+  - {fileID: 21300000, guid: d9262b359cf07ee48ab27f6e35e500e8, type: 3}
+  - {fileID: 21300000, guid: 92fbae88016083542b8cae03b5329e3a, type: 3}
+  - {fileID: 21300000, guid: ca71fd821387fc44c86465d78d10b7b4, type: 3}
+  - {fileID: 21300000, guid: a2ad4305bb26dbd40bb20be477342ea6, type: 3}
+  - {fileID: 21300000, guid: 333d45bacce1ff34a8a321c8936da7f2, type: 3}
+  - {fileID: 21300000, guid: 4efe719018d9ea740bf153236d4ecbd1, type: 3}
+  - {fileID: 21300000, guid: c3ad693923aca2a4383e642dad1a8329, type: 3}
+  arthurSprites:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 7fd7d4a2ebfdadd498e1fc1673530996, type: 3}
+  - {fileID: 21300000, guid: eafd2a87899f0184481837f1bbe26179, type: 3}
+  - {fileID: 21300000, guid: 8454ac0982d591f4aaa1cbb68fcbde86, type: 3}
+  - {fileID: 21300000, guid: eb1dd771cfa54574f9f3b4083f4aa832, type: 3}
+  - {fileID: 21300000, guid: b8af950095798bc479c40ddd1214c0d7, type: 3}
+  - {fileID: 21300000, guid: 11ead6e608c1570428235142b0652712, type: 3}
+  - {fileID: 21300000, guid: 61628b21433872f4a96ef9cb5dbf8226, type: 3}
+  - {fileID: 21300000, guid: b9d383ae5c5f67541b905004db12073c, type: 3}
+  - {fileID: 21300000, guid: 33f88fe5918dd954d90c81e8ae8d2058, type: 3}
+  - {fileID: 21300000, guid: 9140a97f8c542724f9feed8a4b7679e0, type: 3}
+  - {fileID: 21300000, guid: c27bde0e9d253c642bde9c73693e5f38, type: 3}
+  - {fileID: 21300000, guid: 8824ca1964a626641ad7cf8077e23153, type: 3}
+  - {fileID: 21300000, guid: 6960bcb8f55c4274893bd158a6d708d8, type: 3}
+  - {fileID: 21300000, guid: cb29b538d49abcb4db8c842b9b60e731, type: 3}
+  - {fileID: 21300000, guid: 637a9f2388b2bd749ad36cb8b81d550d, type: 3}
+  - {fileID: 21300000, guid: 2149a2c8fa24e094ebc5f5afc9d96e8d, type: 3}
+  - {fileID: 21300000, guid: dcfeb4d0a997c6a418616e8b29443160, type: 3}
+  - {fileID: 21300000, guid: 9c2ba2f73ce8c434c910fc3bc04cc933, type: 3}
+  - {fileID: 21300000, guid: a5496d88204635843a5f7b4147676e8e, type: 3}
+  - {fileID: 21300000, guid: d8b3cc8a43690d1488864eabf248ac31, type: 3}
+  - {fileID: 21300000, guid: 5a8b85850db7e1549adfde68c39ceaa5, type: 3}
+  - {fileID: 21300000, guid: 49b98f641aadb064eb283cf3eb853a5c, type: 3}
+  - {fileID: 21300000, guid: 1d0c4c092ba18c74992ae1ccd032a5e3, type: 3}
+  - {fileID: 21300000, guid: 4d335ace3be8095478d79d11e135503a, type: 3}
   bottomPosition: {fileID: 2083858536}
   tutorialText:
   - fui fui fuiii fui fui (sifflements)
@@ -525,6 +577,7 @@ MonoBehaviour:
   - did you hear me ..?
   - yeah, it was great !
   - well thanks ! it means a lot to me ^^
+  objectsToHideAndShow: []
 --- !u!114 &786666608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -943,15 +996,15 @@ RectTransform:
   m_GameObject: {fileID: 1599839692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 394081086}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -255, y: 130}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -255, y: 175}
+  m_SizeDelta: {x: 100, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1599839694
 MonoBehaviour:
