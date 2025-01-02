@@ -18,12 +18,15 @@ public class TutorialBehaviour : MonoBehaviour
     public GameObject bottomPosition;
     
     public string[] tutorialText;
+    public GameObject[] objectsToHideAndShow;
+    
     void Start() //étape 0 du tutoriel
     {
         MoveTextBox(bottomPosition.transform.position);
         ModifyTextBox(tutorialText[tutorialStep]);
         ModifySpeakingCharacter(1);
         HideCharacter(2);
+        StopHighlighting();
         ShowTextBox();
     }
     
@@ -58,14 +61,30 @@ public class TutorialBehaviour : MonoBehaviour
         textBox.transform.GetChild(1).gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(newWidth, newHeight);
     }
 
-    public void DesactivateGameObject(GameObject gameObjectToDesactivate) //désactive n'importe quel gameobject, peut etre utilisé pour désactiver des boutons que le joueur pourrait activer avant d'y etre introduit
+    public void DesactivateGameObject(int gameObjectToDesactivate) //désactive n'importe quel gameobject renseigné dans le tableau "objectsToHideAndShow" dans l'inpecteur. prend pour parametre le numero de l'element en question dans l'inpecteur a partir de 0
     {
-        gameObjectToDesactivate.SetActive(false);
+        objectsToHideAndShow[gameObjectToDesactivate].SetActive(false);
     }
 
-    public void ActivateGameobject(GameObject gameObjectToActivate)
+    public void ActivateGameobject(int gameObjectToActivate)// active n'importe quel gameobject renseigné dans le tableau "objectsToHideAndShow" dans l'inpecteur. prend pour parametre le numero de l'element en question dans l'inpecteur a partir de 0
     {
-        gameObjectToActivate.SetActive(true);
+        objectsToHideAndShow[gameObjectToActivate].SetActive(true);
+    }
+
+    public void DesactivateAllGameObjects() // désactive tout les gameObjects renseignés dans le tableau "objectsToHideAndShow"
+    {
+        foreach (GameObject objectToDesactivate in objectsToHideAndShow)
+        {
+            objectToDesactivate.SetActive(false);
+        }
+    }
+    
+    public void ActivateAllGameObjects() // active tout les gameObjects renseignés dans le tableau "objectsToHideAndShow"
+    {
+        foreach (GameObject objectToActivate in objectsToHideAndShow)
+        {
+            objectToActivate.SetActive(true);
+        }
     }
 
     public void ModifySpeakingCharacter(int newSpeakingCharacter) //change l'intensité du personnage selectionné pour 1 et met en semi-transparent le deuxieme. le personnage de gauche est désigné par 1 et celui de droite par 2
@@ -137,19 +156,20 @@ public class TutorialBehaviour : MonoBehaviour
         }
     }
 
-    public void Highlight(Vector2 highLightPosition, Vector2 highLightScale)
+    public void Highlight(Vector2 highLightPosition, Vector2 highLightScale) // affiche un cadre roue clignotant la la position indiquée en parametre 1 (coordonées x/y) et de la taille indiquée en parametre 2 (largeur/hauteur)
     {
         highLighter.SetActive(true);
         RectTransform rectTransform = highLighter.GetComponent<RectTransform>();
         if (rectTransform != null)
         {
+            Debug.Log("Highlight");
             rectTransform.anchoredPosition = highLightPosition;
             rectTransform.localScale = highLightScale;
         }
     }
 
 
-    public void StopHighlighting()
+    public void StopHighlighting() // retire le cadre clignotant de l'écran.
     {
         highLighter.SetActive(false);
     }
@@ -160,11 +180,14 @@ public class TutorialBehaviour : MonoBehaviour
         Time.timeScale = newTimeScale;
     }
 
-    public void StopTutorial()
+    public void StopTutorial() // arrete le tutoriel, retire la texteboxe, retire le carde clignotant, permet au joueur d'utiliser les raccourcis et le fast mode. réactive tout les gameObject du tableau "objectsToHideAndShow"
     {
         isInTutorial = false;
         HideTextBox();
+        StopHighlighting();
+        ActivateAllGameObjects();
         tutorialTimeScale = 1f;
+        Time.timeScale = 1f;
     }
 
     public void ResumeTutorial()
@@ -185,7 +208,6 @@ public class TutorialBehaviour : MonoBehaviour
                 ShowCharacter(2);
                 ModifySpeakingCharacter(2);
                 ModifyToCurentText();
-                Highlight(new Vector2(0,0), new Vector2(1, 1));
                 break;
             
             case 2:
