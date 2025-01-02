@@ -1,26 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TutorialBehaviour : MonoBehaviour
 {
     
-    public int tutorielStep;
+    public int tutorialStep;
     
     public static bool isInTutorial = true;
     public static float tutorialTimeScale = 1f;
-    
-    public GameObject textBox;
 
+    public GameObject textBox;
+    public GameObject highLighter;
     public GameObject bottomPosition;
     
     public string[] tutorialText;
     void Start() //étape 0 du tutoriel
     {
         MoveTextBox(bottomPosition.transform.position);
-        ModifyTextBox(tutorialText[tutorielStep]);
+        ModifyTextBox(tutorialText[tutorialStep]);
         ModifySpeakingCharacter(1);
         HideCharacter(2);
         ShowTextBox();
@@ -38,10 +39,10 @@ public class TutorialBehaviour : MonoBehaviour
 
     public void ModifyToCurentText() //change le text de la text boxe pour celui contenu dans le tutorialtext de l'etape actuel
     {
-        ModifyTextBox(tutorialText[tutorielStep]);
+        if (tutorialStep < tutorialText.Length) ModifyTextBox(tutorialText[tutorialStep]);
     }
     
-    public void ModifyTextBox(string text = "") //moifie le text de la textboxe pour nimporte quel string (ne sert a rien en théorie a part pour bypass la fonction ci dessus
+    public void ModifyTextBox(string text = "") //moifie le text de la textboxe pour nimporte quel string (ne sert a rien en théorie a part pour bypass la fonction ci dessus. par défaut renvoie un texte vide
     {
         textBox.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = text;
     }
@@ -51,7 +52,7 @@ public class TutorialBehaviour : MonoBehaviour
         textBox.transform.position = newPosition;
     }
 
-    public void ModifyTextBoxScale(float newWidth = 650f, float newHeight = 155f) // modifie la taille de la zone de texte selon une largeure puis une hauteur. ne change pas l'emplacement des personnages
+    public void ModifyTextBoxScale(float newWidth = 650f, float newHeight = 155f) // modifie la taille de la zone de texte selon une largeure puis une hauteur. ne change pas l'emplacement des personnages. prend par défaut la taille d'origine
     {
         textBox.transform.GetChild(0).gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(newWidth, newHeight);
         textBox.transform.GetChild(1).gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(newWidth, newHeight);
@@ -136,7 +137,24 @@ public class TutorialBehaviour : MonoBehaviour
         }
     }
 
-    public void ModifyTimeScale(float newTimeScale = 1f) // change la vitesse de l'écoulement du temps (bypass l'option de fast mode du gameManager)
+    public void Highlight(Vector2 highLightPosition, Vector2 highLightScale)
+    {
+        highLighter.SetActive(true);
+        RectTransform rectTransform = highLighter.GetComponent<RectTransform>();
+        if (rectTransform != null)
+        {
+            rectTransform.anchoredPosition = highLightPosition;
+            rectTransform.localScale = highLightScale;
+        }
+    }
+
+
+    public void StopHighlighting()
+    {
+        highLighter.SetActive(false);
+    }
+    
+    public void ModifyTimeScale(float newTimeScale = 1f) // change la vitesse de l'écoulement du temps (bypass l'option de fast mode du gameManager). par défaut met la vitesse de jeu en normale
     {
         tutorialTimeScale = newTimeScale;
         Time.timeScale = newTimeScale;
@@ -157,8 +175,8 @@ public class TutorialBehaviour : MonoBehaviour
 
     public void NextStep()
     {
-        tutorielStep++;
-        switch (tutorielStep)
+        tutorialStep++;
+        switch (tutorialStep)
         {
             case 0:
                 break;
@@ -167,6 +185,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ShowCharacter(2);
                 ModifySpeakingCharacter(2);
                 ModifyToCurentText();
+                Highlight(new Vector2(0,0), new Vector2(1, 1));
                 break;
             
             case 2:
