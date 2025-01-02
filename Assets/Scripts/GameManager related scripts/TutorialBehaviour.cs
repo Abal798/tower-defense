@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class TutorialBehaviour : MonoBehaviour
 {
     
+    [Header("GD ne pas toucher")]
     public int tutorialStep;
     
     public static bool isInTutorial = true;
@@ -15,10 +16,16 @@ public class TutorialBehaviour : MonoBehaviour
 
     public GameObject textBox;
     public GameObject highLighter;
-    public GameObject bottomPosition;
+    public Sprite[] tomSprites;
     
+    [Header("espace GD")]
+    public GameObject bottomPosition;
     public string[] tutorialText;
     public GameObject[] objectsToHideAndShow;
+    
+
+    
+
     
     void Start() //étape 0 du tutoriel
     {
@@ -28,6 +35,7 @@ public class TutorialBehaviour : MonoBehaviour
         HideCharacter(2);
         StopHighlighting();
         ShowTextBox();
+        ChangeExpression(1,23);
     }
     
     public void ShowTextBox() //affiche toute la textboxe , personnages compris
@@ -156,6 +164,14 @@ public class TutorialBehaviour : MonoBehaviour
         }
     }
 
+    public void ChangeExpression(int characterToChange, int newExpression)
+    {
+        if (characterToChange == 1)
+        {
+            textBox.transform.GetChild(2).gameObject.GetComponent<Image>().sprite = tomSprites[newExpression];
+        }
+    }
+
     public void Highlight(Vector2 highLightPosition, Vector2 highLightScale) // affiche un cadre roue clignotant la la position indiquée en parametre 1 (coordonées x/y) et de la taille indiquée en parametre 2 (largeur/hauteur)
     {
         highLighter.SetActive(true);
@@ -207,25 +223,30 @@ public class TutorialBehaviour : MonoBehaviour
             case 1:
                 ShowCharacter(2);
                 ModifySpeakingCharacter(2);
+                ChangeExpression(1,10);
                 ModifyToCurentText();
                 break;
             
             case 2:
                 ModifySpeakingCharacter(1);
+                ChangeExpression(1,18);
                 ModifyToCurentText();
                 break;
             
             case 3:
+                ChangeExpression(1,17);
                 ModifyToCurentText(); 
                 break;
             
             case 4:
                 ModifySpeakingCharacter(2);
+                ChangeExpression(1,16);
                 ModifyToCurentText();
                 break;
             
             case 5:
                 ModifySpeakingCharacter(1);
+                ChangeExpression(1,17);
                 ModifyToCurentText();
                 break;
             
