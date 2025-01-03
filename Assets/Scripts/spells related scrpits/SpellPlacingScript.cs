@@ -37,10 +37,10 @@ public class SpellPlacingScript : MonoBehaviour
     {
         return element switch
         {
-            1 => SpellForm.Ligne,
-            2 => SpellForm.Croix,
+            1 => SpellForm.Croix,
+            2 => SpellForm.Ligne,
             3 => SpellForm.Carre,
-            _ => SpellForm.Ligne
+            _ => SpellForm.Croix
         };
     }
 
