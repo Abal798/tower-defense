@@ -26,7 +26,7 @@ public class SpellPlacingScript : MonoBehaviour
     private bool butonSpell2updated = false;
     public GameObject boutonSpell3;
     private bool butonSpell3updated = false;
-    public bool rotationState;
+    public int rotationState;
     
 
     
@@ -93,10 +93,10 @@ public class SpellPlacingScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetAxis("Mouse ScrollWheel") != 0f)
-        {
-            rotationState = !rotationState;
-        }
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+        if (scroll > 0f)rotationState++;
+        else if (scroll < 0f)rotationState--;
+
         Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if (placementSpell1)
@@ -355,10 +355,10 @@ public class SpellPlacingScript : MonoBehaviour
                 positions = GetCrossShape(center);
                 break;
             case SpellForm.Ligne:
-                positions = GetLineShape(center);
+                positions = GetZShape(center);
                 break;
             case SpellForm.Carre:
-                positions = GetSquareShape(center);
+                positions = GetThumbShape(center);
                 break;
             default:
                 positions.Add(center); 
@@ -374,59 +374,51 @@ public class SpellPlacingScript : MonoBehaviour
         {
             center,
             center + Vector3Int.up,
-            center + Vector3Int.up * 2,
             center + Vector3Int.down,
-            center + Vector3Int.down * 2,
             center + Vector3Int.left,
-            center + Vector3Int.left * 2,
             center + Vector3Int.right,
-            center + Vector3Int.right *2,
         };
     }
 
-    private List<Vector3Int> GetLineShape(Vector3Int center)
+    private List<Vector3Int> GetZShape(Vector3Int center)
     {
         List<Vector3Int> positions = new List<Vector3Int>();
 
-        if (rotationState == false) // Horizontal line
+        if (Mathf.Abs(rotationState) % 2 == 1) // Horizontal line
         {
-            positions.Add(center + Vector3Int.left * 4);
-            positions.Add(center + Vector3Int.left * 3);
-            positions.Add(center + Vector3Int.left * 2);
+            positions.Add(center + Vector3Int.left + Vector3Int.down);
             positions.Add(center + Vector3Int.left);
             positions.Add(center);
             positions.Add(center + Vector3Int.right);
-            positions.Add(center + Vector3Int.right * 2);
-            positions.Add(center + Vector3Int.right * 3);
-            positions.Add(center + Vector3Int.right * 4);
+            positions.Add(center + Vector3Int.right + Vector3Int.up);
         }
-        else if (rotationState == true) // Vertical line
+        else if (Mathf.Abs(rotationState) % 2 == 0) // Vertical line
         {
-            positions.Add(center + Vector3Int.down * 4);
-            positions.Add(center + Vector3Int.down * 3);
-            positions.Add(center + Vector3Int.down * 2);
+            positions.Add(center + Vector3Int.down + Vector3Int.right);
             positions.Add(center + Vector3Int.down);
             positions.Add(center);
             positions.Add(center + Vector3Int.up);
-            positions.Add(center + Vector3Int.up * 2);
-            positions.Add(center + Vector3Int.up * 3);
-            positions.Add(center + Vector3Int.up * 4);
+            positions.Add(center + Vector3Int.up + Vector3Int.left);
         }
 
         return positions;
     }
     
 
-    private List<Vector3Int> GetSquareShape(Vector3Int center)
+    private List<Vector3Int> GetThumbShape(Vector3Int center)
     {
         List<Vector3Int> positions = new List<Vector3Int>();
-        for (int x = -1; x <= 1; x++)
+        for (int x = 0; x <= 1; x++)
         {
-            for (int y = -1; y <= 1; y++)
+            for (int y = 0; y <= 1; y++)
             {
                 positions.Add(center + new Vector3Int(x, y, 0));
             }
         }
+        if (Mathf.Abs(rotationState) % 4 == 0) positions.Add(center + Vector3Int.down);
+        if (Mathf.Abs(rotationState) % 4 == 1) positions.Add(center + Vector3Int.left);
+        if (Mathf.Abs(rotationState) % 4 == 2) positions.Add(center + Vector3Int.up * 2);
+        if (Mathf.Abs(rotationState) % 4 == 3) positions.Add(center + Vector3Int.right * 2);
         return positions;
     }
 
