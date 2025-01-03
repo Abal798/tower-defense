@@ -237,34 +237,39 @@ public class TutorialBehaviour : MonoBehaviour
                 ModifySpeakingCharacter(2);
                 ChangeExpression(1,10);
                 ModifyToCurentText();
+                cameraLocked = true;
+                DesactivateAllGameObjects();
+                Debug.Log("Arthur parle");
                 break;
             
             case 2:
                 ModifySpeakingCharacter(1);
-                ChangeExpression(1,18);
+                ChangeExpression(1,19);
                 ModifyToCurentText();
                 break;
             
             case 3:
-                ChangeExpression(1,17);
+                ChangeExpression(1,3);
                 ModifyToCurentText(); 
                 break;
             
             case 4:
                 ModifySpeakingCharacter(2);
-                ChangeExpression(1,16);
+                ChangeExpression(2,17);
                 ModifyToCurentText();
                 break;
             
             case 5:
-                ModifySpeakingCharacter(1);
-                ChangeExpression(1,17);
+                ChangeExpression(2,9);
                 ModifyToCurentText();
+                // Le joueur doit placer une tour avant de pouvoir poursuivre.
                 break;
             
             case 6:
-                StopTutorial();
+                ChangeExpression(2, 9);
+                ModifyToCurentText();
                 break;
+
         }
     }
 

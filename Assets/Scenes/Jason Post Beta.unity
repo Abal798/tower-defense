@@ -668,6 +668,11 @@ Transform:
   - {fileID: 1985097465}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &128006111 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3349202893609073975, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+  m_PrefabInstance: {fileID: 5659166513698722036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &128273639
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,6 +1418,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 354061848}
   m_CullTransparentMesh: 1
+--- !u!1 &429597800 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9031213904529334010, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+  m_PrefabInstance: {fileID: 5659166513698722036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &439077682
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,6 +1551,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 64261803}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &461593632 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2946087318622938013, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+  m_PrefabInstance: {fileID: 5659166513698722036}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &479079339 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7503418445737331306, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+  m_PrefabInstance: {fileID: 5659166513698722036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &491652981 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 573478970749491883, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
@@ -1552,6 +1572,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a936b9287a7fe134183acf194ee4da3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &496457526 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3054602339660328635, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+  m_PrefabInstance: {fileID: 5659166513698722036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &515313140
 GameObject:
   m_ObjectHideFlags: 0
@@ -2650,13 +2675,53 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4d335ace3be8095478d79d11e135503a, type: 3}
   bottomPosition: {fileID: 813490747}
   tutorialText:
-  - fui fui fuiii fui fui (sifflements) lala
-  - hello !
-  - oh ! i thougt i was alone !
-  - did you hear me ..?
-  - yeah, it was great !
-  - well thanks ! it means a lot to me ^^
-  objectsToHideAndShow: []
+  - "Ah ! Nous avons enfin trouv\xE9 un endroit parfait pour nous installer !"
+  - "En effet, c'est assez loin de la ville pour que nos poursuivants n'attirent
+    d'ennuis \xE0 personne."
+  - "\xC9valuons un peu ta connaissance de l\u2019alchimie ! Dicte-moi ce que je
+    dois faire pour \xE9tablir une premi\xE8re ligne de d\xE9fense."
+  - Merci de votre confiance !
+  - "Pour commencer, prenons la fiole d'\xE2me de l'\xE9l\xE9ment que nous voulons
+    cr\xE9er, et jetons-l\xE0 \xE0 l'emplacement o\xF9 nous voulons placer notre
+    tour."
+  - "Nous pouvons profiter des terrains et renforcer nos tours en les pla\xE7ant
+    \xE0 c\xF4t\xE9 de : /n - La for\xEAt pour la port\xE9e; /n - La terre de feu
+    pour les d\xE9g\xE2ts ; /n - Les rivi\xE8res pour la cadence !"
+  - "Tu as bien appris tes le\xE7ons \xE0 ce que je vois."
+  - Excellent !
+  - "Oh non ! Nos poursuivants nous ont retrouv\xE9s ! Esp\xE9rons que ces tours
+    suffisent \xE0 nous d\xE9fendre !"
+  - "Nos d\xE9fenses ont tenu bon ! Malgr\xE9 tout, je doute que nos ennemis ne s'arr\xEAtent
+    l\xE0. Pr\xE9parons quelques sorts pour renforcer nos d\xE9fenses."
+  - Poursuivons un peu ton test, explique moi comment concocter un sort.
+  - "Tr\xE8s bien ! Dans un premier temps, allons \xE0 notre chaudron, et pla\xE7ons-y
+    deux doses d'\xE9l\xE9ments puis, m\xE9langeons."
+  - "Nous pouvons ensuite placer ce sort de la m\xEAme mani\xE8re que nous avons
+    plac\xE9 une tour. Ce sort nous permettra de modifier le terrain \xE0 notre avantage."
+  - "\xC9vitons tout de m\xEAme de placer un sort sur nos tours, sans quoi elles
+    risquent d'\xEAtre d\xE9truites."
+  - "l'\xE9quilibre de la r\xE9gion est tr\xE8s fragile. En abusant de sorts d'un
+    m\xEAme \xE9l\xE9ment, nous risquons de d\xE9s\xE9quilibrer la zone et nous attirer
+    des ennuis ! "
+  - Attention ! Une nouvelle vagues d'ennemis est en approche !
+  - "Tr\xE8s bien, tu m'a prouv\xE9 que tu \xE9tait assez comp\xE9tent pour \xEAtre
+    mon apprenti. Je vais reprendre le contr\xF4le des d\xE9fenses d\xE9sormais."
+  objectsToHideAndShow:
+  - {fileID: 479079339}
+  - {fileID: 854028119}
+  - {fileID: 1923128008}
+  - {fileID: 1535743212}
+  - {fileID: 128006111}
+  - {fileID: 978182216}
+  - {fileID: 461593632}
+  - {fileID: 496457526}
+  - {fileID: 1254968913}
+  - {fileID: 1850589000}
+  - {fileID: 1917451324}
+  - {fileID: 1863683556}
+  - {fileID: 429597800}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &749880187
 GameObject:
   m_ObjectHideFlags: 0
@@ -3067,6 +3132,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 836534523}
   m_CullTransparentMesh: 1
+--- !u!1 &854028119 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4484324873506591806, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+  m_PrefabInstance: {fileID: 5659166513698722036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &887348225
 GameObject:
   m_ObjectHideFlags: 0
@@ -3536,6 +3606,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 939746177}
   m_CullTransparentMesh: 1
+--- !u!1 &978182216 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4744356249220203580, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+  m_PrefabInstance: {fileID: 5659166513698722036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &979701263
 GameObject:
   m_ObjectHideFlags: 0
@@ -4714,6 +4789,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1253946467}
   m_CullTransparentMesh: 1
+--- !u!1 &1254968913 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 672830154374194323, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+  m_PrefabInstance: {fileID: 5659166513698722036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1281792789
 GameObject:
   m_ObjectHideFlags: 0
@@ -26927,6 +27007,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 338851064}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1535743212 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2473491480304957587, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+  m_PrefabInstance: {fileID: 5659166513698722036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1538393929
 GameObject:
   m_ObjectHideFlags: 0
@@ -27513,7 +27598,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 370291775431013739, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
   m_PrefabInstance: {fileID: 5659166513698722036}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1863683556}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dee56607b8769184b9dee084231575d1, type: 3}
@@ -28287,6 +28372,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 3
+--- !u!1 &1850589000 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6492967491434602478, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+  m_PrefabInstance: {fileID: 5659166513698722036}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1863683556 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7017008716660426839, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+  m_PrefabInstance: {fileID: 5659166513698722036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1869686935
 GameObject:
   m_ObjectHideFlags: 0
@@ -28555,6 +28650,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900587983}
   m_CullTransparentMesh: 1
+--- !u!1 &1917451324 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 843395163383960995, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+  m_PrefabInstance: {fileID: 5659166513698722036}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1923128008 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6782493340069718436, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+  m_PrefabInstance: {fileID: 5659166513698722036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1931696385
 GameObject:
   m_ObjectHideFlags: 0
