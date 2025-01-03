@@ -9,7 +9,7 @@ public class TutorialBehaviour : MonoBehaviour
 {
     
     [Header("GD ne pas toucher")]
-    public int tutorialStep = 0;
+    public static int tutorialStep = 0;
     
     public static bool isInTutorial;
     public static bool cameraLocked = false;
@@ -31,6 +31,7 @@ public class TutorialBehaviour : MonoBehaviour
     
     void Start() //étape 0 du tutoriel
     {
+        tutorialStep = 0;
         ResumeTutorial();
         MoveTextBox(bottomPosition.transform.position);
         ModifyTextBox(tutorialText[tutorialStep]);
