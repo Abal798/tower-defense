@@ -78,18 +78,6 @@ public class MenuManager : MonoBehaviour
             {
                 FindObjectOfType<Spawn>().ButtonFonctionLaunchWave();
             }
-            if (Input.GetKeyDown(keyRebinder.GetKeyForAction("shortcutFireTower")))
-            {
-                GridBuilding.current.PreInitializeFeu(IconFeu);
-            }
-            if (Input.GetKeyDown(keyRebinder.GetKeyForAction("shortcutWaterTower")))
-            {
-                GridBuilding.current.PreInitializeEau(IconEau);
-            }
-            if (Input.GetKeyDown(keyRebinder.GetKeyForAction("shortcutEarthTower")))
-            {
-                GridBuilding.current.PreInitializeTerre(IconTerre);
-            }
             if (Input.GetKeyDown(keyRebinder.GetKeyForAction("shortcutPotion1")))
             {
                 RM.gameObject.GetComponent<SpellPlacingScript>().Spell1();
@@ -124,6 +112,19 @@ public class MenuManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.X))
             {
                 GoToBookPanel();
+            }
+            
+            if (Input.GetKeyDown(keyRebinder.GetKeyForAction("shortcutFireTower")))
+            {
+                GridBuilding.current.PreInitializeFeu(IconFeu);
+            }
+            if (Input.GetKeyDown(keyRebinder.GetKeyForAction("shortcutWaterTower")))
+            {
+                GridBuilding.current.PreInitializeEau(IconEau);
+            }
+            if (Input.GetKeyDown(keyRebinder.GetKeyForAction("shortcutEarthTower")))
+            {
+                GridBuilding.current.PreInitializeTerre(IconTerre);
             }
         }
 
