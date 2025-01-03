@@ -10,10 +10,11 @@ public class MonsterDeathBehaviour : MonoBehaviour
     [Header("modifiable")]
     
     public int soulReward = 6;
-    
-    
+
+
     [Header("a renseigner (les GD, tjr pas toucher)")]
-    
+
+    public GameObject monsterDamagesEffectPrefab;
     public MonsterStats MS;
     public GameObject deathParticules;
 
@@ -158,6 +159,8 @@ public class MonsterDeathBehaviour : MonoBehaviour
         
         if (MS.type == 0)
         {
+            ShowFloatingText(damages);
+            
             healthPoints -= damages;
         }
 
@@ -176,6 +179,8 @@ public class MonsterDeathBehaviour : MonoBehaviour
                 }
             }
 
+            ShowFloatingText(damages);
+            
             healthPoints -= damages;
         }
         if (MS.type == 2)
@@ -193,6 +198,8 @@ public class MonsterDeathBehaviour : MonoBehaviour
                 }
             }
 
+            ShowFloatingText(damages);
+            
             healthPoints -= damages;
         }
         if (MS.type == 3)
@@ -210,8 +217,27 @@ public class MonsterDeathBehaviour : MonoBehaviour
                 }
             }
 
+            ShowFloatingText(damages);
+            
             healthPoints -= damages;
         }
         
     }
+
+    void ShowFloatingText(float damagesAmount = 1)
+    {
+        // Instantiate the floating text
+        GameObject newFloatingText = Instantiate(monsterDamagesEffectPrefab, transform.position, Quaternion.identity);
+
+        // Ensure the floating text keeps its position in world space
+        newFloatingText.transform.position = transform.position;
+
+        // Detach from parent
+        newFloatingText.transform.SetParent(null);
+
+        // Update the text and color
+        newFloatingText.transform.GetChild(0).GetComponent<TextMesh>().text = damagesAmount.ToString();
+        newFloatingText.transform.GetChild(0).GetComponent<TextMesh>().color = new Color(255, 393 * Mathf.Exp(-0.2f * damagesAmount), 0, 255);
+    }
+
 }

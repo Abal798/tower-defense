@@ -17,9 +17,9 @@ GameObject:
   - component: {fileID: 3593964182594265304}
   - component: {fileID: 6012127422834315380}
   - component: {fileID: -3089433572879407143}
-  - component: {fileID: 1006782394852865325}
+  - component: {fileID: 2255522603312805375}
   m_Layer: 6
-  m_Name: kamikaze
+  m_Name: sumoner
   m_TagString: Ennemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.509434, b: 0.005941022, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -220,10 +220,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6558944d9a8b4d94ba190e16e880de10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 40
+  health: 100
   basicSpeed: 1
-  speed: 1
-  damages: 10
+  speed: 2
+  damages: 15
   type: 0
   damageFactorbonus: 1.5
   damageFactorMalus: 0.75
@@ -254,7 +254,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &1006782394852865325
+--- !u!114 &2255522603312805375
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -263,14 +263,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1791313746008852168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 391cf5f6219ca114ea6f3fe0f81e0439, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c2d2ddc95e2b7e4a81facbd8a07f787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MStats: {fileID: 6012127422834315380}
-  deplacements: []
-  pathfinding: {fileID: 4164270264960268209}
-  speed: 0
-  gridLayout: {fileID: 0}
-  objectif: {x: 0, y: 0, z: 0}
-  objectifTargeted: 0
-  nearestTower: {x: 0, y: 0, z: 0}
