@@ -10,16 +10,16 @@ GameObject:
   m_Component:
   - component: {fileID: 1341761080996762243}
   - component: {fileID: 7374532177628107893}
-  - component: {fileID: 8496490190715410811}
   - component: {fileID: 4462025437506793994}
-  - component: {fileID: 4164270264960268209}
-  - component: {fileID: -1325253033383984031}
-  - component: {fileID: 3593964182594265304}
-  - component: {fileID: 6012127422834315380}
-  - component: {fileID: -3089433572879407143}
-  - component: {fileID: 1173053799401961824}
+  - component: {fileID: 795280816224040712}
+  - component: {fileID: 46717546319750892}
+  - component: {fileID: 4423026053618790021}
+  - component: {fileID: 4780176884292685160}
+  - component: {fileID: 8534210464315537085}
+  - component: {fileID: -8156118977787339490}
+  - component: {fileID: 8475912563468101869}
   m_Layer: 6
-  m_Name: Swarmer
+  m_Name: boss
   m_TagString: Ennemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,7 +35,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.5, y: 3.5, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,18 +81,136 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 3a63b7cb66315f546a216034e9e047e9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3b7b5066dfc4ad94e84771669b54c888, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.024, y: 1.024}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8496490190715410811
+--- !u!114 &4462025437506793994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791313746008852168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 624125c9e150c554eb88ef8f6e7a4c7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soulReward: 36
+  monsterDamagesEffectPrefab: {fileID: 1860567611682378094, guid: 5156c5ba4dab29d489c85293b9bee66d, type: 3}
+  MS: {fileID: 4423026053618790021}
+  deathParticules: {fileID: 5132903826172967407, guid: 69e5a0a7244bdad4b9395227de198bcd, type: 3}
+  TakeDamageAnimation: {fileID: 8475912563468101869}
+  healthPoints: 0
+  incomingDamage: 0
+  RM: {fileID: 0}
+--- !u!114 &795280816224040712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791313746008852168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64e50e6681f273d40b1fd6cb26d1470e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilesToVisit: []
+  debugList: []
+  resultTempo: []
+  Final: []
+  txtDebugging: {fileID: 5873502354103935828, guid: 9f58c2acb26096c408414e9d01c9f818, type: 3}
+--- !u!114 &46717546319750892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791313746008852168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa78fdba10acf9c40b0226b3e7c7447c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MStats: {fileID: 4423026053618790021}
+  deplacements: []
+  pathfinding: {fileID: 0}
+  speed: 0
+  gridLayout: {fileID: 0}
+  objectif: {x: 0, y: 0, z: 0}
+--- !u!114 &4423026053618790021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791313746008852168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6558944d9a8b4d94ba190e16e880de10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1750
+  basicSpeed: 0.75
+  speed: 0
+  damages: 45
+  type: 0
+  damageFactorbonus: 1.5
+  damageFactorMalus: 0.75
+--- !u!114 &4780176884292685160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791313746008852168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4914701ace5c561459216c175ccceaa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MS: {fileID: 4423026053618790021}
+  damages: 0
+  targetTower: 0
+  tower: {fileID: 0}
+  baseTower: {fileID: 0}
+--- !u!50 &8534210464315537085
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791313746008852168}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 192
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!61 &-8156118977787339490
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,8 +246,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.024, y: 1.024}
-    newSize: {x: 1.024, y: 1.024}
+    oldSize: {x: 1.89, y: 2}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -137,125 +255,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4462025437506793994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791313746008852168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 624125c9e150c554eb88ef8f6e7a4c7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soulReward: 12
-  monsterDamagesEffectPrefab: {fileID: 1860567611682378094, guid: 5156c5ba4dab29d489c85293b9bee66d, type: 3}
-  MS: {fileID: 6012127422834315380}
-  deathParticules: {fileID: 5132903826172967407, guid: 69e5a0a7244bdad4b9395227de198bcd, type: 3}
-  TakeDamageAnimation: {fileID: 1173053799401961824}
-  healthPoints: 4
-  incomingDamage: 0
-  RM: {fileID: 0}
---- !u!114 &4164270264960268209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791313746008852168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e50e6681f273d40b1fd6cb26d1470e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tilesToVisit: []
-  debugList: []
-  resultTempo: []
-  Final: []
-  txtDebugging: {fileID: 5873502354103935828, guid: 9f58c2acb26096c408414e9d01c9f818, type: 3}
---- !u!114 &-1325253033383984031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791313746008852168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa78fdba10acf9c40b0226b3e7c7447c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MStats: {fileID: 6012127422834315380}
-  deplacements: []
-  pathfinding: {fileID: 0}
-  speed: 1
-  gridLayout: {fileID: 0}
-  objectif: {x: 0, y: 0, z: 0}
---- !u!114 &3593964182594265304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791313746008852168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4914701ace5c561459216c175ccceaa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MS: {fileID: 6012127422834315380}
-  damages: 0
-  targetTower: 0
-  tower: {fileID: 0}
-  baseTower: {fileID: 0}
---- !u!114 &6012127422834315380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791313746008852168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6558944d9a8b4d94ba190e16e880de10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  basicSpeed: 1
-  speed: 2
-  damages: 15
-  type: 0
-  damageFactorbonus: 1.5
-  damageFactorMalus: 0.75
---- !u!50 &-3089433572879407143
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791313746008852168}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
---- !u!111 &1173053799401961824
+--- !u!111 &8475912563468101869
 Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -264,10 +264,10 @@ Animation:
   m_GameObject: {fileID: 1791313746008852168}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: fe2aaff5d07a7094e8ea46db8b0ec87f, type: 2}
+  m_Animation: {fileID: 7400000, guid: 9c045f6fcf575904582a4493325f756b, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: fe2aaff5d07a7094e8ea46db8b0ec87f, type: 2}
+  - {fileID: 7400000, guid: 9c045f6fcf575904582a4493325f756b, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 0
+  m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
