@@ -266,3 +266,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2d2ddc95e2b7e4a81facbd8a07f787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  summonersFlag: {fileID: 5944119196181530582, guid: 9fe0d735c8644cc4ba3ab85b26c93808, type: 3}
+  numberOfMonstersSumoned: 10

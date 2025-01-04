@@ -97,3 +97,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a5778f7f0376754eaa22de875b30e13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numberOfMonstersToSpawn: 10
+  swarmerPrefab: {fileID: 1791313746008852168, guid: 208d1a2fa46ec174b8c0c0c11578c539, type: 3}
