@@ -16,6 +16,7 @@ public class Spawn : MonoBehaviour
     public GameObject monsterTypeOne;
     public GameObject monsterTypeTwo;
     public GameObject monsterTypeThree;
+    public GameObject monsterTypeBoss;
     public RessourcesManager RM;
     public float chanceDeSpawnElementaireEntreZeroEtUn;
     public int vagueDapparitionDesElementaires;
@@ -79,51 +80,75 @@ public class Spawn : MonoBehaviour
 
     private IEnumerator LaunchWave()
     {
-        // Calcul du nombre total de monstres à générer
         ennemyToSpawn = numberOfMonsterOne + numberOfMonsterTwo + numberOfMonsterThree;
         float waveDuration = basicWaveDuration + 4 * RM.wave;
         timeBetweenSpawn = waveDuration / ennemyToSpawn;
 
-        // Spawn des monstres de type 1
-        for (int i = 0; i < numberOfMonsterOne; i++)
+        // Créer une liste de tout les monstres à générer
+        List<int> monsterOrder = new List<int>();
+        for (int i = 0; i < numberOfMonsterOne; i++) monsterOrder.Add(1);
+        for (int i = 0; i < numberOfMonsterTwo; i++) monsterOrder.Add(2);
+        for (int i = 0; i < numberOfMonsterThree; i++) monsterOrder.Add(3);
+        
+        ShuffleList(monsterOrder);
+        
+        foreach (int monsterType in monsterOrder)
         {
-            GameObject newMonster = Instantiate(monsterTypeOne, GetRandomPositionOnSquareEdge(), Quaternion.identity);
-            newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;
-            newMonster.GetComponent<MonsterStats>().type = 0;
-            monstersAlive.Add(newMonster);
-            yield return new WaitForSeconds(timeBetweenSpawn); // Pause entre chaque apparition
-        }
+            GameObject newMonster;
 
-        // Spawn des monstres de type 2
-        for (int i = 0; i < numberOfMonsterTwo; i++)
-        {
-            BookManager.instance.monsterGiantEncountered = true;
-            GameObject newMonster = Instantiate(monsterTypeTwo, GetRandomPositionOnSquareEdge(), Quaternion.identity);
-            newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;
-
-            if (RM.wave >= vagueDapparitionDesElementaires)
+            if (monsterType == 1)
             {
-                newMonster.GetComponent<MonsterStats>().type = GetMonsterType();
+                newMonster = Instantiate(monsterTypeOne, GetRandomPositionOnSquareEdge(), Quaternion.identity);
+                newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;
+                newMonster.GetComponent<MonsterStats>().type = 0;
             }
-            else
+            else if (monsterType == 2)
             {
+                newMonster = Instantiate(monsterTypeTwo, GetRandomPositionOnSquareEdge(), Quaternion.identity);
+                newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;
+
+                if (RM.wave >= vagueDapparitionDesElementaires)
+                {
+                    newMonster.GetComponent<MonsterStats>().type = GetMonsterType();
+                }
+                else
+                {
+                    newMonster.GetComponent<MonsterStats>().type = 0;
+                }
+            }
+            else // monsterType == 3
+            {
+                newMonster = Instantiate(monsterTypeThree, GetRandomPositionOnSquareEdge(), Quaternion.identity);
+                newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;
                 newMonster.GetComponent<MonsterStats>().type = 0;
             }
 
+            newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;
             monstersAlive.Add(newMonster);
-            yield return new WaitForSeconds(timeBetweenSpawn); // Pause entre chaque apparition
+            
+            yield return new WaitForSeconds(timeBetweenSpawn);
         }
-
-        // Spawn des monstres de type 3
-        for (int i = 0; i < numberOfMonsterThree; i++)
+        
+        if (endWaveNumber - 1 == RM.wave) // arrive en dernier systematiquement
         {
-            GameObject newMonster = Instantiate(monsterTypeThree, GetRandomPositionOnSquareEdge(), Quaternion.identity);
+            GameObject newMonster = Instantiate(monsterTypeBoss, GetRandomPositionOnSquareEdge(), Quaternion.identity);
             newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;
             newMonster.GetComponent<MonsterStats>().type = 0;
             monstersAlive.Add(newMonster);
-            yield return new WaitForSeconds(timeBetweenSpawn); // Pause entre chaque apparition
         }
     }
+    
+    private void ShuffleList<T>(List<T> list)
+    {
+        for (int i = 0; i < list.Count; i++)
+        {
+            int randomIndex = Random.Range(0, list.Count);
+            T temp = list[i];
+            list[i] = list[randomIndex];
+            list[randomIndex] = temp;
+        }
+    }
+
 
 
     private Vector3 GetRandomPositionOnSquareEdge()
