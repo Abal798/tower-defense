@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4780176884292685160}
   - component: {fileID: 8534210464315537085}
   - component: {fileID: -8156118977787339490}
+  - component: {fileID: 6965535822025260316}
   m_Layer: 6
   m_Name: Giant
   m_TagString: Ennemy
@@ -35,7 +36,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -107,6 +108,7 @@ MonoBehaviour:
   monsterDamagesEffectPrefab: {fileID: 1860567611682378094, guid: 5156c5ba4dab29d489c85293b9bee66d, type: 3}
   MS: {fileID: 4423026053618790021}
   deathParticules: {fileID: 5132903826172967407, guid: 69e5a0a7244bdad4b9395227de198bcd, type: 3}
+  TakeDamageAnimation: {fileID: 6965535822025260316}
   healthPoints: 0
   incomingDamage: 0
   RM: {fileID: 0}
@@ -253,3 +255,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!111 &6965535822025260316
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791313746008852168}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 46ea528b6fc658447b2ab290697cb75f, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 46ea528b6fc658447b2ab290697cb75f, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
