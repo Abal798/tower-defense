@@ -2684,9 +2684,11 @@ MonoBehaviour:
     cr\xE9er, et jetons-l\xE0 \xE0 l'emplacement o\xF9 nous voulons placer notre
     tour."
   - "Nous pouvons profiter des terrains et renforcer nos tours en les pla\xE7ant
-    \xE0 c\xF4t\xE9 de : /n - La for\xEAt pour la port\xE9e; /n - La terre de feu
-    pour les d\xE9g\xE2ts ; /n - Les rivi\xE8res pour la cadence !"
-  - "Tu as bien appris tes le\xE7ons \xE0 ce que je vois."
+    \xE0 c\xF4t\xE9 de :"
+  - "- La for\xEAt pour la port\xE9e;"
+  - "- La terre de feu pour les d\xE9g\xE2ts;"
+  - "- Les rivi\xE8res pour la cadence."
+  - "Tu as bien appris tes le\xE7ons \xE0 ce que je vois, finis de placer nos d\xE9fenses."
   - Excellent !
   - "Oh non ! Nos poursuivants nous ont retrouv\xE9s ! Esp\xE9rons que ces tours
     suffisent \xE0 nous d\xE9fendre !"
@@ -2706,6 +2708,8 @@ MonoBehaviour:
   - "Tr\xE8s bien, tu m'a prouv\xE9 que tu \xE9tait assez comp\xE9tent pour \xEAtre
     mon apprenti. Je vais reprendre le contr\xF4le des d\xE9fenses d\xE9sormais."
   objectsToHideAndShow:
+  - {fileID: 850645786}
+  - {fileID: 479079339}
   - {fileID: 479079339}
   - {fileID: 854028119}
   - {fileID: 1923128008}
@@ -2717,10 +2721,9 @@ MonoBehaviour:
   - {fileID: 1254968913}
   - {fileID: 1850589000}
   - {fileID: 1917451324}
+  - {fileID: 1535743212}
   - {fileID: 1863683556}
   - {fileID: 429597800}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &749880187
 GameObject:
   m_ObjectHideFlags: 0
@@ -3131,6 +3134,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 836534523}
   m_CullTransparentMesh: 1
+--- !u!1 &850645786 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6791365268380428007, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+  m_PrefabInstance: {fileID: 5659166513698722036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &854028119 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4484324873506591806, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}

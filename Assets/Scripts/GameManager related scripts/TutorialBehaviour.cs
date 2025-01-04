@@ -40,6 +40,7 @@ public class TutorialBehaviour : MonoBehaviour
         StopHighlighting();
         ShowTextBox();
         ChangeExpression(1,23);
+        DesactivateAllGameObjects();
     }
     
     public void ShowTextBox() //affiche toute la textboxe , personnages compris
@@ -236,40 +237,108 @@ public class TutorialBehaviour : MonoBehaviour
                 ChangeExpression(2, 2);
                 ShowCharacter(2);
                 ModifySpeakingCharacter(2);
-                ChangeExpression(1,10);
                 ModifyToCurentText();
                 cameraLocked = true;
-                DesactivateAllGameObjects();
                 Debug.Log("Arthur parle");
                 break;
             
             case 2:
-                ModifySpeakingCharacter(1);
-                ChangeExpression(1,19);
+                ChangeExpression(2,19);
+                ChangeExpression(1,18);
                 ModifyToCurentText();
                 break;
             
             case 3:
+                ModifySpeakingCharacter(1);
                 ChangeExpression(1,3);
                 ModifyToCurentText(); 
                 break;
             
             case 4:
-                ModifySpeakingCharacter(2);
-                ChangeExpression(2,17);
+                ChangeExpression(1,17);
                 ModifyToCurentText();
+                ActivateGameobject(11); // Affiche le SoulsDisplay pour montrer les ressources
+              //  HighLight((0,0),(1,1));
                 break;
             
             case 5:
+                StopHighlighting();
                 ChangeExpression(2,9);
                 ModifyToCurentText();
+                // Affichage des tours et prix
+                break;
+            case 6:
+                ModifyToCurentText();
+                // Ptet ajouter sur le visuel le symbole de terre ou forêt, OU highlight une des cases.
+                break;
+            case 7:
+                ModifyToCurentText();
+                // Visuel du feu comme mentionné précédemment
+                break;
+            case 8:
+                ModifyToCurentText();
+                // Visuel de l'eau comme mentionné précédemment
                 // Le joueur doit placer une tour avant de pouvoir poursuivre.
                 break;
             
-            case 6:
-                ChangeExpression(2, 9);
+            case 9:
+                ChangeExpression(2, 2);
+                ModifySpeakingCharacter(2);
+                ModifyToCurentText();
+                // Le joueur doit placer le reste de ses défenses (c'est pas assez explicit dans le texte)
+                break;
+            case 10:
+                ModifySpeakingCharacter(1);
+                ChangeExpression(1, 3);
                 ModifyToCurentText();
                 break;
+            case 11: 
+                ChangeExpression(1, 18);
+                ModifyToCurentText();
+                // Display du bouton de vague
+                break;
+            case 12:
+                ModifySpeakingCharacter(2);
+            ChangeExpression(2, 9);
+            ModifyToCurentText();
+                break;
+            case 13:
+            ChangeExpression(2, 2);
+            ModifyToCurentText();
+            break;
+            case 14:
+            ModifySpeakingCharacter(1);
+            ChangeExpression(1, 17);
+            ModifyToCurentText();
+                break;
+            case 15:
+            ChangeExpression(1, 8);
+            ModifyToCurentText();
+                cameraLocked = false;
+            break;
+            case 16:
+                ChangeExpression(1, 20);
+                ModifyToCurentText();
+                break;
+            case 17:
+            ChangeExpression(1, 1);
+            ModifyToCurentText();
+            // Le joueur place ensuite son sort nouvellement créer (highlight le sort qu'il vient de sort une fois qu'il sort de l'inventaire)
+            break;
+            case 18:
+            ChangeExpression(1, 18);
+                ChangeExpression(2, 18);
+            ModifyToCurentText();
+            break;
+            case 19:
+            ModifySpeakingCharacter(2);
+            ChangeExpression(2, 9);
+            ModifyToCurentText();
+                break;
+
+
+
+
 
         }
     }
