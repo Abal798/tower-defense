@@ -156,7 +156,7 @@ public class RessourcesManager : MonoBehaviour
         
     }
     
-    public float GetTowerPrice(int towerElement, int numberOfTowerPlaced, int numberOfUpgrade)
+    public float GetTowerPrice(int towerElement, int numberOfTowerPlaced)
     {
         if (towerElement == 1)
         {

@@ -91,16 +91,16 @@ public class GridBuilding : MonoBehaviour
                     int price = 0;
                     if (elementTour == 1)
                     {
-                        price = Mathf.FloorToInt(RM.GetTowerPrice(elementTour, RM.nbrOfFireTower, 0));
+                        price = Mathf.FloorToInt(RM.GetTowerPrice(elementTour, RM.nbrOfFireTower));
                         Debug.Log("price" + price);
                     }
                     else if (elementTour == 2)
                     {
-                        price = Mathf.FloorToInt(RM.GetTowerPrice(elementTour, RM.nbrOfWaterTower, 0));
+                        price = Mathf.FloorToInt(RM.GetTowerPrice(elementTour, RM.nbrOfWaterTower));
                     }
                     else if (elementTour == 3)
                     {
-                        price = Mathf.FloorToInt(RM.GetTowerPrice(elementTour, RM.nbrOfEarthTower, 0));
+                        price = Mathf.FloorToInt(RM.GetTowerPrice(elementTour, RM.nbrOfEarthTower));
                     }
                     if (temp.Afford(elementTour, price))// ajouter ici le morceau de script qui permet de recuperer le prix de placement d'une tour
                     {
