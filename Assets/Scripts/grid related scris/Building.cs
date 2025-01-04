@@ -110,7 +110,7 @@ public class Building : MonoBehaviour
             TowerStats towerStats = GridBuilding.current.listeTowerCo[cellPos].transform.GetChild(0).GetComponent<TowerStats>();
             bool canUpgrade = false;
                 
-            if (towerStats.ameliorations.Count >= 1 && towerStats.ameliorations.Count < 3)
+            if (towerStats.ameliorations.Count == 1 || towerStats.ameliorations.Count == 2)
             {
                 if (element == 1)
                 {
