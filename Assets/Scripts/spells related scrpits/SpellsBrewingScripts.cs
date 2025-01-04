@@ -89,7 +89,7 @@ public class SpellsBrewingScripts : MonoBehaviour
 
     public void FireButtonSelected()
     {
-        if (brewedSpell.Count < 3)
+        if (brewedSpell.Count < 2)
         {
             if(RM.fireSoul > fireDosePrice)
             {
@@ -115,7 +115,7 @@ public class SpellsBrewingScripts : MonoBehaviour
 
     public void WaterButtonSelected()
     {
-        if (brewedSpell.Count < 3)
+        if (brewedSpell.Count < 2)
         {
             if(RM.waterSoul > waterDosePrice)
             {
@@ -140,7 +140,7 @@ public class SpellsBrewingScripts : MonoBehaviour
 
     public void EarthButtonSelected()
     {
-        if (brewedSpell.Count < 3)
+        if (brewedSpell.Count < 2)
         {
             if(RM.plantSoul > earthDosePrice)
             {
@@ -160,7 +160,7 @@ public class SpellsBrewingScripts : MonoBehaviour
         else
         {
             AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
-            UIM.DisplayAlert("3 is the maximum ingredient you can fit");
+            UIM.DisplayAlert("only two ingredients can fit");
         }
     }
 
