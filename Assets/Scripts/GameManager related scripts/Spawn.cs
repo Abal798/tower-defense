@@ -12,8 +12,10 @@ public class Spawn : MonoBehaviour
     
     public int numberOfMonsterOne;
     public int numberOfMonsterTwo;
+    public int numberOfMonsterThree;
     public GameObject monsterTypeOne;
     public GameObject monsterTypeTwo;
+    public GameObject monsterTypeThree;
     public RessourcesManager RM;
     public float chanceDeSpawnElementaireEntreZeroEtUn;
     public int vagueDapparitionDesElementaires;
@@ -21,6 +23,7 @@ public class Spawn : MonoBehaviour
     public int endWaveNumber;
     public int[] monsterOneWaveList;
     public int[] monsterTwoWaveList;
+    public int[] monsterThreeWaveList;
 
     public List<GameObject> monstersAlive;
 
@@ -49,6 +52,11 @@ public class Spawn : MonoBehaviour
     {
         CleanMonstersAlive();
         RM.wave++;
+        GameObject[] sumonersFlags = GameObject.FindGameObjectsWithTag("SumonersFlag");
+        foreach (GameObject sumonersFlag in sumonersFlags)
+        {
+            sumonersFlag.GetComponent<SummonersFlagBehaviour>().SpawnMonster();
+        }
         waveLaunched.Invoke();
         EndGameStats.EGS.nombreDeVague = RM.wave;
 
@@ -56,6 +64,7 @@ public class Spawn : MonoBehaviour
         {
             numberOfMonsterOne = monsterOneWaveList[RM.wave];
             numberOfMonsterTwo = monsterTwoWaveList[RM.wave];
+            numberOfMonsterThree = monsterThreeWaveList[RM.wave];
             
             //if(numberOfMonsterOne > 0) BookManager.instance.monsterSwarmerEncountered = true;
             //if(numberOfMonsterTwo > 0) BookManager.instance.monsterGiantEncountered = true;
@@ -70,32 +79,25 @@ public class Spawn : MonoBehaviour
 
     private IEnumerator LaunchWave()
     {
-        ennemyToSpawn = numberOfMonsterOne + numberOfMonsterTwo;
+        ennemyToSpawn = numberOfMonsterOne + numberOfMonsterTwo + numberOfMonsterThree;
         float waveDuration = basicWaveDuration + 4 * RM.wave;
         timeBetweenSpawn = waveDuration / ennemyToSpawn;
 
         // Spawn des monstres de type un avec intervalle de temps
         for (int i = 0; i < ennemyToSpawn; i++)
         {
-            if (Random.Range(1, ennemyToSpawn+1) <= numberOfMonsterOne)
+            int rand = Random.Range(0, ennemyToSpawn + 1);
+            if (rand <= numberOfMonsterOne)
             {
                 
                 numberOfMonsterOne--;
                 GameObject newMonster = Instantiate(monsterTypeOne, GetRandomPositionOnSquareEdge(), Quaternion.identity);
                 newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;
-                if (RM.wave >= vagueDapparitionDesElementaires)
-                {
-                    newMonster.GetComponent<MonsterStats>().type = GetMonsterType();
-                }
-                else
-                {
-                    newMonster.GetComponent<MonsterStats>().type = 0;
-                }
-                
+                newMonster.GetComponent<MonsterStats>().type = 0;
                 monstersAlive.Add(newMonster);
                 
             }
-            else
+            else if (rand <= numberOfMonsterTwo && rand > numberOfMonsterOne)
             {
                 BookManager.instance.monsterGiantEncountered = true;
                 numberOfMonsterTwo--;
@@ -109,6 +111,14 @@ public class Spawn : MonoBehaviour
                 {
                     newMonster.GetComponent<MonsterStats>().type = 0;
                 }
+                monstersAlive.Add(newMonster);
+            }
+            else
+            {
+                numberOfMonsterThree--;
+                GameObject newMonster = Instantiate(monsterTypeThree, GetRandomPositionOnSquareEdge(), Quaternion.identity);
+                newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;
+                newMonster.GetComponent<MonsterStats>().type = 0;
                 monstersAlive.Add(newMonster);
             }
             ennemyToSpawn--;
