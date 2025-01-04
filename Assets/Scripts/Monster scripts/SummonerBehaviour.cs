@@ -5,8 +5,13 @@ using UnityEngine;
 
 public class SummonerBehaviour : MonoBehaviour
 {
+    
+    public GameObject summonersFlag;
+    public int numberOfMonstersSumoned = 10;
+    
     private void OnDestroy()
     { 
-        //set the trigger for the next wave
+        GameObject newFlag = Instantiate(summonersFlag, transform.position, Quaternion.identity);
+        newFlag.GetComponent<SummonersFlagBehaviour>().numberOfMonstersToSpawn = numberOfMonstersSumoned;
     }
 }
