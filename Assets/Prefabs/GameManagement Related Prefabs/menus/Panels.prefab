@@ -4032,7 +4032,6 @@ GameObject:
   - component: {fileID: 7633059336582610335}
   - component: {fileID: 171313228676450455}
   - component: {fileID: 6195427106167049157}
-  - component: {fileID: 8319390067771997142}
   - component: {fileID: 573478970749491883}
   m_Layer: 5
   m_Name: SoulConverterPanel
@@ -4141,25 +4140,6 @@ MonoBehaviour:
   fireSoulAmount: {fileID: 8234137569255417885}
   waterSoulAmount: {fileID: 5594665939778768132}
   earthSoulAmount: {fileID: 2250896755388366212}
---- !u!114 &8319390067771997142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1248701632584669207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a936b9287a7fe134183acf194ee4da3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RM: {fileID: 0}
-  soulAmount: {fileID: 1673565615546212972}
-  recipieDisplay:
-  - {fileID: 7026514096514468935}
-  - {fileID: 162888609977207214}
-  - {fileID: 6006142755148966153}
-  recipie: 
 --- !u!114 &573478970749491883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10425,7 +10405,7 @@ RectTransform:
   m_GameObject: {fileID: 3088709487138606663}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5312749053291493788}
@@ -10445,7 +10425,7 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4169188693374429900
 Canvas:
   m_ObjectHideFlags: 0
@@ -21858,9 +21838,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SpellsBrewingScripts, Assembly-CSharp
-        m_MethodName: SaveSpell
+      - m_Target: {fileID: 573478970749491883}
+        m_TargetAssemblyTypeName: SoulConvertingScript, Assembly-CSharp
+        m_MethodName: Convert
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
