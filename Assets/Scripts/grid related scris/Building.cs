@@ -110,35 +110,19 @@ public class Building : MonoBehaviour
             TowerStats towerStats = GridBuilding.current.listeTowerCo[cellPos].transform.GetChild(0).GetComponent<TowerStats>();
             bool canUpgrade = false;
                 
-            if (towerStats.ameliorations.Count == 1)
+            if (towerStats.ameliorations.Count == 1 || towerStats.ameliorations.Count == 2)
             {
                 if (element == 1)
                 {
-                    canUpgrade = Afford(element, Mathf.FloorToInt(RM.GetTowerPrice(element, RM.nbrOfFireTower, 1)));
+                    canUpgrade = Afford(element, Mathf.FloorToInt(RM.GetTowerPrice(element, RM.nbrOfFireTower)));
                 }
                 else if (element == 2)
                 {
-                    canUpgrade = Afford(element, Mathf.FloorToInt(RM.GetTowerPrice(element, RM.nbrOfWaterTower, 1)));
+                    canUpgrade = Afford(element, Mathf.FloorToInt(RM.GetTowerPrice(element, RM.nbrOfWaterTower)));
                 }
                 else if (element == 3)
                 {
-                    canUpgrade = Afford(element, Mathf.FloorToInt(RM.GetTowerPrice(element, RM.nbrOfEarthTower, 1)));
-                }
-                
-            }
-            else if (towerStats.ameliorations.Count == 2)
-            {
-                if (element == 1)
-                {
-                    canUpgrade = Afford(element, Mathf.FloorToInt(RM.GetTowerPrice(element, RM.nbrOfFireTower, 2)));
-                }
-                else if (element == 2)
-                {
-                    canUpgrade = Afford(element, Mathf.FloorToInt(RM.GetTowerPrice(element, RM.nbrOfWaterTower, 2)));
-                }
-                else if (element == 3)
-                {
-                    canUpgrade = Afford(element, Mathf.FloorToInt(RM.GetTowerPrice(element, RM.nbrOfEarthTower, 2)));
+                    canUpgrade = Afford(element, Mathf.FloorToInt(RM.GetTowerPrice(element, RM.nbrOfEarthTower)));
                 }
             }
                 
