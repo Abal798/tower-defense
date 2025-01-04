@@ -80,21 +80,18 @@ public class Spawn : MonoBehaviour
 
     private IEnumerator LaunchWave()
     {
-        // Calcul du nombre total de monstres à générer
         ennemyToSpawn = numberOfMonsterOne + numberOfMonsterTwo + numberOfMonsterThree;
         float waveDuration = basicWaveDuration + 4 * RM.wave;
         timeBetweenSpawn = waveDuration / ennemyToSpawn;
 
-        // Créer une liste des types de monstres à générer
+        // Créer une liste de tout les monstres à générer
         List<int> monsterOrder = new List<int>();
         for (int i = 0; i < numberOfMonsterOne; i++) monsterOrder.Add(1);
         for (int i = 0; i < numberOfMonsterTwo; i++) monsterOrder.Add(2);
         for (int i = 0; i < numberOfMonsterThree; i++) monsterOrder.Add(3);
-
-        // Mélanger la liste pour obtenir un ordre aléatoire
+        
         ShuffleList(monsterOrder);
-
-        // Instancier les monstres selon l'ordre mélangé
+        
         foreach (int monsterType in monsterOrder)
         {
             GameObject newMonster;
@@ -128,13 +125,11 @@ public class Spawn : MonoBehaviour
 
             newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;
             monstersAlive.Add(newMonster);
-
-            // Pause entre les apparitions
+            
             yield return new WaitForSeconds(timeBetweenSpawn);
         }
-
-        // Ajouter un boss si la dernière vague est atteinte
-        if (endWaveNumber - 1 == RM.wave)
+        
+        if (endWaveNumber - 1 == RM.wave) // arrive en dernier systematiquement
         {
             GameObject newMonster = Instantiate(monsterTypeBoss, GetRandomPositionOnSquareEdge(), Quaternion.identity);
             newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;
@@ -142,8 +137,7 @@ public class Spawn : MonoBehaviour
             monstersAlive.Add(newMonster);
         }
     }
-
-    // Fonction pour mélanger une liste
+    
     private void ShuffleList<T>(List<T> list)
     {
         for (int i = 0; i < list.Count; i++)
