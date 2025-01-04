@@ -2413,13 +2413,14 @@ MonoBehaviour:
   monsterTypeOne: {fileID: 1791313746008852168, guid: 208d1a2fa46ec174b8c0c0c11578c539, type: 3}
   monsterTypeTwo: {fileID: 1791313746008852168, guid: d06bd98ef2bc15246882e89415279836, type: 3}
   monsterTypeThree: {fileID: 1791313746008852168, guid: ab76bed5c54f3e94e9df20488c1bec87, type: 3}
+  monsterTypeBoss: {fileID: 0}
   RM: {fileID: 744501577}
   chanceDeSpawnElementaireEntreZeroEtUn: 0
   vagueDapparitionDesElementaires: 0
-  endWaveNumber: 8
-  monsterOneWaveList: 000000000e0000001c0000002e0000004b0000006e0000009b000000cd000000fa0000002c010000
+  endWaveNumber: 9
+  monsterOneWaveList: 000000000c00000018000000280000004b000000780000009b000000cd000000fa0000002c010000
   monsterTwoWaveList: 00000000000000000000000000000000000000000100000003000000070000000c00000010000000
-  monsterThreeWaveList: 0000000001000000010000000100000001000000010000000100000001000000
+  monsterThreeWaveList: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   monstersAlive: []
   basicWaveDuration: 0
   squareSize: 39
@@ -2463,9 +2464,9 @@ MonoBehaviour:
   basicWaterDosePrice: 60
   basicEarthDosePrice: 60
   spellAugmentationPriceFactor: 5
-  fireSoul: 220
-  waterSoul: 99999
-  plantSoul: 99999
+  fireSoul: 190
+  waterSoul: 190
+  plantSoul: 190
   mainTilemap: {fileID: 1526346545}
   priceScaleFactor: 20
   basicFireTowerPrice: 100
