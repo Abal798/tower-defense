@@ -16,6 +16,7 @@ public class Spawn : MonoBehaviour
     public GameObject monsterTypeOne;
     public GameObject monsterTypeTwo;
     public GameObject monsterTypeThree;
+    public GameObject monsterTypeBoss;
     public RessourcesManager RM;
     public float chanceDeSpawnElementaireEntreZeroEtUn;
     public int vagueDapparitionDesElementaires;
@@ -97,7 +98,7 @@ public class Spawn : MonoBehaviour
         // Spawn des monstres de type 2
         for (int i = 0; i < numberOfMonsterTwo; i++)
         {
-            BookManager.instance.monsterGiantEncountered = true;
+            //BookManager.instance.monsterGiantEncountered = true;
             GameObject newMonster = Instantiate(monsterTypeTwo, GetRandomPositionOnSquareEdge(), Quaternion.identity);
             newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;
 
@@ -122,6 +123,14 @@ public class Spawn : MonoBehaviour
             newMonster.GetComponent<MonsterStats>().type = 0;
             monstersAlive.Add(newMonster);
             yield return new WaitForSeconds(timeBetweenSpawn); // Pause entre chaque apparition
+        }
+        
+        if(endWaveNumber-1 == RM.wave)
+        {
+            GameObject newMonster = Instantiate(monsterTypeBoss, GetRandomPositionOnSquareEdge(), Quaternion.identity);
+            newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;
+            newMonster.GetComponent<MonsterStats>().type = 0;
+            monstersAlive.Add(newMonster);
         }
     }
 
