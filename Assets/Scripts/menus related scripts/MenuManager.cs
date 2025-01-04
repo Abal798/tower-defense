@@ -61,9 +61,9 @@ public class MenuManager : MonoBehaviour
         waterSoulIngameDisplay.text = "" + RM.waterSoul;
         earthSoulIngameDisplay.text = "" + RM.plantSoul;
 
-        fireTowerPriceDisplay.text = "" + RM.GetTowerPrice(1,RM.nbrOfFireTower,0);
-        waterTowerPriceDisplay.text = "" + RM.GetTowerPrice(1,RM.nbrOfWaterTower,0);
-        earthTowerPriceDisplay.text = "" + RM.GetTowerPrice(1,RM.nbrOfEarthTile,0);
+        fireTowerPriceDisplay.text = "" + RM.GetTowerPrice(1,RM.nbrOfFireTower);
+        waterTowerPriceDisplay.text = "" + RM.GetTowerPrice(1,RM.nbrOfWaterTower);
+        earthTowerPriceDisplay.text = "" + RM.GetTowerPrice(1,RM.nbrOfEarthTower);
         
         
         waveDisplay.text = "wave : " + RM.wave;
