@@ -165,12 +165,12 @@ public class RessourcesManager : MonoBehaviour
         }
         if (towerElement == 2)
         {
-            waterTowerPrice = basicWaterTowerPrice + priceScaleFactor * numberOfTowerPlaced;
+            waterTowerPrice = basicWaterTowerPrice + priceScaleFactor *  numberOfTowerPlaced;
             return waterTowerPrice;
         }
         if (towerElement == 3)
         {
-            earthTowerPrice = basicEarthTowerPrice + priceScaleFactor * numberOfTowerPlaced;
+            earthTowerPrice = basicEarthTowerPrice + priceScaleFactor *  numberOfTowerPlaced;
             return earthTowerPrice;
         }
 
