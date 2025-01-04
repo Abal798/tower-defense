@@ -17,6 +17,7 @@ public class MonsterDeathBehaviour : MonoBehaviour
     public GameObject monsterDamagesEffectPrefab;
     public MonsterStats MS;
     public GameObject deathParticules;
+    public Animation TakeDamageAnimation;
 
     
     [Header("automatique")]
@@ -154,6 +155,8 @@ public class MonsterDeathBehaviour : MonoBehaviour
 
     private void TakeDamages(Collider2D other)
     {
+        TakeDamageAnimation.Play();
+        
         float damages = other.gameObject.GetComponent<BulletBehaviour>().dammage;
         List<int> bulletType = other.gameObject.GetComponent<BulletBehaviour>().bulletElements;
         

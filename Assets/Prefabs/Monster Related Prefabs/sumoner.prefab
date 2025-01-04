@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 6012127422834315380}
   - component: {fileID: -3089433572879407143}
   - component: {fileID: 2255522603312805375}
+  - component: {fileID: 4554944457774543691}
   m_Layer: 6
   m_Name: sumoner
   m_TagString: Ennemy
@@ -36,7 +37,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -153,6 +154,7 @@ MonoBehaviour:
   monsterDamagesEffectPrefab: {fileID: 1860567611682378094, guid: 5156c5ba4dab29d489c85293b9bee66d, type: 3}
   MS: {fileID: 6012127422834315380}
   deathParticules: {fileID: 5132903826172967407, guid: 69e5a0a7244bdad4b9395227de198bcd, type: 3}
+  TakeDamageAnimation: {fileID: 4554944457774543691}
   healthPoints: 4
   incomingDamage: 0
   RM: {fileID: 0}
@@ -268,3 +270,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   summonersFlag: {fileID: 5944119196181530582, guid: 9fe0d735c8644cc4ba3ab85b26c93808, type: 3}
   numberOfMonstersSumoned: 10
+--- !u!111 &4554944457774543691
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791313746008852168}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 6efa586dfcce23e42854d8f129cd753e, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 6efa586dfcce23e42854d8f129cd753e, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
