@@ -17,10 +17,13 @@ public class CameraManager : MonoBehaviour
     public float maxZoom = 10f; // Maximum orthographic 
     
     private  new Camera camera;
+
+    private float basicZoom;
+    private Vector3 basicCameraPosition;
     
     
     
-    private Vector2 previousMousePosition; // Stocke la position de la souris au frame précédent
+    private Vector2 previousMousePosition; // Stocke la position de la souris a la frame précédent
     private Vector2 mouseDelta;           // Stocke le déplacement de la souris
 
     private bool isDragging = false; 
@@ -30,6 +33,8 @@ public class CameraManager : MonoBehaviour
     private void Start()
     {
         camera = GetComponent<Camera>();
+        basicZoom = camera.orthographicSize;
+        basicCameraPosition = transform.position;
     }
 
     private void Update()
@@ -106,13 +111,14 @@ public class CameraManager : MonoBehaviour
         camera.orthographicSize = Mathf.Clamp(camera.orthographicSize, minZoom, maxZoom);
 
         targetPosition.z = transform.position.z;
-
-        
-
-        
-        
-        
         transform.position = Vector3.Lerp(transform.position, targetPosition, 0.1f);
+
+
+        if (TutorialBehaviour.cameraLocked == true)
+        {
+            camera.orthographicSize = basicZoom;
+            transform.position = basicCameraPosition;
+        }
     }
     
     public Vector2 GetMouseDelta()
