@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -116,8 +117,8 @@ public class CameraManager : MonoBehaviour
 
         if (TutorialBehaviour.cameraLocked == true)
         {
-            camera.orthographicSize = basicZoom;
-            transform.position = basicCameraPosition;
+            camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, basicZoom, Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, basicCameraPosition, Time.deltaTime);
         }
     }
     
