@@ -117,7 +117,7 @@ public class CameraManager : MonoBehaviour
 
         if (TutorialBehaviour.cameraLocked == true)
         {
-            camera.orthographicSize = MathF.Lerp(camera.orthographicSize, basicZoom, Time.deltaTime);
+            camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, basicZoom, Time.deltaTime);
             transform.position = Vector3.Lerp(transform.position, basicCameraPosition, Time.deltaTime);
         }
     }
