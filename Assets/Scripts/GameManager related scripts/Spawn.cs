@@ -35,8 +35,6 @@ public class Spawn : MonoBehaviour
 
     public float squareSize = 50;
 
-    public UnityEvent waveLaunched;
-
 
     private void Start()
     {
@@ -53,12 +51,19 @@ public class Spawn : MonoBehaviour
     {
         CleanMonstersAlive();
         RM.wave++;
+
+        foreach (var tower in GridBuilding.current.listeTowerCo)
+        {
+            tower.Value.GetComponent<ActualizeChild>().HealTower();
+        }
+        
+        
+        
         GameObject[] sumonersFlags = GameObject.FindGameObjectsWithTag("SumonersFlag");
         foreach (GameObject sumonersFlag in sumonersFlags)
         {
             sumonersFlag.GetComponent<SummonersFlagBehaviour>().SpawnMonster();
         }
-        waveLaunched.Invoke();
         EndGameStats.EGS.nombreDeVague = RM.wave;
 
         if (RM.wave < monsterOneWaveList.Length)

@@ -248,7 +248,7 @@ public class MonsterDeathBehaviour : MonoBehaviour
         newFloatingText.transform.SetParent(null);
 
         // Update the text and color
-        newFloatingText.transform.GetChild(0).GetComponent<TextMesh>().text = damagesAmount.ToString();
+        newFloatingText.transform.GetChild(0).GetComponent<TextMesh>().text = MathF.Round(damagesAmount).ToString();
         newFloatingText.transform.GetChild(0).GetComponent<TextMesh>().color = new Color(255, 393 * Mathf.Exp(-0.2f * damagesAmount), 0, 255);
         
         Destroy(newFloatingText, 2f);
