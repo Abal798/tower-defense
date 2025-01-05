@@ -4,16 +4,38 @@ using UnityEngine;
 
 public class ButtonScaleSelection : MonoBehaviour
 {
+    private Vector3 targetScale;
+    private Vector3 startScale;
+    [SerializeField] private float scaleSpeed = 10f; // Speed of the scaling transition
+
+    private bool isPointerOver = false;
+
+    void Start()
+    {
+        startScale = transform.localScale;
+        targetScale = transform.localScale * 1.1f;
+    }
+
+    void Update()
+    {
+        // Smoothly scale towards the target scale based on pointer state
+        if (isPointerOver)
+        {
+            transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime * scaleSpeed);
+        }
+        else
+        {
+            transform.localScale = Vector3.Lerp(transform.localScale, startScale, Time.deltaTime * scaleSpeed);
+        }
+    }
+
     public void OnPointerEnter()
     {
-        transform.localScale = new Vector3(1.1f, 1.1f, 1f);
+        isPointerOver = true; // Set pointer state
     }
-    public void OnPointerEnter(Vector3 newScale)
-    {
-        transform.localScale = newScale;
-    }
+
     public void OnPointerExit()
     {
-        transform.localScale = new Vector3(1f, 1f, 1f);
+        isPointerOver = false; // Reset pointer state
     }
 }
