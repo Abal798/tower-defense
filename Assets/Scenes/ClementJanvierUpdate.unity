@@ -2418,27 +2418,12 @@ MonoBehaviour:
   chanceDeSpawnElementaireEntreZeroEtUn: 0
   vagueDapparitionDesElementaires: 0
   endWaveNumber: 9
-  monsterOneWaveList: 000000000c00000018000000280000005a000000780000009b000000be000000fa0000002c010000
-  monsterTwoWaveList: 00000000000000000000000000000000000000000100000003000000070000000c00000010000000
+  monsterOneWaveList: 000000000c00000018000000280000004b00000087000000a5000000dc000000fa0000002c010000
+  monsterTwoWaveList: 00000000000000000000000000000000000000000200000006000000080000000c00000010000000
   monsterThreeWaveList: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   monstersAlive: []
   basicWaveDuration: 0
   squareSize: 39
-  waveLaunched:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -8620561639708342159, guid: 29511a5861e89ce4293b294750d70ba7, type: 3}
-        m_TargetAssemblyTypeName: ActualizeChild, Assembly-CSharp
-        m_MethodName: HealTower
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &744501577
 MonoBehaviour:
   m_ObjectHideFlags: 0
