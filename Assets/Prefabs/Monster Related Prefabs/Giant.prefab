@@ -106,6 +106,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soulReward: 36
   monsterDamagesEffectPrefab: {fileID: 1860567611682378094, guid: 5156c5ba4dab29d489c85293b9bee66d, type: 3}
+  monsterDamageParticulePrefab: {fileID: 4514968584335673242, guid: 2b85546198112d6469855f7d04ba5a37, type: 3}
+  damageParticulesOffset: 0
   MS: {fileID: 4423026053618790021}
   deathParticules: {fileID: 5132903826172967407, guid: 69e5a0a7244bdad4b9395227de198bcd, type: 3}
   TakeDamageAnimation: {fileID: 6965535822025260316}
