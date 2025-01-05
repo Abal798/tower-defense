@@ -2413,7 +2413,7 @@ MonoBehaviour:
   monsterTypeOne: {fileID: 1791313746008852168, guid: 208d1a2fa46ec174b8c0c0c11578c539, type: 3}
   monsterTypeTwo: {fileID: 1791313746008852168, guid: d06bd98ef2bc15246882e89415279836, type: 3}
   monsterTypeThree: {fileID: 1791313746008852168, guid: ab76bed5c54f3e94e9df20488c1bec87, type: 3}
-  monsterTypeBoss: {fileID: 0}
+  monsterTypeBoss: {fileID: 1791313746008852168, guid: c4b8ae89e9b7b98419cdd0b1e35dfa3e, type: 3}
   RM: {fileID: 744501577}
   chanceDeSpawnElementaireEntreZeroEtUn: 0
   vagueDapparitionDesElementaires: 0
@@ -2464,9 +2464,9 @@ MonoBehaviour:
   basicWaterDosePrice: 60
   basicEarthDosePrice: 60
   spellAugmentationPriceFactor: 5
-  fireSoul: 220
-  waterSoul: 99999
-  plantSoul: 99999
+  fireSoul: 190
+  waterSoul: 190
+  plantSoul: 190
   mainTilemap: {fileID: 1526346545}
   priceScaleFactor: 20
   basicFireTowerPrice: 100
@@ -28865,7 +28865,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6498038585188560961, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6592259351321667751, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target

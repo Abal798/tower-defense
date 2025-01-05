@@ -24,7 +24,6 @@ public class SpellsBrewingScripts : MonoBehaviour
     [Header("display")] 
     public GameObject[] ingredientOne;
     public GameObject[] ingredientTwo;
-    public GameObject[] ingredientThree;
 
     private int fireDosePrice = 60;
     private int waterDosePrice = 60;
@@ -276,13 +275,6 @@ public class SpellsBrewingScripts : MonoBehaviour
             {
                 currentSpellShape.GetComponent<Image>().color = Color.green;
             }
-                
-        
-            
-        }
-        else if(brewedSpell.Count == 3)
-        {
-            ingredientThree[i].SetActive(true);
         }
     }
 
@@ -293,10 +285,6 @@ public class SpellsBrewingScripts : MonoBehaviour
             VARIABLE.SetActive(false);
         }
         foreach (var VARIABLE in ingredientTwo)
-        {
-            VARIABLE.SetActive(false);
-        }
-        foreach (var VARIABLE in ingredientThree)
         {
             VARIABLE.SetActive(false);
         }

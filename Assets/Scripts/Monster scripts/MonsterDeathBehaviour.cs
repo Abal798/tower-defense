@@ -15,6 +15,8 @@ public class MonsterDeathBehaviour : MonoBehaviour
     [Header("a renseigner (les GD, tjr pas toucher)")]
 
     public GameObject monsterDamagesEffectPrefab;
+    public GameObject monsterDamageParticulePrefab;
+    public float damageParticulesOffset;
     public MonsterStats MS;
     public GameObject deathParticules;
     public Animation TakeDamageAnimation;
@@ -156,7 +158,7 @@ public class MonsterDeathBehaviour : MonoBehaviour
     private void TakeDamages(Collider2D other)
     {
         TakeDamageAnimation.Play();
-        
+        instantiateParticules(other);
         float damages = other.gameObject.GetComponent<BulletBehaviour>().dammage;
         List<int> bulletType = other.gameObject.GetComponent<BulletBehaviour>().bulletElements;
         
@@ -227,10 +229,17 @@ public class MonsterDeathBehaviour : MonoBehaviour
         
     }
 
+    void instantiateParticules(Collider2D other)
+    {
+        GameObject newParticules = Instantiate(monsterDamageParticulePrefab, transform.position, quaternion.identity, transform);
+        newParticules.transform.rotation =  Quaternion.LookRotation(transform.position - other.gameObject.transform.position);
+        Destroy(newParticules,2f);
+    }
+
     void ShowFloatingText(float damagesAmount = 1)
     {
         // Instantiate the floating text
-        GameObject newFloatingText = Instantiate(monsterDamagesEffectPrefab, transform.position, Quaternion.identity);
+        GameObject newFloatingText = Instantiate(monsterDamagesEffectPrefab, transform.position, Quaternion.identity, transform);
 
         // Ensure the floating text keeps its position in world space
         newFloatingText.transform.position = transform.position;
@@ -241,6 +250,8 @@ public class MonsterDeathBehaviour : MonoBehaviour
         // Update the text and color
         newFloatingText.transform.GetChild(0).GetComponent<TextMesh>().text = damagesAmount.ToString();
         newFloatingText.transform.GetChild(0).GetComponent<TextMesh>().color = new Color(255, 393 * Mathf.Exp(-0.2f * damagesAmount), 0, 255);
+        
+        Destroy(newFloatingText, 2f);
     }
 
 }
