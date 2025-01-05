@@ -306,6 +306,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ActivateGameobject(7);
                 Highlight(new Vector2(810, 455), new Vector2(3f, 0.4f));
                 // Il doit lancer la prochaine vague le prochain dialogue apparaissant après la vague
+                UnlockCamera();
                 break;
             case 12:
                 ModifySpeakingCharacter(2);
@@ -335,12 +336,12 @@ public class TutorialBehaviour : MonoBehaviour
                 StopHighlighting();
                 break;
             case 17:
-                    ChangeExpression(1, 20);
-                    ModifyToCurentText();
-                    UnlockCamera();
-                    // Le joueur place ensuite son sort nouvellement créer qu'il doit placer pour pouvoir continuer
-                    Highlight(new Vector2(750, -280), new Vector2(6.3f, 1.2f)); // Pas sûr des coordonnées exacte vu que je ne peux pas voir le slot exact ou la potion se fait, mais ça se fera vite
-                    break;
+                ChangeExpression(1, 20);
+                ModifyToCurentText();
+                UnlockCamera();
+                Highlight(new Vector2(750, -245), new Vector2(5f, 0.85f));
+                // Le joueur place ensuite son sort nouvellement créer qu'il doit placer pour pouvoir continuer
+                break;
             case 18:
                 ChangeExpression(1, 1);
                 ModifyToCurentText();
