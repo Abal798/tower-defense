@@ -2669,6 +2669,7 @@ MonoBehaviour:
   - "\xC9valuons un peu ta connaissance de l\u2019alchimie ! Dicte-moi ce que je
     dois faire pour \xE9tablir une premi\xE8re ligne de d\xE9fense."
   - Merci de votre confiance !
+  - "Bla bla sur les \xE2mes"
   - "Pour commencer, prenons la fiole d'\xE2me de l'\xE9l\xE9ment que nous voulons
     cr\xE9er, et jetons-l\xE0 \xE0 l'emplacement o\xF9 nous voulons placer notre
     tour."
@@ -2681,6 +2682,7 @@ MonoBehaviour:
   - Excellent !
   - "Oh non ! Nos poursuivants nous ont retrouv\xE9s ! Esp\xE9rons que ces tours
     suffisent \xE0 nous d\xE9fendre !"
+  - "Parler de l'acquisition des \xE2mes avant de lancer la vague"
   - "Nos d\xE9fenses ont tenu bon ! Et nous avons plus de r\xE9serves ! Malgr\xE9
     tout, je doute que nos ennemis ne s'arr\xEAtent l\xE0. "
   - "Pr\xE9parons quelques sorts pour renforcer nos d\xE9fenses."
@@ -2691,7 +2693,7 @@ MonoBehaviour:
     plac\xE9 une tour. Ce sort nous permettra de modifier le terrain \xE0 notre avantage."
   - "\xC9vitons tout de m\xEAme de placer un sort sur nos tours, sans quoi elles
     risquent d'\xEAtre d\xE9truites."
-  - "l'\xE9quilibre de la r\xE9gion est tr\xE8s fragile. En abusant de sorts d'un
+  - "L'\xE9quilibre de la r\xE9gion est tr\xE8s fragile. En abusant de sorts d'un
     m\xEAme \xE9l\xE9ment, nous risquons de d\xE9s\xE9quilibrer la zone et nous attirer
     des ennuis ! "
   - Attention ! Une nouvelle vagues d'ennemis est en approche !
