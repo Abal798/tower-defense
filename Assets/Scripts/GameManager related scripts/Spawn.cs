@@ -13,9 +13,11 @@ public class Spawn : MonoBehaviour
     public int numberOfMonsterOne;
     public int numberOfMonsterTwo;
     public int numberOfMonsterThree;
+    public int numberOfMonsterFour;
     public GameObject monsterTypeOne;
     public GameObject monsterTypeTwo;
     public GameObject monsterTypeThree;
+    public GameObject monsterTypeFour;
     public GameObject monsterTypeBoss;
     public RessourcesManager RM;
     public float chanceDeSpawnElementaireEntreZeroEtUn;
@@ -25,6 +27,7 @@ public class Spawn : MonoBehaviour
     public int[] monsterOneWaveList;
     public int[] monsterTwoWaveList;
     public int[] monsterThreeWaveList;
+    public int[] monsterFourWaveList;
 
     public List<GameObject> monstersAlive;
 
@@ -71,6 +74,7 @@ public class Spawn : MonoBehaviour
             numberOfMonsterOne = monsterOneWaveList[RM.wave];
             numberOfMonsterTwo = monsterTwoWaveList[RM.wave];
             numberOfMonsterThree = monsterThreeWaveList[RM.wave];
+            numberOfMonsterFour = monsterFourWaveList[RM.wave];
             
             //if(numberOfMonsterOne > 0) BookManager.instance.monsterSwarmerEncountered = true;
             //if(numberOfMonsterTwo > 0) BookManager.instance.monsterGiantEncountered = true;
@@ -85,7 +89,7 @@ public class Spawn : MonoBehaviour
 
     private IEnumerator LaunchWave()
     {
-        ennemyToSpawn = numberOfMonsterOne + numberOfMonsterTwo + numberOfMonsterThree;
+        ennemyToSpawn = numberOfMonsterOne + numberOfMonsterTwo + numberOfMonsterThree + numberOfMonsterFour;
         float waveDuration = basicWaveDuration + 4 * RM.wave;
         timeBetweenSpawn = waveDuration / ennemyToSpawn;
 
@@ -94,6 +98,7 @@ public class Spawn : MonoBehaviour
         for (int i = 0; i < numberOfMonsterOne; i++) monsterOrder.Add(1);
         for (int i = 0; i < numberOfMonsterTwo; i++) monsterOrder.Add(2);
         for (int i = 0; i < numberOfMonsterThree; i++) monsterOrder.Add(3);
+        for (int i = 0; i < numberOfMonsterFour; i++) monsterOrder.Add(4);
         
         ShuffleList(monsterOrder);
         
@@ -121,9 +126,16 @@ public class Spawn : MonoBehaviour
                     newMonster.GetComponent<MonsterStats>().type = 0;
                 }
             }
-            else // monsterType == 3
+            else if(monsterType == 3)
             {
                 newMonster = Instantiate(monsterTypeThree, GetRandomPositionOnSquareEdge(), Quaternion.identity);
+                newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;
+                newMonster.GetComponent<MonsterStats>().type = 0;
+            }
+
+            else //if(monsterType == 4)
+            {
+                newMonster = Instantiate(monsterTypeFour, GetRandomPositionOnSquareEdge(), Quaternion.identity);
                 newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;
                 newMonster.GetComponent<MonsterStats>().type = 0;
             }

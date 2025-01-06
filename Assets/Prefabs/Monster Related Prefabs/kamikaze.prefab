@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 1341761080996762243}
   - component: {fileID: 7374532177628107893}
   - component: {fileID: 8496490190715410811}
+  - component: {fileID: -6528988906386054266}
   - component: {fileID: 4462025437506793994}
   - component: {fileID: 4164270264960268209}
   - component: {fileID: -1325253033383984031}
-  - component: {fileID: 3593964182594265304}
   - component: {fileID: 6012127422834315380}
   - component: {fileID: -3089433572879407143}
-  - component: {fileID: 1006782394852865325}
+  - component: {fileID: 1173053799401961824}
+  - component: {fileID: 3662245900588095929}
   m_Layer: 6
   m_Name: kamikaze
   m_TagString: Ennemy
@@ -81,14 +82,14 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 7482667652216324306, guid: 3a63b7cb66315f546a216034e9e047e9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
+  m_DrawMode: 2
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
+  m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
@@ -128,15 +129,28 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.024, y: 1.024}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
+    drawMode: 2
+    adaptiveTiling: 1
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-6528988906386054266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791313746008852168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9919b78e645dab4439578b849e77f03c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regionSize: 2
 --- !u!114 &4462025437506793994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,8 +165,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soulReward: 12
   monsterDamagesEffectPrefab: {fileID: 1860567611682378094, guid: 5156c5ba4dab29d489c85293b9bee66d, type: 3}
+  monsterDamageParticulePrefab: {fileID: 4514968584335673242, guid: 2b85546198112d6469855f7d04ba5a37, type: 3}
+  damageParticulesOffset: 0
   MS: {fileID: 6012127422834315380}
   deathParticules: {fileID: 5132903826172967407, guid: 69e5a0a7244bdad4b9395227de198bcd, type: 3}
+  TakeDamageAnimation: {fileID: 1173053799401961824}
   healthPoints: 4
   incomingDamage: 0
   RM: {fileID: 0}
@@ -187,27 +204,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MStats: {fileID: 6012127422834315380}
   deplacements: []
+  hierarchicalPathfinding: {fileID: 0}
   pathfinding: {fileID: 0}
   speed: 1
   gridLayout: {fileID: 0}
   objectif: {x: 0, y: 0, z: 0}
---- !u!114 &3593964182594265304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791313746008852168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4914701ace5c561459216c175ccceaa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MS: {fileID: 6012127422834315380}
-  damages: 0
-  targetTower: 0
-  tower: {fileID: 0}
-  baseTower: {fileID: 0}
+  towerDetectionRadius: 100
 --- !u!114 &6012127422834315380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,10 +222,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6558944d9a8b4d94ba190e16e880de10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 40
+  health: 100
   basicSpeed: 1
-  speed: 1
-  damages: 10
+  speed: 2
+  damages: 15
   type: 0
   damageFactorbonus: 1.5
   damageFactorMalus: 0.75
@@ -254,7 +256,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &1006782394852865325
+--- !u!111 &1173053799401961824
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791313746008852168}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a128ef99d14401b47bd28163f710dd10, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: fe2aaff5d07a7094e8ea46db8b0ec87f, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!114 &3662245900588095929
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -266,11 +284,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 391cf5f6219ca114ea6f3fe0f81e0439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MStats: {fileID: 6012127422834315380}
-  deplacements: []
-  pathfinding: {fileID: 4164270264960268209}
-  speed: 0
-  gridLayout: {fileID: 0}
-  objectif: {x: 0, y: 0, z: 0}
-  objectifTargeted: 0
-  nearestTower: {x: 0, y: 0, z: 0}
+  MS: {fileID: 6012127422834315380}
+  targetTower: 0
+  tower: {fileID: 0}
