@@ -638,7 +638,7 @@ MonoBehaviour:
   menusSoundsSource: {fileID: 1985097464}
   enemyDie: {fileID: 8300000, guid: b4f4fdaa3c585364eaa8da346a91020a, type: 3}
   buttonClick: {fileID: 8300000, guid: e94de3b559f61dc43825a90a3ff00c04, type: 3}
-  alertDisplay: {fileID: 8300000, guid: f523b9df4eb373d459433e9c4006159d, type: 3}
+  alertDisplay: {fileID: 8300000, guid: 17b6e835815b1034c87a129d45d561cb, type: 3}
   pageTurn: {fileID: 8300000, guid: 80ac5e14d176e7140a1c4004c55e6d8e, type: 3}
   menusSounds: []
   addFireIngredient: {fileID: 8300000, guid: 4e086af21417a98448eb5294d7257cd0, type: 3}
@@ -648,8 +648,8 @@ MonoBehaviour:
   cook: {fileID: 8300000, guid: bb4107916ca892645ad6e8cb3fc47441, type: 3}
   towerSpawn: {fileID: 8300000, guid: 60f8ed7ad34840a448c6800ea5c8cb5e, type: 3}
   towerSelect: {fileID: 8300000, guid: affdcbfb0221df245886c490473c8e9c, type: 3}
-  towerDeath: {fileID: 0}
-  towerUpgrade: {fileID: 0}
+  towerDeath: {fileID: 8300000, guid: a105befc4bd72584fa1a3caf317a5cf9, type: 3}
+  towerUpgrade: {fileID: 8300000, guid: 0f4ac9fca82c4e9449c8d6527b9e73fa, type: 3}
 --- !u!4 &64261803
 Transform:
   m_ObjectHideFlags: 0
