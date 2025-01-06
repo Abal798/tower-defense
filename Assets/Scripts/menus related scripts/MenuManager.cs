@@ -57,6 +57,7 @@ public class MenuManager : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log("AHHHHHHHHHHHHH"+ activePanel.name);
         fireSoulIngameDisplay.text = "" + RM.fireSoul;
         waterSoulIngameDisplay.text = "" + RM.waterSoul;
         earthSoulIngameDisplay.text = "" + RM.plantSoul;
@@ -143,14 +144,14 @@ public class MenuManager : MonoBehaviour
 
 
 
-        /*if (Input.GetMouseButtonDown(1) && activePanel == ingamePanel)
+        if (Input.GetMouseButtonDown(1) && activePanel == ingamePanel)
         {
             foreach (var tower in GridBuilding.current.listeTowerCo)
             {
-                //tower.Value.GetComponent<TowerRemover>().UnSelectTower();
+                tower.Value.GetComponent<ActualizeChild>().UnSelectTower();
             }
         }
-        */
+        
     }
 
     public void OpenStats()
