@@ -305,26 +305,25 @@ public class TutorialBehaviour : MonoBehaviour
             case 12:
                 ModifyToCurentText(); // Amélioration de tour, qu'il n'est pas obligé de faire.
                 break;
-            case 13:
+            case 13: 
+                ModifyToCurentText();
+                break;
+            case 14:
                 ModifyToCurentText();
                 ModifySpeakingCharacter(1);
                 ChangeExpression(1, 3);
-                // Le joueur doit finir de placer ces défenses (Jusqu'à qu'il n'ait plus de ressources pour placer ses ressources dans les 3 éléments
                 break;
-            case 14:
+            case 15:
                 ModifyToCurentText();
                 ChangeExpression(1, 18);
                 ActivateGameobject(6);
                 ActivateGameobject(10);
                 Highlight(new Vector2(805, 452.5f), new Vector2(3.2f, 0.35f));
-                break;
-            case 15: 
-                // Il doit lancer la prochaine vague le prochain dialogue apparaissant après la vague
-                ModifyToCurentText();
-                UnlockCamera();
+                // Le joueur doit finir de placer ces défenses (Jusqu'à qu'il n'ait plus de ressources pour placer ses ressources dans les 3 éléments
                 break;
             case 16:
                 ModifySpeakingCharacter(2);
+                StopHighlighting();
                 ChangeExpression(1, 23);
                 ChangeExpression(2, 2);
                 ModifyToCurentText();
@@ -342,7 +341,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ChangeExpression(1, 17);
                 ModifyToCurentText();
                 ActivateGameobject(7);
-                    Highlight(new Vector2(-858, 310), new Vector2(1.90f, 0.8f));
+                    Highlight(new Vector2(-855, 313), new Vector2(1.93f, 0.77f));
                 // Le joueur doit cliquer sur le bouton d'Alchemy pour continuer
                     break;
             case 20:
@@ -363,20 +362,27 @@ public class TutorialBehaviour : MonoBehaviour
                 // Le joueur place ensuite son sort nouvellement créer qu'il doit placer pour pouvoir continuer
                 break;
             case 23:
+                ModifyToCurentText();
+                break;
+            case 24:
                 ChangeExpression(1, 1);
                 ModifyToCurentText();
                 ActivateGameobject(13); // Activation Triangle Barry
                 Highlight(new Vector2(325, 475), new Vector2(1.75f, 1.5f));
                 // Parler un peu plus de ce que ça fait (ou modifie le texte pour dire que ça les renforcent selon l'élément déséquilibré)
                     break;
-            case 24:
+            case 25:
                 ChangeExpression(1, 14);
                 ChangeExpression(2, 18);
                 ModifyToCurentText();
                 Highlight(new Vector2(805, 452.5f), new Vector2(3.2f, 0.35f));
                 // Le joueur doit lancer la prochaine vague pour continuer.
                 break;
-            case 25:
+            case 26:
+                ModifyToCurentText();
+                break;
+                
+            case 27:
                 // Une fois la vague terminée
                 ModifySpeakingCharacter(2);
                 ChangeExpression(2, 9);
@@ -386,7 +392,7 @@ public class TutorialBehaviour : MonoBehaviour
                 UnlockCamera();
                 // Si jamais il souhaite supprimer des tours, il y a ce bouton. 
                 break;
-            case 26:
+            case 28:
                 StopTutorial();
                 // Restera le Converter à introduire juste avant
                 // Parler de la conversion si jamais certains éléments manquent, mais que le prix à payer n'est pas une façon optimale de faire comparé à la manière naturelle

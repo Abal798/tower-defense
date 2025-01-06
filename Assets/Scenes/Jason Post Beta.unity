@@ -2674,28 +2674,30 @@ MonoBehaviour:
   - "Ensuite, pour cr\xE9er des d\xE9fenses, prenons la fiole d'\xE2me de l'\xE9l\xE9ment
     que nous voulons cr\xE9er, et jetons-l\xE0 \xE0 l\xE0 ou nous voulons placer
     notre tour."
-  - Si tu te trompes pendant la planification, tu peux toujours enlever une tour,
-    cependant ce n'est pas optimal !
+  - "Si tu te trompes pendant la planification, tu peux toujours enlever une tour,
+    cependant ce n'est pas optimal ! (faut que je modifie pour rendre \xE7a plus
+    smooth)"
   - "Nous pouvons profiter des terrains et renforcer nos tours en les pla\xE7ant
     \xE0 c\xF4t\xE9 de :"
   - "- La for\xEAt pour la port\xE9e;"
   - "- La terre de feu pour les d\xE9g\xE2ts;"
   - "- Les rivi\xE8res pour la cadence."
   - "Tu as bien appris tes le\xE7ons \xE0 ce que je vois, finis de placer nos d\xE9fenses."
-  - "Tu peux verser une autre potion pour am\xE9liorer une tour, mais on ne peut
-    pas d\xE9passer 3 !"
-  - Excellent !
+  - "Cependant tu as oubli\xE9 de mentionner que verser une autre potion permets
+    d'am\xE9liorer une tour, mais on ne peut pas d\xE9passer 3 !"
+  - "Dans tous les cas, je te laisse finir de pr\xE9parer les d\xE9fenses."
+  - Excellent ! (Merci du conseil professeur !)
   - "Oh non ! Nos poursuivants nous ont retrouv\xE9s ! Esp\xE9rons que ces tours
     suffisent \xE0 nous d\xE9fendre !"
-  - "Parler de l'acquisition des \xE2mes avant de lancer la vague"
   - "Nos d\xE9fenses ont tenu bon ! Et nous avons plus de r\xE9serves ! Malgr\xE9
     tout, je doute que nos ennemis ne s'arr\xEAtent l\xE0. "
   - "Pr\xE9parons quelques sorts pour renforcer nos d\xE9fenses."
   - Poursuivons un peu ton test, explique moi comment concocter un sort.
   - "Tr\xE8s bien ! Dans un premier temps, allons \xE0 notre chaudron, et pla\xE7ons-y
     deux doses d'\xE9l\xE9ments puis, m\xE9langeons."
-  - Bla bla sur les sorts et how on les fait
-  - bla bla sort 2
+  - "Le premier \xE9l\xE9ment que l'on infuse d\xE9terminera la forme de celui-ci. "
+  - "Tandis que le deuxi\xE8me d\xE9terminera l'\xE9l\xE9ment qui terraformera le
+    terrain. Et cela fonctionne aussi avec 2 \xE9l\xE9ments identiques !"
   - "Nous pouvons ensuite placer ce sort de la m\xEAme mani\xE8re que nous avons
     plac\xE9 une tour. Ce sort nous permettra de modifier le terrain \xE0 notre avantage."
   - "\xC9vitons tout de m\xEAme de placer un sort sur nos tours, sans quoi elles
@@ -2703,6 +2705,8 @@ MonoBehaviour:
   - "L'\xE9quilibre de la r\xE9gion est tr\xE8s fragile. En abusant de sorts d'un
     m\xEAme \xE9l\xE9ment, nous risquons de d\xE9s\xE9quilibrer la zone et nous attirer
     des ennuis ! "
+  - "Qu'importe l'\xE9l\xE9ment affect\xE9, celui-ci verra son efficacit\xE9 drastiquement
+    r\xE9duite"
   - Attention ! Une nouvelle vagues d'ennemis est en approche !
   - "Tr\xE8s bien, tu m'a prouv\xE9 que tu \xE9tait assez comp\xE9tent pour \xEAtre
     mon apprenti. Je vais reprendre le contr\xF4le des d\xE9fenses d\xE9sormais."
