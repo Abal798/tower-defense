@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 6012127422834315380}
   - component: {fileID: -3089433572879407143}
   - component: {fileID: 1006782394852865325}
+  - component: {fileID: 8566930384499126229}
   m_Layer: 6
   m_Name: kamikaze
   m_TagString: Ennemy
@@ -151,8 +152,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soulReward: 12
   monsterDamagesEffectPrefab: {fileID: 1860567611682378094, guid: 5156c5ba4dab29d489c85293b9bee66d, type: 3}
+  monsterDamageParticulePrefab: {fileID: 0}
+  damageParticulesOffset: 0
   MS: {fileID: 6012127422834315380}
   deathParticules: {fileID: 5132903826172967407, guid: 69e5a0a7244bdad4b9395227de198bcd, type: 3}
+  TakeDamageAnimation: {fileID: 8566930384499126229}
   healthPoints: 4
   incomingDamage: 0
   RM: {fileID: 0}
@@ -187,10 +191,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MStats: {fileID: 6012127422834315380}
   deplacements: []
+  hierarchicalPathfinding: {fileID: 0}
   pathfinding: {fileID: 0}
   speed: 1
   gridLayout: {fileID: 0}
   objectif: {x: 0, y: 0, z: 0}
+  towerDetectionRadius: 5
 --- !u!114 &3593964182594265304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,9 +274,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MStats: {fileID: 6012127422834315380}
   deplacements: []
+  hierarchicalPathfinding: {fileID: 0}
   pathfinding: {fileID: 4164270264960268209}
   speed: 0
   gridLayout: {fileID: 0}
   objectif: {x: 0, y: 0, z: 0}
+  towerDetectionRadius: 1000
   objectifTargeted: 0
   nearestTower: {x: 0, y: 0, z: 0}
+--- !u!111 &8566930384499126229
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791313746008852168}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a128ef99d14401b47bd28163f710dd10, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: a128ef99d14401b47bd28163f710dd10, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
