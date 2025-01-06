@@ -77,11 +77,11 @@ public class Building : MonoBehaviour
         temp.ameliorations.Add(element);
         AudioManager.AM.PlaySfx(AudioManager.AM.towerSpawn);
         
-        Profiler.BeginSample("InvokePathfinding");
+        //Profiler.BeginSample("InvokePathfinding");
         
-        UpdatePathfinding.Invoke();
+        //UpdatePathfinding.Invoke();
         
-        Profiler.EndSample();
+        //Profiler.EndSample();
         Destroy(gameObject);
 
         if (element == 1)
