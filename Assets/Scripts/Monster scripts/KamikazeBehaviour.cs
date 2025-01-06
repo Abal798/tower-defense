@@ -1,67 +1,33 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class KamikazeBehaviour : MonsterMouvementBehaviours
+public class KamikazeBehaviour : MonoBehaviour
 {
-    public bool objectifTargeted = false;
-    public Vector3Int nearestTower;
-
-    private void Start()
+    public MonsterStats MS;
+    
+    public bool targetTower;
+    public Collider2D tower;
+    
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (gridLayout == null)
+        if (collider.transform.parent != null)
         {
-            GameObject gridObject = GameObject.FindGameObjectWithTag("grid");
-            if (gridObject == null)
+            if(collider.transform.parent.CompareTag("Tower"))
             {
-                Debug.LogError("No object with tag 'grid' found in the scene!");
-                return;
-            }
-
-            gridLayout = gridObject.GetComponent<Grid>();
-            if (gridLayout == null)
-            {
-                Debug.LogError("The object with tag 'grid' does not have a Grid component!");
-                return;
+                collider.gameObject.GetComponent<TowerTakingDamage>().TakeDamage(1000000);
+                Destroy(gameObject);
+                
             }
         }
-        UpdateObjectif();
-    }
-
-    private void UpdateObjectif()
-    {
-        float minDistance = Mathf.Infinity;
-
-        foreach (var tower in GridBuilding.current.listeTowerCo)
+        
+        if(collider.CompareTag("Base"))
         {
-            float sqrDistance = (transform.position - (Vector3)tower.Key).sqrMagnitude;
-
-            if (sqrDistance < minDistance)
-            {
-                minDistance = sqrDistance;
-                nearestTower = tower.Key;
-            }
-        }
-
-        if (nearestTower != null)
-        {
-            objectif = nearestTower;
-            objectifTargeted = true;
-        }
-        else
-        {
-            objectifTargeted = false;
-            objectif = new Vector3Int(0, 0, 0);
-        }
-
-        UpdatePathfinding();
-    }
-
-    private void Update()
-    {
-        if (!GridBuilding.current.listeTowerCo.ContainsKey(objectif) || GridBuilding.current.listeTowerCo[objectif] == null)
-        {
-            UpdateObjectif();
+            Destroy(gameObject);
         }
     }
+
+    
 }
