@@ -28592,6 +28592,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 33284988490512513, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 136
+      objectReference: {fileID: 0}
+    - target: {fileID: 33284988490512513, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 229
+      objectReference: {fileID: 0}
     - target: {fileID: 176462429872191931, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -120
@@ -28608,6 +28616,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
+    - target: {fileID: 372000979200076991, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 372000979200076991, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9da21193941856c4eaf266ea4f8fd1e3, type: 3}
     - target: {fileID: 379720308355675225, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -28752,6 +28768,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
+    - target: {fileID: 3305795341281014912, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 137
+      objectReference: {fileID: 0}
+    - target: {fileID: 3305795341281014912, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 229
+      objectReference: {fileID: 0}
     - target: {fileID: 3470395213416276806, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -28780,6 +28804,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
+    - target: {fileID: 4377699369969072716, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4421745090214123259, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_SizeDelta.x
       value: -1334.8444
@@ -28892,10 +28920,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
+    - target: {fileID: 7099039543849285790, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7110076121628499298, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -32.200012
       objectReference: {fileID: 0}
+    - target: {fileID: 7590100193199770743, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7590100193199770743, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5a92bd2c68985ee4f92f883151e2896b, type: 3}
     - target: {fileID: 8030935312486708231, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -29039,6 +29079,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1635792796536829146, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+    - {fileID: 1571723114736079690, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+    - {fileID: 1180037281062788008, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
