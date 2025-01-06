@@ -636,8 +636,8 @@ MonoBehaviour:
   musicSource: {fileID: 439077683}
   SFXSource: {fileID: 1042538939}
   menusSoundsSource: {fileID: 1985097464}
-  enemyDie: {fileID: 8300000, guid: 02c05c60aad54e04297e13dccff08d2f, type: 3}
-  buttonClick: {fileID: 8300000, guid: 6210828b5936a4348ba930454ad4f4f9, type: 3}
+  enemyDie: {fileID: 8300000, guid: b4f4fdaa3c585364eaa8da346a91020a, type: 3}
+  buttonClick: {fileID: 8300000, guid: e94de3b559f61dc43825a90a3ff00c04, type: 3}
   alertDisplay: {fileID: 8300000, guid: f523b9df4eb373d459433e9c4006159d, type: 3}
   pageTurn: {fileID: 8300000, guid: 80ac5e14d176e7140a1c4004c55e6d8e, type: 3}
   menusSounds: []
@@ -2435,21 +2435,6 @@ MonoBehaviour:
   monstersAlive: []
   basicWaveDuration: 0
   squareSize: 39
-  waveLaunched:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -8620561639708342159, guid: 29511a5861e89ce4293b294750d70ba7, type: 3}
-        m_TargetAssemblyTypeName: ActualizeChild, Assembly-CSharp
-        m_MethodName: HealTower
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &744501577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2714,7 +2699,6 @@ MonoBehaviour:
     mon apprenti. Je vais reprendre le contr\xF4le des d\xE9fenses d\xE9sormais."
   objectsToHideAndShow:
   - {fileID: 850645786}
-  - {fileID: 479079339}
   - {fileID: 479079339}
   - {fileID: 854028119}
   - {fileID: 1923128008}

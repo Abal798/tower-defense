@@ -264,7 +264,6 @@ public class TutorialBehaviour : MonoBehaviour
                 ActivateGameobject(3);
                 ActivateGameobject(4);
                 ActivateGameobject(5);
-                ActivateGameobject(6);
                // Highlight(new Vector2(-85,450),new Vector2(3,1)); // Highlight des Âmes à faire au préalable (il manque une intro des différentes ressources)
                 Highlight(new Vector2(-700, -370), new Vector2(6,3.25f)); // Highlight des différentes tours
                 break;
@@ -303,8 +302,9 @@ public class TutorialBehaviour : MonoBehaviour
                 break;
             case 11: 
                 ModifyToCurentText();
-                ActivateGameobject(7);
-                Highlight(new Vector2(810, 455), new Vector2(3f, 0.4f));
+                ActivateGameobject(6);
+                ActivateGameobject(11);
+                Highlight(new Vector2(805, 452.5f), new Vector2(3.2f, 0.35f));
                 // Il doit lancer la prochaine vague le prochain dialogue apparaissant après la vague
                 UnlockCamera();
                 break;
@@ -326,7 +326,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ModifySpeakingCharacter(1);
                 ChangeExpression(1, 17);
                 ModifyToCurentText();
-                ActivateGameobject(8);
+                ActivateGameobject(7);
                     Highlight(new Vector2(-858, 310), new Vector2(1.90f, 0.8f));
                 // Le joueur doit cliquer sur le bouton d'Alchemy pour continuer
                     break;
@@ -345,13 +345,14 @@ public class TutorialBehaviour : MonoBehaviour
             case 18:
                 ChangeExpression(1, 1);
                 ModifyToCurentText();
-                ActivateGameobject(14); // Activation Triangle Barry
+                ActivateGameobject(13); // Activation Triangle Barry
                 Highlight(new Vector2(325, 475), new Vector2(1.75f, 1.5f));
                     break;
             case 19:
                 ChangeExpression(1, 14);
                 ChangeExpression(2, 18);
                 ModifyToCurentText();
+                Highlight(new Vector2(805, 452.5f), new Vector2(3.2f, 0.35f));
                 // Le joueur doit lancer la prochaine vague pour continuer.
                 break;
             case 20:
