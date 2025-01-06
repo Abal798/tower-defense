@@ -79,7 +79,7 @@ public class Building : MonoBehaviour
         
         Profiler.BeginSample("InvokePathfinding");
         
-        UpdatePathfinding.Invoke();
+        //UpdatePathfinding.Invoke();
         
         Profiler.EndSample();
         Destroy(gameObject);

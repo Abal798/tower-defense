@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1341761080996762243}
   - component: {fileID: 7374532177628107893}
   - component: {fileID: 8496490190715410811}
+  - component: {fileID: -6528988906386054266}
   - component: {fileID: 4462025437506793994}
   - component: {fileID: 4164270264960268209}
   - component: {fileID: -1325253033383984031}
@@ -137,6 +138,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-6528988906386054266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791313746008852168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9919b78e645dab4439578b849e77f03c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regionSize: 2
 --- !u!114 &4462025437506793994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,10 +204,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MStats: {fileID: 6012127422834315380}
   deplacements: []
+  hierarchicalPathfinding: {fileID: 0}
   pathfinding: {fileID: 0}
   speed: 1
   gridLayout: {fileID: 0}
   objectif: {x: 0, y: 0, z: 0}
+  towerDetectionRadius: 3
 --- !u!114 &3593964182594265304
 MonoBehaviour:
   m_ObjectHideFlags: 0
