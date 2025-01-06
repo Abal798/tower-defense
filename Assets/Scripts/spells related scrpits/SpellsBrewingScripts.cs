@@ -90,7 +90,7 @@ public class SpellsBrewingScripts : MonoBehaviour
     {
         if (brewedSpell.Count < 2)
         {
-            if(RM.fireSoul > fireDosePrice)
+            if(RM.fireSoul >= fireDosePrice)
             {
                 AudioManager.AM.PlaySfx(AudioManager.AM.addFireIngredient);
                 fireDoseUtilisation++;
@@ -116,7 +116,7 @@ public class SpellsBrewingScripts : MonoBehaviour
     {
         if (brewedSpell.Count < 2)
         {
-            if(RM.waterSoul > waterDosePrice)
+            if(RM.waterSoul >= waterDosePrice)
             {
                 waterDoseUtilisation++;
                 RM.waterSoul -= waterDosePrice;
@@ -141,7 +141,7 @@ public class SpellsBrewingScripts : MonoBehaviour
     {
         if (brewedSpell.Count < 2)
         {
-            if(RM.plantSoul > earthDosePrice)
+            if(RM.plantSoul >= earthDosePrice)
             {
                 AudioManager.AM.PlaySfx(AudioManager.AM.addEarthIngredient);
                 earthDoseUtilisation++;
