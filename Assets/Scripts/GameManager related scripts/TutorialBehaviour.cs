@@ -270,65 +270,74 @@ public class TutorialBehaviour : MonoBehaviour
                 ActivateGameobject(5);
                 Highlight(new Vector2(-700, -370), new Vector2(6,3.25f)); // Highlight des différentes tours
                 break;
-            case 6:
+            case 6: 
+                ModifyToCurentText(); // Suppression de tour
+                ChangeExpression(2,8);
+                ModifySpeakingCharacter(2);
+                Highlight(new Vector2(-903.5f, -170), new Vector2(0.9f,1f));
+                ActivateGameobject(9);
+                break;
+            case 7:
+                ModifySpeakingCharacter(1);
                 ModifyToCurentText();
-                StopHighlighting();
+                StopHighlighting(); 
                 ChangeExpression(2,9);
                 break;
-            case 7: // Les Terrains
+            case 8: // Les Terrains
                 ModifyToCurentText();
                 Highlight(new Vector2(-105, -270), new Vector2(2.5f, 1.25f));
                 break; //
-            case 8:
+            case 9:
                 ModifyToCurentText();
                 Highlight(new Vector2(487, -55), new Vector2(1.25f, 1.25f));
                 break;
-            case 9:
+            case 10:
                 ModifyToCurentText();
                 Highlight(new Vector2(-220, 380), new Vector2(2.5f, 1.25f));
                 break;
-            case 10:
+            case 11:
                 ModifyToCurentText();
                 ChangeExpression(2, 2);
                 StopHighlighting();
                 ModifySpeakingCharacter(2);
                 // Le joueur doit placer une tour avant de pouvoir poursuivre.
                 break;
-            
-            case 11:
+            case 12:
+                ModifyToCurentText(); // Amélioration de tour, qu'il n'est pas obligé de faire.
+                break;
+            case 13:
                 ModifyToCurentText();
                 ModifySpeakingCharacter(1);
                 ChangeExpression(1, 3);
-                // Le joueur doit placer le reste de ses défenses (c'est pas assez explicit dans le texte), en expliquant qu'il peut soit poser plus de tours, soit les améliorer en mettant une autre fiole sur celle-ci.
+                // Le joueur doit finir de placer ces défenses (Jusqu'à qu'il n'ait plus de ressources pour placer ses ressources dans les 3 éléments
                 break;
-            case 12:
+            case 14:
                 ModifyToCurentText();
                 ChangeExpression(1, 18);
                 ActivateGameobject(6);
                 ActivateGameobject(10);
                 Highlight(new Vector2(805, 452.5f), new Vector2(3.2f, 0.35f));
                 break;
-            case 13: 
-                // Dialogue qui parle des âmes qui sont acquises en prenant les âmes élémentaires des ennemis, selon la tour qui les tues. Une amélioration modifie l'acquisition d'âmes selon les éléments placez dessus
+            case 15: 
                 // Il doit lancer la prochaine vague le prochain dialogue apparaissant après la vague
                 ModifyToCurentText();
                 UnlockCamera();
                 break;
-            case 14:
+            case 16:
                 ModifySpeakingCharacter(2);
                 ChangeExpression(1, 23);
                 ChangeExpression(2, 2);
                 ModifyToCurentText();
                 break;
-            case 15:
+            case 17:
                 ChangeExpression(1, 8);
                 ModifyToCurentText();
                 break;
-            case 16:
+            case 18:
                 ChangeExpression(2, 2);
                 ModifyToCurentText();
                 break;
-            case 17:
+            case 19:
                 ModifySpeakingCharacter(1);
                 ChangeExpression(1, 17);
                 ModifyToCurentText();
@@ -336,34 +345,38 @@ public class TutorialBehaviour : MonoBehaviour
                     Highlight(new Vector2(-858, 310), new Vector2(1.90f, 0.8f));
                 // Le joueur doit cliquer sur le bouton d'Alchemy pour continuer
                     break;
-            case 18:
+            case 20:
+                ModifyToCurentText();
+                Highlight(new Vector2(-605, -37), new Vector2(1.5f, 1.5f)); // Forme du Sort
+                break;
+            case 21:
                 ChangeExpression(1, 8);
                 ModifyToCurentText();
                 StopHighlighting();
-                // Parler ici que le premier défini la forme et le 2e slot défini le type de case, les 2 pouvant se cumuler
+                Highlight(new Vector2(-430, -37), new Vector2(1.5f, 1.5f)); // Terrain lié à la forme
                 break;
-            case 19:
+            case 22:
                 ChangeExpression(1, 20);
                 ModifyToCurentText();
                 UnlockCamera();
                 Highlight(new Vector2(750, -245), new Vector2(5f, 0.85f));
                 // Le joueur place ensuite son sort nouvellement créer qu'il doit placer pour pouvoir continuer
                 break;
-            case 20:
+            case 23:
                 ChangeExpression(1, 1);
                 ModifyToCurentText();
                 ActivateGameobject(13); // Activation Triangle Barry
                 Highlight(new Vector2(325, 475), new Vector2(1.75f, 1.5f));
                 // Parler un peu plus de ce que ça fait (ou modifie le texte pour dire que ça les renforcent selon l'élément déséquilibré)
                     break;
-            case 21:
+            case 24:
                 ChangeExpression(1, 14);
                 ChangeExpression(2, 18);
                 ModifyToCurentText();
                 Highlight(new Vector2(805, 452.5f), new Vector2(3.2f, 0.35f));
                 // Le joueur doit lancer la prochaine vague pour continuer.
                 break;
-            case 22:
+            case 25:
                 // Une fois la vague terminée
                 ModifySpeakingCharacter(2);
                 ChangeExpression(2, 9);
@@ -373,7 +386,7 @@ public class TutorialBehaviour : MonoBehaviour
                 UnlockCamera();
                 // Si jamais il souhaite supprimer des tours, il y a ce bouton. 
                 break;
-            case 23:
+            case 26:
                 StopTutorial();
                 // Restera le Converter à introduire juste avant
                 // Parler de la conversion si jamais certains éléments manquent, mais que le prix à payer n'est pas une façon optimale de faire comparé à la manière naturelle

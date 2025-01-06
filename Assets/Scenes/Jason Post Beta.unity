@@ -2669,16 +2669,21 @@ MonoBehaviour:
   - "\xC9valuons un peu ta connaissance de l\u2019alchimie ! Dicte-moi ce que je
     dois faire pour \xE9tablir une premi\xE8re ligne de d\xE9fense."
   - Merci de votre confiance !
-  - "Bla bla sur les \xE2mes"
-  - "Pour commencer, prenons la fiole d'\xE2me de l'\xE9l\xE9ment que nous voulons
-    cr\xE9er, et jetons-l\xE0 \xE0 l'emplacement o\xF9 nous voulons placer notre
-    tour."
+  - "Pour commencer, les \xE2mes. On les obtient depuis les corps d'entit\xE9s mortes
+    affect\xE9s par un \xE9l\xE9ment."
+  - "Ensuite, pour cr\xE9er des d\xE9fenses, prenons la fiole d'\xE2me de l'\xE9l\xE9ment
+    que nous voulons cr\xE9er, et jetons-l\xE0 \xE0 l\xE0 ou nous voulons placer
+    notre tour."
+  - Si tu te trompes pendant la planification, tu peux toujours enlever une tour,
+    cependant ce n'est pas optimal !
   - "Nous pouvons profiter des terrains et renforcer nos tours en les pla\xE7ant
     \xE0 c\xF4t\xE9 de :"
   - "- La for\xEAt pour la port\xE9e;"
   - "- La terre de feu pour les d\xE9g\xE2ts;"
   - "- Les rivi\xE8res pour la cadence."
   - "Tu as bien appris tes le\xE7ons \xE0 ce que je vois, finis de placer nos d\xE9fenses."
+  - "Tu peux verser une autre potion pour am\xE9liorer une tour, mais on ne peut
+    pas d\xE9passer 3 !"
   - Excellent !
   - "Oh non ! Nos poursuivants nous ont retrouv\xE9s ! Esp\xE9rons que ces tours
     suffisent \xE0 nous d\xE9fendre !"
@@ -2689,6 +2694,8 @@ MonoBehaviour:
   - Poursuivons un peu ton test, explique moi comment concocter un sort.
   - "Tr\xE8s bien ! Dans un premier temps, allons \xE0 notre chaudron, et pla\xE7ons-y
     deux doses d'\xE9l\xE9ments puis, m\xE9langeons."
+  - Bla bla sur les sorts et how on les fait
+  - bla bla sort 2
   - "Nous pouvons ensuite placer ce sort de la m\xEAme mani\xE8re que nous avons
     plac\xE9 une tour. Ce sort nous permettra de modifier le terrain \xE0 notre avantage."
   - "\xC9vitons tout de m\xEAme de placer un sort sur nos tours, sans quoi elles
