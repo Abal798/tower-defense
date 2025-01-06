@@ -9,7 +9,7 @@ public class TutorialBehaviour : MonoBehaviour
 {
     
     [Header("GD ne pas toucher")]
-    public int tutorialStep = 0;
+    public static int tutorialStep = 0;
     
     public static bool isInTutorial;
     public static bool cameraLocked = false;
@@ -31,6 +31,7 @@ public class TutorialBehaviour : MonoBehaviour
     
     void Start() //étape 0 du tutoriel
     {
+        tutorialStep = 0;
         ResumeTutorial();
         MoveTextBox(bottomPosition.transform.position);
         ModifyTextBox(tutorialText[tutorialStep]);
@@ -39,6 +40,8 @@ public class TutorialBehaviour : MonoBehaviour
         StopHighlighting();
         ShowTextBox();
         ChangeExpression(1,23);
+        DesactivateAllGameObjects();
+        LockCamera();
     }
     
     public void ShowTextBox() //affiche toute la textboxe , personnages compris
@@ -235,36 +238,139 @@ public class TutorialBehaviour : MonoBehaviour
                 ChangeExpression(2, 2);
                 ShowCharacter(2);
                 ModifySpeakingCharacter(2);
-                ChangeExpression(1,10);
                 ModifyToCurentText();
+                Debug.Log("Arthur parle");
                 break;
             
             case 2:
-                ModifySpeakingCharacter(1);
+                ChangeExpression(2,19);
                 ChangeExpression(1,18);
                 ModifyToCurentText();
                 break;
             
             case 3:
-                ChangeExpression(1,17);
+                ModifySpeakingCharacter(1);
+                ChangeExpression(1,3);
                 ModifyToCurentText(); 
                 break;
             
             case 4:
-                ModifySpeakingCharacter(2);
-                ChangeExpression(1,16);
+                ChangeExpression(1,17);
                 ModifyToCurentText();
+                ActivateGameobject(11); // Affiche le SoulsDisplay pour montrer les ressources
+                ActivateGameobject(0); // Affiche les différentes tours et leurs prix
+                ActivateGameobject(1);
+                ActivateGameobject(2);
+                ActivateGameobject(3);
+                ActivateGameobject(4);
+                ActivateGameobject(5);
+                ActivateGameobject(6);
+               // Highlight(new Vector2(-85,450),new Vector2(3,1)); // Highlight des Âmes à faire au préalable (il manque une intro des différentes ressources)
+                Highlight(new Vector2(-700, -370), new Vector2(6,3.25f)); // Highlight des différentes tours
                 break;
             
             case 5:
-                ModifySpeakingCharacter(1);
-                ChangeExpression(1,17);
+                StopHighlighting();
+                ChangeExpression(2,9);
                 ModifyToCurentText();
+                break; //Ajouter un case qui parle des âmes et comment on en obtient (parler bien plus tard du converter)
+            case 6:
+                ModifyToCurentText();
+                Highlight(new Vector2(-105, -270), new Vector2(2.5f, 1.25f));
+                break;
+            case 7:
+                ModifyToCurentText();
+                Highlight(new Vector2(487, -55), new Vector2(1.25f, 1.25f));
+                // Visuel du feu comme mentionné précédemment
+                break;
+            case 8:
+                ModifyToCurentText();
+                Highlight(new Vector2(-220, 380), new Vector2(2.5f, 1.25f));
+                // Le joueur doit placer une tour avant de pouvoir poursuivre.
                 break;
             
-            case 6:
-                StopTutorial();
+            case 9:
+                ChangeExpression(2, 2);
+                StopHighlighting();
+                ModifySpeakingCharacter(2);
+                ModifyToCurentText();
+                // Le joueur doit placer le reste de ses défenses (c'est pas assez explicit dans le texte)
                 break;
+            case 10:
+                ModifySpeakingCharacter(1);
+                ChangeExpression(1, 3);
+                ModifyToCurentText();
+                break;
+            case 11: 
+                ModifyToCurentText();
+                ActivateGameobject(7);
+                Highlight(new Vector2(810, 455), new Vector2(3f, 0.4f));
+                // Il doit lancer la prochaine vague le prochain dialogue apparaissant après la vague
+                UnlockCamera();
+                break;
+            case 12:
+                ModifySpeakingCharacter(2);
+                ChangeExpression(2, 23);
+                ChangeExpression(1, 18);
+                ModifyToCurentText();
+                break;
+            case 13:
+                ChangeExpression(1, 8);
+                ModifyToCurentText();
+                break;
+            case 14:
+                ChangeExpression(2, 2);
+                ModifyToCurentText();
+                break;
+            case 15:
+                ModifySpeakingCharacter(1);
+                ChangeExpression(1, 17);
+                ModifyToCurentText();
+                ActivateGameobject(8);
+                    Highlight(new Vector2(-858, 310), new Vector2(1.90f, 0.8f));
+                // Le joueur doit cliquer sur le bouton d'Alchemy pour continuer
+                    break;
+            case 16:
+                ChangeExpression(1, 8);
+                ModifyToCurentText();
+                StopHighlighting();
+                break;
+            case 17:
+                ChangeExpression(1, 20);
+                ModifyToCurentText();
+                UnlockCamera();
+                Highlight(new Vector2(750, -245), new Vector2(5f, 0.85f));
+                // Le joueur place ensuite son sort nouvellement créer qu'il doit placer pour pouvoir continuer
+                break;
+            case 18:
+                ChangeExpression(1, 1);
+                ModifyToCurentText();
+                ActivateGameobject(14); // Activation Triangle Barry
+                Highlight(new Vector2(325, 475), new Vector2(1.75f, 1.5f));
+                    break;
+            case 19:
+                ChangeExpression(1, 14);
+                ChangeExpression(2, 18);
+                ModifyToCurentText();
+                // Le joueur doit lancer la prochaine vague pour continuer.
+                break;
+            case 20:
+                // Une fois la vague terminée
+                ModifySpeakingCharacter(2);
+                ChangeExpression(2, 9);
+                ModifyToCurentText();
+                ActivateAllGameObjects();
+                UnlockCamera();
+                break;
+            case 21:
+                StopTutorial();
+                // Restera le Converter à introduire juste avant
+                break;
+
+
+
+
+
         }
     }
 
