@@ -132,7 +132,6 @@ public class MonsterMouvementBehaviours : MonoBehaviour
 
     private void FindNearestTower()
     {
-        // Get all towers (assuming towers have a "Tower" tag)
         GameObject[] towers = GameObject.FindGameObjectsWithTag("Tower");
 
         GameObject nearestTower = null;
@@ -154,7 +153,7 @@ public class MonsterMouvementBehaviours : MonoBehaviour
         }
         else
         {
-            targetTower = null;  // No towers detected, continue pathfinding
+            targetTower = null;  
         }
     }
 

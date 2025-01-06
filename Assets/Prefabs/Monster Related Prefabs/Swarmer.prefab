@@ -209,7 +209,7 @@ MonoBehaviour:
   speed: 1
   gridLayout: {fileID: 0}
   objectif: {x: 0, y: 0, z: 0}
-  towerDetectionRadius: 3
+  towerDetectionRadius: 2
 --- !u!114 &3593964182594265304
 MonoBehaviour:
   m_ObjectHideFlags: 0
