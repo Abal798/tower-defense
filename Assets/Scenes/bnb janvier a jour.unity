@@ -636,20 +636,22 @@ MonoBehaviour:
   musicSource: {fileID: 439077683}
   SFXSource: {fileID: 1042538939}
   menusSoundsSource: {fileID: 1985097464}
-  enemyDie: {fileID: 8300000, guid: 02c05c60aad54e04297e13dccff08d2f, type: 3}
+  enemyDie: {fileID: 8300000, guid: 83710a0abfdbed54a8be592aeaef1e56, type: 3}
   buttonClick: {fileID: 8300000, guid: 6210828b5936a4348ba930454ad4f4f9, type: 3}
-  alertDisplay: {fileID: 8300000, guid: f523b9df4eb373d459433e9c4006159d, type: 3}
+  alertDisplay: {fileID: 8300000, guid: 17b6e835815b1034c87a129d45d561cb, type: 3}
   pageTurn: {fileID: 8300000, guid: 80ac5e14d176e7140a1c4004c55e6d8e, type: 3}
   menusSounds: []
   addFireIngredient: {fileID: 8300000, guid: 4e086af21417a98448eb5294d7257cd0, type: 3}
   addEarthIngredient: {fileID: 8300000, guid: 6b46539d556cb754c951b37a7d7aa421, type: 3}
+  addWaterIngredient: {fileID: 8300000, guid: e8ce0319434ed204996750704f1de599, type: 3}
   fireSpellplacing: {fileID: 8300000, guid: fabb3ec82b86fa24a9bf2aeaa779160c, type: 3}
   waterSpellplacing: {fileID: 8300000, guid: 9be712b71f2940949919d830b86e4a8f, type: 3}
+  earthSpellplacing: {fileID: 8300000, guid: 675feb0d4ebd43d4e8bbc541c6b44dd0, type: 3}
   cook: {fileID: 8300000, guid: bb4107916ca892645ad6e8cb3fc47441, type: 3}
   towerSpawn: {fileID: 8300000, guid: 60f8ed7ad34840a448c6800ea5c8cb5e, type: 3}
   towerSelect: {fileID: 8300000, guid: affdcbfb0221df245886c490473c8e9c, type: 3}
-  towerDeath: {fileID: 0}
-  towerUpgrade: {fileID: 0}
+  towerDeath: {fileID: 8300000, guid: a105befc4bd72584fa1a3caf317a5cf9, type: 3}
+  towerUpgrade: {fileID: 8300000, guid: 0f4ac9fca82c4e9449c8d6527b9e73fa, type: 3}
 --- !u!4 &64261803
 Transform:
   m_ObjectHideFlags: 0
@@ -2428,7 +2430,7 @@ MonoBehaviour:
   endWaveNumber: 15
   monsterOneWaveList: 000000000c000000180000002a00000041000000500000005f0000007d000000aa000000d70000002c01000090010000f40100009e0200007003000078050000
   monsterTwoWaveList: 000000000000000000000000000000000000000002000000060000000b000000120000001b000000280000003c00000064000000a0000000f00000005e010000
-  monsterThreeWaveList: 000000000000000000000000000000000000000000000000000000000000000004000000100000002d0000003c000000500000006e000000c800000090010000
+  monsterThreeWaveList: 000000000200000000000000000000000000000000000000000000000000000004000000100000002d0000003c000000500000006e000000c800000090010000
   monsterFourWaveList: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000a0000000f0000001400000000000000
   monstersAlive: []
   basicWaveDuration: 0
@@ -28729,6 +28731,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -164
       objectReference: {fileID: 0}
+    - target: {fileID: 1677106193160854444, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1677106193160854444, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1677106193160854444, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 1677106193160854444, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -220
+      objectReference: {fileID: 0}
     - target: {fileID: 1732052605433518539, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_VerticalAlignment
       value: 512
@@ -28901,6 +28919,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
+    - target: {fileID: 4484498116767627158, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484498116767627158, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 21eaafb0adc425a41b7e2da561136cb4, type: 3}
+    - target: {fileID: 4484498116767627158, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484498116767627158, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4532724474205401430, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 150
@@ -29254,6 +29288,7 @@ PrefabInstance:
     - {fileID: 1635792796536829146, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
     - {fileID: 1571723114736079690, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
     - {fileID: 1180037281062788008, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+    - {fileID: 3757352467546744380, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
