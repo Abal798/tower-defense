@@ -18,7 +18,7 @@ public class Building : MonoBehaviour
     public RessourcesManager RM;
     public UIManager UIM;
     
-    public static UnityEvent UpdatePathfinding = new UnityEvent();
+    public static UnityEvent UpdateSurroundings = new UnityEvent();
 
 
     private void Start()

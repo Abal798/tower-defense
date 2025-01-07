@@ -63,7 +63,7 @@ public class TowerStats : MonoBehaviour
         health = maxHealth;
         CalculateSurroundings();
         recalculateStats();
-        Building.UpdatePathfinding.AddListener(CalculateSurroundings); //attention a cette ligne , elle fait recalculate stats a chaque fois qu'une nouvelle toure est posée, c'est chiant pour les visuels
+        Building.UpdateSurroundings.AddListener(CalculateSurroundings); //attention a cette ligne , elle fait recalculate stats a chaque fois qu'une nouvelle toure est posée, c'est chiant pour les visuels
         
     }
 
@@ -134,7 +134,7 @@ public class TowerStats : MonoBehaviour
 
     private void OnDestroy()
     {
-        Building.UpdatePathfinding.RemoveListener(CalculateSurroundings);
+        Building.UpdateSurroundings.RemoveListener(CalculateSurroundings);
     }
 
     public void CalculateSurroundings()

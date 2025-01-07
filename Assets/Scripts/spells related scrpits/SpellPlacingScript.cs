@@ -498,7 +498,7 @@ public class SpellPlacingScript : MonoBehaviour
         
         
         
-        //Building.UpdatePathfinding.Invoke();
+        Building.UpdateSurroundings.Invoke();
     }
     
     
