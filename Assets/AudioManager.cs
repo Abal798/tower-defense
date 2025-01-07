@@ -26,8 +26,10 @@ public class AudioManager : MonoBehaviour
     [Header("spells")] 
     public AudioClip addFireIngredient;
     public AudioClip addEarthIngredient;
+    public AudioClip addWaterIngredient;
     public AudioClip fireSpellplacing;
     public AudioClip waterSpellplacing;
+    public AudioClip earthSpellplacing;
     public AudioClip cook;
     
     [Header("tower")]
