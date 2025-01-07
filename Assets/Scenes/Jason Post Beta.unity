@@ -2418,12 +2418,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   victoryPanel: {fileID: 548614662}
+  launchWaveButton: {fileID: 0}
   numberOfMonsterOne: 0
   numberOfMonsterTwo: 0
   numberOfMonsterThree: 0
+  numberOfMonsterFour: 0
   monsterTypeOne: {fileID: 1791313746008852168, guid: 208d1a2fa46ec174b8c0c0c11578c539, type: 3}
   monsterTypeTwo: {fileID: 1791313746008852168, guid: d06bd98ef2bc15246882e89415279836, type: 3}
   monsterTypeThree: {fileID: 1791313746008852168, guid: ab76bed5c54f3e94e9df20488c1bec87, type: 3}
+  monsterTypeFour: {fileID: 0}
   monsterTypeBoss: {fileID: 0}
   RM: {fileID: 744501577}
   chanceDeSpawnElementaireEntreZeroEtUn: 0
@@ -2432,6 +2435,7 @@ MonoBehaviour:
   monsterOneWaveList: 000000001200000020000000300000004b0000006e000000aa000000f0000000
   monsterTwoWaveList: 0000000000000000000000000000000000000000010000000300000008000000
   monsterThreeWaveList: 0000000001000000010000000100000001000000010000000100000001000000
+  monsterFourWaveList: 
   monstersAlive: []
   basicWaveDuration: 0
   squareSize: 39
@@ -2668,7 +2672,7 @@ MonoBehaviour:
     d'ennuis \xE0 personne."
   - "\xC9valuons un peu ta connaissance de l\u2019alchimie ! Dicte-moi ce que je
     dois faire pour \xE9tablir une premi\xE8re ligne de d\xE9fense."
-  - Merci de votre confiance !
+  - Merci de votre confiance !!
   - "Pour commencer, les \xE2mes. On les obtient depuis les corps d'entit\xE9s mortes
     affect\xE9s par un \xE9l\xE9ment."
   - "Ensuite, pour cr\xE9er des d\xE9fenses, prenons la fiole d'\xE2me de l'\xE9l\xE9ment
