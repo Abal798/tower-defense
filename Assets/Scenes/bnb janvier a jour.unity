@@ -2714,7 +2714,7 @@ MonoBehaviour:
   endWaveNumber: 15
   monsterOneWaveList: 000000000c000000180000002a00000041000000500000005f0000007d000000aa000000d70000002c01000090010000f40100009e0200007003000078050000
   monsterTwoWaveList: 000000000000000000000000000000000000000002000000060000000b000000120000001b000000280000003c00000064000000a0000000f00000005e010000
-  monsterThreeWaveList: 000000000200000000000000000000000000000000000000000000000000000004000000100000002d0000003c000000500000006e000000c800000090010000
+  monsterThreeWaveList: 000000000000000000000000000000000000000000000000000000000000000004000000100000002d0000003c000000500000006e000000c800000090010000
   monsterFourWaveList: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000a0000000f0000001400000000000000
   monstersAlive: []
   basicWaveDuration: 0
@@ -2897,6 +2897,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RM: {fileID: 0}
   spawn: {fileID: 0}
+  launchWaveButton: {fileID: 405531760}
+  tutorialStep: 0
   textBox: {fileID: 1337479132}
   highLighter: {fileID: 1472488825}
   tomSprites:
@@ -29826,6 +29828,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 64261802}
     - target: {fileID: 4039158788852819238, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039158788852819238, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039158788852819238, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 744501576}
@@ -29833,6 +29843,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
+    - target: {fileID: 4039158788852819238, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 744501585}
+    - target: {fileID: 4039158788852819238, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039158788852819238, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: waveButtonCalled
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039158788852819238, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: TutorialBehaviour, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039158788852819238, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4299222822625494986, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 

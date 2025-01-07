@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Resources;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
@@ -12,11 +13,13 @@ public class TutorialBehaviour : MonoBehaviour
     [Header("GD ne pas toucher")] 
     public RessourcesManager RM;
     public Spawn spawn;
+    public GameObject launchWaveButton;
 
     private bool AlchemyButtonCkicked = false;
     private bool alreadyOneSpellCoocked = false;
+    private bool waveOnebeginned = false, waveTwobeginned = false;
     
-    public static int tutorialStep = 0;
+    public int tutorialStep = 0;
     
     public static bool isInTutorial;
     public static bool cameraLocked = false;
@@ -57,15 +60,68 @@ public class TutorialBehaviour : MonoBehaviour
         DesactivateGameObject(6);
     }
 
+    private bool isCoroutineRunning = false;
+
     private void Update()
     {
         if (RM.spellSlotOne.Count != 0) alreadyOneSpellCoocked = true;
+
+        if (RM.wave == 1 && launchWaveButton.activeSelf && !isCoroutineRunning)
+        {
+            isCoroutineRunning = true;
+            StartCoroutine(WaitForMonsterToSpawn(() => waveOnebeginned = true));
+        }
+
+        if (RM.wave == 2 && launchWaveButton.activeSelf && !isCoroutineRunning)
+        {
+            isCoroutineRunning = true;
+            StartCoroutine(WaitForMonsterToSpawn(() => waveTwobeginned = true));
+        }
+
+        if (tutorialStep == 16 && waveOnebeginned && launchWaveButton.activeSelf)
+        {
+            tutorialStep++;
+            NextStep();
+        }
+
+        if (tutorialStep == 28 && waveTwobeginned && launchWaveButton.activeSelf)
+        {
+            tutorialStep++;
+            NextStep();
+        }
     }
+
+    private IEnumerator WaitForMonsterToSpawn(Action onWaveBeginned)
+    {
+        yield return new WaitForSeconds(2f);
+        onWaveBeginned();
+        isCoroutineRunning = false;
+    }
+
+    
 
     public void AlchemyButtonCalled()
     {
         AlchemyButtonCkicked = true;
-        if(tutorialStep == 19)NextStep();
+        if(tutorialStep == 20)
+        {
+            tutorialStep++;
+            NextStep();
+        }
+    }
+
+    public void waveButtonCalled()
+    {
+        if(tutorialStep == 15)
+        {
+            tutorialStep++;
+            NextStep();
+        }
+        else if(tutorialStep == 27)
+        {
+            tutorialStep++;
+            NextStep();
+        }
     }
     
     public void ShowTextBox() //affiche toute la textboxe , personnages compris
@@ -76,6 +132,15 @@ public class TutorialBehaviour : MonoBehaviour
     public void HideTextBox() //cache toute la textboxe , personnages compris
     {
         textBox.SetActive(false);
+    }
+
+    public void HideNextButton()
+    {
+        textBox.transform.GetChild(4).gameObject.SetActive(false);
+    }
+    public void ShowNextButton()
+    {
+        textBox.transform.GetChild(4).gameObject.SetActive(true);
     }
 
     public void ModifyToCurentText() //change le text de la text boxe pour celui contenu dans le tutorialtext de l'etape actuel
@@ -252,25 +317,19 @@ public class TutorialBehaviour : MonoBehaviour
 
     public void NextStep()
     {
-        /*
-        if (tutorialStep < 11) tutorialStep++;
-        if (tutorialStep == 11 && GridBuilding.current.listeTowerCo.Count > 0) tutorialStep++;
-        if (tutorialStep > 11 && tutorialStep < 14) tutorialStep++;
-        if (tutorialStep == 14 && RM.fireSoul == 90 && RM.waterSoul == 90 && RM.plantSoul == 90) tutorialStep++;
-        if (tutorialStep == 15 && RM.wave > 0) tutorialStep++;
-        if (tutorialStep == 16 && spawn.monstersAlive.Count == 0) tutorialStep++;
-        if (tutorialStep > 16 && tutorialStep < 19) tutorialStep++;
-        if (tutorialStep == 19 && AlchemyButtonCkicked) tutorialStep++;
-        if (tutorialStep > 19 && tutorialStep < 22) tutorialStep++;
-        if (tutorialStep == 22 && alreadyOneSpellCoocked) tutorialStep++;
-        if (tutorialStep == 23 && EndGameStats.EGS.nombreDeSortsPlaces > 0) tutorialStep++;
-        if (tutorialStep > 23 && tutorialStep < 27) tutorialStep++;
-        if (tutorialStep == 27 && RM.wave > 1) tutorialStep++;
-        if (tutorialStep == 28 && spawn.monstersAlive.Count == 0) tutorialStep++;
-        if (tutorialStep > 18) tutorialStep++;
-       */
         
-        tutorialStep++;
+        if (tutorialStep < 10) tutorialStep++;
+        if (tutorialStep == 10 && GridBuilding.current.listeTowerCo.Count > 0) tutorialStep++;
+        if (tutorialStep > 10 && tutorialStep < 13) tutorialStep++;
+        if (tutorialStep == 13 && RM.fireSoul == 90 && RM.waterSoul == 90 && RM.plantSoul == 90) tutorialStep++;
+        if (tutorialStep > 13 && tutorialStep < 15) tutorialStep++;
+        if(tutorialStep > 16 && tutorialStep < 20) tutorialStep++;
+        if(tutorialStep > 20 && tutorialStep < 23) tutorialStep++;
+        if(tutorialStep == 23 && alreadyOneSpellCoocked) tutorialStep++;
+        if(tutorialStep == 24 && EndGameStats.EGS.nombreDeSortsPlaces > 0) tutorialStep++;
+        if(tutorialStep > 24 && tutorialStep < 27) tutorialStep++;
+        if(tutorialStep > 28) tutorialStep++;
+        
         
         switch (tutorialStep)
         {
@@ -383,12 +442,15 @@ public class TutorialBehaviour : MonoBehaviour
                 ActivateGameobject(10);
                 ModifyTextBoxScale(650f, 135f);
                 Highlight(new Vector2(805, 452.5f), new Vector2(3.2f, 0.35f));
+                HideNextButton();
                 break; // La première vague
             case 16:
+                StopHighlighting();
                 UnlockCamera();
-                // HideTextBox();
+                HideTextBox();
                 break;
             case 17:
+                ShowNextButton();
                 ShowTextBox(); // Post Vague 1
                 ModifySpeakingCharacter(2);
                 StopHighlighting();
@@ -465,17 +527,19 @@ public class TutorialBehaviour : MonoBehaviour
                 StopHighlighting();
                 Highlight(new Vector2(805, 452.5f), new Vector2(3.2f, 0.35f));
                 ModifyTextBoxScale(650f, 85f);
+                HideNextButton();
                 // Le joueur doit lancer la prochaine vague pour continuer.
                 break;
             case 28:
+                UnlockCamera();
+                HideTextBox();
+                break;
+            case 29:
+                ShowNextButton();
                 ShowTextBox();
                 ModifyToCurentText();
                 ChangeExpression(1, 14);
                 ChangeExpression(2, 18);
-                break;
-            case 29:
-                UnlockCamera();
-                // HideTextBox();
                 break;
             case 30:
                 // SoulConverter
@@ -491,7 +555,6 @@ public class TutorialBehaviour : MonoBehaviour
                 ModifyToCurentText();
                 break;
             case 32:
-                // Une fois la vague terminée
                 ModifySpeakingCharacter(2);
                 ChangeExpression(2, 9);
                 ChangeExpression(1,8);
