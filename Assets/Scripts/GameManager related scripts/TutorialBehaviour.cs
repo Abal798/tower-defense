@@ -170,12 +170,12 @@ public class TutorialBehaviour : MonoBehaviour
         if (characterToPlace == 1)
         {
             HideCharacter(2);
-            textBox.transform.GetChild(2).position = new Vector3(textBox.transform.position.x, textBox.transform.position.y + 230, textBox.transform.position.z);
+            textBox.transform.GetChild(2).position = new Vector3(textBox.transform.position.x, textBox.transform.position.y + 180, textBox.transform.position.z);
         }
         else
         {
             HideCharacter(1);
-            textBox.transform.GetChild(3).position = new Vector3(textBox.transform.position.x, textBox.transform.position.y + 230, textBox.transform.position.z);
+            textBox.transform.GetChild(3).position = new Vector3(textBox.transform.position.x, textBox.transform.position.y + 180, textBox.transform.position.z);
         }
     }
 
@@ -331,7 +331,8 @@ public class TutorialBehaviour : MonoBehaviour
             case 7:
                 ModifySpeakingCharacter(1);
                 ModifyToCurentText();
-                StopHighlighting(); 
+                StopHighlighting();
+                ModifyTextBoxScale(650f, 85f);
                 ChangeExpression(2,9);
                 break;
             case 8: // Les Terrains
@@ -346,12 +347,14 @@ public class TutorialBehaviour : MonoBehaviour
             case 10:
                 ModifyToCurentText();
                 Highlight(new Vector2(-220, 380), new Vector2(2.5f, 1.25f));
+                ModifyTextBoxScale(650f, 85f);
                 break;
             // Le joueur doit placer une tour avant de pouvoir poursuivre.
             case 11:
                 ShowTextBox();
                 ModifyToCurentText();
                 ChangeExpression(2, 2);
+                ModifyTextBoxScale(650f, 135f);
                 StopHighlighting();
                 ModifySpeakingCharacter(2);
                 ModifyTextBoxScale(650f, 85f);
@@ -364,7 +367,6 @@ public class TutorialBehaviour : MonoBehaviour
             case 13: 
                 StopHighlighting();
                 ModifyToCurentText();
-                UnlockCamera();
                 ModifyTextBoxScale(650f, 85f);
                 break;
             // Le joueur doit finir de placer ces défenses (Jusqu'à qu'il n'ait plus de ressources pour placer ses ressources dans les 3 éléments=
@@ -382,8 +384,9 @@ public class TutorialBehaviour : MonoBehaviour
                 ModifyTextBoxScale(650f, 135f);
                 Highlight(new Vector2(805, 452.5f), new Vector2(3.2f, 0.35f));
                 break; // La première vague
-            case 16: 
-               HideTextBox();
+            case 16:
+                UnlockCamera();
+                // HideTextBox();
                 break;
             case 17:
                 ShowTextBox(); // Post Vague 1
@@ -451,6 +454,7 @@ public class TutorialBehaviour : MonoBehaviour
             case 26:
                 ChangeExpression(1, 1);
                 ModifyToCurentText();
+                ModifyTextBoxScale(650f, 175f);
                 ActivateGameobject(12); // Activation Triangle Barry
                 Highlight(new Vector2(545, 470), new Vector2(1.75f, 1.4f));
                 break;
@@ -464,13 +468,14 @@ public class TutorialBehaviour : MonoBehaviour
                 // Le joueur doit lancer la prochaine vague pour continuer.
                 break;
             case 28:
-                HideTextBox();
-                break;
-            case 29:
                 ShowTextBox();
                 ModifyToCurentText();
                 ChangeExpression(1, 14);
                 ChangeExpression(2, 18);
+                break;
+            case 29:
+                UnlockCamera();
+                // HideTextBox();
                 break;
             case 30:
                 // SoulConverter
@@ -495,6 +500,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ActivateAllGameObjects();
                 UnlockCamera();
                 ModifyTextBoxScale();
+                ModifyTextBoxScale(650f, 175f);
                 break;
             case 33:
                 StopTutorial();

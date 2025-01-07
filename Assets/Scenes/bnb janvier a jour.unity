@@ -3002,10 +3002,11 @@ MonoBehaviour:
     r\xE9duite."
   - Attention ! Une nouvelle vagues d'ennemis est en approche !
   - '/!\ Objectif: Lancement vague 2'
-  - "J'ai un peu de temps pour te parler d'un outil qu'est encore en travaux: la
-    Conversion d'\xC2mes. "
+  - "Pfiou...J'ai un peu de temps pour te parler d'un outil qu'est encore en travaux:
+    la Conversion d'\xC2mes. "
   - "Celui-ci te permettra de convertir deux \xE2mes en un type d'\xE2mes dont on
-    pourrait \xEAtre d\xE9pourvu, mais le taux est tr\xE8s faible."
+    pourrait \xEAtre d\xE9pourvu, mais le taux est tr\xE8s faible, il faut donc s'en
+    servir avec parsimonie."
   - "Tr\xE8s bien, tu m'a prouv\xE9 que tu \xE9tait assez comp\xE9tent pour \xEAtre
     mon apprenti. Je vais reprendre le contr\xF4le des d\xE9fenses d\xE9sormais."
   objectsToHideAndShow:
