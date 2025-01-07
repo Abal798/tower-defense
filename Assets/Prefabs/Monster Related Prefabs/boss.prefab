@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 8534210464315537085}
   - component: {fileID: -8156118977787339490}
   - component: {fileID: 8475912563468101869}
+  - component: {fileID: -5289728147515111640}
   m_Layer: 6
   m_Name: boss
   m_TagString: Ennemy
@@ -145,10 +146,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MStats: {fileID: 4423026053618790021}
   deplacements: []
+  hierarchicalPathfinding: {fileID: 0}
   pathfinding: {fileID: 0}
   speed: 0
   gridLayout: {fileID: 0}
   objectif: {x: 0, y: 0, z: 0}
+  towerDetectionRadius: 5
 --- !u!114 &4423026053618790021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,3 +276,16 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &-5289728147515111640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791313746008852168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9919b78e645dab4439578b849e77f03c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regionSize: 5

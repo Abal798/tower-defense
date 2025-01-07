@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: -3089433572879407143}
   - component: {fileID: 2255522603312805375}
   - component: {fileID: 4554944457774543691}
+  - component: {fileID: 584325627534280969}
   m_Layer: 6
   m_Name: sumoner
   m_TagString: Ennemy
@@ -191,10 +192,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MStats: {fileID: 6012127422834315380}
   deplacements: []
+  hierarchicalPathfinding: {fileID: 0}
   pathfinding: {fileID: 0}
   speed: 1
   gridLayout: {fileID: 0}
   objectif: {x: 0, y: 0, z: 0}
+  towerDetectionRadius: 5
 --- !u!114 &3593964182594265304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,3 +291,16 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &584325627534280969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791313746008852168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9919b78e645dab4439578b849e77f03c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regionSize: 5
