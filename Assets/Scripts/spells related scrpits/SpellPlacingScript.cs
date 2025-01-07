@@ -541,12 +541,10 @@ public class SpellPlacingScript : MonoBehaviour
             AudioManager.AM.PlaySfx(AudioManager.AM.waterSpellplacing);
         }
         
-        /*
-         else if (spellType == 3)
+        else if (spellType == 3)
         {
-            AudioManager.AM.PlaySfx(AudioManager.AM.waterSpellplacing);
+            AudioManager.AM.PlaySfx(AudioManager.AM.earthSpellplacing);
         }
-        */
     }
     public enum SpellForm { Ligne, Croix, Carre }
     public enum SecondaryEffect { SlowAS, Slow, Stun }

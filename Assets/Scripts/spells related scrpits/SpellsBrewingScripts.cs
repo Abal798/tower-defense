@@ -118,6 +118,7 @@ public class SpellsBrewingScripts : MonoBehaviour
         {
             if(RM.waterSoul >= waterDosePrice)
             {
+                AudioManager.AM.PlaySfx(AudioManager.AM.addWaterIngredient);
                 waterDoseUtilisation++;
                 RM.waterSoul -= waterDosePrice;
                 brewedSpell.Add(2);
