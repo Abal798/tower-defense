@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 624125c9e150c554eb88ef8f6e7a4c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soulReward: 12
+  soulReward: 36
   monsterDamagesEffectPrefab: {fileID: 1860567611682378094, guid: 5156c5ba4dab29d489c85293b9bee66d, type: 3}
   monsterDamageParticulePrefab: {fileID: 4514968584335673242, guid: 2b85546198112d6469855f7d04ba5a37, type: 3}
   damageParticulesOffset: 0
@@ -236,10 +236,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6558944d9a8b4d94ba190e16e880de10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  basicSpeed: 1
-  speed: 2
-  damages: 15
+  health: 130
+  basicSpeed: 3
+  speed: 3
+  damages: 120
   type: 0
   damageFactorbonus: 1.5
   damageFactorMalus: 0.75

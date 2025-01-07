@@ -55,8 +55,7 @@ public class MonsterMouvementBehaviours : MonoBehaviour
             Debug.LogError("No Pathfinding component found on this GameObject!");
             return;
         }
-
-        Building.UpdatePathfinding.AddListener(UpdatePathfinding);
+        
         CalculatePath();
     }
 
@@ -172,8 +171,5 @@ public class MonsterMouvementBehaviours : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
-        Building.UpdatePathfinding.RemoveListener(UpdatePathfinding);
-    }
+  
 }
