@@ -643,8 +643,10 @@ MonoBehaviour:
   menusSounds: []
   addFireIngredient: {fileID: 8300000, guid: 4e086af21417a98448eb5294d7257cd0, type: 3}
   addEarthIngredient: {fileID: 8300000, guid: 6b46539d556cb754c951b37a7d7aa421, type: 3}
+  addWaterIngredient: {fileID: 0}
   fireSpellplacing: {fileID: 8300000, guid: fabb3ec82b86fa24a9bf2aeaa779160c, type: 3}
   waterSpellplacing: {fileID: 8300000, guid: 9be712b71f2940949919d830b86e4a8f, type: 3}
+  earthSpellplacing: {fileID: 0}
   cook: {fileID: 8300000, guid: bb4107916ca892645ad6e8cb3fc47441, type: 3}
   towerSpawn: {fileID: 8300000, guid: 60f8ed7ad34840a448c6800ea5c8cb5e, type: 3}
   towerSelect: {fileID: 8300000, guid: affdcbfb0221df245886c490473c8e9c, type: 3}
@@ -2452,7 +2454,7 @@ MonoBehaviour:
   basicFireDosePrice: 60
   basicWaterDosePrice: 60
   basicEarthDosePrice: 60
-  spellAugmentationPriceFactor: 5
+  spellAugmentationPriceFactor: 10
   fireSoul: 190
   waterSoul: 190
   plantSoul: 190
