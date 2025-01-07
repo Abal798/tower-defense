@@ -1439,6 +1439,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 354061848}
   m_CullTransparentMesh: 1
+--- !u!1 &405531760 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4744356249220203580, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+  m_PrefabInstance: {fileID: 5659166513698722036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &439077682
 GameObject:
   m_ObjectHideFlags: 0
@@ -1585,7 +1590,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &515313141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2407,6 +2412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   victoryPanel: {fileID: 548614662}
+  launchWaveButton: {fileID: 405531760}
   numberOfMonsterOne: 0
   numberOfMonsterTwo: 0
   numberOfMonsterThree: 0
@@ -2419,11 +2425,11 @@ MonoBehaviour:
   RM: {fileID: 744501577}
   chanceDeSpawnElementaireEntreZeroEtUn: 0
   vagueDapparitionDesElementaires: 0
-  endWaveNumber: 10
-  monsterOneWaveList: 000000000e0000001c0000002e0000004b0000006e0000009b000000cd000000fa0000002c010000
-  monsterTwoWaveList: 00000000000000000000000000000000000000000100000003000000070000000c00000010000000
-  monsterThreeWaveList: 00000000000000000000000000000000000000000000000001000000020000000200000002000000
-  monsterFourWaveList: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  endWaveNumber: 15
+  monsterOneWaveList: 000000000c000000180000002a00000041000000500000005f0000007d000000aa000000d70000002c01000090010000f40100009e0200007003000078050000
+  monsterTwoWaveList: 000000000000000000000000000000000000000002000000060000000b000000120000001b000000280000003c00000064000000a0000000f00000005e010000
+  monsterThreeWaveList: 000000000000000000000000000000000000000000000000000000000000000004000000100000002d0000003c000000500000006e000000c800000090010000
+  monsterFourWaveList: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000a0000000f0000001400000000000000
   monstersAlive: []
   basicWaveDuration: 0
   squareSize: 39
@@ -28699,6 +28705,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
+    - target: {fileID: 1248701632584669207, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1284422920175825660, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -29007,6 +29017,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 154
       objectReference: {fileID: 0}
+    - target: {fileID: 6717883148261508810, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6822370474985082982, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -211
@@ -29047,6 +29061,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 5a92bd2c68985ee4f92f883151e2896b, type: 3}
+    - target: {fileID: 7868524316712332910, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8030935312486708231, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 

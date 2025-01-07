@@ -37,6 +37,17 @@ public class SoulConvertingScript : MonoBehaviour
             UIManager.UIM.DisplayAlert("recipie already complete");
             AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
         }
+
+        if (recipie.Count < 3)
+        {
+            float minValue = getSoulAmountWithType(recipie[0]);
+            foreach (var souls in recipie)
+            {
+                if (getSoulAmountWithType(souls) < minValue) minValue = getSoulAmountWithType(souls);
+            }
+
+            soulAmount.maxValue = minValue;
+        }
         
     }
 
@@ -80,6 +91,13 @@ public class SoulConvertingScript : MonoBehaviour
             UIManager.UIM.DisplayAlert("not enough indication to convert");
             AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
         }
+    }
+
+    public float getSoulAmountWithType(int type)
+    {
+        if (type == 1) return RM.fireSoul;
+        if (type == 2) return RM.waterSoul;
+        return RM.plantSoul;
     }
 }
  
