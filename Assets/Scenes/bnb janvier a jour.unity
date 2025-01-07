@@ -2964,9 +2964,8 @@ MonoBehaviour:
   - "Ensuite, pour cr\xE9er des d\xE9fenses, prenons la fiole d'\xE2me de l'\xE9l\xE9ment
     que nous voulons cr\xE9er, et jetons-l\xE0 \xE0 l\xE0 ou nous voulons placer
     notre tour."
-  - "Si tu te trompes pendant la planification, tu peux toujours enlever une tour,
-    cependant ce n'est pas optimal ! (faut que je modifie pour rendre \xE7a plus
-    smooth)"
+  - "Si jamais tu n'es pas satisfait d'une de nos d\xE9fenses, tu peux toujours l'enlever,
+    mais on perdrait beaucoup de ressources !"
   - "Nous pouvons profiter des terrains et renforcer nos tours en les pla\xE7ant
     \xE0 c\xF4t\xE9 de :"
   - "- La for\xEAt pour la port\xE9e;"
@@ -2975,7 +2974,7 @@ MonoBehaviour:
   - '/!\ Objectif: Placer une tour'
   - "Tu as bien appris tes le\xE7ons \xE0 ce que je vois, cependant tu as oubli\xE9
     de mentionner quelque chose de fondamental."
-  - "En effet, tu n'a pas mentionner le fait que verser une autre potion permets
+  - "En effet, tu n'as pas mentionner le fait que verser une autre potion permets
     d'am\xE9liorer une tour, mais on ne peut pas d\xE9passer 3 am\xE9liorations !"
   - "Dans tous les cas, je te laisse finir de pr\xE9parer les d\xE9fenses."
   - "/!\\ Objectif: Placer le reste des d\xE9fenses (am\xE9lioration ou non)"
@@ -3008,8 +3007,9 @@ MonoBehaviour:
   - Attention ! Une nouvelle vagues d'ennemis est en approche !
   - '/!\ Objectif: Lancer la vague 2'
   - "J'ai un peu de temps pour te parler d'un outil qu'est encore en travaux: la
-    Conversion d'\xC2mes. Celui-ci te permettra de convertir deux \xE2mes en un type
-    d'\xE2mes dont on pourrait \xEAtre d\xE9pourvu, mais le taux est tr\xE8s faible."
+    Conversion d'\xC2mes. "
+  - "Celui-ci te permettra de convertir deux \xE2mes en un type d'\xE2mes dont on
+    pourrait \xEAtre d\xE9pourvu, mais le taux est tr\xE8s faible."
   - "Tr\xE8s bien, tu m'a prouv\xE9 que tu \xE9tait assez comp\xE9tent pour \xEAtre
     mon apprenti. Je vais reprendre le contr\xF4le des d\xE9fenses d\xE9sormais."
   objectsToHideAndShow:

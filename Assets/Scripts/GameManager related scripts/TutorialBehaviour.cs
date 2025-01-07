@@ -54,7 +54,7 @@ public class TutorialBehaviour : MonoBehaviour
         DesactivateAllGameObjects();
         LockCamera();
         ModifyTextBoxScale(650f, 85f);
-        DesactivateGameObject(7);
+        DesactivateGameObject(6);
     }
 
     private void Update()
@@ -268,7 +268,7 @@ public class TutorialBehaviour : MonoBehaviour
         if (tutorialStep == 27 && RM.wave > 1) tutorialStep++;
         if (tutorialStep == 28 && spawn.monstersAlive.Count == 0) tutorialStep++;
         if (tutorialStep > 18) tutorialStep++;
-        
+       
         
         switch (tutorialStep)
         {
@@ -361,8 +361,10 @@ public class TutorialBehaviour : MonoBehaviour
             case 13:
                 ModifyToCurentText(); // Amélioration de tour, qu'il n'est pas obligé de faire.
                 ModifyTextBoxScale();
+                StopHighlighting();
                 break;
             case 14: 
+                StopHighlighting();
                 ModifyToCurentText();
                 UnlockCamera();
                 ModifyTextBoxScale(650f, 85f);
@@ -492,6 +494,10 @@ public class TutorialBehaviour : MonoBehaviour
                 Highlight(new Vector2(-855, 225), new Vector2(1.93f, 0.7f));
                 break;
             case 35:
+                ModifyToCurentText();
+                // Highlight(); (J'highlighterais les âmes avec ça
+                break;
+            case 36:
                 // Une fois la vague terminée
                 ModifySpeakingCharacter(2);
                 ChangeExpression(2, 9);
@@ -502,7 +508,7 @@ public class TutorialBehaviour : MonoBehaviour
                 UnlockCamera();
                 ModifyTextBoxScale();
                 break;
-            case 36:
+            case 37:
                 StopTutorial();
                 break;
         }
