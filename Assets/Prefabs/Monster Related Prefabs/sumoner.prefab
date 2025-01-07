@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8496490190715410811}
   - component: {fileID: 4462025437506793994}
   - component: {fileID: 4164270264960268209}
+  - component: {fileID: 584325627534280969}
   - component: {fileID: -1325253033383984031}
   - component: {fileID: 3593964182594265304}
   - component: {fileID: 6012127422834315380}
@@ -177,6 +178,19 @@ MonoBehaviour:
   resultTempo: []
   Final: []
   txtDebugging: {fileID: 5873502354103935828, guid: 9f58c2acb26096c408414e9d01c9f818, type: 3}
+--- !u!114 &584325627534280969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791313746008852168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9919b78e645dab4439578b849e77f03c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regionSize: 5
 --- !u!114 &-1325253033383984031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,10 +205,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MStats: {fileID: 6012127422834315380}
   deplacements: []
+  hierarchicalPathfinding: {fileID: 0}
   pathfinding: {fileID: 0}
   speed: 1
   gridLayout: {fileID: 0}
   objectif: {x: 0, y: 0, z: 0}
+  towerDetectionRadius: 5
 --- !u!114 &3593964182594265304
 MonoBehaviour:
   m_ObjectHideFlags: 0
