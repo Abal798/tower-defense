@@ -42,6 +42,7 @@ public class TutorialBehaviour : MonoBehaviour
         ChangeExpression(1,23);
         DesactivateAllGameObjects();
         LockCamera();
+        ModifyTextBoxScale(650f, 85f);
     }
     
     public void ShowTextBox() //affiche toute la textboxe , personnages compris
@@ -146,12 +147,12 @@ public class TutorialBehaviour : MonoBehaviour
         if (characterToPlace == 1)
         {
             HideCharacter(2);
-            textBox.transform.GetChild(2).position = new Vector3(textBox.transform.position.x, textBox.transform.position.y + 130, textBox.transform.position.z);
+            textBox.transform.GetChild(2).position = new Vector3(textBox.transform.position.x, textBox.transform.position.y + 230, textBox.transform.position.z);
         }
         else
         {
             HideCharacter(1);
-            textBox.transform.GetChild(3).position = new Vector3(textBox.transform.position.x, textBox.transform.position.y + 130, textBox.transform.position.z);
+            textBox.transform.GetChild(3).position = new Vector3(textBox.transform.position.x, textBox.transform.position.y + 230, textBox.transform.position.z);
         }
     }
 
@@ -232,6 +233,7 @@ public class TutorialBehaviour : MonoBehaviour
         switch (tutorialStep)
         {
             case 0:
+                
                 break;
             
             case 1:
@@ -239,6 +241,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ShowCharacter(2);
                 ModifySpeakingCharacter(2); // Premier dialogue ou Arthur parle
                 ModifyToCurentText();
+                ModifyTextBoxScale(650f, 85f);
                 Debug.Log("Arthur parle");
                 break;
             
@@ -246,12 +249,14 @@ public class TutorialBehaviour : MonoBehaviour
                 ChangeExpression(2,19);
                 ChangeExpression(1,18);
                 ModifyToCurentText();
+                ModifyTextBoxScale(); 
                 break;
             
             case 3:
                 ModifySpeakingCharacter(1);
                 ChangeExpression(1,3);
                 ModifyToCurentText(); 
+                ModifyTextBoxScale(650f, 55f);
                 break;
             
             case 4:
@@ -259,6 +264,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ModifyToCurentText();
                 ActivateGameobject(10); // Affiche le SoulsDisplay pour montrer les ressources
                 Highlight(new Vector2(-790, -350), new Vector2(3f,3.5f)); // Highlight des Âmes
+                ModifyTextBoxScale(650f, 135f);
                 break;
             case 5:
                 ModifyToCurentText();
@@ -270,6 +276,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ActivateGameobject(5);
                 Highlight(new Vector2(-90, -390), new Vector2(6.5f,3.4f)); // Highlight des différentes tours
                 MoveTextBox(new Vector3(1550, 110, 0));
+                ModifyTextBoxScale(650f, 185f); 
                 break;
             case 6: 
                 ModifyToCurentText(); // Suppression de tour
@@ -288,6 +295,7 @@ public class TutorialBehaviour : MonoBehaviour
             case 8: // Les Terrains
                 ModifyToCurentText();
                 Highlight(new Vector2(-105, -270), new Vector2(2.5f, 1.25f));
+                ModifyTextBoxScale(650f, 55f);
                 break; //
             case 9:
                 ModifyToCurentText();
@@ -302,19 +310,23 @@ public class TutorialBehaviour : MonoBehaviour
                 ChangeExpression(2, 2);
                 StopHighlighting();
                 ModifySpeakingCharacter(2);
+                ModifyTextBoxScale(650f, 85f);
                 // Le joueur doit placer une tour avant de pouvoir poursuivre.
                 break;
             case 12:
                 ModifyToCurentText(); // Amélioration de tour, qu'il n'est pas obligé de faire.
+                ModifyTextBoxScale();
                 break;
             case 13: 
                 ModifyToCurentText();
                 UnlockCamera();
+                ModifyTextBoxScale(650f, 85f);
                 break;
             case 14:
                 ModifyToCurentText();
                 ModifySpeakingCharacter(1);
                 ChangeExpression(1, 3);
+                ModifyTextBoxScale(650f, 55f);
                 break;
             case 15:
                 ModifyToCurentText();
@@ -322,6 +334,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ActivateGameobject(6);
                 ActivateGameobject(10);
                 Highlight(new Vector2(805, 452.5f), new Vector2(3.2f, 0.35f));
+                ModifyTextBoxScale(650f, 135f);
                 // Le joueur doit finir de placer ces défenses (Jusqu'à qu'il n'ait plus de ressources pour placer ses ressources dans les 3 éléments
                 break;
             case 16:
@@ -330,10 +343,13 @@ public class TutorialBehaviour : MonoBehaviour
                 ChangeExpression(1, 23);
                 ChangeExpression(2, 2);
                 ModifyToCurentText();
+                LockCamera();
+                ModifyTextBoxScale(650f, 113f);
                 break;
             case 17:
                 ChangeExpression(1, 8);
                 ModifyToCurentText();
+                ModifyTextBoxScale(650f, 85f);
                 break;
             case 18:
                 ChangeExpression(2, 2);
@@ -344,26 +360,30 @@ public class TutorialBehaviour : MonoBehaviour
                 ChangeExpression(1, 17);
                 ModifyToCurentText();
                 ActivateGameobject(7);
-                    Highlight(new Vector2(-855, 313), new Vector2(1.93f, 0.77f));
+                ModifyTextBoxScale();
+                    Highlight(new Vector2(-850, 320), new Vector2(1f, 0.85f));
                 // Le joueur doit cliquer sur le bouton d'Alchemy pour continuer
                     break;
             case 20:
                 ModifyToCurentText();
                 MoveTextBox(new Vector3(1575,450));
                 Highlight(new Vector2(-605, -37), new Vector2(1.5f, 1.5f)); // Forme du Sort
+                ModifyTextBoxScale(650f, 85f);
                 break;
             case 21:
                 ChangeExpression(1, 8);
                 ModifyToCurentText();
-                StopHighlighting();
+                ModifyTextBoxScale();
                 Highlight(new Vector2(-430, -37), new Vector2(1.5f, 1.5f)); // Terrain lié à la forme
                 break;
             case 22:
                 ModifyToCurentText();
+                UnlockCamera();
                 ModifySpeakingCharacter(2);
                 ChangeExpression(1,17);
                 // Le joueur doit cook un sort pour continuer.
                 Highlight(new Vector2(-170, -90), new Vector2(1.8f, 0.3f));
+                ModifyTextBoxScale(650f, 85f);
                 break;
             case 23:
                 ChangeExpression(1, 20);
@@ -371,10 +391,12 @@ public class TutorialBehaviour : MonoBehaviour
                 ModifyToCurentText();
                 UnlockCamera();
                 Highlight(new Vector2(745, -245), new Vector2(5f, 0.85f));
+                ModifyTextBoxScale();
                 // Le joueur place ensuite son sort nouvellement créer qu'il doit placer pour pouvoir continuer
                 break;
             case 24:
                 ModifyToCurentText();
+                ModifyTextBoxScale(650f, 85f);
                 break;
             case 25:
                 ChangeExpression(1, 1);
@@ -387,7 +409,9 @@ public class TutorialBehaviour : MonoBehaviour
                 ChangeExpression(1, 18);
                 ChangeExpression(2, 24);
                 ModifyToCurentText();
+                StopHighlighting();
                 Highlight(new Vector2(805, 452.5f), new Vector2(3.2f, 0.35f));
+                ModifyTextBoxScale(650f, 85f);
                 // Le joueur doit lancer la prochaine vague pour continuer.
                 break;
             case 27:
@@ -402,16 +426,19 @@ public class TutorialBehaviour : MonoBehaviour
                 ChangeExpression(2, 8);
                 ChangeExpression(1, 23);
                 ActivateGameobject(8);
-                Highlight(new Vector2(-855, 240), new Vector2(1.93f, 0.77f));
+                ModifyTextBoxScale();
+                Highlight(new Vector2(-855, 225), new Vector2(1.93f, 0.7f));
                 break;
             case 29:
                 // Une fois la vague terminée
                 ModifySpeakingCharacter(2);
                 ChangeExpression(2, 9);
                 ChangeExpression(1,8);
+                PlaceCharacterInCenter(2);
                 ModifyToCurentText();
                 ActivateAllGameObjects();
                 UnlockCamera();
+                ModifyTextBoxScale();
                 // Si jamais il souhaite supprimer des tours, il y a ce bouton. 
                 break;
             case 30:

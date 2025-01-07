@@ -643,8 +643,10 @@ MonoBehaviour:
   menusSounds: []
   addFireIngredient: {fileID: 8300000, guid: 4e086af21417a98448eb5294d7257cd0, type: 3}
   addEarthIngredient: {fileID: 8300000, guid: 6b46539d556cb754c951b37a7d7aa421, type: 3}
+  addWaterIngredient: {fileID: 0}
   fireSpellplacing: {fileID: 8300000, guid: fabb3ec82b86fa24a9bf2aeaa779160c, type: 3}
   waterSpellplacing: {fileID: 8300000, guid: 9be712b71f2940949919d830b86e4a8f, type: 3}
+  earthSpellplacing: {fileID: 0}
   cook: {fileID: 8300000, guid: bb4107916ca892645ad6e8cb3fc47441, type: 3}
   towerSpawn: {fileID: 8300000, guid: 60f8ed7ad34840a448c6800ea5c8cb5e, type: 3}
   towerSelect: {fileID: 8300000, guid: affdcbfb0221df245886c490473c8e9c, type: 3}
@@ -3813,15 +3815,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 8
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
