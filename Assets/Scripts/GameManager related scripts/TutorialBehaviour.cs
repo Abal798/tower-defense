@@ -399,7 +399,10 @@ public class TutorialBehaviour : MonoBehaviour
                 // SoulConverter
                 ModifyToCurentText();
                 ModifySpeakingCharacter(2);
+                ChangeExpression(2, 8);
+                ChangeExpression(1, 23);
                 ActivateGameobject(8);
+                Highlight(new Vector2(-855, 240), new Vector2(1.93f, 0.77f));
                 break;
             case 29:
                 // Une fois la vague terminée
