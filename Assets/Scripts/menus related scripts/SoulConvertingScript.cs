@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -70,28 +71,37 @@ public class SoulConvertingScript : MonoBehaviour
 
     public void Convert()
     {
-        float convertAmount = soulAmount.value;
-
-        if (recipie.Count == 3)
+        if (recipie.Count != 3)
         {
-            for (int i = 0; i < recipie.Count - 1; i++)
-            {
-                if (recipie[i] == 1) RM.fireSoul -= convertAmount;
-                if (recipie[i] == 2) RM.waterSoul -= convertAmount;
-                if (recipie[i] == 3) RM.plantSoul -= convertAmount;
-            }
-            if (recipie[2] == 1) RM.fireSoul += convertAmount;
-            if (recipie[2] == 2) RM.waterSoul += convertAmount;
-            if (recipie[2] == 3) RM.plantSoul += convertAmount;
-            
-            ResetRecipie();
-        }
-        else
-        {
-            UIManager.UIM.DisplayAlert("not enough indication to convert");
+            UIManager.UIM.DisplayAlert("Not enough ingredients to convert");
             AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
+            return;
         }
+
+        float convertAmount = soulAmount.value;
+        if (recipie[0] == recipie[1] && getSoulAmountWithType(recipie[0]) < convertAmount * 2)
+        {
+            UIManager.UIM.DisplayAlert("Not enough soul amounts for conversion");
+            AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
+            return;
+        }
+
+        for (int i = 0; i < recipie.Count - 1; i++)
+        {
+            UpdateSoulAmount(recipie[i], -convertAmount);
+        }
+
+        UpdateSoulAmount(recipie[2], convertAmount);
+        ResetRecipie();
     }
+
+    private void UpdateSoulAmount(int type, float amount)
+    {
+        if (type == 1) RM.fireSoul += amount;
+        else if (type == 2) RM.waterSoul += amount;
+        else if (type == 3) RM.plantSoul += amount;
+    }
+
 
     public float getSoulAmountWithType(int type)
     {
