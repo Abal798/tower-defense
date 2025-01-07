@@ -149,7 +149,7 @@ public class Spawn : MonoBehaviour
             yield return new WaitForSeconds(timeBetweenSpawn);
         }
         
-        if (endWaveNumber - 1 == RM.wave) // arrive en dernier systematiquement
+        if (endWaveNumber == RM.wave) // arrive en dernier systematiquement
         {
             GameObject newMonster = Instantiate(monsterTypeBoss, GetRandomPositionOnSquareEdge(), Quaternion.identity);
             newMonster.GetComponent<MonsterDeathBehaviour>().RM = RM;
