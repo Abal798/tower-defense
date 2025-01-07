@@ -164,6 +164,7 @@ public class MenuManager : MonoBehaviour
     {
         if (alchimiePanel.activeSelf == false)
         {
+            alchimiePanel.GetComponent<SpellsBrewingScripts>().ResetRecipie();
             alchimiePanel.SetActive(true);
             SoulConverterPanel.SetActive(false);
             activePanel = alchimiePanel;
@@ -186,6 +187,7 @@ public class MenuManager : MonoBehaviour
         }
         else
         {
+            SoulConverterPanel.GetComponent<SoulConvertingScript>().ResetRecipie();
             SoulConverterPanel.SetActive(false);
             activePanel = ingamePanel;
         }
