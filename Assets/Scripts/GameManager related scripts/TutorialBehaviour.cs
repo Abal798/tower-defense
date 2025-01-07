@@ -258,7 +258,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ChangeExpression(1,17);
                 ModifyToCurentText();
                 ActivateGameobject(10); // Affiche le SoulsDisplay pour montrer les ressources
-                Highlight(new Vector2(-70,480),new Vector2(4,1.25f)); // Highlight des Âmes
+                Highlight(new Vector2(-790, -350), new Vector2(3f,3.5f)); // Highlight des Âmes
                 break;
             case 5:
                 ModifyToCurentText();
@@ -268,13 +268,15 @@ public class TutorialBehaviour : MonoBehaviour
                 ActivateGameobject(3);
                 ActivateGameobject(4);
                 ActivateGameobject(5);
-                Highlight(new Vector2(-700, -370), new Vector2(6,3.25f)); // Highlight des différentes tours
+                Highlight(new Vector2(-90, -390), new Vector2(6.5f,3.4f)); // Highlight des différentes tours
+                MoveTextBox(new Vector3(1550, 110, 0));
                 break;
             case 6: 
                 ModifyToCurentText(); // Suppression de tour
                 ChangeExpression(2,8);
                 ModifySpeakingCharacter(2);
-                Highlight(new Vector2(-903.5f, -170), new Vector2(0.9f,1f));
+               MoveTextBox(new Vector3(950, 500, 0));
+                Highlight(new Vector2(263, -475), new Vector2(0.9f,0.9f));
                 ActivateGameobject(9);
                 break;
             case 7:
@@ -307,6 +309,7 @@ public class TutorialBehaviour : MonoBehaviour
                 break;
             case 13: 
                 ModifyToCurentText();
+                UnlockCamera();
                 break;
             case 14:
                 ModifyToCurentText();
@@ -346,6 +349,7 @@ public class TutorialBehaviour : MonoBehaviour
                     break;
             case 20:
                 ModifyToCurentText();
+                MoveTextBox(new Vector3(1575,450));
                 Highlight(new Vector2(-605, -37), new Vector2(1.5f, 1.5f)); // Forme du Sort
                 break;
             case 21:
@@ -355,34 +359,49 @@ public class TutorialBehaviour : MonoBehaviour
                 Highlight(new Vector2(-430, -37), new Vector2(1.5f, 1.5f)); // Terrain lié à la forme
                 break;
             case 22:
-                ChangeExpression(1, 20);
                 ModifyToCurentText();
-                UnlockCamera();
-                Highlight(new Vector2(750, -245), new Vector2(5f, 0.85f));
-                // Le joueur place ensuite son sort nouvellement créer qu'il doit placer pour pouvoir continuer
+                ModifySpeakingCharacter(2);
+                ChangeExpression(1,17);
+                // Le joueur doit cook un sort pour continuer.
+                Highlight(new Vector2(-170, -90), new Vector2(1.8f, 0.3f));
                 break;
             case 23:
+                ChangeExpression(1, 20);
+                ModifySpeakingCharacter(1);
                 ModifyToCurentText();
+                UnlockCamera();
+                Highlight(new Vector2(745, -245), new Vector2(5f, 0.85f));
+                // Le joueur place ensuite son sort nouvellement créer qu'il doit placer pour pouvoir continuer
                 break;
             case 24:
+                ModifyToCurentText();
+                break;
+            case 25:
                 ChangeExpression(1, 1);
                 ModifyToCurentText();
-                ActivateGameobject(13); // Activation Triangle Barry
-                Highlight(new Vector2(325, 475), new Vector2(1.75f, 1.5f));
+                ActivateGameobject(12); // Activation Triangle Barry
+                Highlight(new Vector2(545, 470), new Vector2(1.75f, 1.4f));
                 // Parler un peu plus de ce que ça fait (ou modifie le texte pour dire que ça les renforcent selon l'élément déséquilibré)
                     break;
-            case 25:
-                ChangeExpression(1, 14);
-                ChangeExpression(2, 18);
+            case 26:
+                ChangeExpression(1, 18);
+                ChangeExpression(2, 24);
                 ModifyToCurentText();
                 Highlight(new Vector2(805, 452.5f), new Vector2(3.2f, 0.35f));
                 // Le joueur doit lancer la prochaine vague pour continuer.
                 break;
-            case 26:
-                ModifyToCurentText();
-                break;
-                
             case 27:
+                ModifyToCurentText();
+                ChangeExpression(1, 14);
+                ChangeExpression(2, 18);
+                break;
+            case 28:
+                // SoulConverter
+                ModifyToCurentText();
+                ModifySpeakingCharacter(2);
+                ActivateGameobject(8);
+                break;
+            case 29:
                 // Une fois la vague terminée
                 ModifySpeakingCharacter(2);
                 ChangeExpression(2, 9);
@@ -392,7 +411,7 @@ public class TutorialBehaviour : MonoBehaviour
                 UnlockCamera();
                 // Si jamais il souhaite supprimer des tours, il y a ce bouton. 
                 break;
-            case 28:
+            case 30:
                 StopTutorial();
                 // Restera le Converter à introduire juste avant
                 // Parler de la conversion si jamais certains éléments manquent, mais que le prix à payer n'est pas une façon optimale de faire comparé à la manière naturelle
