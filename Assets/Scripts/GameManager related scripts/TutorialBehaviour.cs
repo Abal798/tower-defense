@@ -252,7 +252,7 @@ public class TutorialBehaviour : MonoBehaviour
 
     public void NextStep()
     {
-
+        /*
         if (tutorialStep < 11) tutorialStep++;
         if (tutorialStep == 11 && GridBuilding.current.listeTowerCo.Count > 0) tutorialStep++;
         if (tutorialStep > 11 && tutorialStep < 14) tutorialStep++;
@@ -268,7 +268,9 @@ public class TutorialBehaviour : MonoBehaviour
         if (tutorialStep == 27 && RM.wave > 1) tutorialStep++;
         if (tutorialStep == 28 && spawn.monstersAlive.Count == 0) tutorialStep++;
         if (tutorialStep > 18) tutorialStep++;
-       
+       */
+        
+        tutorialStep++;
         
         switch (tutorialStep)
         {
@@ -392,6 +394,7 @@ public class TutorialBehaviour : MonoBehaviour
                 Highlight(new Vector2(805, 452.5f), new Vector2(3.2f, 0.35f));
                 break;
             case 19:
+                ShowTextBox();
                 ModifySpeakingCharacter(2);
                 StopHighlighting();
                 ChangeExpression(1, 23);
