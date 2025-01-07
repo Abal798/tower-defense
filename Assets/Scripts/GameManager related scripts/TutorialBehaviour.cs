@@ -233,7 +233,6 @@ public class TutorialBehaviour : MonoBehaviour
         switch (tutorialStep)
         {
             case 0:
-                
                 break;
             
             case 1:
@@ -284,7 +283,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ModifySpeakingCharacter(2);
                MoveTextBox(new Vector3(950, 500, 0));
                 Highlight(new Vector2(263, -475), new Vector2(0.9f,0.9f));
-                ActivateGameobject(9);
+                ActivateGameobject(9); // Affiche le bouton de Suppression
                 break;
             case 7:
                 ModifySpeakingCharacter(1);
@@ -359,7 +358,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ModifySpeakingCharacter(1);
                 ChangeExpression(1, 17);
                 ModifyToCurentText();
-                ActivateGameobject(7);
+                ActivateGameobject(7); // Affiche le bouton d'Alchemy
                 ModifyTextBoxScale();
                     Highlight(new Vector2(-850, 320), new Vector2(1f, 0.85f));
                 // Le joueur doit cliquer sur le bouton d'Alchemy pour continuer
@@ -378,18 +377,17 @@ public class TutorialBehaviour : MonoBehaviour
                 break;
             case 22:
                 ModifyToCurentText();
-                UnlockCamera();
+                UnlockCamera(); // Unlock de caméra pour qu'il puisse placer le sort ou qu'il le souhaite.
                 ModifySpeakingCharacter(2);
                 ChangeExpression(1,17);
-                // Le joueur doit cook un sort pour continuer.
                 Highlight(new Vector2(-170, -90), new Vector2(1.8f, 0.3f));
                 ModifyTextBoxScale(650f, 85f);
+                // Le joueur doit cook un sort pour continuer.
                 break;
             case 23:
                 ChangeExpression(1, 20);
                 ModifySpeakingCharacter(1);
                 ModifyToCurentText();
-                UnlockCamera();
                 Highlight(new Vector2(745, -245), new Vector2(5f, 0.85f));
                 ModifyTextBoxScale();
                 // Le joueur place ensuite son sort nouvellement créer qu'il doit placer pour pouvoir continuer
@@ -404,7 +402,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ActivateGameobject(12); // Activation Triangle Barry
                 Highlight(new Vector2(545, 470), new Vector2(1.75f, 1.4f));
                 // Parler un peu plus de ce que ça fait (ou modifie le texte pour dire que ça les renforcent selon l'élément déséquilibré)
-                    break;
+                break;
             case 26:
                 ChangeExpression(1, 18);
                 ChangeExpression(2, 24);
@@ -439,12 +437,9 @@ public class TutorialBehaviour : MonoBehaviour
                 ActivateAllGameObjects();
                 UnlockCamera();
                 ModifyTextBoxScale();
-                // Si jamais il souhaite supprimer des tours, il y a ce bouton. 
                 break;
             case 30:
                 StopTutorial();
-                // Restera le Converter à introduire juste avant
-                // Parler de la conversion si jamais certains éléments manquent, mais que le prix à payer n'est pas une façon optimale de faire comparé à la manière naturelle
                 break;
 
 
