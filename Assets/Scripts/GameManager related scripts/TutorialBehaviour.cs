@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,8 +8,14 @@ using UnityEngine.UI;
 
 public class TutorialBehaviour : MonoBehaviour
 {
+
+    [Header("GD ne pas toucher")] 
+    public RessourcesManager RM;
+    public Spawn spawn;
+
+    private bool AlchemyButtonCkicked = false;
+    private bool alreadyOneSpellCoocked = false;
     
-    [Header("GD ne pas toucher")]
     public static int tutorialStep = 0;
     
     public static bool isInTutorial;
@@ -24,11 +31,15 @@ public class TutorialBehaviour : MonoBehaviour
     public GameObject bottomPosition;
     public string[] tutorialText;
     public GameObject[] objectsToHideAndShow;
-    
 
-    
 
-    
+    private void Awake()
+    {
+        RM = FindObjectOfType<RessourcesManager>();
+        spawn = FindObjectOfType<Spawn>();
+    }
+
+
     void Start() //étape 0 du tutoriel
     {
         tutorialStep = 0;
@@ -43,6 +54,17 @@ public class TutorialBehaviour : MonoBehaviour
         DesactivateAllGameObjects();
         LockCamera();
         ModifyTextBoxScale(650f, 85f);
+    }
+
+    private void Update()
+    {
+        if (RM.spellSlotOne.Count != 0) alreadyOneSpellCoocked = true;
+    }
+
+    public void AlchemyButtonCalled()
+    {
+        AlchemyButtonCkicked = true;
+        if(tutorialStep == 19)NextStep();
     }
     
     public void ShowTextBox() //affiche toute la textboxe , personnages compris
@@ -229,7 +251,24 @@ public class TutorialBehaviour : MonoBehaviour
 
     public void NextStep()
     {
-        tutorialStep++;
+
+        if (tutorialStep < 11) tutorialStep++;
+        if (tutorialStep == 11 && GridBuilding.current.listeTowerCo.Count > 0) tutorialStep++;
+        if (tutorialStep > 11 && tutorialStep < 14) tutorialStep++;
+        if (tutorialStep == 14 && RM.fireSoul == 90 && RM.waterSoul == 90 && RM.plantSoul == 90) tutorialStep++;
+        if (tutorialStep == 15 && RM.wave > 0) tutorialStep++;
+        if (tutorialStep == 16 && spawn.monstersAlive.Count == 0) tutorialStep++;
+        if (tutorialStep > 16 && tutorialStep < 19) tutorialStep++;
+        if (tutorialStep == 19 && AlchemyButtonCkicked) tutorialStep++;
+        if (tutorialStep > 19 && tutorialStep < 22) tutorialStep++;
+        if (tutorialStep == 22 && alreadyOneSpellCoocked) tutorialStep++;
+        if (tutorialStep == 23 && EndGameStats.EGS.nombreDeSortsPlaces > 0) tutorialStep++;
+        if (tutorialStep > 23 && tutorialStep < 27) tutorialStep++;
+        if (tutorialStep == 27 && RM.wave > 1) tutorialStep++;
+        if (tutorialStep == 28 && spawn.monstersAlive.Count == 0) tutorialStep++;
+        if (tutorialStep > 18) tutorialStep++;
+        
+        
         switch (tutorialStep)
         {
             case 0:
