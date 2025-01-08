@@ -8,21 +8,12 @@ public class BookManager : MonoBehaviour
     public static BookManager instance;
     
     public GameObject[] paragraphs;
-    
-    public bool monsterSwarmerEncountered = false;
-    public bool monsterGiantEncountered = false;
-    
 
-    private void Awake()
+    public void Start()
     {
-        instance = this;
+        foreach (var paragraphes in paragraphs)
+        {
+            paragraphes.SetActive(true);
+        }
     }
-
-    void OnEnable()
-    {
-        paragraphs[0].gameObject.SetActive(monsterSwarmerEncountered); 
-        paragraphs[1].gameObject.SetActive(monsterGiantEncountered); 
-    }
-    
-    
 }
