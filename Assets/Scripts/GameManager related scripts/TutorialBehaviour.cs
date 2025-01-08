@@ -84,7 +84,7 @@ public class TutorialBehaviour : MonoBehaviour
             NextStep();
         }
 
-        if (tutorialStep == 29 && waveTwobeginned && launchWaveButton.activeSelf)
+        if (tutorialStep == 28 && waveTwobeginned && launchWaveButton.activeSelf)
         {
             tutorialStep++;
             NextStep();
@@ -126,7 +126,7 @@ public class TutorialBehaviour : MonoBehaviour
             tutorialStep++;
             NextStep();
         }
-        else if(tutorialStep == 28)
+        else if(tutorialStep == 29)
         {
             tutorialStep++;
             NextStep();
@@ -497,7 +497,7 @@ public class TutorialBehaviour : MonoBehaviour
                 Highlight(new Vector2(-605, -37), new Vector2(1.5f, 1.5f)); // Forme du Sort
                 MoveTextBox(new Vector3(1575,450));
                 ModifyTextBoxScale(650f, 85f);
-                ShowNextButton();
+              //  ShowNextButton();
                 break;
             case 22:
                 ChangeExpression(1, 8);
