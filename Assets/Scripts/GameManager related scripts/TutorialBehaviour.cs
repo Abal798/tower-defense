@@ -98,6 +98,15 @@ public class TutorialBehaviour : MonoBehaviour
         isCoroutineRunning = false;
     }
 
+    public void StepSeveteenAndTwentyNine()
+    {
+        if (tutorialStep == 17 || tutorialStep == 29)
+        {
+            tutorialStep ++;
+            NextStep();
+        }
+    }
+
     
 
     public void AlchemyButtonCalled()
@@ -323,7 +332,8 @@ public class TutorialBehaviour : MonoBehaviour
         if (tutorialStep > 10 && tutorialStep < 13) tutorialStep++;
         if (tutorialStep == 13 && RM.fireSoul == 90 && RM.waterSoul == 90 && RM.plantSoul == 90) tutorialStep++;
         if (tutorialStep > 13 && tutorialStep < 15) tutorialStep++;
-        if(tutorialStep > 16 && tutorialStep < 20) tutorialStep++;
+        
+        if(tutorialStep > 17 && tutorialStep < 20) tutorialStep++;
         if(tutorialStep > 20 && tutorialStep < 23) tutorialStep++;
         if(tutorialStep == 23 && alreadyOneSpellCoocked) tutorialStep++;
         if(tutorialStep == 24 && EndGameStats.EGS.nombreDeSortsPlaces > 0) tutorialStep++;
@@ -476,9 +486,11 @@ public class TutorialBehaviour : MonoBehaviour
                 ActivateGameobject(7); // Affiche le bouton d'Alchemy
                 ModifyTextBoxScale();
                 Highlight(new Vector2(-850, 320), new Vector2(1f, 0.85f));
+                HideNextButton();
                 // Le joueur doit cliquer sur le bouton d'Alchemy pour continuer
                 break;
             case 21:
+                ShowNextButton();
                 ShowTextBox();
                 ModifyToCurentText();
                 MoveTextBox(new Vector3(1575,450));
