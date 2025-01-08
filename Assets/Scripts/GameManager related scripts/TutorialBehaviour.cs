@@ -222,7 +222,7 @@ public class TutorialBehaviour : MonoBehaviour
 
         Transform childTransform4 = textBox.transform.GetChild(4);
         Vector3 currentPosition4 = childTransform4.position;
-        currentPosition4.y = textBox.transform.position.y - (textBox.transform.GetChild(0).gameObject.GetComponent<RectTransform>().sizeDelta.y / 2) - 10;
+        currentPosition4.y = textBox.transform.position.y - (textBox.transform.GetChild(0).gameObject.GetComponent<RectTransform>().sizeDelta.y / 2) - 2;
         childTransform4.position = currentPosition4;
     }
 
