@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/JasonPostPeta.unity.meta
 guid: d015008f97ab0714d86fe2121fdcb446
+========
+guid: 27e0578d33d61ca479338f8b90007a40
+>>>>>>>> main:Assets/Scenes/ClementJanvierEquilibrage.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

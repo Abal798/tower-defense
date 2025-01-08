@@ -636,8 +636,8 @@ MonoBehaviour:
   musicSource: {fileID: 439077683}
   SFXSource: {fileID: 1042538939}
   menusSoundsSource: {fileID: 1985097464}
-  enemyDie: {fileID: 8300000, guid: b4f4fdaa3c585364eaa8da346a91020a, type: 3}
-  buttonClick: {fileID: 8300000, guid: d29b5b95c7cbb26419abfa6a2d6a881f, type: 3}
+  enemyDie: {fileID: 8300000, guid: 83710a0abfdbed54a8be592aeaef1e56, type: 3}
+  buttonClick: {fileID: 8300000, guid: 6210828b5936a4348ba930454ad4f4f9, type: 3}
   alertDisplay: {fileID: 8300000, guid: 17b6e835815b1034c87a129d45d561cb, type: 3}
   pageTurn: {fileID: 8300000, guid: 80ac5e14d176e7140a1c4004c55e6d8e, type: 3}
   menusSounds: []
@@ -1083,90 +1083,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &306401996
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 306401997}
-  - component: {fileID: 306401998}
-  m_Layer: 0
-  m_Name: SPRITE_TOUR_EXPORT
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &306401997
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 306401996}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.043, y: 0.707, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1809393144}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &306401998
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 306401996}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 180628b89c83cdc42a0c349722b987de, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 12.32, y: 14.56}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &334308858
 GameObject:
   m_ObjectHideFlags: 0
@@ -2483,18 +2399,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 744501585}
-        m_TargetAssemblyTypeName: TutorialBehaviour, Assembly-CSharp
-        m_MethodName: stepEleven
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &707200517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2724,10 +2628,10 @@ MonoBehaviour:
   chanceDeSpawnElementaireEntreZeroEtUn: 0
   vagueDapparitionDesElementaires: 0
   endWaveNumber: 15
-  monsterOneWaveList: 000000000c000000180000002a00000041000000500000005f0000007d000000aa000000d70000002c01000090010000f40100009e0200007003000078050000
-  monsterTwoWaveList: 000000000000000000000000000000000000000002000000060000000b000000120000001b000000280000003c00000064000000a0000000f00000005e010000
-  monsterThreeWaveList: 000000000000000000000000000000000000000000000000000000000000000004000000100000002d0000003c000000500000006e000000c800000090010000
-  monsterFourWaveList: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000a0000000f0000001400000000000000
+  monsterOneWaveList: 000000000c00000018000000280000003e0000004b000000500000007d000000aa000000b4000000f00000002c0100005e010000c201000030020000bc020000
+  monsterTwoWaveList: 00000000000000000000000000000000000000000200000006000000080000000c00000016000000240000002e0000004b0000006e000000c30000002c010000
+  monsterThreeWaveList: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000a0000000f0000001400000000000000
+  monsterFourWaveList: 000000000000000000000000000000000000000000000000000000000000000004000000100000001e0000003c0000005000000096000000c800000090010000
   monstersAlive: []
   basicWaveDuration: 0
   squareSize: 39
@@ -2755,7 +2659,7 @@ MonoBehaviour:
   basicFireDosePrice: 60
   basicWaterDosePrice: 60
   basicEarthDosePrice: 60
-  spellAugmentationPriceFactor: 5
+  spellAugmentationPriceFactor: 10
   fireSoul: 190
   waterSoul: 190
   plantSoul: 190
@@ -2967,62 +2871,61 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4d335ace3be8095478d79d11e135503a, type: 3}
   bottomPosition: {fileID: 1315070205}
   tutorialText:
-  - "Tom:      Ah ! Nous avons enfin trouv\xE9 un endroit parfait pour nous installer
-    !"
-  - "Arthur:      En effet, c'est assez loin de la ville pour que nos poursuivants
-    n'attirent d'ennuis \xE0 personne."
+  - "Ah ! Nous avons enfin trouv\xE9 un endroit parfait pour nous installer !"
+  - "En effet, c'est assez loin de la ville pour que nos poursuivants n'attirent
+    d'ennuis \xE0 personne."
   - "\xC9valuons un peu ta connaissance de l\u2019alchimie ! Dicte-moi ce que je
     dois faire pour \xE9tablir une premi\xE8re ligne de d\xE9fense."
-  - Merci de votre confiance !
+  - Merci de votre confiance !!
   - "Pour commencer, les \xE2mes. On les obtient depuis les corps d'entit\xE9s mortes
     affect\xE9s par un \xE9l\xE9ment."
-  - "Nous pourrons aussi profiter des terrains et renforcer nos tours en les pla\xE7ant
+  - "Ensuite, pour cr\xE9er des d\xE9fenses, prenons la fiole d'\xE2me de l'\xE9l\xE9ment
+    que nous voulons cr\xE9er, et jetons-l\xE0 \xE0 l\xE0 ou nous voulons placer
+    notre tour."
+  - "Si jamais tu n'es pas satisfait d'une de nos d\xE9fenses, tu peux toujours l'enlever,
+    mais on perdrait beaucoup de ressources !"
+  - "Nous pouvons profiter des terrains et renforcer nos tours en les pla\xE7ant
     \xE0 c\xF4t\xE9 de :"
   - "- La for\xEAt pour la port\xE9e;"
   - "- La terre de feu pour les d\xE9g\xE2ts;"
-  - "Les rivi\xE8res pour la cadence. Ai-je oublier quelque chose professeur ?"
-  - "Je vois que tu connais bien ta le\xE7on, c'est bien. Maintenant laisse moi te
-    parler des am\xE9liorations."
-  - "Celles-ci se font en pla\xE7ant une potion sur une d\xE9fense d\xE9j\xE0 faites.
-    Mais en avant de d\xE9tailler, voil\xE0 ce que \xE7a donne de placer une potion
-    de d\xE9fense."
-  - 
-  - "Si on le souhaite, on peut utiliser un outil pour d\xE9truire une tour, mais
-    on ne r\xE9cup\xE8re rien par la destruction. Pour en revenir aux am\xE9liorations,
-    celles-ci sont limit\xE9es \xE0 3 mais augmente drastiquement la puissance de
-    nos d\xE9fenses."
-  - "Dans tous les cas, je te laisse finir de pr\xE9parer les d\xE9fenses, voir si
-    tu as bien compris ce que je viens de dire."
-  - 
+  - "- Les rivi\xE8res pour la cadence. Voil\xE0 ! Maintenant je vais placer la fiole"
+  - "Tu as bien appris tes le\xE7ons \xE0 ce que je vois, cependant tu as oubli\xE9
+    de mentionner quelque chose de fondamental."
+  - "En effet, tu n'as pas mentionner le fait que verser une autre potion permets
+    d'am\xE9liorer une tour, mais on ne peut pas d\xE9passer 3 am\xE9liorations !"
+  - "Dans tous les cas, je te laisse finir de pr\xE9parer les d\xE9fenses."
+  - Excellent ! Merci du conseil professeur !
   - "Oh non ! Nos poursuivants nous ont retrouv\xE9s ! Esp\xE9rons que ces tours
     suffisent \xE0 nous d\xE9fendre !"
   - /!\ Vague 1
   - "Nos d\xE9fenses ont tenu bon ! Et nous avons plus de r\xE9serves ! Malgr\xE9
     tout, je doute que nos ennemis ne s'arr\xEAtent l\xE0. "
-  - 
-  - Poursuivons un peu ton test, explique-moi comment concocter un sort.
+  - "Pr\xE9parons quelques sorts pour renforcer nos d\xE9fenses."
+  - Poursuivons un peu ton test, explique moi comment concocter un sort.
   - "Tr\xE8s bien ! Dans un premier temps, allons \xE0 notre chaudron, et pla\xE7ons-y
     deux doses d'\xE9l\xE9ments puis, m\xE9langeons."
-  - "Ensuite, nous aurons le premier \xE9l\xE9ment qui d\xE9terminera la forme de
-    notre terrain, et le deuxi\xE8me remplacera l'\xE9l\xE9ment sur ce terrain. "
-  - 
-  - "Nous pouvons ensuite m\xE9langer notre sort puis le placer. Cela dit, il ne
-    faudrait pas le placer sur une tour, auquel cas \xE7a la d\xE9truira sans qu'on
-    r\xE9cup\xE8re les ressources."
-  - 
-  - 
-  - 
+  - "Le premier \xE9l\xE9ment que l'on infuse d\xE9terminera la forme de celui-ci. "
+  - "Tandis que le deuxi\xE8me d\xE9terminera l'\xE9l\xE9ment qui terraformera le
+    terrain. Et cela fonctionne aussi avec 2 \xE9l\xE9ments identiques !"
+  - "Tr\xE8s bien. Montre moi comment tu place ledit sort maintenant ?"
+  - "Nous pouvons ensuite placer ce sort de la m\xEAme mani\xE8re que nous avons
+    plac\xE9 une d\xE9fense. Ce sort nous permettra de modifier le terrain \xE0 notre
+    avantage."
+  - "\xC9vitons tout de m\xEAme de placer un sort sur nos tours, sans quoi elles
+    risquent d'\xEAtre d\xE9truites."
   - "L'\xE9quilibre de la r\xE9gion est tr\xE8s fragile. En abusant de sorts d'un
-    m\xEAme \xE9l\xE9ment, nous risquons de d\xE9s\xE9quilibrer la zone et celui-ci
-    verra son efficacit\xE9 drastiquement r\xE9duite."
-  - Attention ! Une nouvelle vague d'ennemis est en approche !
+    m\xEAme \xE9l\xE9ment, nous risquons de d\xE9s\xE9quilibrer la zone et nous attirer
+    des ennuis ! "
+  - "Qu'importe l'\xE9l\xE9ment affect\xE9, celui-ci verra son efficacit\xE9 drastiquement
+    r\xE9duite."
+  - Attention ! Une nouvelle vagues d'ennemis est en approche !
   - '/!\ Objectif: Lancement vague 2'
-  - "Pfiou... J'ai un peu de temps pour te parler d'un outil qui est encore en travaux
-    : la Conversion d'\xC2mes. On y mets 2 \xE9l\xE9ments qui vont \xEAtre recycler
-    en un \xE9l\xE9ment dont on est potentiellement d\xE9pourvu, mais cela reste
-    tr\xE8s peu efficace !"
-  - 
-  - "Tr\xE8s bien, tu m'as prouv\xE9 que tu \xE9tais assez comp\xE9tent pour \xEAtre
+  - "Pfiou...J'ai un peu de temps pour te parler d'un outil qu'est encore en travaux:
+    la Conversion d'\xC2mes. "
+  - "Celui-ci te permettra de convertir deux \xE2mes en un type d'\xE2mes dont on
+    pourrait \xEAtre d\xE9pourvu, mais le taux est tr\xE8s faible, il faut donc s'en
+    servir avec parsimonie."
+  - "Tr\xE8s bien, tu m'a prouv\xE9 que tu \xE9tait assez comp\xE9tent pour \xEAtre
     mon apprenti. Je vais reprendre le contr\xF4le des d\xE9fenses d\xE9sormais."
   objectsToHideAndShow:
   - {fileID: 5659166513698722039}
@@ -3433,6 +3336,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780179280}
   m_CullTransparentMesh: 1
+--- !u!114 &805268759 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5206054350647368453, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+  m_PrefabInstance: {fileID: 5659166513698722036}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08b6069b1ab64fe48bc05f3ee9935f04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &836534523
 GameObject:
   m_ObjectHideFlags: 0
@@ -4322,6 +4236,90 @@ Transform:
   m_Children: []
   m_Father: {fileID: 64261803}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1045733036
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1045733037}
+  - component: {fileID: 1045733038}
+  m_Layer: 0
+  m_Name: SPRITE_TOUR_EXPORT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1045733037
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045733036}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.003, y: 0.016, z: 0}
+  m_LocalScale: {x: 0.39999998, y: 0.39999998, z: 0.39999998}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1809393144}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1045733038
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045733036}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 2f8080f038270674db2e490572b789fa, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 12.32, y: 14.56}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1073671995
 GameObject:
   m_ObjectHideFlags: 0
@@ -28491,7 +28489,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 306401997}
+  - {fileID: 1045733037}
   - {fileID: 304638352}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -29725,6 +29723,14 @@ PrefabInstance:
       propertyPath: RM
       value: 
       objectReference: {fileID: 744501577}
+    - target: {fileID: 624044085797810625, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 624044085797810625, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8970941185e1c714fb549df99ee52e4b, type: 3}
     - target: {fileID: 716906023971312275, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -29753,6 +29759,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
+    - target: {fileID: 1248701632584669207, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1320214689579317291, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -29826,10 +29836,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4039158788852819238, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4039158788852819238, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 744501576}
@@ -29846,19 +29852,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4039158788852819238, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4039158788852819238, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: waveButtonCalled
       objectReference: {fileID: 0}
     - target: {fileID: 4039158788852819238, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: TutorialBehaviour, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4039158788852819238, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
       value: TutorialBehaviour, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4039158788852819238, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
@@ -29957,6 +29955,10 @@ PrefabInstance:
       propertyPath: RM
       value: 
       objectReference: {fileID: 744501577}
+    - target: {fileID: 6317252254310891406, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -100
+      objectReference: {fileID: 0}
     - target: {fileID: 6592259351321667751, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -29965,18 +29967,58 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
+    - target: {fileID: 6717883148261508810, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6837587868240894001, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
+    - target: {fileID: 7251605374076726940, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7868524316712332910, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8030935312486708231, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8030935312486708231, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
+    - target: {fileID: 8030935312486708231, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToSoulConverterPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8030935312486708231, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8030935312486708231, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148720885116260263, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 805268759}
     - target: {fileID: 8148720885116260263, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
+    - target: {fileID: 8148720885116260263, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToAlchimiePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148720885116260263, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8205919177039476357, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
