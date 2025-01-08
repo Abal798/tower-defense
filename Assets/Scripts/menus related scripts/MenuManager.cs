@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class MenuManager : MonoBehaviour
 {
     public RessourcesManager RM;
-    
+    public Button speedSimulationButton;
     public GameObject ingamePanel;
     public GameObject alchimiePanel;
     public GameObject keyRebindingPanel;
@@ -90,6 +90,11 @@ public class MenuManager : MonoBehaviour
             if (Input.GetKeyDown(keyRebinder.GetKeyForAction("shortcutPotion3")))
             {
                 RM.gameObject.GetComponent<SpellPlacingScript>().Spell3();
+            }
+
+            if (Input.GetKeyDown(keyRebinder.GetKeyForAction("shortcutTimeSpeed")))
+            {
+                FastButtonPressed(speedSimulationButton);
             }
             
         }
