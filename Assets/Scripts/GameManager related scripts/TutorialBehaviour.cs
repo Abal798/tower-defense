@@ -100,7 +100,7 @@ public class TutorialBehaviour : MonoBehaviour
 
     public void StepSeveteenAndTwentyNine()
     {
-        if (tutorialStep == 17 || tutorialStep == 28)
+        if (tutorialStep == 17 || tutorialStep == 29)
         {
             tutorialStep ++;
             NextStep();
@@ -485,18 +485,19 @@ public class TutorialBehaviour : MonoBehaviour
                 ModifySpeakingCharacter(1);
                 ChangeExpression(1, 17);
                 ModifyToCurentText();
-                ModifyTextBoxScale(); ActivateGameobject(7); // Affiche le bouton d'Alchemy
+                ModifyTextBoxScale(); 
+                ActivateGameobject(7); // Affiche le bouton d'Alchemy
                 Highlight(new Vector2(-850, 320), new Vector2(1f, 0.85f));
                 // Le joueur doit cliquer sur le bouton d'Alchemy pour continuer
                 HideNextButton();
                 break;
             case 21:
                 ShowTextBox(); // Ce case est skip somehow
-                ShowNextButton();
                 ModifyToCurentText();
-                MoveTextBox(new Vector3(1575,450));
                 Highlight(new Vector2(-605, -37), new Vector2(1.5f, 1.5f)); // Forme du Sort
+                MoveTextBox(new Vector3(1575,450));
                 ModifyTextBoxScale(650f, 85f);
+                ShowNextButton();
                 break;
             case 22:
                 ChangeExpression(1, 8);

@@ -3000,9 +3000,8 @@ MonoBehaviour:
   - Poursuivons un peu ton test, explique moi comment concocter un sort.
   - "Tr\xE8s bien ! Dans un premier temps, allons \xE0 notre chaudron, et pla\xE7ons-y
     deux doses d'\xE9l\xE9ments puis, m\xE9langeons."
-  - /!\ Concoction de Sort
-  - "Le premier \xE9l\xE9ment que l'on infuse d\xE9terminera la forme de celui-ci.
-    Tandis que le deuxi\xE8me d\xE9terminera l'\xE9l\xE9ment qui terraformera le
+  - "Le premier \xE9l\xE9ment que l'on infuse d\xE9terminera la forme de celui-ci. "
+  - "Tandis que le deuxi\xE8me d\xE9terminera l'\xE9l\xE9ment qui terraformera le
     terrain. Et cela fonctionne aussi avec 2 \xE9l\xE9ments identiques !"
   - "Tr\xE8s bien. Montre moi comment tu place ledit sort maintenant ?"
   - "Nous pouvons ensuite placer ce sort de la m\xEAme mani\xE8re que nous avons
