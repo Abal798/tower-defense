@@ -13,7 +13,7 @@ public class CameraManager : MonoBehaviour
     public Vector2 minPosition; // Minimum bounds for the camera
     public Vector2 maxPosition; // Maximum bounds for the camera
     
-    public float zoomSpeed = 1f; // Speed of zooming
+    public float zoomSpeed = 3f; // Speed of zooming
     public float minZoom = 2f; // Minimum orthographic size
     public float maxZoom = 10f; // Maximum orthographic 
     
