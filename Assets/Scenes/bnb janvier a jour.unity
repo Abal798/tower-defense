@@ -2917,6 +2917,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca1249c39d6b8cf40adb8543f15a01b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soulRecycling: 75
+  RM: {fileID: 744501577}
 --- !u!114 &744501585
 MonoBehaviour:
   m_ObjectHideFlags: 0
