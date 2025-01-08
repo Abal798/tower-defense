@@ -126,7 +126,7 @@ public class TutorialBehaviour : MonoBehaviour
             tutorialStep++;
             NextStep();
         }
-        else if(tutorialStep == 27)
+        else if(tutorialStep == 28)
         {
             tutorialStep++;
             NextStep();
@@ -337,8 +337,9 @@ public class TutorialBehaviour : MonoBehaviour
         if(tutorialStep > 20 && tutorialStep < 23) tutorialStep++;
         if(tutorialStep == 23 && alreadyOneSpellCoocked) tutorialStep++;
         if(tutorialStep == 24 && EndGameStats.EGS.nombreDeSortsPlaces > 0) tutorialStep++;
-        if(tutorialStep > 24 && tutorialStep < 27) tutorialStep++;
+        if(tutorialStep > 24 && tutorialStep < 28) tutorialStep++;
         if(tutorialStep > 28) tutorialStep++;
+        
         
         
         switch (tutorialStep)
@@ -453,6 +454,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ModifyTextBoxScale(650f, 135f);
                 Highlight(new Vector2(805, 452.5f), new Vector2(3.2f, 0.35f));
                 HideNextButton();
+                ActivateGameobject(13); // A désactiver une fois fix
                 break; // La première vague
             case 16:
                 StopHighlighting();
@@ -483,15 +485,14 @@ public class TutorialBehaviour : MonoBehaviour
                 ModifySpeakingCharacter(1);
                 ChangeExpression(1, 17);
                 ModifyToCurentText();
-                ActivateGameobject(7); // Affiche le bouton d'Alchemy
-                ModifyTextBoxScale();
+                ModifyTextBoxScale(); ActivateGameobject(7); // Affiche le bouton d'Alchemy
                 Highlight(new Vector2(-850, 320), new Vector2(1f, 0.85f));
-                HideNextButton();
                 // Le joueur doit cliquer sur le bouton d'Alchemy pour continuer
+                HideNextButton();
                 break;
             case 21:
+                ShowTextBox(); // Ce case est skip somehow
                 ShowNextButton();
-                ShowTextBox();
                 ModifyToCurentText();
                 MoveTextBox(new Vector3(1575,450));
                 Highlight(new Vector2(-605, -37), new Vector2(1.5f, 1.5f)); // Forme du Sort
@@ -500,8 +501,10 @@ public class TutorialBehaviour : MonoBehaviour
             case 22:
                 ChangeExpression(1, 8);
                 ModifyToCurentText();
-                ModifyTextBoxScale();
+                MoveTextBox(new Vector3(1550,450));
+                ModifyTextBoxScale(650f, 175f);
                 Highlight(new Vector2(-430, -37), new Vector2(1.5f, 1.5f)); // Terrain lié à la forme
+                ShowNextButton();
                 break;
             case 23:
                 ModifyToCurentText();
@@ -539,22 +542,23 @@ public class TutorialBehaviour : MonoBehaviour
                 StopHighlighting();
                 Highlight(new Vector2(805, 452.5f), new Vector2(3.2f, 0.35f));
                 ModifyTextBoxScale(650f, 85f);
-                HideNextButton();
-                // Le joueur doit lancer la prochaine vague pour continuer.
                 break;
             case 28:
-                UnlockCamera();
-                HideTextBox();
-                break;
-            case 29:
-                ShowNextButton();
-                ShowTextBox();
                 ModifyToCurentText();
                 ChangeExpression(1, 14);
                 ChangeExpression(2, 18);
+                HideNextButton();
+                UnlockCamera();
+                // Le joueur doit lancer la prochaine vague pour continuer.
+                break;
+            case 29:
+                StopHighlighting();
+                UnlockCamera();
+                HideTextBox();
                 break;
             case 30:
                 // SoulConverter
+                ShowTextBox();
                 ModifyToCurentText();
                 ModifySpeakingCharacter(2);
                 ChangeExpression(2, 8);
@@ -562,6 +566,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ActivateGameobject(8);
                 ModifyTextBoxScale();
                 Highlight(new Vector2(-855, 225), new Vector2(1.93f, 0.7f));
+                ShowNextButton();
                 break;
             case 31:
                 ModifyToCurentText();
