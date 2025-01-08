@@ -84,7 +84,7 @@ public class TutorialBehaviour : MonoBehaviour
             NextStep();
         }
 
-        if (tutorialStep == 28 && waveTwobeginned && launchWaveButton.activeSelf)
+        if (tutorialStep == 29 && waveTwobeginned && launchWaveButton.activeSelf)
         {
             tutorialStep++;
             NextStep();
@@ -100,7 +100,7 @@ public class TutorialBehaviour : MonoBehaviour
 
     public void StepSeveteenAndTwentyNine()
     {
-        if (tutorialStep == 17 || tutorialStep == 29)
+        if (tutorialStep == 17 || tutorialStep == 28)
         {
             tutorialStep ++;
             NextStep();
@@ -554,6 +554,7 @@ public class TutorialBehaviour : MonoBehaviour
             case 29:
                 StopHighlighting();
                 UnlockCamera();
+                HideNextButton();
                 HideTextBox();
                 break;
             case 30:
