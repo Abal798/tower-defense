@@ -70,11 +70,31 @@ public class TutorialBehaviour : MonoBehaviour
         textBox.transform.position = newPosition;
     }
 
-    public void ModifyTextBoxScale(float newWidth = 650f, float newHeight = 155f) // modifie la taille de la zone de texte selon une largeure puis une hauteur. ne change pas l'emplacement des personnages. prend par défaut la taille d'origine
+    public void ModifyTextBoxScale(float newWidth = 650f, float newHeight = 155f)// Modifie la taille de la zone de texte et déplace les deux personnages
     {
         textBox.transform.GetChild(0).gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(newWidth, newHeight);
+<<<<<<< Updated upstream
         textBox.transform.GetChild(1).gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(newWidth, newHeight);
+=======
+        textBox.transform.GetChild(1).gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(newWidth - 150, newHeight - 150);
+
+        Transform childTransform2 = textBox.transform.GetChild(2);
+        Vector3 currentPosition2 = childTransform2.position;
+        currentPosition2.y = textBox.transform.position.y + textBox.transform.GetChild(0).gameObject.GetComponent<RectTransform>().sizeDelta.y / 2 + 105;
+        childTransform2.position = currentPosition2;
+
+        Transform childTransform3 = textBox.transform.GetChild(3);
+        Vector3 currentPosition3 = childTransform3.position;
+        currentPosition3.y = textBox.transform.position.y + textBox.transform.GetChild(0).gameObject.GetComponent<RectTransform>().sizeDelta.y / 2 + 105;
+        childTransform3.position = currentPosition3;
+
+        Transform childTransform4 = textBox.transform.GetChild(4);
+        Vector3 currentPosition4 = childTransform4.position;
+        currentPosition4.y = textBox.transform.position.y - (textBox.transform.GetChild(0).gameObject.GetComponent<RectTransform>().sizeDelta.y / 2) - 2;
+        childTransform4.position = currentPosition4;
+>>>>>>> Stashed changes
     }
+
 
     public void DesactivateGameObject(int gameObjectToDesactivate) //désactive n'importe quel gameobject renseigné dans le tableau "objectsToHideAndShow" dans l'inpecteur. prend pour parametre le numero de l'element en question dans l'inpecteur a partir de 0
     {
@@ -254,7 +274,8 @@ public class TutorialBehaviour : MonoBehaviour
             case 3:
                 ModifySpeakingCharacter(1);
                 ChangeExpression(1,3);
-                ModifyToCurentText(); 
+                ModifyToCurentText();
+                ChangeExpression(2, 2);
                 ModifyTextBoxScale(650f, 55f);
                 break;
             
@@ -284,6 +305,7 @@ public class TutorialBehaviour : MonoBehaviour
                MoveTextBox(new Vector3(950, 500, 0));
                 Highlight(new Vector2(263, -475), new Vector2(0.9f,0.9f));
                 ActivateGameobject(9); // Affiche le bouton de Suppression
+<<<<<<< Updated upstream
                 break;
             case 7:
                 ModifySpeakingCharacter(1);
@@ -315,6 +337,9 @@ public class TutorialBehaviour : MonoBehaviour
             case 12:
                 ModifyToCurentText(); // Amélioration de tour, qu'il n'est pas obligé de faire.
                 ModifyTextBoxScale();
+=======
+                ModifyTextBoxScale(685f, 250f);
+>>>>>>> Stashed changes
                 break;
             case 13: 
                 ModifyToCurentText();
@@ -332,6 +357,11 @@ public class TutorialBehaviour : MonoBehaviour
                 ChangeExpression(1, 18);
                 ActivateGameobject(6);
                 ActivateGameobject(10);
+<<<<<<< Updated upstream
+=======
+                ChangeExpression(2, 13);
+                ModifyTextBoxScale(650f, 135f);
+>>>>>>> Stashed changes
                 Highlight(new Vector2(805, 452.5f), new Vector2(3.2f, 0.35f));
                 ModifyTextBoxScale(650f, 135f);
                 // Le joueur doit finir de placer ces défenses (Jusqu'à qu'il n'ait plus de ressources pour placer ses ressources dans les 3 éléments
@@ -370,6 +400,17 @@ public class TutorialBehaviour : MonoBehaviour
                 ModifyTextBoxScale(650f, 85f);
                 break;
             case 21:
+<<<<<<< Updated upstream
+=======
+                ShowTextBox();
+                ModifyToCurentText();
+                Highlight(new Vector2(-525, -37), new Vector2(3.5f, 1.5f)); // Forme du Sort
+                MoveTextBox(new Vector3(1575,450));
+                ModifyTextBoxScale(650f, 175f);
+                ShowNextButton();
+                break;
+            case 22:
+>>>>>>> Stashed changes
                 ChangeExpression(1, 8);
                 ModifyToCurentText();
                 ModifyTextBoxScale();
@@ -380,8 +421,14 @@ public class TutorialBehaviour : MonoBehaviour
                 UnlockCamera(); // Unlock de caméra pour qu'il puisse placer le sort ou qu'il le souhaite.
                 ModifySpeakingCharacter(2);
                 ChangeExpression(1,17);
+<<<<<<< Updated upstream
                 Highlight(new Vector2(-170, -90), new Vector2(1.8f, 0.3f));
                 ModifyTextBoxScale(650f, 85f);
+=======
+                Highlight(new Vector2(-220, -90), new Vector2(1.8f, 0.3f));
+                ModifyTextBoxScale(650f, 195f);
+                HideNextButton();
+>>>>>>> Stashed changes
                 // Le joueur doit cook un sort pour continuer.
                 break;
             case 23:
@@ -424,7 +471,11 @@ public class TutorialBehaviour : MonoBehaviour
                 ChangeExpression(2, 8);
                 ChangeExpression(1, 23);
                 ActivateGameobject(8);
+<<<<<<< Updated upstream
                 ModifyTextBoxScale();
+=======
+                ModifyTextBoxScale(680f, 255f);
+>>>>>>> Stashed changes
                 Highlight(new Vector2(-855, 225), new Vector2(1.93f, 0.7f));
                 break;
             case 29:
