@@ -478,8 +478,9 @@ public class TutorialBehaviour : MonoBehaviour
             case 13: 
                 StopHighlighting();
                 ModifyToCurentText();
-                ModifyTextBoxScale(650f, 85f);
+                ModifyTextBoxScale(650f, 115f);
                 ModifySpeakingCharacter(2);
+                ChangeExpression(1, 23);
                 HideNextButton();
                 break;
             // Le joueur doit finir de placer ces défenses (Jusqu'à qu'il n'ait plus de ressources pour placer ses ressources dans les 3 éléments=
@@ -493,6 +494,7 @@ public class TutorialBehaviour : MonoBehaviour
             case 15:
                 ModifyToCurentText();
                 ChangeExpression(1, 18);
+                ModifySpeakingCharacter(1);
                 ActivateGameobject(6);
                 ActivateGameobject(10);
                 ModifyTextBoxScale(650f, 135f);
