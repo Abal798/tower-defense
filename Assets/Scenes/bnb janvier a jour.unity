@@ -29825,6 +29825,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4039158788852819238, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039158788852819238, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 744501576}
@@ -29841,11 +29845,19 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4039158788852819238, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039158788852819238, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: waveButtonCalled
       objectReference: {fileID: 0}
     - target: {fileID: 4039158788852819238, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: TutorialBehaviour, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039158788852819238, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
       value: TutorialBehaviour, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4039158788852819238, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}

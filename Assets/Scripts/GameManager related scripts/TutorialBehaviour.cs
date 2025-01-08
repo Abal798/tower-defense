@@ -18,6 +18,12 @@ public class TutorialBehaviour : MonoBehaviour
     private bool AlchemyButtonCkicked = false;
     private bool alreadyOneSpellCoocked = false;
     private bool waveOnebeginned = false, waveTwobeginned = false;
+    private bool waveOneFinished = false, waveTwoFinished = false;
+    private bool playerPlacedATower = false;
+    private bool playerFinishedPlacingTower = false;
+    private bool playerClickedOnAlchemyButton = false;
+    private bool playerCoockedASpell = false;
+    private bool playerPlacedASpell = false;
     
     public int tutorialStep = 0;
     
@@ -82,12 +88,55 @@ public class TutorialBehaviour : MonoBehaviour
         {
             tutorialStep++;
             NextStep();
+            waveOneFinished = true;
         }
 
-        if (tutorialStep == 28 && waveTwobeginned && launchWaveButton.activeSelf)
+        if (tutorialStep == 29 && waveTwobeginned && launchWaveButton.activeSelf)
         {
             tutorialStep++;
             NextStep();
+            waveTwoFinished = true;
+        }
+
+        if (GridBuilding.current.listeTowerCo.Count != 0)
+        {
+            playerPlacedATower = true;
+        }
+
+        if (tutorialStep == 10 && playerPlacedATower)
+        {
+            ShowNextButton();
+        }
+
+        if (RM.fireSoul == 90 && RM.waterSoul == 90 && RM.plantSoul == 90)
+        {
+            playerFinishedPlacingTower = true;
+        }
+
+        if (tutorialStep == 13 && playerFinishedPlacingTower)
+        {
+            ShowNextButton();
+        }
+
+        if (RM.spellSlotOne.Count > 0)
+        {
+            playerCoockedASpell = true;
+        }
+
+        if (tutorialStep == 23 && playerCoockedASpell)
+        {
+            ShowNextButton();
+        }
+
+        if (EndGameStats.EGS.nombreDeSortsPlaces > 0)
+        {
+            playerPlacedASpell = true;
+        }
+
+        if (tutorialStep == 24 && playerPlacedASpell)
+        {
+            ShowNextButton();
+            StopHighlighting();
         }
     }
 
@@ -98,9 +147,9 @@ public class TutorialBehaviour : MonoBehaviour
         isCoroutineRunning = false;
     }
 
-    public void StepSeveteenAndTwentyNine()
+    public void waveButtonCalled()
     {
-        if (tutorialStep == 17 || tutorialStep == 29)
+        if (tutorialStep == 15 || tutorialStep == 28)
         {
             tutorialStep ++;
             NextStep();
@@ -116,22 +165,11 @@ public class TutorialBehaviour : MonoBehaviour
         {
             tutorialStep++;
             NextStep();
+            playerClickedOnAlchemyButton = true;
         }
     }
 
-    public void waveButtonCalled()
-    {
-        if(tutorialStep == 15)
-        {
-            tutorialStep++;
-            NextStep();
-        }
-        else if(tutorialStep == 29)
-        {
-            tutorialStep++;
-            NextStep();
-        }
-    }
+
     
     public void ShowTextBox() //affiche toute la textboxe , personnages compris
     {
@@ -332,13 +370,16 @@ public class TutorialBehaviour : MonoBehaviour
         if (tutorialStep > 10 && tutorialStep < 13) tutorialStep++;
         if (tutorialStep == 13 && RM.fireSoul == 90 && RM.waterSoul == 90 && RM.plantSoul == 90) tutorialStep++;
         if (tutorialStep > 13 && tutorialStep < 15) tutorialStep++;
-        
+        if (tutorialStep == 17 && waveOneFinished) tutorialStep++;
         if(tutorialStep > 17 && tutorialStep < 20) tutorialStep++;
-        if(tutorialStep > 20 && tutorialStep < 23) tutorialStep++;
+        if (tutorialStep == 21 && playerClickedOnAlchemyButton) tutorialStep++;
+        if(tutorialStep > 21 && tutorialStep < 23) tutorialStep++;
         if(tutorialStep == 23 && alreadyOneSpellCoocked) tutorialStep++;
         if(tutorialStep == 24 && EndGameStats.EGS.nombreDeSortsPlaces > 0) tutorialStep++;
         if(tutorialStep > 24 && tutorialStep < 28) tutorialStep++;
-        if(tutorialStep > 28) tutorialStep++;
+        if (tutorialStep == 30 && waveTwoFinished) tutorialStep++;
+        if (tutorialStep > 30) tutorialStep++;
+        
         
         
         
@@ -418,6 +459,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ModifyToCurentText();
                 Highlight(new Vector2(-220, 380), new Vector2(2.5f, 1.25f));
                 ModifyTextBoxScale(650f, 85f);
+                HideNextButton();
                 break;
             // Le joueur doit placer une tour avant de pouvoir poursuivre.
             case 11:
@@ -438,6 +480,7 @@ public class TutorialBehaviour : MonoBehaviour
                 StopHighlighting();
                 ModifyToCurentText();
                 ModifyTextBoxScale(650f, 85f);
+                HideNextButton();
                 break;
             // Le joueur doit finir de placer ces défenses (Jusqu'à qu'il n'ait plus de ressources pour placer ses ressources dans les 3 éléments=
             case 14:
@@ -492,12 +535,12 @@ public class TutorialBehaviour : MonoBehaviour
                 HideNextButton();
                 break;
             case 21:
-                ShowTextBox(); // Ce case est skip somehow
+                ShowTextBox();
                 ModifyToCurentText();
                 Highlight(new Vector2(-605, -37), new Vector2(1.5f, 1.5f)); // Forme du Sort
                 MoveTextBox(new Vector3(1575,450));
                 ModifyTextBoxScale(650f, 85f);
-              //  ShowNextButton();
+                ShowNextButton();
                 break;
             case 22:
                 ChangeExpression(1, 8);
@@ -514,6 +557,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ChangeExpression(1,17);
                 Highlight(new Vector2(-170, -90), new Vector2(1.8f, 0.3f));
                 ModifyTextBoxScale(650f, 85f);
+                HideNextButton();
                 // Le joueur doit cook un sort pour continuer.
                 break;
             case 24:
@@ -522,6 +566,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ModifyToCurentText();
                 Highlight(new Vector2(745, -245), new Vector2(5f, 0.85f));
                 ModifyTextBoxScale();
+                HideNextButton();
                 // Le joueur place ensuite son sort nouvellement créer qu'il doit placer pour pouvoir continuer
                 break;
             case 25:
@@ -541,10 +586,10 @@ public class TutorialBehaviour : MonoBehaviour
                 ChangeExpression(2, 24);
                 ModifyToCurentText();
                 StopHighlighting();
-                Highlight(new Vector2(805, 452.5f), new Vector2(3.2f, 0.35f));
                 ModifyTextBoxScale(650f, 85f);
                 break;
             case 28:
+                Highlight(new Vector2(805, 452.5f), new Vector2(3.2f, 0.35f));
                 ModifyToCurentText();
                 ChangeExpression(1, 14);
                 ChangeExpression(2, 18);
@@ -555,7 +600,6 @@ public class TutorialBehaviour : MonoBehaviour
             case 29:
                 StopHighlighting();
                 UnlockCamera();
-                HideNextButton();
                 HideTextBox();
                 break;
             case 30:
