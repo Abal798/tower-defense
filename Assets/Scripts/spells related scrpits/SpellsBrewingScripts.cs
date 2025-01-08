@@ -53,13 +53,13 @@ public class SpellsBrewingScripts : MonoBehaviour
 
     private void Update()
     {
-        fireSoulDisplay.text = "fire : " + RM.fireSoul.ToString();
-        waterSoulDisplay.text = "water : " + RM.waterSoul.ToString();
-        earthSoulDisplay.text = "earth : " + RM.plantSoul.ToString();
+        fireSoulDisplay.text = "Feu : " + RM.fireSoul.ToString();
+        waterSoulDisplay.text = "Eau : " + RM.waterSoul.ToString();
+        earthSoulDisplay.text = "Terre : " + RM.plantSoul.ToString();
 
-        firePriceDisplay.text = "price : " + fireDosePrice.ToString();
-        waterPriceDisplay.text = "price : " + waterDosePrice.ToString();
-        earthPriceDisplay.text = "price : " + earthDosePrice.ToString();
+        firePriceDisplay.text = "Prix : " + fireDosePrice.ToString();
+        waterPriceDisplay.text = "Prix : " + waterDosePrice.ToString();
+        earthPriceDisplay.text = "Prix : " + earthDosePrice.ToString();
 
         if (MenuManager.activePanel == gameObject)
         {

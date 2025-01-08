@@ -84,8 +84,10 @@ public class GridBuilding : MonoBehaviour
             }
             
             
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
             {
+                
+                
                 if (temp.CanBePlaced())
                 {
                     int price = 0;
@@ -111,25 +113,20 @@ public class GridBuilding : MonoBehaviour
                     
                 }
             }
-            else if (Input.GetMouseButtonDown(1))
+            else if (Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject())
+            {
+               ClearArea();
+               Destroy(temp.gameObject);
+            }
+            else if (Input.GetMouseButtonDown(1) )
             {
                 ClearArea();
                 Destroy(temp.gameObject);
             
             }
         }
-        
-        
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (EventSystem.current.IsPointerOverGameObject(0))
-            {
-                return;
-            }
-            
-            
-           
-        }/*
+
+        /*
         else if (Input.GetKeyDown(KeyCode.Space))
         {
             if (temp.CanBePlaced())
@@ -141,7 +138,7 @@ public class GridBuilding : MonoBehaviour
         {
             ClearArea();
             Destroy(temp.gameObject);
-            
+
         }*/
     }
 
