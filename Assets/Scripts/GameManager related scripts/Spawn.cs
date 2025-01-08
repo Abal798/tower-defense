@@ -49,12 +49,8 @@ public class Spawn : MonoBehaviour
     {
         monstersAlive.RemoveAll(monster => monster == null);
         if(RM.wave == endWaveNumber && monstersAlive.Count == 0 && TutorialBehaviour.isInTutorial == false) victoryPanel.SetActive(true);
-        if (TutorialBehaviour.isInTutorial == false)
-        {
-            if(monstersAlive.Count > 0) launchWaveButton.SetActive(false);
-            else launchWaveButton.SetActive(true);
-        }
-        
+        if(monstersAlive.Count > 0) launchWaveButton.SetActive(false);
+        else launchWaveButton.SetActive(true);
     }
 
     public void ButtonFonctionLaunchWave()
