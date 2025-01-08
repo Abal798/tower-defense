@@ -2988,16 +2988,16 @@ MonoBehaviour:
   - "- La for\xEAt pour la port\xE9e;"
   - "- La terre de feu pour les d\xE9g\xE2ts;"
   - "Les rivi\xE8res pour la cadence. Ai-je oublier quelque chose professeur ?"
-  - "Je vois que tu connais bien ta le\xE7on, c'est bien. Maintenant laisse moi te
-    parler des am\xE9liorations."
-  - "Celles-ci se font en pla\xE7ant une potion sur une d\xE9fense d\xE9j\xE0 faites.
+  - "Je vois que tu connais bien ta le\xE7on, c'est bien. Maintenant, laisse-moi
+    te parler des am\xE9liorations."
+  - "Celles-ci se font en pla\xE7ant une potion sur une d\xE9fense d\xE9j\xE0 faite.
     Mais en avant de d\xE9tailler, voil\xE0 ce que \xE7a donne de placer une potion
     de d\xE9fense."
   - 
   - "Si on le souhaite, on peut utiliser un outil pour d\xE9truire une tour, mais
-    on ne r\xE9cup\xE8re rien par la destruction. Pour en revenir aux am\xE9liorations,
-    celles-ci sont limit\xE9es \xE0 3 mais augmente drastiquement la puissance de
-    nos d\xE9fenses."
+    on ne r\xE9cup\xE8re que tr\xE8s peu par la destruction. Pour en revenir aux
+    am\xE9liorations, celles-ci sont limit\xE9es mais augmentent grandement la puissance
+    de nos d\xE9fenses."
   - "Dans tous les cas, je te laisse finir de pr\xE9parer les d\xE9fenses, voir si
     tu as bien compris ce que je viens de dire."
   - 
@@ -3007,11 +3007,12 @@ MonoBehaviour:
   - "Nos d\xE9fenses ont tenu bon ! Et nous avons plus de r\xE9serves ! Malgr\xE9
     tout, je doute que nos ennemis ne s'arr\xEAtent l\xE0. "
   - 
-  - Poursuivons un peu ton test, explique-moi comment concocter un sort.
-  - "Tr\xE8s bien ! Dans un premier temps, allons \xE0 notre chaudron, et pla\xE7ons-y
-    deux doses d'\xE9l\xE9ments puis, m\xE9langeons."
-  - "Ensuite, nous aurons le premier \xE9l\xE9ment qui d\xE9terminera la forme de
-    notre terrain, et le deuxi\xE8me remplacera l'\xE9l\xE9ment sur ce terrain. "
+  - 'Poursuivons un peu ton test, explique-moi comment concocter un sort. '
+  - "Tr\xE8s bien ! Dans un premier temps, allons \xE0 notre chaudron qui est justement
+    en \xE9bullition !"
+  - "Ensuite, nous pla\xE7ons le premier \xE9l\xE9ment qui sera placer d\xE9terminera
+    la forme de notre terrain, et le deuxi\xE8me qui remplacera l'\xE9l\xE9ment sur
+    ce terrain. "
   - 
   - "Nous pouvons ensuite m\xE9langer notre sort puis le placer. Cela dit, il ne
     faudrait pas le placer sur une tour, auquel cas \xE7a la d\xE9truira sans qu'on
@@ -3025,9 +3026,9 @@ MonoBehaviour:
   - Attention ! Une nouvelle vague d'ennemis est en approche !
   - '/!\ Objectif: Lancement vague 2'
   - "Pfiou... J'ai un peu de temps pour te parler d'un outil qui est encore en travaux
-    : la Conversion d'\xC2mes. On y mets 2 \xE9l\xE9ments qui vont \xEAtre recycler
+    : la Conversion d'\xC2mes. On y met 2 \xE9l\xE9ments qui vont \xEAtre recycl\xE9s
     en un \xE9l\xE9ment dont on est potentiellement d\xE9pourvu, mais cela reste
-    tr\xE8s peu efficace !"
+    tr\xE8s peu efficace et peu judicieux  !"
   - 
   - "Tr\xE8s bien, tu m'as prouv\xE9 que tu \xE9tais assez comp\xE9tent pour \xEAtre
     mon apprenti. Je vais reprendre le contr\xF4le des d\xE9fenses d\xE9sormais."
