@@ -10,6 +10,8 @@ using UnityEngine.UI;
 public class MenuManager : MonoBehaviour
 {
     public RessourcesManager RM;
+    public Spawn spawn;
+    
     public Button speedSimulationButton;
     public GameObject ingamePanel;
     public GameObject alchimiePanel;
@@ -74,7 +76,7 @@ public class MenuManager : MonoBehaviour
             {
                 GoToAlchimiePanel();
             }
-            if (Input.GetKeyDown(keyRebinder.GetKeyForAction("shortcutLaunchWave")))
+            if (Input.GetKeyDown(keyRebinder.GetKeyForAction("shortcutLaunchWave")) && spawn.monstersAlive.Count == 0)
             {
                 FindObjectOfType<Spawn>().ButtonFonctionLaunchWave();
             }

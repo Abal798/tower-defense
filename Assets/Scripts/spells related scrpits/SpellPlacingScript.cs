@@ -415,10 +415,10 @@ public class SpellPlacingScript : MonoBehaviour
                 positions.Add(center + new Vector3Int(x, y, 0));
             }
         }
-        if (Mathf.Abs(rotationState) % 4 == 0) positions.Add(center + Vector3Int.down);
+        if (Mathf.Abs(rotationState) % 4 == 0) positions.Add(center + Vector3Int.down + Vector3Int.right);
         if (Mathf.Abs(rotationState) % 4 == 1) positions.Add(center + Vector3Int.left);
         if (Mathf.Abs(rotationState) % 4 == 2) positions.Add(center + Vector3Int.up * 2);
-        if (Mathf.Abs(rotationState) % 4 == 3) positions.Add(center + Vector3Int.right * 2);
+        if (Mathf.Abs(rotationState) % 4 == 3) positions.Add(center + Vector3Int.right * 2 + Vector3Int.up);
         return positions;
     }
 
