@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Resources;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
@@ -9,23 +7,9 @@ using UnityEngine.UI;
 
 public class TutorialBehaviour : MonoBehaviour
 {
-
-    [Header("GD ne pas toucher")] 
-    public RessourcesManager RM;
-    public Spawn spawn;
-    public GameObject launchWaveButton;
-
-    private bool AlchemyButtonCkicked = false;
-    private bool alreadyOneSpellCoocked = false;
-    private bool waveOnebeginned = false, waveTwobeginned = false;
-    private bool waveOneFinished = false, waveTwoFinished = false;
-    private bool playerPlacedATower = false;
-    private bool playerFinishedPlacingTower = false;
-    private bool playerClickedOnAlchemyButton = false;
-    private bool playerCoockedASpell = false;
-    private bool playerPlacedASpell = false;
     
-    public int tutorialStep = 0;
+    [Header("GD ne pas toucher")]
+    public static int tutorialStep = 0;
     
     public static bool isInTutorial;
     public static bool cameraLocked = false;
@@ -40,15 +24,11 @@ public class TutorialBehaviour : MonoBehaviour
     public GameObject bottomPosition;
     public string[] tutorialText;
     public GameObject[] objectsToHideAndShow;
+    
 
+    
 
-    private void Awake()
-    {
-        RM = FindObjectOfType<RessourcesManager>();
-        spawn = FindObjectOfType<Spawn>();
-    }
-
-
+    
     void Start() //étape 0 du tutoriel
     {
         tutorialStep = 0;
@@ -63,113 +43,7 @@ public class TutorialBehaviour : MonoBehaviour
         DesactivateAllGameObjects();
         LockCamera();
         ModifyTextBoxScale(650f, 85f);
-        DesactivateGameObject(6);
     }
-
-    private bool isCoroutineRunning = false;
-
-    private void Update()
-    {
-        if (RM.spellSlotOne.Count != 0) alreadyOneSpellCoocked = true;
-
-        if (RM.wave == 1 && launchWaveButton.activeSelf && !isCoroutineRunning)
-        {
-            isCoroutineRunning = true;
-            StartCoroutine(WaitForMonsterToSpawn(() => waveOnebeginned = true));
-        }
-
-        if (RM.wave == 2 && launchWaveButton.activeSelf && !isCoroutineRunning)
-        {
-            isCoroutineRunning = true;
-            StartCoroutine(WaitForMonsterToSpawn(() => waveTwobeginned = true));
-        }
-
-        if (tutorialStep == 16 && waveOnebeginned && launchWaveButton.activeSelf)
-        {
-            tutorialStep++;
-            NextStep();
-            waveOneFinished = true;
-        }
-
-        if (tutorialStep == 29 && waveTwobeginned && launchWaveButton.activeSelf)
-        {
-            tutorialStep++;
-            NextStep();
-            waveTwoFinished = true;
-        }
-
-        if (GridBuilding.current.listeTowerCo.Count != 0)
-        {
-            playerPlacedATower = true;
-        }
-
-        if (tutorialStep == 10 && playerPlacedATower)
-        {
-            ShowNextButton();
-        }
-
-        if (RM.fireSoul == 90 && RM.waterSoul == 90 && RM.plantSoul == 90)
-        {
-            playerFinishedPlacingTower = true;
-        }
-
-        if (tutorialStep == 13 && playerFinishedPlacingTower)
-        {
-            ShowNextButton();
-        }
-
-        if (RM.spellSlotOne.Count > 0)
-        {
-            playerCoockedASpell = true;
-        }
-
-        if (tutorialStep == 23 && playerCoockedASpell)
-        {
-            ShowNextButton();
-        }
-
-        if (EndGameStats.EGS.nombreDeSortsPlaces > 0)
-        {
-            playerPlacedASpell = true;
-        }
-
-        if (tutorialStep == 24 && playerPlacedASpell)
-        {
-            ShowNextButton();
-            StopHighlighting();
-        }
-    }
-
-    private IEnumerator WaitForMonsterToSpawn(Action onWaveBeginned)
-    {
-        yield return new WaitForSeconds(2f);
-        onWaveBeginned();
-        isCoroutineRunning = false;
-    }
-
-    public void waveButtonCalled()
-    {
-        if (tutorialStep == 15 || tutorialStep == 28)
-        {
-            tutorialStep ++;
-            NextStep();
-        }
-    }
-
-    
-
-    public void AlchemyButtonCalled()
-    {
-        AlchemyButtonCkicked = true;
-        if(tutorialStep == 20)
-        {
-            tutorialStep++;
-            NextStep();
-            playerClickedOnAlchemyButton = true;
-        }
-    }
-
-
     
     public void ShowTextBox() //affiche toute la textboxe , personnages compris
     {
@@ -179,15 +53,6 @@ public class TutorialBehaviour : MonoBehaviour
     public void HideTextBox() //cache toute la textboxe , personnages compris
     {
         textBox.SetActive(false);
-    }
-
-    public void HideNextButton()
-    {
-        textBox.transform.GetChild(4).gameObject.SetActive(false);
-    }
-    public void ShowNextButton()
-    {
-        textBox.transform.GetChild(4).gameObject.SetActive(true);
     }
 
     public void ModifyToCurentText() //change le text de la text boxe pour celui contenu dans le tutorialtext de l'etape actuel
@@ -208,7 +73,7 @@ public class TutorialBehaviour : MonoBehaviour
     public void ModifyTextBoxScale(float newWidth = 650f, float newHeight = 155f) // modifie la taille de la zone de texte selon une largeure puis une hauteur. ne change pas l'emplacement des personnages. prend par défaut la taille d'origine
     {
         textBox.transform.GetChild(0).gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(newWidth, newHeight);
-        textBox.transform.GetChild(1).gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(newWidth - 150, newHeight - 150);
+        textBox.transform.GetChild(1).gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(newWidth, newHeight);
     }
 
     public void DesactivateGameObject(int gameObjectToDesactivate) //désactive n'importe quel gameobject renseigné dans le tableau "objectsToHideAndShow" dans l'inpecteur. prend pour parametre le numero de l'element en question dans l'inpecteur a partir de 0
@@ -282,12 +147,12 @@ public class TutorialBehaviour : MonoBehaviour
         if (characterToPlace == 1)
         {
             HideCharacter(2);
-            textBox.transform.GetChild(2).position = new Vector3(textBox.transform.position.x, textBox.transform.position.y + 180, textBox.transform.position.z);
+            textBox.transform.GetChild(2).position = new Vector3(textBox.transform.position.x, textBox.transform.position.y + 230, textBox.transform.position.z);
         }
         else
         {
             HideCharacter(1);
-            textBox.transform.GetChild(3).position = new Vector3(textBox.transform.position.x, textBox.transform.position.y + 180, textBox.transform.position.z);
+            textBox.transform.GetChild(3).position = new Vector3(textBox.transform.position.x, textBox.transform.position.y + 230, textBox.transform.position.z);
         }
     }
 
@@ -364,51 +229,35 @@ public class TutorialBehaviour : MonoBehaviour
 
     public void NextStep()
     {
-        
-        if (tutorialStep < 10) tutorialStep++;
-        if (tutorialStep == 10 && GridBuilding.current.listeTowerCo.Count > 0) tutorialStep++;
-        if (tutorialStep > 10 && tutorialStep < 13) tutorialStep++;
-        if (tutorialStep == 13 && RM.fireSoul == 90 && RM.waterSoul == 90 && RM.plantSoul == 90) tutorialStep++;
-        if (tutorialStep > 13 && tutorialStep < 15) tutorialStep++;
-        if (tutorialStep == 17 && waveOneFinished) tutorialStep++;
-        if(tutorialStep > 17 && tutorialStep < 20) tutorialStep++;
-        if (tutorialStep == 21 && playerClickedOnAlchemyButton) tutorialStep++;
-        if(tutorialStep > 21 && tutorialStep < 23) tutorialStep++;
-        if(tutorialStep == 23 && alreadyOneSpellCoocked) tutorialStep++;
-        if(tutorialStep == 24 && EndGameStats.EGS.nombreDeSortsPlaces > 0) tutorialStep++;
-        if(tutorialStep > 24 && tutorialStep < 28) tutorialStep++;
-        if (tutorialStep == 30 && waveTwoFinished) tutorialStep++;
-        if (tutorialStep > 30) tutorialStep++;
-        
-        
-        
-        
+        tutorialStep++;
         switch (tutorialStep)
         {
             case 0:
                 break;
-
+            
             case 1:
                 ChangeExpression(2, 2);
                 ShowCharacter(2);
                 ModifySpeakingCharacter(2); // Premier dialogue ou Arthur parle
                 ModifyToCurentText();
-                ModifyTextBoxScale(650f, 115f);
+                ModifyTextBoxScale(650f, 85f);
                 Debug.Log("Arthur parle");
                 break;
-
+            
             case 2:
                 ChangeExpression(2,19);
                 ChangeExpression(1,18);
                 ModifyToCurentText();
                 ModifyTextBoxScale(); 
                 break;
+            
             case 3:
                 ModifySpeakingCharacter(1);
                 ChangeExpression(1,3);
                 ModifyToCurentText(); 
                 ModifyTextBoxScale(650f, 55f);
                 break;
+            
             case 4:
                 ChangeExpression(1,17);
                 ModifyToCurentText();
@@ -417,38 +266,6 @@ public class TutorialBehaviour : MonoBehaviour
                 ModifyTextBoxScale(650f, 135f);
                 break;
             case 5:
-                ModifySpeakingCharacter(1);
-                ModifyToCurentText();
-                StopHighlighting();
-                ModifyTextBoxScale(650f, 115f);
-                ChangeExpression(2,9);
-                break;
-            case 6: // Les Terrains
-                ModifyToCurentText();    
-                Highlight(new Vector2(-105, -270), new Vector2(2.5f, 1.25f));
-                ModifyTextBoxScale(650f, 55f);
-                break; //
-            case 7:
-                ModifyToCurentText();
-                Highlight(new Vector2(487, -55), new Vector2(1.25f, 1.25f));
-                break;
-            case 8:
-                ModifyToCurentText();
-                Highlight(new Vector2(-220, 380), new Vector2(2.5f, 1.25f));
-                ModifyTextBoxScale(650f, 85f);
-                break;
-            
-            case 9:
-                ShowTextBox();
-                ModifyToCurentText();
-                ChangeExpression(2, 2);
-                ModifyTextBoxScale(650f, 135f);
-                StopHighlighting();
-                ModifySpeakingCharacter(2);
-                ModifyTextBoxScale(650f, 135f);
-                break;
-            // Le joueur doit placer une tour avant de pouvoir poursuivre.
-            case 10:
                 ModifyToCurentText();
                 ActivateGameobject(0); // Affiche les différentes tours et leurs prix
                 ActivateGameobject(1);
@@ -456,177 +273,162 @@ public class TutorialBehaviour : MonoBehaviour
                 ActivateGameobject(3);
                 ActivateGameobject(4);
                 ActivateGameobject(5);
-                ModifySpeakingCharacter(2);
-                ChangeExpression(1,3);
                 Highlight(new Vector2(-90, -390), new Vector2(6.5f,3.4f)); // Highlight des différentes tours
                 MoveTextBox(new Vector3(1550, 110, 0));
                 ModifyTextBoxScale(650f, 185f); 
                 break;
-            case 11: 
-                ModifyToCurentText(); // Amélioration de tour, qu'il n'est pas obligé de faire.
-                ModifyTextBoxScale();
-                StopHighlighting();
-                break;
-            case 12:
+            case 6: 
                 ModifyToCurentText(); // Suppression de tour
                 ChangeExpression(2,8);
                 ModifySpeakingCharacter(2);
-                MoveTextBox(new Vector3(950, 500, 0));
+               MoveTextBox(new Vector3(950, 500, 0));
                 Highlight(new Vector2(263, -475), new Vector2(0.9f,0.9f));
                 ActivateGameobject(9); // Affiche le bouton de Suppression
-                ModifyTextBoxScale(675f, 250f);
+                break;
+            case 7:
+                ModifySpeakingCharacter(1);
+                ModifyToCurentText();
+                StopHighlighting(); 
+                ChangeExpression(2,9);
+                break;
+            case 8: // Les Terrains
+                ModifyToCurentText();
+                Highlight(new Vector2(-105, -270), new Vector2(2.5f, 1.25f));
+                ModifyTextBoxScale(650f, 55f);
+                break; //
+            case 9:
+                ModifyToCurentText();
+                Highlight(new Vector2(487, -55), new Vector2(1.25f, 1.25f));
+                break;
+            case 10:
+                ModifyToCurentText();
+                Highlight(new Vector2(-220, 380), new Vector2(2.5f, 1.25f));
+                break;
+            case 11:
+                ModifyToCurentText();
+                ChangeExpression(2, 2);
+                StopHighlighting();
+                ModifySpeakingCharacter(2);
+                ModifyTextBoxScale(650f, 85f);
+                // Le joueur doit placer une tour avant de pouvoir poursuivre.
+                break;
+            case 12:
+                ModifyToCurentText(); // Amélioration de tour, qu'il n'est pas obligé de faire.
+                ModifyTextBoxScale();
                 break;
             case 13: 
-                StopHighlighting();
                 ModifyToCurentText();
-                ModifyTextBoxScale(650f, 115f);
-                ModifySpeakingCharacter(2);
-                ChangeExpression(1, 23);
+                UnlockCamera();
+                ModifyTextBoxScale(650f, 85f);
                 break;
-            // Le joueur doit finir de placer ces défenses (Jusqu'à qu'il n'ait plus de ressources pour placer ses ressources dans les 3 éléments=
             case 14:
                 ModifyToCurentText();
                 ModifySpeakingCharacter(1);
                 ChangeExpression(1, 3);
-                ModifySpeakingCharacter(1); 
                 ModifyTextBoxScale(650f, 55f);
                 break;
             case 15:
                 ModifyToCurentText();
                 ChangeExpression(1, 18);
-                ModifySpeakingCharacter(1);
                 ActivateGameobject(6);
                 ActivateGameobject(10);
-                ModifyTextBoxScale(650f, 135f);
                 Highlight(new Vector2(805, 452.5f), new Vector2(3.2f, 0.35f));
-                HideNextButton();
-                ActivateGameobject(13); // A désactiver une fois fix
-                break; // La première vague */
-            case 16:
-                StopHighlighting();
-                UnlockCamera();
-                HideTextBox();
+                ModifyTextBoxScale(650f, 135f);
+                // Le joueur doit finir de placer ces défenses (Jusqu'à qu'il n'ait plus de ressources pour placer ses ressources dans les 3 éléments
                 break;
-            case 17:
-                ShowNextButton();
-                ShowTextBox(); // Post Vague 1
+            case 16:
                 ModifySpeakingCharacter(2);
                 StopHighlighting();
                 ChangeExpression(1, 23);
                 ChangeExpression(2, 2);
                 ModifyToCurentText();
                 LockCamera();
-                ModifyTextBoxScale(675f, 113f);
+                ModifyTextBoxScale(650f, 113f);
                 break;
-            case 18:
+            case 17:
                 ChangeExpression(1, 8);
                 ModifyToCurentText();
                 ModifyTextBoxScale(650f, 85f);
                 break;
-            case 19:
+            case 18:
                 ChangeExpression(2, 2);
                 ModifyToCurentText();
                 break;
-            case 20:
+            case 19:
                 ModifySpeakingCharacter(1);
                 ChangeExpression(1, 17);
                 ModifyToCurentText();
-                ModifyTextBoxScale(); 
                 ActivateGameobject(7); // Affiche le bouton d'Alchemy
-                Highlight(new Vector2(-850, 320), new Vector2(1f, 0.85f));
+                ModifyTextBoxScale();
+                    Highlight(new Vector2(-850, 320), new Vector2(1f, 0.85f));
                 // Le joueur doit cliquer sur le bouton d'Alchemy pour continuer
-                HideNextButton();
+                    break;
+            case 20:
+                ModifyToCurentText();
+                MoveTextBox(new Vector3(1575,450));
+                Highlight(new Vector2(-605, -37), new Vector2(1.5f, 1.5f)); // Forme du Sort
+                ModifyTextBoxScale(650f, 85f);
                 break;
             case 21:
-                ShowTextBox();
-                ModifyToCurentText();
-                Highlight(new Vector2(-605, -37), new Vector2(1.5f, 1.5f)); // Forme du Sort
-                MoveTextBox(new Vector3(1575,450));
-                ModifyTextBoxScale(650f, 175f);
-                ShowNextButton();
-                break;
-            case 22:
                 ChangeExpression(1, 8);
                 ModifyToCurentText();
-                MoveTextBox(new Vector3(1550,450));
-                ModifyTextBoxScale(650f, 175f);
+                ModifyTextBoxScale();
                 Highlight(new Vector2(-430, -37), new Vector2(1.5f, 1.5f)); // Terrain lié à la forme
-                ShowNextButton();
                 break;
-            case 23:
+            case 22:
                 ModifyToCurentText();
                 UnlockCamera(); // Unlock de caméra pour qu'il puisse placer le sort ou qu'il le souhaite.
                 ModifySpeakingCharacter(2);
                 ChangeExpression(1,17);
                 Highlight(new Vector2(-170, -90), new Vector2(1.8f, 0.3f));
-                ModifyTextBoxScale(650f, 195f);
-                HideNextButton();
+                ModifyTextBoxScale(650f, 85f);
                 // Le joueur doit cook un sort pour continuer.
-                break; 
-            case 24:
+                break;
+            case 23:
                 ChangeExpression(1, 20);
                 ModifySpeakingCharacter(1);
                 ModifyToCurentText();
                 Highlight(new Vector2(745, -245), new Vector2(5f, 0.85f));
                 ModifyTextBoxScale();
-                HideNextButton();
                 // Le joueur place ensuite son sort nouvellement créer qu'il doit placer pour pouvoir continuer
                 break;
-            case 25:
-                ShowTextBox();
+            case 24:
                 ModifyToCurentText();
                 ModifyTextBoxScale(650f, 85f);
                 break;
-            case 26:
+            case 25:
                 ChangeExpression(1, 1);
-                ModifySpeakingCharacter(2);
-                ChangeExpression(2, 23);
                 ModifyToCurentText();
-                ModifyTextBoxScale(650f, 175f);
-                break; 
-            case 27:
+                ActivateGameobject(12); // Activation Triangle Barry
+                Highlight(new Vector2(545, 470), new Vector2(1.75f, 1.4f));
+                // Parler un peu plus de ce que ça fait (ou modifie le texte pour dire que ça les renforcent selon l'élément déséquilibré)
+                break;
+            case 26:
                 ChangeExpression(1, 18);
                 ChangeExpression(2, 24);
                 ModifyToCurentText();
                 StopHighlighting();
-                ActivateGameobject(12); // Activation Triangle Barry
-                Highlight(new Vector2(545, 470), new Vector2(1.75f, 1.4f));
-                ModifyTextBoxScale(685f, 250f);
-                break;
-            case 28:
                 Highlight(new Vector2(805, 452.5f), new Vector2(3.2f, 0.35f));
-                ModifyToCurentText();
-                ModifySpeakingCharacter(1);
-                ChangeExpression(1, 14);
-                ChangeExpression(2, 18);
-                HideNextButton();
-                UnlockCamera();
                 ModifyTextBoxScale(650f, 85f);
                 // Le joueur doit lancer la prochaine vague pour continuer.
                 break;
-            case 29:
-                StopHighlighting();
-                UnlockCamera();
-                HideTextBox();
-                ModifyTextBoxScale(685f, 250f);
+            case 27:
+                ModifyToCurentText();
+                ChangeExpression(1, 14);
+                ChangeExpression(2, 18);
                 break;
-            case 30:
-                // SoulConverter display
-                ShowTextBox();
+            case 28:
+                // SoulConverter
                 ModifyToCurentText();
                 ModifySpeakingCharacter(2);
                 ChangeExpression(2, 8);
                 ChangeExpression(1, 23);
                 ActivateGameobject(8);
-                ModifyTextBoxScale(650f, 255f);
+                ModifyTextBoxScale();
                 Highlight(new Vector2(-855, 225), new Vector2(1.93f, 0.7f));
-                ShowNextButton();
                 break;
-            case 31: // In SoulConverter Menu
-                ModifyToCurentText();
-                Highlight(new Vector2(-755, 50), new Vector2(3f, 1f));
-                break; 
-            case 32:
+            case 29:
+                // Une fois la vague terminée
                 ModifySpeakingCharacter(2);
                 ChangeExpression(2, 9);
                 ChangeExpression(1,8);
@@ -635,11 +437,15 @@ public class TutorialBehaviour : MonoBehaviour
                 ActivateAllGameObjects();
                 UnlockCamera();
                 ModifyTextBoxScale();
-                ModifyTextBoxScale(650f, 175f);
                 break;
-            case 33:
+            case 30:
                 StopTutorial();
                 break;
+
+
+
+
+
         }
     }
 
