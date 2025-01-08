@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class MenuManager : MonoBehaviour
 {
     public RessourcesManager RM;
-    
+    public Button speedSimulationButton;
     public GameObject ingamePanel;
     public GameObject alchimiePanel;
     public GameObject keyRebindingPanel;
@@ -57,7 +57,6 @@ public class MenuManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("AHHHHHHHHHHHHH"+ activePanel.name);
         fireSoulIngameDisplay.text = "" + RM.fireSoul;
         waterSoulIngameDisplay.text = "" + RM.waterSoul;
         earthSoulIngameDisplay.text = "" + RM.plantSoul;
@@ -67,7 +66,7 @@ public class MenuManager : MonoBehaviour
         earthTowerPriceDisplay.text = "" + RM.GetTowerPrice(1,RM.nbrOfEarthTower);
         
         
-        waveDisplay.text = "wave : " + RM.wave;
+        waveDisplay.text = "Vague : " + RM.wave;
 
         if (ingamePanel.activeSelf && TutorialBehaviour.isInTutorial == false)
         {
@@ -90,6 +89,11 @@ public class MenuManager : MonoBehaviour
             if (Input.GetKeyDown(keyRebinder.GetKeyForAction("shortcutPotion3")))
             {
                 RM.gameObject.GetComponent<SpellPlacingScript>().Spell3();
+            }
+
+            if (Input.GetKeyDown(keyRebinder.GetKeyForAction("shortcutTimeSpeed")))
+            {
+                FastButtonPressed(speedSimulationButton);
             }
             
         }

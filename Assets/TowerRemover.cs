@@ -9,6 +9,8 @@ public class TowerRemover : MonoBehaviour
     
     private bool isDragging = true;
     private GameObject overlayRemover;
+    public float soulRecycling;
+    public RessourcesManager RM;
 
     private void Update()
     {
@@ -25,6 +27,14 @@ public class TowerRemover : MonoBehaviour
                 Vector3Int pos = (Vector3Int.FloorToInt(SnapToGrid(mousePosition)));
                 if (GridBuilding.current.listeTowerCo.ContainsKey(pos))
                 {
+                    foreach (int ameliorationType in GridBuilding.current.listeTowerCo[pos].transform.GetChild(0).gameObject.GetComponent<TowerStats>().ameliorations)
+                    {
+                        if (ameliorationType == 1) RM.fireSoul += soulRecycling;
+                        else if (ameliorationType == 2) RM.waterSoul += soulRecycling;
+                        else if (ameliorationType == 3) RM.plantSoul += soulRecycling;
+                    }
+                    
+                    
                     Destroy(GridBuilding.current.listeTowerCo[pos]);
                     GridBuilding.current.listeTowerCo.Remove(pos);
                     GridBuilding.current.MainTilemap.SetTile(pos, GridBuilding.tileBases[TileType.Grass]);
