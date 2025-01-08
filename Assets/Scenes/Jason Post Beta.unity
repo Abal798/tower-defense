@@ -636,9 +636,9 @@ MonoBehaviour:
   musicSource: {fileID: 439077683}
   SFXSource: {fileID: 1042538939}
   menusSoundsSource: {fileID: 1985097464}
-  enemyDie: {fileID: 8300000, guid: 02c05c60aad54e04297e13dccff08d2f, type: 3}
-  buttonClick: {fileID: 8300000, guid: 6210828b5936a4348ba930454ad4f4f9, type: 3}
-  alertDisplay: {fileID: 8300000, guid: f523b9df4eb373d459433e9c4006159d, type: 3}
+  enemyDie: {fileID: 8300000, guid: b4f4fdaa3c585364eaa8da346a91020a, type: 3}
+  buttonClick: {fileID: 8300000, guid: e94de3b559f61dc43825a90a3ff00c04, type: 3}
+  alertDisplay: {fileID: 8300000, guid: 17b6e835815b1034c87a129d45d561cb, type: 3}
   pageTurn: {fileID: 8300000, guid: 80ac5e14d176e7140a1c4004c55e6d8e, type: 3}
   menusSounds: []
   addFireIngredient: {fileID: 8300000, guid: 4e086af21417a98448eb5294d7257cd0, type: 3}
@@ -648,8 +648,8 @@ MonoBehaviour:
   cook: {fileID: 8300000, guid: bb4107916ca892645ad6e8cb3fc47441, type: 3}
   towerSpawn: {fileID: 8300000, guid: 60f8ed7ad34840a448c6800ea5c8cb5e, type: 3}
   towerSelect: {fileID: 8300000, guid: affdcbfb0221df245886c490473c8e9c, type: 3}
-  towerDeath: {fileID: 0}
-  towerUpgrade: {fileID: 0}
+  towerDeath: {fileID: 8300000, guid: a105befc4bd72584fa1a3caf317a5cf9, type: 3}
+  towerUpgrade: {fileID: 8300000, guid: 0f4ac9fca82c4e9449c8d6527b9e73fa, type: 3}
 --- !u!4 &64261803
 Transform:
   m_ObjectHideFlags: 0
@@ -2418,12 +2418,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   victoryPanel: {fileID: 548614662}
+  launchWaveButton: {fileID: 0}
   numberOfMonsterOne: 0
   numberOfMonsterTwo: 0
   numberOfMonsterThree: 0
+  numberOfMonsterFour: 0
   monsterTypeOne: {fileID: 1791313746008852168, guid: 208d1a2fa46ec174b8c0c0c11578c539, type: 3}
   monsterTypeTwo: {fileID: 1791313746008852168, guid: d06bd98ef2bc15246882e89415279836, type: 3}
   monsterTypeThree: {fileID: 1791313746008852168, guid: ab76bed5c54f3e94e9df20488c1bec87, type: 3}
+  monsterTypeFour: {fileID: 0}
   monsterTypeBoss: {fileID: 0}
   RM: {fileID: 744501577}
   chanceDeSpawnElementaireEntreZeroEtUn: 0
@@ -2432,24 +2435,10 @@ MonoBehaviour:
   monsterOneWaveList: 000000001200000020000000300000004b0000006e000000aa000000f0000000
   monsterTwoWaveList: 0000000000000000000000000000000000000000010000000300000008000000
   monsterThreeWaveList: 0000000001000000010000000100000001000000010000000100000001000000
+  monsterFourWaveList: 
   monstersAlive: []
   basicWaveDuration: 0
   squareSize: 39
-  waveLaunched:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -8620561639708342159, guid: 29511a5861e89ce4293b294750d70ba7, type: 3}
-        m_TargetAssemblyTypeName: ActualizeChild, Assembly-CSharp
-        m_MethodName: HealTower
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &744501577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2683,17 +2672,25 @@ MonoBehaviour:
     d'ennuis \xE0 personne."
   - "\xC9valuons un peu ta connaissance de l\u2019alchimie ! Dicte-moi ce que je
     dois faire pour \xE9tablir une premi\xE8re ligne de d\xE9fense."
-  - Merci de votre confiance !
-  - "Pour commencer, prenons la fiole d'\xE2me de l'\xE9l\xE9ment que nous voulons
-    cr\xE9er, et jetons-l\xE0 \xE0 l'emplacement o\xF9 nous voulons placer notre
-    tour."
+  - Merci de votre confiance !!
+  - "Pour commencer, les \xE2mes. On les obtient depuis les corps d'entit\xE9s mortes
+    affect\xE9s par un \xE9l\xE9ment."
+  - "Ensuite, pour cr\xE9er des d\xE9fenses, prenons la fiole d'\xE2me de l'\xE9l\xE9ment
+    que nous voulons cr\xE9er, et jetons-l\xE0 \xE0 l\xE0 ou nous voulons placer
+    notre tour."
+  - "Si tu te trompes pendant la planification, tu peux toujours enlever une tour,
+    cependant ce n'est pas optimal ! (faut que je modifie pour rendre \xE7a plus
+    smooth)"
   - "Nous pouvons profiter des terrains et renforcer nos tours en les pla\xE7ant
     \xE0 c\xF4t\xE9 de :"
   - "- La for\xEAt pour la port\xE9e;"
   - "- La terre de feu pour les d\xE9g\xE2ts;"
   - "- Les rivi\xE8res pour la cadence."
   - "Tu as bien appris tes le\xE7ons \xE0 ce que je vois, finis de placer nos d\xE9fenses."
-  - Excellent !
+  - "Cependant tu as oubli\xE9 de mentionner que verser une autre potion permets
+    d'am\xE9liorer une tour, mais on ne peut pas d\xE9passer 3 !"
+  - "Dans tous les cas, je te laisse finir de pr\xE9parer les d\xE9fenses."
+  - Excellent ! (Merci du conseil professeur !)
   - "Oh non ! Nos poursuivants nous ont retrouv\xE9s ! Esp\xE9rons que ces tours
     suffisent \xE0 nous d\xE9fendre !"
   - "Nos d\xE9fenses ont tenu bon ! Et nous avons plus de r\xE9serves ! Malgr\xE9
@@ -2702,19 +2699,26 @@ MonoBehaviour:
   - Poursuivons un peu ton test, explique moi comment concocter un sort.
   - "Tr\xE8s bien ! Dans un premier temps, allons \xE0 notre chaudron, et pla\xE7ons-y
     deux doses d'\xE9l\xE9ments puis, m\xE9langeons."
+  - "Le premier \xE9l\xE9ment que l'on infuse d\xE9terminera la forme de celui-ci. "
+  - "Tandis que le deuxi\xE8me d\xE9terminera l'\xE9l\xE9ment qui terraformera le
+    terrain. Et cela fonctionne aussi avec 2 \xE9l\xE9ments identiques !"
+  - "Tr\xE8s bien. Montre moi comment tu fais ledit sort maintenant ?"
   - "Nous pouvons ensuite placer ce sort de la m\xEAme mani\xE8re que nous avons
     plac\xE9 une tour. Ce sort nous permettra de modifier le terrain \xE0 notre avantage."
   - "\xC9vitons tout de m\xEAme de placer un sort sur nos tours, sans quoi elles
     risquent d'\xEAtre d\xE9truites."
-  - "l'\xE9quilibre de la r\xE9gion est tr\xE8s fragile. En abusant de sorts d'un
+  - "L'\xE9quilibre de la r\xE9gion est tr\xE8s fragile. En abusant de sorts d'un
     m\xEAme \xE9l\xE9ment, nous risquons de d\xE9s\xE9quilibrer la zone et nous attirer
     des ennuis ! "
+  - "Qu'importe l'\xE9l\xE9ment affect\xE9, celui-ci verra son efficacit\xE9 drastiquement
+    r\xE9duite"
   - Attention ! Une nouvelle vagues d'ennemis est en approche !
+  - "Laisse moi t'introduire la conversion d'\xE2mes, qui reste exp\xE9rimental.
+    On pourra convertir selon nos besoin les \xE2mes dont on est d\xE9pourvu."
   - "Tr\xE8s bien, tu m'a prouv\xE9 que tu \xE9tait assez comp\xE9tent pour \xEAtre
     mon apprenti. Je vais reprendre le contr\xF4le des d\xE9fenses d\xE9sormais."
   objectsToHideAndShow:
   - {fileID: 850645786}
-  - {fileID: 479079339}
   - {fileID: 479079339}
   - {fileID: 854028119}
   - {fileID: 1923128008}
@@ -29609,7 +29613,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 55846df641bc64745aa327966c1a945c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
