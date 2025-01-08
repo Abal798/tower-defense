@@ -636,8 +636,8 @@ MonoBehaviour:
   musicSource: {fileID: 439077683}
   SFXSource: {fileID: 1042538939}
   menusSoundsSource: {fileID: 1985097464}
-  enemyDie: {fileID: 8300000, guid: 83710a0abfdbed54a8be592aeaef1e56, type: 3}
-  buttonClick: {fileID: 8300000, guid: 6210828b5936a4348ba930454ad4f4f9, type: 3}
+  enemyDie: {fileID: 8300000, guid: b4f4fdaa3c585364eaa8da346a91020a, type: 3}
+  buttonClick: {fileID: 8300000, guid: d29b5b95c7cbb26419abfa6a2d6a881f, type: 3}
   alertDisplay: {fileID: 8300000, guid: 17b6e835815b1034c87a129d45d561cb, type: 3}
   pageTurn: {fileID: 8300000, guid: 80ac5e14d176e7140a1c4004c55e6d8e, type: 3}
   menusSounds: []
