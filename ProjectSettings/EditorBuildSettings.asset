@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 5a3d2fb2f0d1f624a815e33c6a2cd325
   - enabled: 1
-    path: Assets/Scenes/ClementJanvierUpdate.unity
-    guid: 806da37a980ba6a4598cb10a0f25d19c
+    path: Assets/Scenes/ClementJanvierEquilibrage.unity
+    guid: 27e0578d33d61ca479338f8b90007a40
   m_configObjects: {}
