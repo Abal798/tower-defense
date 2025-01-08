@@ -2986,45 +2986,42 @@ MonoBehaviour:
   - "Celles-ci se font en pla\xE7ant une potion sur une d\xE9fense d\xE9j\xE0 faites.
     Mais en avant de d\xE9tailler, voil\xE0 ce que \xE7a donne de placer une potion
     de d\xE9fense."
-  - "Mais il faut faire attention, car le prix augmente toujours et on est limit\xE9
-    \xE0 3 am\xE9liorations, il faut donc bien choisir !"
-  - "Si jamais une d\xE9fense ne nous sied pas, cette potion permets de la d\xE9truire,
-    cependant, tout est d\xE9truit dans le processus !"
+  - 
+  - "Si on le souhaite, on peut utiliser un outil pour d\xE9truire une tour, mais
+    on ne r\xE9cup\xE8re rien par la destruction. Pour en revenir aux am\xE9liorations,
+    celles-ci sont limit\xE9es \xE0 3 mais augmente drastiquement la puissance de
+    nos d\xE9fenses."
   - "Dans tous les cas, je te laisse finir de pr\xE9parer les d\xE9fenses, voir si
     tu as bien compris ce que je viens de dire."
-  - Excellent ! Merci du conseil, professeur !
+  - 
   - "Oh non ! Nos poursuivants nous ont retrouv\xE9s ! Esp\xE9rons que ces tours
     suffisent \xE0 nous d\xE9fendre !"
   - /!\ Vague 1
   - "Nos d\xE9fenses ont tenu bon ! Et nous avons plus de r\xE9serves ! Malgr\xE9
     tout, je doute que nos ennemis ne s'arr\xEAtent l\xE0. "
-  - "Pr\xE9parons quelques sorts pour renforcer nos d\xE9fenses."
+  - 
   - Poursuivons un peu ton test, explique-moi comment concocter un sort.
   - "Tr\xE8s bien ! Dans un premier temps, allons \xE0 notre chaudron, et pla\xE7ons-y
     deux doses d'\xE9l\xE9ments puis, m\xE9langeons."
-  - "Le premier \xE9l\xE9ment que l'on infuse d\xE9terminera la forme de celui-ci. "
-  - "Tandis que le deuxi\xE8me d\xE9terminera l'\xE9l\xE9ment qui terraformera le
-    terrain. Et cela fonctionne aussi avec 2 \xE9l\xE9ments identiques !"
-  - "Ensuite nous pouvons proc\xE9der au m\xE9lange de notre sort, qui aura la forme
-    bas\xE9 sur le premier \xE9l\xE9ment, et son terrain bas\xE9e sur le deuxi\xE8me."
-  - "Nous pouvons ensuite placer ce sort de la m\xEAme mani\xE8re que nous avons
-    plac\xE9 une d\xE9fense. Ce sort nous permettra de modifier le terrain \xE0 notre
-    avantage."
-  - "\xC9vitons tout de m\xEAme de placer un sort sur nos tours, sans quoi elles
-    risquent d'\xEAtre d\xE9truites."
+  - "Ensuite, nous aurons le premier \xE9l\xE9ment qui d\xE9terminera la forme de
+    notre terrain, et le deuxi\xE8me remplacera l'\xE9l\xE9ment sur ce terrain. "
+  - 
+  - "Nous pouvons ensuite m\xE9langer notre sort puis le placer. Cela dit, il ne
+    faudrait pas le placer sur une tour, auquel cas \xE7a la d\xE9truira sans qu'on
+    r\xE9cup\xE8re les ressources."
+  - 
+  - 
+  - 
   - "L'\xE9quilibre de la r\xE9gion est tr\xE8s fragile. En abusant de sorts d'un
-    m\xEAme \xE9l\xE9ment, nous risquons de d\xE9s\xE9quilibrer la zone et nous attirer
-    des ennuis !"
-  - "Qu'importe l'\xE9l\xE9ment affect\xE9, celui-ci verra son efficacit\xE9 drastiquement
-    r\xE9duite."
+    m\xEAme \xE9l\xE9ment, nous risquons de d\xE9s\xE9quilibrer la zone et celui-ci
+    verra son efficacit\xE9 drastiquement r\xE9duite."
   - Attention ! Une nouvelle vague d'ennemis est en approche !
   - '/!\ Objectif: Lancement vague 2'
   - "Pfiou... J'ai un peu de temps pour te parler d'un outil qui est encore en travaux
-    : la Conversion d'\xC2mes."
-  - "Celui-ci te permettra de convertir deux \xE2mes en un type d'\xE2mes dont on
-    pourrait \xEAtre d\xE9pourvu, mais le taux est tr\xE8s faible, il faut donc s'en
-    servir avec parcimonie."
-  - "\xC2mes blabla 2"
+    : la Conversion d'\xC2mes. On y mets 2 \xE9l\xE9ments qui vont \xEAtre recycler
+    en un \xE9l\xE9ment dont on est potentiellement d\xE9pourvu, mais cela reste
+    tr\xE8s peu efficace !"
+  - 
   - "Tr\xE8s bien, tu m'as prouv\xE9 que tu \xE9tais assez comp\xE9tent pour \xEAtre
     mon apprenti. Je vais reprendre le contr\xF4le des d\xE9fenses d\xE9sormais."
   objectsToHideAndShow:
