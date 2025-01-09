@@ -68,6 +68,14 @@ public class MenuManager : MonoBehaviour
         waterTowerPriceDisplay.text = "" + RM.GetTowerPrice(1,RM.nbrOfWaterTower);
         earthTowerPriceDisplay.text = "" + RM.GetTowerPrice(1,RM.nbrOfEarthTower);
         
+        if(RM.GetTowerPrice(1,RM.nbrOfFireTower) > RM.fireSoul)fireTowerPriceDisplay.color = Color.red;
+        else fireTowerPriceDisplay.color = Color.white;
+        if(RM.GetTowerPrice(1,RM.nbrOfWaterTower) > RM.waterSoul)waterTowerPriceDisplay.color = Color.red;
+        else waterTowerPriceDisplay.color = Color.white;
+        if(RM.GetTowerPrice(1,RM.nbrOfEarthTower) > RM.plantSoul)earthTowerPriceDisplay.color = Color.red;
+        else earthTowerPriceDisplay.color = Color.white;
+        
+        
         
         waveDisplay.text = "Vague : " + RM.wave;
 
