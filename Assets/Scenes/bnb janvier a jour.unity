@@ -3150,9 +3150,8 @@ MonoBehaviour:
   - "Cependant, le sort ne devrait pas \xEAtre plac\xE9 sur une tour, auquel cas
     elle sera d\xE9truite, sans qu'on ne r\xE9cup\xE8re de ressources."
   - 
-  - "D'ailleurs, si vous le souhaitez, je peux aller vers une tour pour faire un
-    rapport de son \xE9tat, il vous suffira juste de me montrer laquelle je dois
-    aller voir !"
+  - "D'ailleurs, si vous le souhaitez, vous pouvez pointer avec votre curseur de
+    souris une des cases et je vous montrerais les d\xE9tails de celle-ci !"
   - "Merci ! Mais fait attention, l'\xE9quilibre de la r\xE9gion est tr\xE8s fragile.
     En abusant de sorts d'un m\xEAme \xE9l\xE9ment, nous risquons de d\xE9s\xE9quilibrer
     la zone et celui-ci verra son efficacit\xE9 drastiquement r\xE9duite."
