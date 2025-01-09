@@ -29913,6 +29913,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2031619460}
   m_CullTransparentMesh: 1
+--- !u!114 &2072939392 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6181365742503175958, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+  m_PrefabInstance: {fileID: 5659166513698722036}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 796cfa56d701b424aa8fa0d0633301d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2076319779
 GameObject:
   m_ObjectHideFlags: 0
@@ -30307,6 +30318,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
+    - target: {fileID: 1270915060005628595, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2072939392}
+    - target: {fileID: 1270915060005628595, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMusicVolume
+      objectReference: {fileID: 0}
     - target: {fileID: 1317138065628552025, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 996
@@ -30402,6 +30421,14 @@ PrefabInstance:
     - target: {fileID: 3305795341281014912, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 114.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340161813971981634, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2072939392}
+    - target: {fileID: 3340161813971981634, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSFXVolume
       objectReference: {fileID: 0}
     - target: {fileID: 3470395213416276806, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
