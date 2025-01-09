@@ -2830,7 +2830,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &744501576
 MonoBehaviour:
@@ -3121,8 +3121,8 @@ MonoBehaviour:
   - "Je vois que tu connais bien ta le\xE7on, c'est bien. Maintenant, laisse-moi
     te parler des am\xE9liorations."
   - "Celles-ci se font en pla\xE7ant une fiole sur une d\xE9fense d\xE9j\xE0 faite.
-    Mais en avant de d\xE9tailler, voici comment ou utilise la fiole pour placer
-    une tour. "
+    Mais avant de d\xE9tailler, voici comment ou utilise la fiole pour placer une
+    tour. "
   - 
   - "Si on le souhaite, on peut utiliser un outil pour d\xE9truire une tour, mais
     on ne r\xE9cup\xE8re que tr\xE8s peu par la destruction. "
@@ -3146,7 +3146,7 @@ MonoBehaviour:
   - "Nous pouvons ensuite m\xE9langer notre sort, puis le placer sur le terrain.
     Nos tours r\xE9cup\xE8reront les bonus des terrains dans la foul\xE9e !"
   - "Cependant, le sort ne devrait pas \xEAtre plac\xE9 sur une tour, auquel cas
-    \xE7a la d\xE9truira sans qu'on r\xE9cup\xE8re les ressources."
+    elle sera d\xE9truite, sans qu'on ne r\xE9cup\xE8re de ressources."
   - 
   - "D'ailleurs, si vous le souhaitez, je peux aller vers une tour pour faire un
     rapport de son \xE9tat, il vous suffira juste de me montrer laquelle je dois
@@ -3160,7 +3160,7 @@ MonoBehaviour:
     d'\xC2mes. On y met 2 \xE9l\xE9ments qui vont \xEAtre recycl\xE9s en un \xE9l\xE9ment
     dont on est potentiellement d\xE9pourvu, mais la conversion est \xE0 perte."
   - 
-  - "Si vous avez besoin professeur, je vais commencer \xE0 consign\xE9 les diff\xE9rentes
+  - "Si vous avez besoin professeur, je vais commencer \xE0 consigner les diff\xE9rentes
     cr\xE9atures qui essaieront de nous attaquer, sait-on jamais !"
   - "Tr\xE8s bien, tu m'as prouv\xE9 que tu \xE9tais assez comp\xE9tent pour \xEAtre
     mon apprenti. Je vais reprendre le contr\xF4le des d\xE9fenses d\xE9sormais."
