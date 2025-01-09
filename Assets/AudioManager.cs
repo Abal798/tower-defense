@@ -16,6 +16,8 @@ public class AudioManager : MonoBehaviour
     [Header("----------SFX----------")]
     [Header("ennemis")]
     public AudioClip enemyDie;
+
+    public AudioClip kamikazeTouchTower;
     
     [Header("menus")]
     public AudioClip buttonClick;

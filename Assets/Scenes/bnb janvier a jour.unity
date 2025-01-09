@@ -30164,6 +30164,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 744501581}
+    - target: {fileID: 5237863705570213716, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: cb66de3e34b50014a9894ce8162fbdc0, type: 3}
     - target: {fileID: 5398882395762765267, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -30340,6 +30344,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
+    - target: {fileID: 9106181615256027372, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -17,7 +17,8 @@ public class KamikazeBehaviour : MonoBehaviour
         {
             if(collider.transform.parent.CompareTag("Tower"))
             {
-                collider.gameObject.GetComponent<TowerTakingDamage>().TakeDamage(1000000);
+                collider.gameObject.GetComponent<TowerTakingDamage>().TakeDamage(120);
+                AudioManager.AM.PlaySfx(AudioManager.AM.kamikazeTouchTower);
                 Destroy(gameObject);
                 
             }
