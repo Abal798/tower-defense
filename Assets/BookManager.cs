@@ -10,9 +10,17 @@ public class BookManager : MonoBehaviour
     public GameObject[] paragraphs;
     public GameObject[] hidedParagraphes;
 
+    public bool monsterOneSaw, monsterTwoSaw, monsterThreeSaw, monsterFourSaw, monsterFiveSaw;
+
     private void Awake()
     {
         instance = this;
+
+        if (PlayerPrefs.HasKey("monsterOneSaw")) monsterOneSaw = (PlayerPrefs.GetInt("monsterOneSaw") != 0);
+        if (PlayerPrefs.HasKey("monsterTwoSaw")) monsterTwoSaw = (PlayerPrefs.GetInt("monsterTwoSaw") != 0);
+        if (PlayerPrefs.HasKey("monsterThreeSaw")) monsterThreeSaw = (PlayerPrefs.GetInt("monsterThreeSaw") != 0);
+        if (PlayerPrefs.HasKey("monsterFourSaw")) monsterFourSaw = (PlayerPrefs.GetInt("monsterFourSaw") != 0);
+        if (PlayerPrefs.HasKey("monsterFiveSaw")) monsterFiveSaw = (PlayerPrefs.GetInt("monsterFiveSaw") != 0);
     }
 
     public void Start()
@@ -22,6 +30,16 @@ public class BookManager : MonoBehaviour
             paragraphs[i].SetActive(false);
             hidedParagraphes[i].SetActive(true);
         }
+        
+        if(monsterOneSaw)  ShowParagraph(1);
+        if(monsterTwoSaw)  ShowParagraph(2);
+        if(monsterThreeSaw)  ShowParagraph(3);
+        if(monsterFourSaw)  ShowParagraph(4);
+        if(monsterFiveSaw)  ShowParagraph(5);
+        
+        
+        
+        
     }
 
     public void ShowParagraph(int monsterType)
@@ -29,5 +47,17 @@ public class BookManager : MonoBehaviour
         monsterType -= 1;
         paragraphs[monsterType].SetActive(true);
         hidedParagraphes[monsterType].SetActive(false);
+
+        if (monsterType == 1) monsterOneSaw = true;
+        if (monsterType == 2) monsterTwoSaw = true;
+        if (monsterType == 3) monsterThreeSaw = true;
+        if (monsterType == 4) monsterFourSaw = true;
+        if (monsterType == 5) monsterFiveSaw = true;
+        
+        PlayerPrefs.SetInt("monsterOneSaw", (monsterOneSaw ? 1 : 0));
+        PlayerPrefs.SetInt("monsterTwoSaw", (monsterTwoSaw ? 1 : 0));
+        PlayerPrefs.SetInt("monsterThreeSaw", (monsterThreeSaw ? 1 : 0));
+        PlayerPrefs.SetInt("monsterFourSaw", (monsterFourSaw ? 1 : 0));
+        PlayerPrefs.SetInt("monsterFiveSaw", (monsterFiveSaw ? 1 : 0));
     }
 }
