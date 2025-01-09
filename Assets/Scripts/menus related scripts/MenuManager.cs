@@ -18,6 +18,7 @@ public class MenuManager : MonoBehaviour
     public GameObject keyRebindingPanel;
     public GameObject gameStatsPanel;
     public GameObject pausePanel;
+    public GameObject settingsPanel;
     public GameObject SoulConverterPanel;
     public GameObject bookPanel;
     public GameObject IconFeu;
@@ -208,7 +209,19 @@ public class MenuManager : MonoBehaviour
         activePanel = bookPanel;
     }
 
+    public void OpenSettings()
+    {
+        settingsPanel.SetActive(true);
+        pausePanel.SetActive(false);
+        activePanel = settingsPanel;
+    }
 
+    public void QuitSettings()
+    {
+        settingsPanel.SetActive(false);
+        pausePanel.SetActive(true);
+        activePanel = pausePanel;
+    }
 
 
     public void Quit()
