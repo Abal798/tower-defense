@@ -78,11 +78,13 @@ public class Spawn : MonoBehaviour
             numberOfMonsterTwo = monsterTwoWaveList[RM.wave];
             numberOfMonsterThree = monsterThreeWaveList[RM.wave];
             numberOfMonsterFour = monsterFourWaveList[RM.wave];
-            
-            //if(numberOfMonsterOne > 0) BookManager.instance.monsterSwarmerEncountered = true;
-            //if(numberOfMonsterTwo > 0) BookManager.instance.monsterGiantEncountered = true;
         }
         
+        if (numberOfMonsterOne > 0)BookManager.instance.ShowParagraph(1);
+        if (numberOfMonsterTwo > 0)BookManager.instance.ShowParagraph(2);
+        if (numberOfMonsterThree > 0)BookManager.instance.ShowParagraph(3);
+        if (numberOfMonsterFour > 0)BookManager.instance.ShowParagraph(4);
+        if(RM.wave == endWaveNumber)BookManager.instance.ShowParagraph(5);
         
         if(RM.wave > endWaveNumber && monstersAlive.Count == 0) victoryPanel.SetActive(true);
         
