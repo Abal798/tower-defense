@@ -8,12 +8,26 @@ public class BookManager : MonoBehaviour
     public static BookManager instance;
     
     public GameObject[] paragraphs;
+    public GameObject[] hidedParagraphes;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     public void Start()
     {
-        foreach (var paragraphes in paragraphs)
+        for (int i = 0; i < paragraphs.Length; i++)
         {
-            paragraphes.SetActive(true);
+            paragraphs[i].SetActive(false);
+            hidedParagraphes[i].SetActive(true);
         }
+    }
+
+    public void ShowParagraph(int monsterType)
+    {
+        monsterType -= 1;
+        paragraphs[monsterType].SetActive(true);
+        hidedParagraphes[monsterType].SetActive(false);
     }
 }
