@@ -30,6 +30,16 @@ public class BookManager : MonoBehaviour
             paragraphs[i].SetActive(false);
             hidedParagraphes[i].SetActive(true);
         }
+        
+        if(monsterOneSaw)  ShowParagraph(1);
+        if(monsterTwoSaw)  ShowParagraph(2);
+        if(monsterThreeSaw)  ShowParagraph(3);
+        if(monsterFourSaw)  ShowParagraph(4);
+        if(monsterFiveSaw)  ShowParagraph(5);
+        
+        
+        
+        
     }
 
     public void ShowParagraph(int monsterType)
