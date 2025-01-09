@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 
 public class TooltipManager : MonoBehaviour
@@ -20,7 +21,7 @@ public class TooltipManager : MonoBehaviour
 
     private void Update()
     {
-        if (MenuManager.activePanel.name != "IngamePanel")
+        if ((MenuManager.activePanel.name != "IngamePanel" && MenuManager.activePanel.name != "AlchimiePanel" && MenuManager.activePanel.name != "SoulConverterPanel" ) || EventSystem.current.IsPointerOverGameObject())
         {
             TooltipExtented.HideTooltip_Static();
             TooltipComplet.HideTooltip_Static();
