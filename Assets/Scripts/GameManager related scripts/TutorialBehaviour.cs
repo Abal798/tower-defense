@@ -407,6 +407,7 @@ public class TutorialBehaviour : MonoBehaviour
             case 1:
                 ChangeExpression(2, 2);
                 ShowCharacter(2);
+                LockCamera();
                 ModifySpeakingCharacter(2); // Premier dialogue ou Arthur parle
                 ModifyToCurentText();
                 ModifyTextBoxScale(650f, 115f);
@@ -658,7 +659,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ChangeExpression(2,2);
                 ActivateGameobject(13);
                 ActivateGameobject(14);
-                ModifyTextBoxScale(680f, 155f);
+                ModifyTextBoxScale(680f, 125f);
                 break;
             case 33:
                 ModifySpeakingCharacter(2);
