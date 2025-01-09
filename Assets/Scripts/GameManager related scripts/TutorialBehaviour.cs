@@ -447,11 +447,11 @@ public class TutorialBehaviour : MonoBehaviour
                 break; //
             case 7:
                 ModifyToCurentText();
-                Highlight(new Vector2(495, -55), new Vector2(1.25f, 1.25f));
+                Highlight(new Vector2(490, -55), new Vector2(1.25f, 1.25f));
                 break;
             case 8:
                 ModifyToCurentText();   
-                Highlight(new Vector2(-220, 380), new Vector2(2.5f, 1.25f));
+                Highlight(new Vector2(-272, 380), new Vector2(1.25f, 1.25f));
                 ModifyTextBoxScale(650f, 105f);
                 break;
 
@@ -477,12 +477,12 @@ public class TutorialBehaviour : MonoBehaviour
                 ChangeExpression(1, 3);
                 Highlight(new Vector2(-90, -390), new Vector2(6.5f, 3.4f)); // Highlight des différentes tours
                 MoveTextBox(new Vector3(1580, 150, 0));
-                ModifyTextBoxScale(650f, 210f);
+                ModifyTextBoxScale(650f, 205f);
                 HideNextButton();
                 break;
             case 11:
                 ModifyToCurentText(); // Amélioration de tour, qu'il n'est pas obligé de faire.
-                ModifyTextBoxScale();
+                ModifyTextBoxScale(650f, 165f);
                 StopHighlighting();
                 break;
             case 12:
@@ -492,7 +492,7 @@ public class TutorialBehaviour : MonoBehaviour
                 MoveTextBox(new Vector3(1605, 150, 0));
                 Highlight(new Vector2(263, -475), new Vector2(0.9f, 0.9f));
                 ActivateGameobject(9); // Affiche le bouton de Suppression
-                ModifyTextBoxScale(650f, 165f);
+                ModifyTextBoxScale(650f, 170f);
                 break;
             case 13:
                 StopHighlighting();
@@ -537,7 +537,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ChangeExpression(2, 2);
                 ModifyToCurentText();
                 LockCamera();
-                ModifyTextBoxScale(675f, 125f);
+                ModifyTextBoxScale(675f, 135f);
                 break;
             case 18:
                 ChangeExpression(1, 8);
@@ -561,9 +561,9 @@ public class TutorialBehaviour : MonoBehaviour
             case 21:
                 ShowTextBox();
                 ModifyToCurentText();
-                Highlight(new Vector2(-510, -38), new Vector2(3.5f, 1.7f)); // Forme du Sort
+                Highlight(new Vector2(-510, -38), new Vector2(3.5f, 1.5f)); // Forme du Sort
                 MoveTextBox(new Vector3(1575, 450));
-                ModifyTextBoxScale(650f, 190f);
+                ModifyTextBoxScale(650f, 200f);
                 ShowNextButton();
                 break;
             case 22:
@@ -644,23 +644,23 @@ public class TutorialBehaviour : MonoBehaviour
                 ChangeExpression(2, 8);
                 ChangeExpression(1, 23);
                 ActivateGameobject(8);
-                ModifyTextBoxScale(680f, 255f);
-                Highlight(new Vector2(-855, 225), new Vector2(1.93f, 0.7f));
+                ModifyTextBoxScale(680f, 265f);
+                Highlight(new Vector2(-855, 225), new Vector2(2f, 0.9f));
                 ShowNextButton();
                 break;
             case 31: // In SoulConverter Menu
                 ModifyToCurentText();
-                Highlight(new Vector2(-755, 50), new Vector2(3f, 1f));
+                // Highlight(new Vector2(-765, 50), new Vector2(3.25f, 1.4f));
                 break;
             case 32:
                 // Bouquin
-                Highlight(new Vector2(-855, 138), new Vector2(1.93f, 0.7f));
+                Highlight(new Vector2(-857, 115), new Vector2(1.75f, 1f));
                 ModifyToCurentText();
                 ModifySpeakingCharacter(1);
                 ChangeExpression(2,2);
                 ActivateGameobject(13);
                 ActivateGameobject(14);
-                ModifyTextBoxScale(680f, 125f);
+                ModifyTextBoxScale(680f, 175f);
                 break;
             case 33:
                 ModifySpeakingCharacter(2);
@@ -672,7 +672,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ActivateAllGameObjects();
                 UnlockCamera();
                 ModifyTextBoxScale();
-                ModifyTextBoxScale(650f, 195f);
+                ModifyTextBoxScale(650f, 180f);
                 break;
             case 34:
                 StopTutorial();
