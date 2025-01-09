@@ -105,26 +105,34 @@ public class SpellPlacingScript : MonoBehaviour
             
             if (RM.spellSlotOne.Count == 2)
             {
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(0))                                                
                 {
-                    placementSpell1 = false;
-                    PlaySpellSound(RM.spellSlotOne[1]);
-                    PlaceSpellTerra(mouseWorldPos, RM.spellSlotOne);
-                    ClearPreview();
-                    RM.spellSlotOne.Clear();
-                    foreach (var tower in GridBuilding.current.listeTowerCo)
+                    if (EventSystem.current.IsPointerOverGameObject())
                     {
-                        if(tower.Value.gameObject != null)tower.Value.gameObject.GetComponent<ActualizeChild>().AcutalizeChild();
-            
+                        placementSpell1 = false;
+                        ClearPreview();
                     }
+                    else
+                    {
+                        placementSpell1 = false;
+                        PlaySpellSound(RM.spellSlotOne[1]);
+                        PlaceSpellTerra(mouseWorldPos, RM.spellSlotOne);
+                        ClearPreview();
+                        RM.spellSlotOne.Clear();
+                        foreach (var tower in GridBuilding.current.listeTowerCo)
+                        {
+                            if(tower.Value.gameObject != null)tower.Value.gameObject.GetComponent<ActualizeChild>().AcutalizeChild();
+            
+                        }
 
-                    EndGameStats.EGS.nombreDeSortsPlaces++;
+                        EndGameStats.EGS.nombreDeSortsPlaces++;
+                    }
+                    
                 }
 
                 if (Input.GetMouseButtonDown(1))
                 {
-                    placementSpell1 = false;
-                    ClearPreview();
+                    
                 }
             }
             else if (RM.spellSlotOne.Count == 3)
@@ -149,21 +157,30 @@ public class SpellPlacingScript : MonoBehaviour
         {
             DisplaySpellPreview(mouseWorldPos, RM.spellSlotTwo);
             
-            if (RM.spellSlotTwo.Count == 2)
+            if (RM.spellSlotTwo.Count == 2 )
             {
                 if (Input.GetMouseButtonDown(0))
                 {
-                    placementSpell2 = false;
-                    PlaySpellSound(RM.spellSlotTwo[1]);
-                    PlaceSpellTerra(mouseWorldPos, RM.spellSlotTwo);
-                    ClearPreview();
-                    RM.spellSlotTwo.Clear();
-                    foreach (var tower in GridBuilding.current.listeTowerCo)
+                    if (EventSystem.current.IsPointerOverGameObject())
                     {
-                        if(tower.Value.gameObject != null)tower.Value.gameObject.GetComponent<ActualizeChild>().AcutalizeChild();
-            
+                        placementSpell2 = false;
+                        ClearPreview();
                     }
-                    EndGameStats.EGS.nombreDeSortsPlaces++;
+                    else
+                    {
+                        placementSpell2 = false;
+                        PlaySpellSound(RM.spellSlotTwo[1]);
+                        PlaceSpellTerra(mouseWorldPos, RM.spellSlotTwo);
+                        ClearPreview();
+                        RM.spellSlotTwo.Clear();
+                        foreach (var tower in GridBuilding.current.listeTowerCo)
+                        {
+                            if(tower.Value.gameObject != null)tower.Value.gameObject.GetComponent<ActualizeChild>().AcutalizeChild();
+            
+                        }
+                        EndGameStats.EGS.nombreDeSortsPlaces++;
+                    }
+                    
                 }
 
                 if (Input.GetMouseButtonDown(1))
@@ -198,17 +215,27 @@ public class SpellPlacingScript : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0))
                 {
-                    placementSpell3 = false;
-                    PlaySpellSound(RM.spellSlotThree[1]);
-                    PlaceSpellTerra(mouseWorldPos, RM.spellSlotThree);
-                    ClearPreview();
-                    RM.spellSlotThree.Clear();
-                    foreach (var tower in GridBuilding.current.listeTowerCo)
+                    if (EventSystem.current.IsPointerOverGameObject())
                     {
-                        if(tower.Value.gameObject != null)tower.Value.gameObject.GetComponent<ActualizeChild>().AcutalizeChild();
-            
+                        placementSpell3 = false;
+                        ClearPreview();
                     }
-                    EndGameStats.EGS.nombreDeSortsPlaces++;
+                    else
+                    {
+                        placementSpell3 = false;
+                        PlaySpellSound(RM.spellSlotThree[1]);
+                        PlaceSpellTerra(mouseWorldPos, RM.spellSlotThree);
+                        ClearPreview();
+                        RM.spellSlotThree.Clear();
+                        foreach (var tower in GridBuilding.current.listeTowerCo)
+                        {
+                            if(tower.Value.gameObject != null)tower.Value.gameObject.GetComponent<ActualizeChild>().AcutalizeChild();
+            
+                        }
+                        EndGameStats.EGS.nombreDeSortsPlaces++; 
+                    }
+                    
+                    
                 }
 
                 if (Input.GetMouseButtonDown(1))
@@ -415,10 +442,10 @@ public class SpellPlacingScript : MonoBehaviour
                 positions.Add(center + new Vector3Int(x, y, 0));
             }
         }
-        if (Mathf.Abs(rotationState) % 4 == 0) positions.Add(center + Vector3Int.down);
+        if (Mathf.Abs(rotationState) % 4 == 0) positions.Add(center + Vector3Int.down + Vector3Int.right);
         if (Mathf.Abs(rotationState) % 4 == 1) positions.Add(center + Vector3Int.left);
         if (Mathf.Abs(rotationState) % 4 == 2) positions.Add(center + Vector3Int.up * 2);
-        if (Mathf.Abs(rotationState) % 4 == 3) positions.Add(center + Vector3Int.right * 2);
+        if (Mathf.Abs(rotationState) % 4 == 3) positions.Add(center + Vector3Int.right * 2 + Vector3Int.up);
         return positions;
     }
 
