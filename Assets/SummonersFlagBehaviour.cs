@@ -7,6 +7,12 @@ public class SummonersFlagBehaviour : MonoBehaviour
     public int numberOfMonstersToSpawn = 10;
     public GameObject swarmerPrefab;
     public float spawnDelayTime = 0.25f;
+    public RessourcesManager RManager;
+
+    void Start()
+    {
+        RManager = FindObjectOfType<RessourcesManager>();
+    }
 
     public void SpawnMonster()
     {
@@ -20,7 +26,7 @@ public class SummonersFlagBehaviour : MonoBehaviour
             float xoffset = Random.Range(0, 3);
             float yoffset = Random.Range(0, 3);
             GameObject newSwarmer = Instantiate(swarmerPrefab, new Vector3(transform.position.x + xoffset, transform.position.y + yoffset, transform.position.z), Quaternion.identity);
-            newSwarmer.GetComponent<MonsterDeathBehaviour>().RM = FindObjectOfType<RessourcesManager>();
+            newSwarmer.GetComponent<MonsterDeathBehaviour>().RM = RManager;
             newSwarmer.GetComponent<MonsterStats>().type = 0;
 
             yield return new WaitForSeconds(spawnDelayTime);
