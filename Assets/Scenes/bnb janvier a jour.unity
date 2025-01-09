@@ -3109,10 +3109,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4d335ace3be8095478d79d11e135503a, type: 3}
   bottomPosition: {fileID: 1315070205}
   tutorialText:
-  - "Tom:      Ah ! Nous avons enfin trouv\xE9 un endroit parfait pour nous installer
-    !"
-  - "Arthur:      En effet, c'est assez loin de la ville pour que nos poursuivants
-    n'attirent d'ennuis \xE0 personne."
+  - "Ah ! Nous avons enfin trouv\xE9 un endroit parfait pour nous installer !"
+  - "En effet, c'est assez loin de la ville pour que nos poursuivants n'attirent
+    d'ennuis \xE0 personne."
   - "\xC9valuons un peu ta connaissance de l\u2019alchimie ! Dicte-moi ce que je
     dois faire pour \xE9tablir une premi\xE8re ligne de d\xE9fense."
   - Merci de votre confiance !
@@ -3120,21 +3119,21 @@ MonoBehaviour:
     affect\xE9s par un \xE9l\xE9ment."
   - "Nous pourrons aussi profiter des terrains et renforcer nos tours en les pla\xE7ant
     \xE0 c\xF4t\xE9 de :"
-  - "- La for\xEAt pour la port\xE9e;"
-  - "- La terre de feu pour les d\xE9g\xE2ts;"
-  - "Les rivi\xE8res pour la cadence. Ai-je oublier quelque chose professeur ?"
+  - "- La for\xEAt pour la port\xE9e ;"
+  - "- La terre de feu pour les d\xE9g\xE2ts ;"
+  - "- Les rivi\xE8res pour la cadence. Ai-je oubli\xE9 quelque chose, professeur
+    ?"
   - "Je vois que tu connais bien ta le\xE7on, c'est bien. Maintenant, laisse-moi
     te parler des am\xE9liorations."
-  - "Celles-ci se font en pla\xE7ant une potion sur une d\xE9fense d\xE9j\xE0 faite.
-    Mais en avant de d\xE9tailler, voil\xE0 ce que \xE7a donne de placer une potion
-    de d\xE9fense."
+  - "Celles-ci se font en pla\xE7ant une fiole sur une d\xE9fense d\xE9j\xE0 faite.
+    Mais en avant de d\xE9tailler, voici comment ou utilise la fiole pour placer
+    une tour. "
   - 
   - "Si on le souhaite, on peut utiliser un outil pour d\xE9truire une tour, mais
-    on ne r\xE9cup\xE8re que tr\xE8s peu par la destruction. Pour en revenir aux
-    am\xE9liorations, celles-ci sont limit\xE9es mais augmentent grandement la puissance
-    de nos d\xE9fenses."
-  - "Dans tous les cas, je te laisse finir de pr\xE9parer les d\xE9fenses, voir si
-    tu as bien compris ce que je viens de dire."
+    on ne r\xE9cup\xE8re que tr\xE8s peu par la destruction. "
+  - "Pour en revenir aux am\xE9liorations, celles-ci sont limit\xE9es mais augmentent
+    grandement la puissance de nos d\xE9fenses. Dans tous les cas, je te laisse finir
+    de pr\xE9parer les d\xE9fenses, voir si tu as bien assimil\xE9 ce que j'ai dis."
   - 
   - "Oh non ! Nos poursuivants nous ont retrouv\xE9s ! Esp\xE9rons que ces tours
     suffisent \xE0 nous d\xE9fendre !"
@@ -3145,26 +3144,29 @@ MonoBehaviour:
   - 'Poursuivons un peu ton test, explique-moi comment concocter un sort. '
   - "Tr\xE8s bien ! Dans un premier temps, allons \xE0 notre chaudron qui est justement
     en \xE9bullition !"
-  - "Ensuite, nous pla\xE7ons le premier \xE9l\xE9ment qui sera placer d\xE9terminera
-    la forme de notre terrain, et le deuxi\xE8me qui remplacera l'\xE9l\xE9ment sur
-    ce terrain. "
+  - "Ensuite, nous pla\xE7ons le premier \xE9l\xE9ment qui sera plac\xE9 d\xE9terminera
+    la forme de notre terrain. Le deuxi\xE8me \xE9l\xE9ment remplacera l'\xE9l\xE9ment
+    sur ce terrain."
   - 
-  - "Nous pouvons ensuite m\xE9langer notre sort puis le placer. Cela dit, il ne
-    faudrait pas le placer sur une tour, auquel cas \xE7a la d\xE9truira sans qu'on
-    r\xE9cup\xE8re les ressources."
+  - "Nous pouvons ensuite m\xE9langer notre sort, puis le placer sur le terrain.
+    Nos tours r\xE9cup\xE8reront les bonus des terrains dans la foul\xE9e !"
+  - "Cependant, le sort ne devrait pas \xEAtre plac\xE9 sur une tour, auquel cas
+    \xE7a la d\xE9truira sans qu'on r\xE9cup\xE8re les ressources."
   - 
-  - 
-  - 
-  - "L'\xE9quilibre de la r\xE9gion est tr\xE8s fragile. En abusant de sorts d'un
-    m\xEAme \xE9l\xE9ment, nous risquons de d\xE9s\xE9quilibrer la zone et celui-ci
-    verra son efficacit\xE9 drastiquement r\xE9duite."
+  - "D'ailleurs, si vous le souhaitez, je peux aller vers une tour pour faire un
+    rapport de son \xE9tat, il vous suffira juste de me montrer laquelle je dois
+    aller voir !"
+  - "Merci ! Mais fait attention, l'\xE9quilibre de la r\xE9gion est tr\xE8s fragile.
+    En abusant de sorts d'un m\xEAme \xE9l\xE9ment, nous risquons de d\xE9s\xE9quilibrer
+    la zone et celui-ci verra son efficacit\xE9 drastiquement r\xE9duite."
   - Attention ! Une nouvelle vague d'ennemis est en approche !
   - '/!\ Objectif: Lancement vague 2'
-  - "Pfiou... J'ai un peu de temps pour te parler d'un outil qui est encore en travaux
-    : la Conversion d'\xC2mes. On y met 2 \xE9l\xE9ments qui vont \xEAtre recycl\xE9s
-    en un \xE9l\xE9ment dont on est potentiellement d\xE9pourvu, mais cela reste
-    tr\xE8s peu efficace et peu judicieux  !"
+  - "Pfiou... J'ai un peu de temps pour te parler d'un dernier outil : la Conversion
+    d'\xC2mes. On y met 2 \xE9l\xE9ments qui vont \xEAtre recycl\xE9s en un \xE9l\xE9ment
+    dont on est potentiellement d\xE9pourvu, mais la conversion est \xE0 perte."
   - 
+  - "Si vous avez besoin professeur, je vais commencer \xE0 consign\xE9 les diff\xE9rentes
+    cr\xE9atures qui essaieront de nous attaquer, sait-on jamais !"
   - "Tr\xE8s bien, tu m'as prouv\xE9 que tu \xE9tais assez comp\xE9tent pour \xEAtre
     mon apprenti. Je vais reprendre le contr\xF4le des d\xE9fenses d\xE9sormais."
   objectsToHideAndShow:
@@ -3182,6 +3184,9 @@ MonoBehaviour:
   - {fileID: 5659166513698722040}
   - {fileID: 5659166513698722041}
   - {fileID: 5659166513698722042}
+  - {fileID: 1953467098}
+  - {fileID: 1166210241}
+  - {fileID: 515313140}
 --- !u!1 &749880187
 GameObject:
   m_ObjectHideFlags: 0
@@ -4920,6 +4925,11 @@ MonoBehaviour:
   feuSprite: {fileID: 21300000, guid: a03343141fc49d747a252d44b73a05f2, type: 3}
   waterSprite: {fileID: 21300000, guid: 2169793c5d413ce4e8468c0da564ab01, type: 3}
   earthSprite: {fileID: 21300000, guid: 60a830824a8aaf3489fc8e38c55b69a5, type: 3}
+--- !u!1 &1166210241 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1342082145313130964, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+  m_PrefabInstance: {fileID: 5659166513698722036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1174363901
 GameObject:
   m_ObjectHideFlags: 0
