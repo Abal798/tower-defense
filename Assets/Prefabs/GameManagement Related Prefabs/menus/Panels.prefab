@@ -894,6 +894,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayMenuSound
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &2314074746545036685
 Animator:
   serializedVersion: 5
@@ -1956,6 +1968,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: NavigateThroughMenuPages, Assembly-CSharp
         m_MethodName: NextPage
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayMenuSound
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4215,9 +4239,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Cet adversaire a su se d\xE9marquer des autres parmis les enemis, en effet,
-    il s'agit d'un leader qui porte un drapeau avec lui. A sa mort il le plante dans
-    le sol. Ce drapeau sert de symbole aux soldats \xE9l\xE9mentaires qui y aparaissent
-    directement par groupe de 10.\npv : 200\ndegats : 20\nvitesse : 1"
+    il s'agit d'un leader qui porte un drapeau avec lui. il apparait a la vague 12
+    et \xE0 sa mort il le plante dans le sol. Ce drapeau sert de symbole aux soldats
+    \xE9l\xE9mentaires qui y aparaissent directement par groupe de 10.\npv : 200\ndegats
+    : 20\nvitesse : 1"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5037,6 +5062,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: NavigateThroughMenuPages, Assembly-CSharp
         m_MethodName: PreviousPage
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayMenuSound
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -12825,7 +12862,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: previous page
+  m_text: "page pr\xE9c\xE9dente"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -16322,7 +16359,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: next page
+  m_text: page suivante
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -16869,9 +16906,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "un ennemi tres commun mais qui tire sa force de son nombre. il apparait
-    des la vague 1, n'est jamais \xE9l\xE9mentaire. il en veut directement a la tour
-    et ne se pr\xE9ocupa pas des obstacles sur son chemin.\npv : 100\ndegats : 15\nvitesse
+  m_text: "Un ennemi tres commun mais qui tire sa force de son nombre. il apparait
+    des la vague 1. il en veut directement a la tour et ne se pr\xE9ocupa des obstacles
+    sur son chemin que si ils sont proches de lui.\npv : 100\ndegats : 15\nvitesse
     : 1"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17793,7 +17830,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: previous page
+  m_text: "page pr\xE9c\xE9dente"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -18890,10 +18927,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Cet adversaire est tr\xE8s particulier, pour une raison inconue il ne
-    se dirige pas vers nous mais vers les tours et est si d\xE9vou\xE9 a sa cause
-    que pour infliger de grands degats il est pr\xEAt a sacrifier jusqu'\xE0 sa propre
-    vie.\npv : 130\ndegats : 120\nvitesse : 3"
+  m_text: "Cet adversaire est tr\xE8s particulier, il apparait a la vague 8 et pour
+    une raison inconue il ne se dirige pas vers nous mais vers les tours et est si
+    d\xE9vou\xE9 a sa cause que pour infliger de grands degats il est pr\xEAt a sacrifier
+    jusqu'\xE0 sa propre vie.\npv : 130\ndegats : 120\nvitesse : 3"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -20873,7 +20910,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: cb66de3e34b50014a9894ce8162fbdc0, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -21141,6 +21178,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: NavigateThroughMenuPages, Assembly-CSharp
         m_MethodName: PreviousPage
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayMenuSound
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -22241,7 +22290,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4381721630976993007
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22609,7 +22658,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "un ennemi moyennement commun  qui tire sa force de sa grande vitalit\xE9.
+  m_text: "Un ennemi moyennement commun  qui tire sa force de sa grande vitalit\xE9.
     Il apparait a la vague 5. Il en veut directement a la tour et ne se pr\xE9ocupe
     pas des obstacles sur son chemin.\npv : 1750\ndegats : 45\nvitesse : 0.75"
   m_isRightToLeft: 0
@@ -25527,6 +25576,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayMenuSound
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4918377607950883399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27077,7 +27138,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Sacrifici\xE9"
+  m_text: "Sacrfi\xE9"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -30779,7 +30840,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: previous page
+  m_text: "page pr\xE9c\xE9dente"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -35056,14 +35117,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.020744061, g: 0.46226418, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 7db1cc0568dc538488e6438e71b171e2, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -37085,7 +37146,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: next page
+  m_text: page suivante
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -37740,6 +37801,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayMenuSound
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6369032032777974414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38374,7 +38447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7307796855775620405
 RectTransform:
   m_ObjectHideFlags: 0
@@ -38440,3 +38513,8 @@ MonoBehaviour:
   - {fileID: 7155404107050930139}
   - {fileID: 7832292201932879453}
   - {fileID: 1982254749624267112}
+  monsterOneSaw: 0
+  monsterTwoSaw: 0
+  monsterThreeSaw: 0
+  monsterFourSaw: 0
+  monsterFiveSaw: 0
