@@ -597,6 +597,7 @@ public class TutorialBehaviour : MonoBehaviour
             case 25:
                 ShowTextBox();
                 UnlockCamera();
+                StopHighlighting();
                 ModifyToCurentText();
                 ModifyTextBoxScale(650f, 85f);
                 break;
