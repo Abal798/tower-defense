@@ -38,7 +38,7 @@ public class TutorialBehaviour : MonoBehaviour
 
     [Header("espace GD")]
     public GameObject bottomPosition;
-    public string[] tutorialText;
+    [TextArea(4, 4)] public string[] tutorialText;
     public GameObject[] objectsToHideAndShow;
 
 
