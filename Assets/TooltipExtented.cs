@@ -85,7 +85,7 @@ public class TooltipExtented : MonoBehaviour
         ameliorationsTextExtented.SetText(ameliorations.ToString());
         pvTextExtented.SetText(pv);
         degatsTextExtented.SetText(""+ degats);
-        cadenceTextExtented.SetText(""+ cadence);
+        cadenceTextExtented.SetText(""+ cadence.ToString("F2") + " s");
         porteeTextExtented.SetText(""+ portee);
         surrEarthTextExtented.SetText("" + surrEarth);
         surrFireTextExtented.SetText("" + surrFire);
