@@ -72,6 +72,10 @@ public class TooltipManager : MonoBehaviour
         {
             TooltipUI.HideTooltip_Static();
         }
+        else
+        {
+            return;
+        }
         
         if (Input.mousePosition != lastMousePosition)
         {
