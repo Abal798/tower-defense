@@ -430,7 +430,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ChangeExpression(1, 17);
                 ModifyToCurentText();
                 ActivateGameobject(10); // Affiche le SoulsDisplay pour montrer les ressources
-                Highlight(new Vector2(-790, -350), new Vector2(3f, 3.5f)); // Highlight des Âmes
+                Highlight(new Vector2(-831, -380), new Vector2(3f, 3.8f)); // Highlight des Âmes
                 ModifyTextBoxScale(650f, 135f);
                 break;
             case 5:
@@ -475,7 +475,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ActivateGameobject(5);
                 ModifySpeakingCharacter(2);
                 ChangeExpression(1, 3);
-                Highlight(new Vector2(-90, -390), new Vector2(6.5f, 3.4f)); // Highlight des différentes tours
+                Highlight(new Vector2(-120, -425), new Vector2(5, 2.7f)); // Highlight des différentes tours
                 MoveTextBox(new Vector3(1580, 150, 0));
                 ModifyTextBoxScale(650f, 205f);
                 HideNextButton();
@@ -490,9 +490,9 @@ public class TutorialBehaviour : MonoBehaviour
                 ChangeExpression(2, 8);
                 ModifySpeakingCharacter(2);
                 MoveTextBox(new Vector3(1605, 150, 0));
-                Highlight(new Vector2(263, -475), new Vector2(0.9f, 0.9f));
+                Highlight(new Vector2(161, -481), new Vector2(0.9f, 0.9f));
                 ActivateGameobject(9); // Affiche le bouton de Suppression
-                ModifyTextBoxScale(650f, 170f);
+                ModifyTextBoxScale(650f, 200f);
                 break;
             case 13:
                 StopHighlighting();
