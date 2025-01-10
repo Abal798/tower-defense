@@ -128,7 +128,7 @@ public class MenuManager : MonoBehaviour
         
         
         
-        if (activePanel == ingamePanel)
+        else if (activePanel == ingamePanel)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
