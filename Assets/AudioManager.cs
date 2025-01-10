@@ -54,7 +54,7 @@ public class AudioManager : MonoBehaviour
     {
         AM = this;
     }
-
+/*
     private void Start()
     {
         menusSounds = new List<AudioClip> { buttonClick, pageTurn};
@@ -74,7 +74,7 @@ public class AudioManager : MonoBehaviour
             musicSource.Play();
         }
     }
-
+*/
     public void PlaySfx(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);
@@ -91,7 +91,7 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Index invalide pour PlayMenuSound : " + i);
         }
     }
-
+/*
     public void PlayMusic()
     {
         if (RM.wave < waveToChangeMusic)
@@ -105,5 +105,5 @@ public class AudioManager : MonoBehaviour
 
         musicSource.loop = true; // Enable looping
         musicSource.Play(); // Start playing
-    }
+    }*/
 }

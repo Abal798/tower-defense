@@ -258,7 +258,7 @@ public class Building : MonoBehaviour
             else
             {
                 AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
-                UIM.DisplayAlert("cannot afford this");
+                UIM.DisplayAlert("pas assez d'âme");
                 return false;
             }
                 
@@ -273,7 +273,7 @@ public class Building : MonoBehaviour
             else
             {
                 AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
-                UIM.DisplayAlert("cannot afford this");
+                UIM.DisplayAlert("pas assez d'âme");
                 return false;
             }
         }
@@ -287,7 +287,7 @@ public class Building : MonoBehaviour
             else
             {
                 AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
-                UIM.DisplayAlert("cannot afford this");
+                UIM.DisplayAlert("pas assez d'âme");
                 return false;
             }
         }
