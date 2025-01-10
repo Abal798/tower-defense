@@ -3156,7 +3156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1749ad3ff0f06c44bbedb8089f448721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltipDelay: 0.5
+  tooltipDelay: 0.3
   mainTilemap: {fileID: 1526346545}
 --- !u!114 &744501583
 MonoBehaviour:

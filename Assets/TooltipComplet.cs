@@ -79,7 +79,7 @@ public class TooltipComplet : MonoBehaviour
         ameliorationsText.SetText(ameliorations.ToString());
         pvText.SetText(pv);
         degatsText.SetText(""+ degats);
-        cadenceText.SetText(""+ cadence);
+        cadenceText.SetText(""+ cadence.ToString("F2") + " s");
         porteeText.SetText(""+ portee);
 
         for (int i = 0; i < listImage.Count; i++)
