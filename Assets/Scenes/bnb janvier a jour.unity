@@ -620,7 +620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &64261802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -633,6 +633,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fb41a086e2b28f48af322cd18d34596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RM: {fileID: 0}
+  waveToChangeMusic: 0
   musicSource: {fileID: 439077683}
   SFXSource: {fileID: 1042538939}
   menusSoundsSource: {fileID: 1985097464}
@@ -654,6 +656,9 @@ MonoBehaviour:
   towerSelect: {fileID: 8300000, guid: affdcbfb0221df245886c490473c8e9c, type: 3}
   towerDeath: {fileID: 8300000, guid: a105befc4bd72584fa1a3caf317a5cf9, type: 3}
   towerUpgrade: {fileID: 8300000, guid: 0f4ac9fca82c4e9449c8d6527b9e73fa, type: 3}
+  musicMenu: {fileID: 0}
+  musicWaveBeginning: {fileID: 0}
+  musicWaveEnd: {fileID: 0}
 --- !u!4 &64261803
 Transform:
   m_ObjectHideFlags: 0
@@ -30504,6 +30509,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
+    - target: {fileID: 756782952832735625, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 863349419229759656, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
