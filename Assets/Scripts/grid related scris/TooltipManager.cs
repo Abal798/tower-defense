@@ -12,6 +12,7 @@ public class TooltipManager : MonoBehaviour
     private float timer;
     private bool tooltipActive;
     public Tilemap mainTilemap;
+    public List<ButtonsUITooltip> listButtonUI;
 
     private void Start()
     {
@@ -26,7 +27,50 @@ public class TooltipManager : MonoBehaviour
             TooltipExtented.HideTooltip_Static();
             TooltipComplet.HideTooltip_Static();
             TooltipCases.HideTooltip_Static();
-            return;
+
+            
+            bool tooltipShown = false; 
+
+            foreach (ButtonsUITooltip possibleButton in listButtonUI)
+            {
+
+                if (EventSystem.current.IsPointerOverGameObject())
+                {
+                    PointerEventData pointerData = new PointerEventData(EventSystem.current)
+                    {
+                        position = Input.mousePosition
+                    };
+
+                    List<RaycastResult> raycastResults = new List<RaycastResult>();
+                    EventSystem.current.RaycastAll(pointerData, raycastResults);
+
+                    foreach (RaycastResult result in raycastResults)
+                    {
+                        if (result.gameObject == possibleButton.button)
+                        {
+                            TooltipUI.ShowToolTip_Static(possibleButton.tooltipName, possibleButton.tooltipDescription);
+                            tooltipShown = true; 
+                            break; 
+                        }
+                    }
+
+                    
+                    if (tooltipShown)
+                    {
+                        break;
+                    }
+                }
+            }
+            
+            if (!tooltipShown)
+            {
+                TooltipUI.HideTooltip_Static();
+            }
+        }
+
+        if (!EventSystem.current.IsPointerOverGameObject())
+        {
+            TooltipUI.HideTooltip_Static();
         }
         
         if (Input.mousePosition != lastMousePosition)
@@ -119,4 +163,13 @@ public class TooltipManager : MonoBehaviour
         }
         
     }
+}
+
+[System.Serializable]
+public class ButtonsUITooltip
+{
+    public GameObject button;
+    public string tooltipName;
+    [TextArea(2, 2)] public string tooltipDescription;
+    
 }
