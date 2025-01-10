@@ -252,6 +252,13 @@ public class MenuManager : MonoBehaviour
         activePanel = keyRebindingPanel;
     }
 
+    public void QuitKeyPanel()
+    {
+        keyRebindingPanel.SetActive(false);
+        pausePanel.SetActive(true);
+        activePanel = pausePanel;
+    }
+
     public void FastButtonPressed(Button button)
     {
         gameManager.ChangeTimeScale(button);
