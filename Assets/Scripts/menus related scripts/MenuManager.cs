@@ -111,6 +111,23 @@ public class MenuManager : MonoBehaviour
             
         }
 
+        if (activePanel != ingamePanel)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (activePanel == pausePanel)
+                {
+                    ResumeGame();
+                }
+                else
+                {
+                    QuitThisPanel(activePanel);
+                }
+            }
+        }
+        
+        
+        
         if (activePanel == ingamePanel)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
@@ -140,20 +157,7 @@ public class MenuManager : MonoBehaviour
             }
         }
 
-        if (activePanel != ingamePanel)
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                if (activePanel == pausePanel)
-                {
-                    ResumeGame();
-                }
-                else
-                {
-                    QuitThisPanel(activePanel);
-                }
-            }
-        }
+        
         
         
         if (Input.GetKeyDown(KeyCode.S))
