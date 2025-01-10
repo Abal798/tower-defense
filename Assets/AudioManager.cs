@@ -5,6 +5,11 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager AM;
+    public RessourcesManager RM;
+
+
+
+    [Header("parametres")] public int waveToChangeMusic;
     
     [Header("audio sources")]
     [SerializeField] private AudioSource musicSource;
@@ -40,6 +45,11 @@ public class AudioManager : MonoBehaviour
     public AudioClip towerDeath;
     public AudioClip towerUpgrade;
 
+    [Header("----------musiques----------")]
+    public AudioClip musicMenu;
+    public AudioClip musicWaveBeginning;
+    public AudioClip musicWaveEnd;
+    
     private void Awake()
     {
         AM = this;
@@ -48,6 +58,21 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         menusSounds = new List<AudioClip> { buttonClick, pageTurn};
+        PlayMusic();
+    }
+    
+    private void Update()
+    {
+        if (musicSource.clip == musicWaveBeginning && RM.wave >= waveToChangeMusic)
+        {
+            musicSource.clip = musicWaveEnd;
+            musicSource.Play();
+        }
+        else if (musicSource.clip == musicWaveEnd && RM.wave < waveToChangeMusic)
+        {
+            musicSource.clip = musicWaveBeginning;
+            musicSource.Play();
+        }
     }
 
     public void PlaySfx(AudioClip clip)
@@ -65,5 +90,20 @@ public class AudioManager : MonoBehaviour
         {
             Debug.LogWarning("Index invalide pour PlayMenuSound : " + i);
         }
+    }
+
+    public void PlayMusic()
+    {
+        if (RM.wave < waveToChangeMusic)
+        {
+            musicSource.clip = musicWaveBeginning;
+        }
+        else
+        {
+            musicSource.clip = musicWaveEnd;
+        }
+
+        musicSource.loop = true; // Enable looping
+        musicSource.Play(); // Start playing
     }
 }
