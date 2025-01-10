@@ -13854,6 +13854,7 @@ MonoBehaviour:
   RM: {fileID: 0}
   spawn: {fileID: 0}
   speedSimulationButton: {fileID: 408075804577327899}
+  nextWaveButton: {fileID: 4744356249220203580}
   ingamePanel: {fileID: 361903337417157930}
   alchimiePanel: {fileID: 6498038585188560961}
   keyRebindingPanel: {fileID: 756782952832735625}
