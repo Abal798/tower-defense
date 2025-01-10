@@ -269,6 +269,7 @@ public class SpellPlacingScript : MonoBehaviour
         if (RM.spellSlotOne != null && RM.spellSlotOne.Count > 0 && butonSpell1updated == false)
         {
             butonSpell1updated = true;
+            boutonSpell1.gameObject.GetComponent<ButtonScaleSelection>().enabled = true;
             if(RM.spellSlotOne[0] == 1 && RM.spellSlotOne[1] == 1)boutonSpell1.gameObject.GetComponent<Image>().sprite = spellSprites[0];
             else if(RM.spellSlotOne[0] == 1 && RM.spellSlotOne[1] == 2)boutonSpell1.gameObject.GetComponent<Image>().sprite = spellSprites[1];
             else if(RM.spellSlotOne[0] == 1 && RM.spellSlotOne[1] == 3)boutonSpell1.gameObject.GetComponent<Image>().sprite = spellSprites[2];
@@ -283,11 +284,13 @@ public class SpellPlacingScript : MonoBehaviour
         else if (RM.spellSlotOne != null && RM.spellSlotOne.Count > 0 == false)
         {
             butonSpell1updated = false;
-            boutonSpell1.SetActive(false);
+            boutonSpell1.gameObject.GetComponent<Image>().sprite = spellSprites[9];
+            boutonSpell1.gameObject.GetComponent<ButtonScaleSelection>().enabled = false;
         }
         if (RM.spellSlotTwo != null && RM.spellSlotTwo.Count > 0 && butonSpell2updated == false)
         {
             butonSpell2updated = true;
+            boutonSpell2.gameObject.GetComponent<ButtonScaleSelection>().enabled = true;
             if(RM.spellSlotTwo[0] == 1 && RM.spellSlotTwo[1] == 1)boutonSpell2.gameObject.GetComponent<Image>().sprite = spellSprites[0];
             else if(RM.spellSlotTwo[0] == 1 && RM.spellSlotTwo[1] == 2)boutonSpell2.gameObject.GetComponent<Image>().sprite = spellSprites[1];
             else if(RM.spellSlotTwo[0] == 1 && RM.spellSlotTwo[1] == 3)boutonSpell2.gameObject.GetComponent<Image>().sprite = spellSprites[2];
@@ -302,11 +305,13 @@ public class SpellPlacingScript : MonoBehaviour
         else if (RM.spellSlotTwo != null && RM.spellSlotTwo.Count > 0 == false)
         {
             butonSpell2updated = false;
-            boutonSpell2.SetActive(false);
+            boutonSpell2.gameObject.GetComponent<Image>().sprite = spellSprites[9];
+            boutonSpell2.gameObject.GetComponent<ButtonScaleSelection>().enabled = false;
         }
         if (RM.spellSlotThree != null && RM.spellSlotThree.Count > 0 && butonSpell3updated == false)
         {
             butonSpell3updated = true;
+            boutonSpell3.gameObject.GetComponent<ButtonScaleSelection>().enabled = true;
             if(RM.spellSlotThree[0] == 1 && RM.spellSlotThree[1] == 1)boutonSpell3.gameObject.GetComponent<Image>().sprite = spellSprites[0];
             else if(RM.spellSlotThree[0] == 1 && RM.spellSlotThree[1] == 2)boutonSpell3.gameObject.GetComponent<Image>().sprite = spellSprites[1];
             else if(RM.spellSlotThree[0] == 1 && RM.spellSlotThree[1] == 3)boutonSpell3.gameObject.GetComponent<Image>().sprite = spellSprites[2];
@@ -321,7 +326,8 @@ public class SpellPlacingScript : MonoBehaviour
         else if (RM.spellSlotThree != null && RM.spellSlotThree.Count > 0 == false)
         {
             butonSpell3updated = false;
-            boutonSpell3.SetActive(false);
+            boutonSpell3.gameObject.GetComponent<Image>().sprite = spellSprites[9];
+            boutonSpell3.gameObject.GetComponent<ButtonScaleSelection>().enabled = false;
         }
     }
     
