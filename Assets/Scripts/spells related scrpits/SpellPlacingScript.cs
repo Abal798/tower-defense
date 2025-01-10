@@ -16,6 +16,8 @@ public class SpellPlacingScript : MonoBehaviour
     public Tilemap MainTilemap;
     public RessourcesManager RM;
 
+    public Sprite[] spellSprites;
+
     public bool placementSpell1;
     public bool placementSpell2;
     public bool placementSpell3;
@@ -267,26 +269,15 @@ public class SpellPlacingScript : MonoBehaviour
         if (RM.spellSlotOne != null && RM.spellSlotOne.Count > 0 && butonSpell1updated == false)
         {
             butonSpell1updated = true;
-            string spellContent = "";
-            List<string> elements = new List<string>();
-
-            for (int i = 0; i < RM.spellSlotOne.Count; i++)
-            {
-                if (RM.spellSlotOne[i] == 1)
-                {
-                    elements.Add("feu");
-                }
-                else if (RM.spellSlotOne[i] == 2)
-                {
-                    elements.Add("eau");
-                }
-                else if (RM.spellSlotOne[i] == 3)
-                {
-                    elements.Add("terre");
-                }
-            }
-            spellContent = string.Join(" + ", elements);
-            boutonSpell1.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "sort : " + spellContent;
+            if(RM.spellSlotOne[0] == 1 && RM.spellSlotOne[1] == 1)boutonSpell1.gameObject.GetComponent<Image>().sprite = spellSprites[0];
+            else if(RM.spellSlotOne[0] == 1 && RM.spellSlotOne[1] == 2)boutonSpell1.gameObject.GetComponent<Image>().sprite = spellSprites[1];
+            else if(RM.spellSlotOne[0] == 1 && RM.spellSlotOne[1] == 3)boutonSpell1.gameObject.GetComponent<Image>().sprite = spellSprites[2];
+            else if(RM.spellSlotOne[0] == 2 && RM.spellSlotOne[1] == 1)boutonSpell1.gameObject.GetComponent<Image>().sprite = spellSprites[3];
+            else if(RM.spellSlotOne[0] == 2 && RM.spellSlotOne[1] == 2)boutonSpell1.gameObject.GetComponent<Image>().sprite = spellSprites[4];
+            else if(RM.spellSlotOne[0] == 2 && RM.spellSlotOne[1] == 3)boutonSpell1.gameObject.GetComponent<Image>().sprite = spellSprites[5];
+            else if(RM.spellSlotOne[0] == 3 && RM.spellSlotOne[1] == 1)boutonSpell1.gameObject.GetComponent<Image>().sprite = spellSprites[6];
+            else if(RM.spellSlotOne[0] == 3 && RM.spellSlotOne[1] == 2)boutonSpell1.gameObject.GetComponent<Image>().sprite = spellSprites[7];
+            else if(RM.spellSlotOne[0] == 3 && RM.spellSlotOne[1] == 3)boutonSpell1.gameObject.GetComponent<Image>().sprite = spellSprites[8];
             boutonSpell1.SetActive(true);
         }
         else if (RM.spellSlotOne != null && RM.spellSlotOne.Count > 0 == false)
@@ -297,27 +288,15 @@ public class SpellPlacingScript : MonoBehaviour
         if (RM.spellSlotTwo != null && RM.spellSlotTwo.Count > 0 && butonSpell2updated == false)
         {
             butonSpell2updated = true;
-            string spellContent = "";
-            List<string> elements = new List<string>();
-
-            for (int i = 0; i < RM.spellSlotTwo.Count; i++)
-            {
-                if (RM.spellSlotTwo[i] == 1)
-                {
-                    elements.Add("feu");
-                }
-                else if (RM.spellSlotTwo[i] == 2)
-                {
-                    elements.Add("eau");
-                }
-                else if (RM.spellSlotTwo[i] == 3)
-                {
-                    elements.Add("terre");
-                }
-            }
-
-            spellContent = string.Join(" + ", elements);
-            boutonSpell2.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "sort : " + spellContent;
+            if(RM.spellSlotTwo[0] == 1 && RM.spellSlotTwo[1] == 1)boutonSpell2.gameObject.GetComponent<Image>().sprite = spellSprites[0];
+            else if(RM.spellSlotTwo[0] == 1 && RM.spellSlotTwo[1] == 2)boutonSpell2.gameObject.GetComponent<Image>().sprite = spellSprites[1];
+            else if(RM.spellSlotTwo[0] == 1 && RM.spellSlotTwo[1] == 3)boutonSpell2.gameObject.GetComponent<Image>().sprite = spellSprites[2];
+            else if(RM.spellSlotTwo[0] == 2 && RM.spellSlotTwo[1] == 1)boutonSpell2.gameObject.GetComponent<Image>().sprite = spellSprites[3];
+            else if(RM.spellSlotTwo[0] == 2 && RM.spellSlotTwo[1] == 2)boutonSpell2.gameObject.GetComponent<Image>().sprite = spellSprites[4];
+            else if(RM.spellSlotTwo[0] == 2 && RM.spellSlotTwo[1] == 3)boutonSpell2.gameObject.GetComponent<Image>().sprite = spellSprites[5];
+            else if(RM.spellSlotTwo[0] == 3 && RM.spellSlotTwo[1] == 1)boutonSpell2.gameObject.GetComponent<Image>().sprite = spellSprites[6];
+            else if(RM.spellSlotTwo[0] == 3 && RM.spellSlotTwo[1] == 2)boutonSpell2.gameObject.GetComponent<Image>().sprite = spellSprites[7];
+            else if(RM.spellSlotTwo[0] == 3 && RM.spellSlotTwo[1] == 3)boutonSpell2.gameObject.GetComponent<Image>().sprite = spellSprites[8];
             boutonSpell2.SetActive(true);
         }
         else if (RM.spellSlotTwo != null && RM.spellSlotTwo.Count > 0 == false)
@@ -328,27 +307,15 @@ public class SpellPlacingScript : MonoBehaviour
         if (RM.spellSlotThree != null && RM.spellSlotThree.Count > 0 && butonSpell3updated == false)
         {
             butonSpell3updated = true;
-            string spellContent = "";
-            List<string> elements = new List<string>();
-
-            for (int i = 0; i < RM.spellSlotThree.Count; i++)
-            {
-                if (RM.spellSlotThree[i] == 1)
-                {
-                    elements.Add("feu");
-                }
-                else if (RM.spellSlotThree[i] == 2)
-                {
-                    elements.Add("eau");
-                }
-                else if (RM.spellSlotThree[i] == 3)
-                {
-                    elements.Add("terre");
-                }
-            }
-
-            spellContent = string.Join(" + ", elements);
-            boutonSpell3.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "sort : " + spellContent;
+            if(RM.spellSlotThree[0] == 1 && RM.spellSlotThree[1] == 1)boutonSpell3.gameObject.GetComponent<Image>().sprite = spellSprites[0];
+            else if(RM.spellSlotThree[0] == 1 && RM.spellSlotThree[1] == 2)boutonSpell3.gameObject.GetComponent<Image>().sprite = spellSprites[1];
+            else if(RM.spellSlotThree[0] == 1 && RM.spellSlotThree[1] == 3)boutonSpell3.gameObject.GetComponent<Image>().sprite = spellSprites[2];
+            else if(RM.spellSlotThree[0] == 2 && RM.spellSlotThree[1] == 1)boutonSpell3.gameObject.GetComponent<Image>().sprite = spellSprites[3];
+            else if(RM.spellSlotThree[0] == 2 && RM.spellSlotThree[1] == 2)boutonSpell3.gameObject.GetComponent<Image>().sprite = spellSprites[4];
+            else if(RM.spellSlotThree[0] == 2 && RM.spellSlotThree[1] == 3)boutonSpell3.gameObject.GetComponent<Image>().sprite = spellSprites[5];
+            else if(RM.spellSlotThree[0] == 3 && RM.spellSlotThree[1] == 1)boutonSpell3.gameObject.GetComponent<Image>().sprite = spellSprites[6];
+            else if(RM.spellSlotThree[0] == 3 && RM.spellSlotThree[1] == 2)boutonSpell3.gameObject.GetComponent<Image>().sprite = spellSprites[7];
+            else if(RM.spellSlotThree[0] == 3 && RM.spellSlotThree[1] == 3)boutonSpell3.gameObject.GetComponent<Image>().sprite = spellSprites[8];
             boutonSpell3.SetActive(true);
         }
         else if (RM.spellSlotThree != null && RM.spellSlotThree.Count > 0 == false)
