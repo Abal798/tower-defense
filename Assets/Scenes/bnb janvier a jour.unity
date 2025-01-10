@@ -1728,7 +1728,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &515313141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29683,17 +29683,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2031619460}
   m_CullTransparentMesh: 1
---- !u!114 &2072939392 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6181365742503175958, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-  m_PrefabInstance: {fileID: 5659166513698722036}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 796cfa56d701b424aa8fa0d0633301d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2076319779
 GameObject:
   m_ObjectHideFlags: 0
@@ -29992,42 +29981,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 33284988490512513, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 95.1288
-      objectReference: {fileID: 0}
-    - target: {fileID: 33284988490512513, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 160.1801
-      objectReference: {fileID: 0}
-    - target: {fileID: 33284988490512513, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.2605
-      objectReference: {fileID: 0}
-    - target: {fileID: 33284988490512513, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.99988645
-      objectReference: {fileID: 0}
-    - target: {fileID: 33284988490512513, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.008802021
-      objectReference: {fileID: 0}
-    - target: {fileID: 33284988490512513, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.008649722
-      objectReference: {fileID: 0}
-    - target: {fileID: 33284988490512513, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.008649722
-      objectReference: {fileID: 0}
-    - target: {fileID: 33284988490512513, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 699.16046
-      objectReference: {fileID: 0}
-    - target: {fileID: 33284988490512513, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 117.24393
-      objectReference: {fileID: 0}
     - target: {fileID: 253483671401024422, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -30038,7 +29991,7 @@ PrefabInstance:
       objectReference: {fileID: 64261802}
     - target: {fileID: 361903337417157930, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 379720308355675225, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -30052,14 +30005,34 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
+    - target: {fileID: 487294404422897505, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 252
+      objectReference: {fileID: 0}
     - target: {fileID: 526045698442981856, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
+    - target: {fileID: 569437923439610980, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_text
+      value: "Cet adversaire est tr\xE8s particulier, il apparait \xE0 la vague 8
+        et pour une raison inconue, il ne se dirige pas vers nous mais vers les tours
+        et est si d\xE9vou\xE9 \xE0 sa cause que pour infliger de grands d\xE9g\xE2ts
+        il est pr\xEAt a sacrifier jusqu'\xE0 sa propre vie.\n\n\npv : 130\ndegats
+        : 120\nvitesse : 3"
+      objectReference: {fileID: 0}
     - target: {fileID: 573478970749491883, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: RM
       value: 
       objectReference: {fileID: 744501577}
+    - target: {fileID: 608329350124145409, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -235
+      objectReference: {fileID: 0}
+    - target: {fileID: 608329350124145409, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -200
+      objectReference: {fileID: 0}
     - target: {fileID: 716906023971312275, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -30088,33 +30061,50 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
-    - target: {fileID: 1248701632584669207, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 1197691431803053698, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_text
+      value: "aper\xE7u  du drapeau :"
       objectReference: {fileID: 0}
-    - target: {fileID: 1270915060005628595, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2072939392}
-    - target: {fileID: 1270915060005628595, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetMusicVolume
+    - target: {fileID: 1197691431803053698, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_margin.x
+      value: -9.052856
       objectReference: {fileID: 0}
-    - target: {fileID: 1317138065628552025, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+    - target: {fileID: 1200385535348925224, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 996
+      value: -199
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200385535348925224, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -241
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239907713390802907, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -199
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239907713390802907, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -205
       objectReference: {fileID: 0}
     - target: {fileID: 1320214689579317291, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
-    - target: {fileID: 1631971357892444025, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_text
-      value: apercu
-      objectReference: {fileID: 0}
     - target: {fileID: 1778374883391844044, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_text
-      value: 'apercu :'
+      value: "aper\xE7u :"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982254749624267112, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2364120866818561877, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_text
+      value: "Le dragon sacr\xE9 est d\xE9finitivement l'ennemi le plus coriace que
+        nous avons affront\xE9. Il s'agit d'un des quatres puissants gardiens de
+        l'\xE9quilibre de la magie.  De nombreux livres comptent sa l\xE9gende m\xEAme
+        si peu sont ceux qui peuvent se vanter de l'avoir vu de leurs propres yeux.
+        Nos activit\xE9s ont d\xFB le r\xE9veiller de son long sommeil ...\n\npv
+        : 30000\ndegats : 200\nvitesse : 1"
       objectReference: {fileID: 0}
     - target: {fileID: 2365505926185406699, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -30136,6 +30126,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
+    - target: {fileID: 2428081296163622713, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -341
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428081296163622713, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -223
+      objectReference: {fileID: 0}
     - target: {fileID: 2456636085125931273, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -30156,6 +30154,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
+    - target: {fileID: 2803683383438712323, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811266322939886250, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -318
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811266322939886250, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -134
+      objectReference: {fileID: 0}
     - target: {fileID: 2847147997389057001, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -30192,53 +30202,13 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
-    - target: {fileID: 3305795341281014912, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 99.5348
-      objectReference: {fileID: 0}
-    - target: {fileID: 3305795341281014912, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 166.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 3305795341281014912, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 854.8512
-      objectReference: {fileID: 0}
-    - target: {fileID: 3305795341281014912, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 114.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 3340161813971981634, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2072939392}
-    - target: {fileID: 3340161813971981634, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetSFXVolume
-      objectReference: {fileID: 0}
     - target: {fileID: 3470395213416276806, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
-    - target: {fileID: 3642416798486154952, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_text
-      value: 'apercu :'
-      objectReference: {fileID: 0}
-    - target: {fileID: 3956880727265447895, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3956880727265447895, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 708
-      objectReference: {fileID: 0}
-    - target: {fileID: 3956880727265447895, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 26
-      objectReference: {fileID: 0}
-    - target: {fileID: 3961060231819871319, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 851
+    - target: {fileID: 4025021764023283664, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4039158788852819238, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -30252,46 +30222,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 744501585}
-    - target: {fileID: 4077863203437615457, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 36aa277acbdb2304598984ed90708c1d, type: 3}
     - target: {fileID: 4299222822625494986, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
-    - target: {fileID: 4377699369969072716, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4381655601272891306, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_text
-      value: 'apercu :'
+      value: "aper\xE7u :"
       objectReference: {fileID: 0}
     - target: {fileID: 4439061181521774462, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
-    - target: {fileID: 4470950722436458727, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 280
-      objectReference: {fileID: 0}
-    - target: {fileID: 4470950722436458727, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -408
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484957636731069728, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 82
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484957636731069728, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 108
-      objectReference: {fileID: 0}
     - target: {fileID: 4604637325859003478, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
+    - target: {fileID: 4620779812540909594, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4821520329835626024, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -30328,14 +30278,6 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 744501581}
-    - target: {fileID: 5353958447121507183, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 36aa277acbdb2304598984ed90708c1d, type: 3}
-    - target: {fileID: 5391091623451374332, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 4fce65ceff5780d4a8c6b80cb1d28945, type: 3}
     - target: {fileID: 5398882395762765267, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -30344,17 +30286,13 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
-    - target: {fileID: 5477914348934919865, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_text
-      value: 'apercu :'
-      objectReference: {fileID: 0}
     - target: {fileID: 5681471046214576811, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
     - target: {fileID: 5814791552706324045, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_text
-      value: 'apercu :'
+      value: "aper\xE7u :"
       objectReference: {fileID: 0}
     - target: {fileID: 5832385534222114866, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -30380,14 +30318,22 @@ PrefabInstance:
       propertyPath: RM
       value: 
       objectReference: {fileID: 744501577}
-    - target: {fileID: 6268008145827525613, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_text
-      value: 'apercu :'
+    - target: {fileID: 6498038585188560961, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6565754713343163513, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 64261802}
+    - target: {fileID: 6530147431446335962, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -256
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530147431446335962, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -345
+      objectReference: {fileID: 0}
+    - target: {fileID: 6554920045847878245, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6592259351321667751, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -30400,33 +30346,44 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
-    - target: {fileID: 6717883148261508810, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6837587868240894001, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
-    - target: {fileID: 6901367083552971887, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+    - target: {fileID: 6995539879364850206, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_text
-      value: 'apercu :'
+      value: "Cet adversaire \xE0 su se d\xE9marquer des autres parmis les enemis,
+        en effet, il s'agit d'un leader qui porte un drapeau avec lui. il appara\xEEt
+        a la vague 12 et \xE0 sa mort il le plante dans le sol. Ce drapeau sert de
+        symbole aux soldats \xE9l\xE9mentaires qui y aparaissent directement par
+        groupe de 10.\n\npv : 200\ndegats : 20\nvitesse : 1"
       objectReference: {fileID: 0}
     - target: {fileID: 7099039543849285790, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7362028507890678067, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5c5fddc325d86a74a87a10e504622621, type: 3}
-    - target: {fileID: 7868524316712332910, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
+    - target: {fileID: 7311238239161808072, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_text
+      value: "Cet ennemi est beaucoup plus robuste qu'un soldat elementaire, et m\xEAme
+        si il adopte un comportement similaire, il faut s'en m\xE9fier. Il arrive
+        en moins grand groupe mais de ce que je vois a l'horizon, ils arrivent tout
+        de m\xEAme nombreux.\n\npv : 1750\ndegats : 45\nvitesse : 0.75"
       objectReference: {fileID: 0}
-    - target: {fileID: 7906994050370954907, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 250
+    - target: {fileID: 7583540401188822628, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_text
+      value: "aper\xE7u :"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7756923662617288670, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7963734170706038160, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -278
+      objectReference: {fileID: 0}
+    - target: {fileID: 7963734170706038160, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -249
       objectReference: {fileID: 0}
     - target: {fileID: 8030935312486708231, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -30436,22 +30393,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
-    - target: {fileID: 8159842786700480080, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 98.2432
-      objectReference: {fileID: 0}
-    - target: {fileID: 8159842786700480080, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 164.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 8159842786700480080, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 987.6216
-      objectReference: {fileID: 0}
-    - target: {fileID: 8159842786700480080, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 118.609985
-      objectReference: {fileID: 0}
     - target: {fileID: 8205919177039476357, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -30460,41 +30401,17 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
-    - target: {fileID: 8312082264263945871, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_fontColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8312082264263945871, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_fontColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8312082264263945871, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_fontColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8312082264263945871, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 8354920368589055239, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 984.592
-      objectReference: {fileID: 0}
-    - target: {fileID: 8354920368589055239, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 1136.8154
-      objectReference: {fileID: 0}
-    - target: {fileID: 8354920368589055239, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 501.1311
-      objectReference: {fileID: 0}
-    - target: {fileID: 8354920368589055239, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 49.25122
+    - target: {fileID: 8375926026399063862, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_text
+      value: "De ce que j'ai vu, cet ennemi n'est pas tr\xE8s puissant en soit mais
+        il apparait toujours en tr\xE8s grand nombre et il peut devenir difficile
+        de tous les g\xE9rer. Il se dirige vers notre base s'il ne voit aucune tour
+        autour de lui, sinon il fonce vers ce qu'il a de plus proche.\n\npv : 100\ndegats
+        : 15\nvitesse : 1"
       objectReference: {fileID: 0}
     - target: {fileID: 8439158960735340322, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_text
-      value: 'apercu :'
+      value: "aper\xE7u :"
       objectReference: {fileID: 0}
     - target: {fileID: 8454834549062342814, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -30588,10 +30505,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
-    - target: {fileID: 8617067944581410720, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 36aa277acbdb2304598984ed90708c1d, type: 3}
+    - target: {fileID: 8635871044946976903, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8649197288061485094, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849232268204320286, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865227272923684884, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_text
+      value: "Soldat \xE9l\xE9mentaire"
+      objectReference: {fileID: 0}
     - target: {fileID: 8982504424315163477, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -30600,30 +30529,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
+    - target: {fileID: 9013014615750806695, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -444
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013014615750806695, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -340
+      objectReference: {fileID: 0}
     - target: {fileID: 9023052990492931848, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
-    - target: {fileID: 9090518519642834542, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_fontColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9090518519642834542, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_fontColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9090518519642834542, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_fontColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9090518519642834542, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4278190080
-      objectReference: {fileID: 0}
-    - target: {fileID: 9106181615256027372, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

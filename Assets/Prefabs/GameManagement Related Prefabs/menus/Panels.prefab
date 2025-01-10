@@ -349,7 +349,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'appercu :'
+  m_text: 'apercu :'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
   m_sharedMaterial: {fileID: 2219448373817458997, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
@@ -1513,7 +1513,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -490, y: -291}
+  m_AnchoredPosition: {x: -278, y: -249}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4564158048802768766
@@ -1544,7 +1544,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'appercu :'
+  m_text: "aper\xE7u :"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
   m_sharedMaterial: {fileID: 2219448373817458997, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
@@ -2906,7 +2906,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6181365742503175958}
         m_TargetAssemblyTypeName: VolumeSettings, Assembly-CSharp
         m_MethodName: SetMusicVolume
         m_Mode: 1
@@ -3508,7 +3508,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 102, y: 263}
+  m_AnchoredPosition: {x: 82, y: 108}
   m_SizeDelta: {x: 750, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1835483291523514107
@@ -4211,11 +4211,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Cet adversaire a su se d\xE9marquer des autres parmis les enemis, en effet,
-    il s'agit d'un leader qui porte un drapeau avec lui. il apparait a la vague 12
-    et \xE0 sa mort il le plante dans le sol. Ce drapeau sert de symbole aux soldats
-    \xE9l\xE9mentaires qui y aparaissent directement par groupe de 10.\npv : 200\ndegats
-    : 20\nvitesse : 1"
+  m_text: "Cet adversaire \xE0 su se d\xE9marquer des autres parmis les enemis, en
+    effet, il s'agit d'un leader qui porte un drapeau avec lui. il appara\xEEt a
+    la vague 12 et \xE0 sa mort il le plante dans le sol. Ce drapeau sert de symbole
+    aux soldats \xE9l\xE9mentaires qui y aparaissent directement par groupe de 10.\n\npv
+    : 200\ndegats : 20\nvitesse : 1"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
   m_sharedMaterial: {fileID: 2219448373817458997, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
@@ -4483,7 +4483,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'appercu :'
+  m_text: "aper\xE7u :"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
   m_sharedMaterial: {fileID: 2219448373817458997, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
@@ -5493,7 +5493,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 147.79999, y: 186.9}
+  m_AnchoredPosition: {x: 206.4, y: 186.9}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4394997163659772251
@@ -8200,7 +8200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8151917680384066715
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8289,7 +8289,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Soldat El\xE9mentaire"
+  m_text: "Soldat \xE9l\xE9mentaire"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
   m_sharedMaterial: {fileID: 2219448373817458997, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
@@ -8940,7 +8940,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -314, y: -265}
+  m_AnchoredPosition: {x: -199, y: -205}
   m_SizeDelta: {x: 191.7444, y: 229.0864}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8485010033689563981
@@ -9127,8 +9127,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -9922,7 +9922,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'appercu :'
+  m_text: 'apercu :'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
   m_sharedMaterial: {fileID: 2219448373817458997, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
@@ -11078,7 +11078,7 @@ RectTransform:
   m_Father: {fileID: 944523909121934377}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -11668,7 +11668,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ed471a5909283994595e174b92139651, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 36aa277acbdb2304598984ed90708c1d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12216,7 +12216,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'appercu :'
+  m_text: 'apercu :'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
   m_sharedMaterial: {fileID: 2219448373817458997, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
@@ -12509,7 +12509,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &680277959196904854
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12569,7 +12569,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -451, y: -396}
+  m_AnchoredPosition: {x: -256, y: -345}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3672875105015898838
@@ -13410,8 +13410,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 97, y: -314}
-  m_SizeDelta: {x: 176.27, y: 176.2708}
+  m_AnchoredPosition: {x: 97, y: -319.4}
+  m_SizeDelta: {x: 179.1, y: 178.6716}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4013084556464063839
 CanvasRenderer:
@@ -13436,13 +13436,13 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: 0, y: 42.88, z: 0, w: 43.59}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 209c2cd6ab3b1634d913a472612a4d34, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 4fce65ceff5780d4a8c6b80cb1d28945, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -13450,7 +13450,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 2.45
 --- !u!114 &1320214689579317291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13577,140 +13577,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!1 &3056307408538338970
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7017957257964106778}
-  - component: {fileID: 8843154603649867225}
-  - component: {fileID: 800908351880229754}
-  m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &7017957257964106778
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3056307408538338970}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 985634389660987693}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &8843154603649867225
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3056307408538338970}
-  m_CullTransparentMesh: 1
---- !u!114 &800908351880229754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3056307408538338970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: "page pr\xE9c\xE9dente"
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e213a8c61db4cd047b994a645316b25b, type: 2}
-  m_sharedMaterial: {fileID: -4177598586212601633, guid: e213a8c61db4cd047b994a645316b25b, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &3061685419910063991
 GameObject:
   m_ObjectHideFlags: 0
@@ -15040,7 +14906,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -32.200012, y: 186.9}
+  m_AnchoredPosition: {x: 3.4, y: 186.9}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5391307136118623715
@@ -15453,7 +15319,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 987.6216, y: 114.8902}
+  m_AnchoredPosition: {x: 987.6216, y: 118.609985}
   m_SizeDelta: {x: 98.2432, y: 164.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6683385937359493235
@@ -16687,7 +16553,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -490, y: -291}
+  m_AnchoredPosition: {x: -318, y: -134}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4685527992790990241
@@ -16718,7 +16584,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'appercu :'
+  m_text: "aper\xE7u :"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
   m_sharedMaterial: {fileID: 2219448373817458997, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
@@ -17100,7 +16966,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -573, y: 230}
+  m_AnchoredPosition: {x: -573, y: 252}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9206571307710048462
@@ -17131,10 +16997,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Un ennemi tres commun mais qui tire sa force de son nombre. il apparait
-    des la vague 1. il en veut directement a la tour et ne se pr\xE9ocupa des obstacles
-    sur son chemin que si ils sont proches de lui.\npv : 100\ndegats : 15\nvitesse
-    : 1"
+  m_text: "De ce que j'ai vu, cet ennemi n'est pas tr\xE8s puissant en soit mais
+    il apparait toujours en tr\xE8s grand nombre et il peut devenir difficile de
+    tous les g\xE9rer. Il se dirige vers notre base s'il ne voit aucune tour autour
+    de lui, sinon il fonce vers ce qu'il a de plus proche.\n\npv : 100\ndegats :
+    15\nvitesse : 1"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
   m_sharedMaterial: {fileID: 2219448373817458997, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
@@ -17537,10 +17404,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Le dragon sacr\xE9 est d\xE9finitivement l'ennemi le plus coriace que
-    nous avons affront\xE9, il s'agit d'un des quatres puissants gardiens de l'\xE9quilibre
-    de la magie. De nombreux livres comptent sa l\xE9gende m\xEAme si peu sont ceux
-    qui peuvent se vanter de l'avoir vu de leurs propre yeux. Nos activit\xE9s ont
-    du le reveiller de son long sommeil ...\n\npv : 30000\ndegats : 200\nvitesse
+    nous avons affront\xE9. Il s'agit d'un des quatres puissants gardiens de l'\xE9quilibre
+    de la magie.  De nombreux livres comptent sa l\xE9gende m\xEAme si peu sont ceux
+    qui peuvent se vanter de l'avoir vu de leurs propres yeux. Nos activit\xE9s ont
+    d\xFB le r\xE9veiller de son long sommeil ...\n\npv : 30000\ndegats : 200\nvitesse
     : 1"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
@@ -18746,7 +18613,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6982220908588056277
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19116,10 +18983,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Cet adversaire est tr\xE8s particulier, il apparait a la vague 8 et pour
-    une raison inconue il ne se dirige pas vers nous mais vers les tours et est si
-    d\xE9vou\xE9 a sa cause que pour infliger de grands degats il est pr\xEAt a sacrifier
-    jusqu'\xE0 sa propre vie.\npv : 130\ndegats : 120\nvitesse : 3"
+  m_text: "Cet adversaire est tr\xE8s particulier, il apparait \xE0 la vague 8 et
+    pour une raison inconue, il ne se dirige pas vers nous mais vers les tours et
+    est si d\xE9vou\xE9 \xE0 sa cause que pour infliger de grands d\xE9g\xE2ts il
+    est pr\xEAt a sacrifier jusqu'\xE0 sa propre vie.\n\n\npv : 130\ndegats : 120\nvitesse
+    : 3"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
   m_sharedMaterial: {fileID: 2219448373817458997, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
@@ -19773,8 +19641,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 530.7959, y: 15}
-  m_SizeDelta: {x: 1043.9218, y: 1205.3179}
+  m_AnchoredPosition: {x: 501.1311, y: 49.25122}
+  m_SizeDelta: {x: 984.592, y: 1136.8154}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2389146195581799164
 CanvasRenderer:
@@ -19804,7 +19672,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1f053952fe9b6e74894cdc054361b7e6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5c5fddc325d86a74a87a10e504622621, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21069,7 +20937,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -326, y: -214}
+  m_AnchoredPosition: {x: -199, y: -241}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8680060373062121544
@@ -21336,7 +21204,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1466158254113341184
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22504,7 +22372,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ed471a5909283994595e174b92139651, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 36aa277acbdb2304598984ed90708c1d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -22821,9 +22689,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Un ennemi moyennement commun  qui tire sa force de sa grande vitalit\xE9.
-    Il apparait a la vague 5. Il en veut directement a la tour et ne se pr\xE9ocupe
-    pas des obstacles sur son chemin.\npv : 1750\ndegats : 45\nvitesse : 0.75"
+  m_text: "Cet ennemi est beaucoup plus robuste qu'un soldat elementaire, et m\xEAme
+    si il adopte un comportement similaire, il faut s'en m\xE9fier. Il arrive en
+    moins grand groupe mais de ce que je vois a l'horizon, ils arrivent tout de m\xEAme
+    nombreux.\n\npv : 1750\ndegats : 45\nvitesse : 0.75"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
   m_sharedMaterial: {fileID: 2219448373817458997, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
@@ -23481,7 +23350,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6181365742503175958}
         m_TargetAssemblyTypeName: VolumeSettings, Assembly-CSharp
         m_MethodName: SetSFXVolume
         m_Mode: 1
@@ -24079,7 +23948,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'appercu :'
+  m_text: 'apercu :'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
   m_sharedMaterial: {fileID: 2219448373817458997, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
@@ -24874,7 +24743,7 @@ RectTransform:
   m_Father: {fileID: 2564764763104267794}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -25642,7 +25511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 236, y: -339}
+  m_AnchoredPosition: {x: 280, y: -408}
   m_SizeDelta: {x: 215, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5012662333639789524
@@ -26268,7 +26137,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -377, y: -257}
+  m_AnchoredPosition: {x: -341, y: -223}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &140509208963940543
@@ -26299,7 +26168,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'appercu :'
+  m_text: "aper\xE7u :"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
   m_sharedMaterial: {fileID: 2219448373817458997, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
@@ -27535,7 +27404,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'appercu :'
+  m_text: apercu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
   m_sharedMaterial: {fileID: 2219448373817458997, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
@@ -28565,7 +28434,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6846783733902292399
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30103,7 +29972,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 854.8512, y: 110.50021}
+  m_AnchoredPosition: {x: 854.8512, y: 114.22}
   m_SizeDelta: {x: 99.5348, y: 166.37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5026105343722554107
@@ -30270,211 +30139,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!1 &6786121132467180700
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 985634389660987693}
-  - component: {fileID: 7860298416234300489}
-  - component: {fileID: 8075363885140626461}
-  - component: {fileID: 6565754713343163513}
-  - component: {fileID: 28705618056571950}
-  - component: {fileID: 3287026415479600482}
-  m_Layer: 5
-  m_Name: PreviousPageButton (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &985634389660987693
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6786121132467180700}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7017957257964106778}
-  m_Father: {fileID: 8177116500173151767}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -630, y: -410}
-  m_SizeDelta: {x: 215, y: 90}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &7860298416234300489
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6786121132467180700}
-  m_CullTransparentMesh: 1
---- !u!114 &8075363885140626461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6786121132467180700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!114 &6565754713343163513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6786121132467180700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 8075363885140626461}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2079336929107962556}
-        m_TargetAssemblyTypeName: NavigateThroughMenuPages, Assembly-CSharp
-        m_MethodName: PreviousPage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSound
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &28705618056571950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6786121132467180700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e58d31102c12e439e486d3513f6d5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scaleSpeed: 10
---- !u!114 &3287026415479600482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6786121132467180700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 28705618056571950}
-          m_TargetAssemblyTypeName: ButtonScaleSelection, Assembly-CSharp
-          m_MethodName: OnPointerEnter
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 28705618056571950}
-          m_TargetAssemblyTypeName: ButtonScaleSelection, Assembly-CSharp
-          m_MethodName: OnPointerExit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &6791365268380428007
 GameObject:
   m_ObjectHideFlags: 0
@@ -30509,7 +30173,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 708, y: 22.280212}
+  m_AnchoredPosition: {x: 708, y: 26}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3969080419945218823
@@ -32219,7 +31883,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -211, y: 183}
+  m_AnchoredPosition: {x: -193.3, y: 186.9}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8035494055322555344
@@ -32483,7 +32147,6 @@ RectTransform:
   - {fileID: 6846783733902292399}
   - {fileID: 6982220908588056277}
   - {fileID: 7541805091185266234}
-  - {fileID: 985634389660987693}
   m_Father: {fileID: 7307796855775620405}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -32519,7 +32182,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ed471a5909283994595e174b92139651, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 36aa277acbdb2304598984ed90708c1d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -33907,7 +33570,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 699.16046, y: 113.52414}
+  m_AnchoredPosition: {x: 699.16046, y: 117.24393}
   m_SizeDelta: {x: 95.1288, y: 160.1801}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2912779297748521195
@@ -34139,7 +33802,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'appercu :'
+  m_text: "aper\xE7u :"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
   m_sharedMaterial: {fileID: 2219448373817458997, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
@@ -35049,7 +34712,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1393389088150443676
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35291,7 +34954,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -552, y: -367}
+  m_AnchoredPosition: {x: -444, y: -340}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5553972535531119330
@@ -35322,7 +34985,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'appercu  du drapeau:'
+  m_text: "aper\xE7u  du drapeau :"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
   m_sharedMaterial: {fileID: 2219448373817458997, guid: 3a951376818630e439816b5c4b2d3995, type: 2}
@@ -35385,7 +35048,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -32.408905, w: -2.4558105}
+  m_margin: {x: -9.052856, y: 0, z: -32.408905, w: -2.4558105}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -36162,7 +35825,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -213, y: -178}
+  m_AnchoredPosition: {x: -235, y: -200}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5974055469151510406
@@ -37569,7 +37232,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2633123359730806933
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37608,7 +37271,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3743679502349960073
 RectTransform:
   m_ObjectHideFlags: 0
@@ -38319,7 +37982,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3686428205437847274
 RectTransform:
   m_ObjectHideFlags: 0
