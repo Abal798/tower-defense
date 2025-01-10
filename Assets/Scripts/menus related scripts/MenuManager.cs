@@ -13,6 +13,7 @@ public class MenuManager : MonoBehaviour
     public Spawn spawn;
     
     public Button speedSimulationButton;
+    public GameObject nextWaveButton;
     public GameObject ingamePanel;
     public GameObject alchimiePanel;
     public GameObject keyRebindingPanel;
@@ -24,6 +25,7 @@ public class MenuManager : MonoBehaviour
     public GameObject IconFeu;
     public GameObject IconEau;
     public GameObject IconTerre;
+    
     public static GameObject activePanel;
 
     public TextMeshProUGUI waveDisplay;
@@ -75,9 +77,9 @@ public class MenuManager : MonoBehaviour
         if(RM.GetTowerPrice(1,RM.nbrOfEarthTower) > RM.plantSoul)earthTowerPriceDisplay.color = Color.red;
         else earthTowerPriceDisplay.color = Color.white;
         
-        
-        
         waveDisplay.text = "Vague : " + RM.wave;
+        if (RM.wave == spawn.endWaveNumber - 1)
+            nextWaveButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "dernière vague";
 
         if (ingamePanel.activeSelf && TutorialBehaviour.isInTutorial == false)
         {
@@ -109,25 +111,28 @@ public class MenuManager : MonoBehaviour
             
         }
 
-        if (activePanel == ingamePanel)
+        if (activePanel != ingamePanel)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                if (isPaused)
+                if (activePanel == pausePanel)
                 {
                     ResumeGame();
-
                 }
                 else
                 {
-                    PauseGame();
-
+                    QuitThisPanel(activePanel);
                 }
             }
-
-            if (Input.GetKeyDown(KeyCode.X))
+        }
+        
+        
+        
+        else if (activePanel == ingamePanel)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                GoToBookPanel();
+                PauseGame();
             }
             
             if (Input.GetKeyDown(keyRebinder.GetKeyForAction("shortcutFireTower")))
@@ -142,29 +147,22 @@ public class MenuManager : MonoBehaviour
             {
                 GridBuilding.current.PreInitializeTerre(IconTerre);
             }
-        }
 
-        if (activePanel == bookPanel)
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetMouseButtonDown(1))
             {
-                QuitThisPanel(bookPanel);
+                foreach (var tower in GridBuilding.current.listeTowerCo)
+                {
+                    tower.Value.GetComponent<ActualizeChild>().UnSelectTower();
+                }
             }
         }
+
+        
+        
         
         if (Input.GetKeyDown(KeyCode.S))
         {
             OpenStats();
-        }
-
-
-
-        if (Input.GetMouseButtonDown(1) && activePanel == ingamePanel)
-        {
-            foreach (var tower in GridBuilding.current.listeTowerCo)
-            {
-                tower.Value.GetComponent<ActualizeChild>().UnSelectTower();
-            }
         }
         
     }
@@ -213,6 +211,8 @@ public class MenuManager : MonoBehaviour
     {
         ingamePanel.SetActive(false);
         pausePanel.SetActive(false);
+        SoulConverterPanel.SetActive(false);
+        alchimiePanel.SetActive(false);
         bookPanel.SetActive(true);
         activePanel = bookPanel;
     }
@@ -252,6 +252,13 @@ public class MenuManager : MonoBehaviour
         activePanel = keyRebindingPanel;
     }
 
+    public void QuitKeyPanel()
+    {
+        keyRebindingPanel.SetActive(false);
+        pausePanel.SetActive(true);
+        activePanel = pausePanel;
+    }
+
     public void FastButtonPressed(Button button)
     {
         gameManager.ChangeTimeScale(button);
@@ -264,11 +271,13 @@ public class MenuManager : MonoBehaviour
 
     public void PauseGame()
     {
+        Debug.Log("pause game");
         pausePanel.SetActive(true);
         ingamePanel.SetActive(false);
-        Time.timeScale = 0;
+        Time.timeScale = 0f;
         isPaused = true;
         activePanel = pausePanel;
+        Debug.Log("game paused");
     }
 
     public void ResumeGame()
@@ -287,6 +296,7 @@ public class MenuManager : MonoBehaviour
     {
         Time.timeScale = 1;
         isPaused = false;
+        activePanel = ingamePanel;
         SceneManager.LoadScene(0);
         
     }

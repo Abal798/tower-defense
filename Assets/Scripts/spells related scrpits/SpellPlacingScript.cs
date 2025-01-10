@@ -132,7 +132,8 @@ public class SpellPlacingScript : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(1))
                 {
-                    
+                    placementSpell1 = false;
+                    ClearPreview();
                 }
             }
             else if (RM.spellSlotOne.Count == 3)
