@@ -513,6 +513,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ModifyTextBoxScale(650f, 55f);
                 break;
             case 15:
+                ActivateGameobject(17);
                 ModifyToCurentText();
                 ChangeExpression(1, 18);
                 ModifySpeakingCharacter(1);
@@ -530,6 +531,7 @@ public class TutorialBehaviour : MonoBehaviour
                 HideTextBox();
                 break;
             case 17:
+                DesactivateGameObject(17);
                 ShowNextButton();
                 ShowTextBox(); // Post Vague 1
                 ModifySpeakingCharacter(2);
@@ -624,6 +626,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ModifyTextBoxScale(685f, 250f);
                 break;
             case 28:
+                ActivateGameobject(17);
                 Highlight(new Vector2(805, 452.5f), new Vector2(3.2f, 0.35f));
                 ModifyToCurentText();
                 ModifySpeakingCharacter(1);
@@ -641,6 +644,7 @@ public class TutorialBehaviour : MonoBehaviour
                 break;
             case 30:
                 // SoulConverter display
+                DesactivateGameObject(17);
                 ShowTextBox();
                 LockCamera();
                 ModifyToCurentText();
@@ -679,6 +683,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ModifyTextBoxScale(650f, 180f);
                 break;
             case 34:
+                ActivateGameobject(17);
                 StopTutorial();
                 break;
         }
