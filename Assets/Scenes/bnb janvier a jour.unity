@@ -620,7 +620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &64261802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1255,8 +1255,8 @@ Transform:
   m_GameObject: {fileID: 306401996}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.043, y: 0.96, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.39000002, y: 0.39000002, z: 0.39000002}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1809393144}
@@ -1587,6 +1587,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 354061848}
   m_CullTransparentMesh: 1
+--- !u!1 &380120307 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5343903665006496489, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+  m_PrefabInstance: {fileID: 5659166513698722036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &405531760 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4744356249220203580, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
@@ -3194,14 +3199,17 @@ MonoBehaviour:
     tooltipName: Element Eau
     tooltipDescription: Place une tour d'eau
   - button: {fileID: 610122696}
-    tooltipName: "R\xE9s\xE8rve feu"
+    tooltipName: "R\xE9serve feu"
     tooltipDescription: "Compteur d'\xE2me de feu"
   - button: {fileID: 426917029}
-    tooltipName: "R\xE9s\xE8rve d'eau"
+    tooltipName: "R\xE9serve d'eau"
     tooltipDescription: "Compteur d'\xE2me d'eau"
   - button: {fileID: 130488617}
-    tooltipName: "R\xE9s\xE8rve de terre"
+    tooltipName: "R\xE9serve de terre"
     tooltipDescription: "Compteur d'\xE2me de terre"
+  - button: {fileID: 380120307}
+    tooltipName: "Triangle d'\xE9quilibre de la region"
+    tooltipDescription: Gardez le point le plus au centre possible.
 --- !u!114 &744501583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3243,6 +3251,8 @@ MonoBehaviour:
   RM: {fileID: 0}
   spawn: {fileID: 0}
   launchWaveButton: {fileID: 405531760}
+  ingamePanel: {fileID: 1683755030}
+  alchemyPanel: {fileID: 2146029778}
   tutorialStep: 0
   textBox: {fileID: 1337479132}
   highLighter: {fileID: 1472488825}
@@ -3306,42 +3316,40 @@ MonoBehaviour:
   - "\xC9valuons un peu ta connaissance de l\u2019alchimie ! Dicte-moi ce que je
     dois faire pour \xE9tablir une premi\xE8re ligne de d\xE9fense."
   - Merci de votre confiance !
-  - "Pour commencer, les \xE2mes. On les obtient depuis les corps d'entit\xE9s mortes
-    affect\xE9s par un \xE9l\xE9ment."
+  - "Pour commencer, les \xE2mes. On les obtient en detruisant des ennemis. Le type
+    d'ame depend des tours qui ont particip\xE9."
   - "Nous pourrons aussi profiter des terrains et renforcer nos tours en les pla\xE7ant
     \xE0 c\xF4t\xE9 de :"
-  - "- La for\xEAt pour la port\xE9e ;"
+  - "- La for\xEAt pour la port\xE9e et les PV ;"
   - "- La terre de feu pour les d\xE9g\xE2ts ;"
   - "- Les rivi\xE8res pour la cadence. Ai-je oubli\xE9 quelque chose, professeur
     ?"
   - "Je vois que tu connais bien ta le\xE7on, c'est bien. Maintenant, laisse-moi
-    te parler des am\xE9liorations."
-  - "Celles-ci se font en pla\xE7ant une fiole sur une d\xE9fense d\xE9j\xE0 faite.
-    Mais avant de d\xE9tailler, voici comment ou utilise la fiole pour placer une
-    tour. "
+    te parler du placement des tours."
+  - Selectionne une fiole et place la par terre. Attention tu ne peux pas en placer
+    sur les terrains elementaires.
   - 
   - "Si on le souhaite, on peut utiliser un outil pour d\xE9truire une tour, mais
     on ne r\xE9cup\xE8re que tr\xE8s peu par la destruction. Je te deconseille de
     le faire sur tes premi\xE8res tours."
-  - "Pour en revenir aux am\xE9liorations, celles-ci sont limit\xE9es mais augmentent
-    grandement la puissance de nos d\xE9fenses. Dans tous les cas, je te laisse finir
-    de pr\xE9parer les d\xE9fenses, voir si tu as bien assimil\xE9 ce que j'ai dis."
+  - "Tu peux aussi am\xE9liorer tes tours un maximum de 2 fois. Cela augmente  grandement
+    leurs puissance. Je te laisse finir de pr\xE9parer nos lignes de d\xE9fense librement,
+    voir si tu as bien assimil\xE9 ce que j'ai dis."
   - 
   - "Oh non ! Nos poursuivants nous ont retrouv\xE9s ! Esp\xE9rons que ces tours
     suffisent \xE0 nous d\xE9fendre !"
   - /!\ Vague 1
-  - "Nos d\xE9fenses ont tenu bon ! Et nous avons plus de r\xE9serves ! Malgr\xE9
+  - "Nos d\xE9fenses ont tenu bon et nous avons fait le plein d'\xE2mes ! Malgr\xE9
     tout, je doute que nos ennemis ne s'arr\xEAtent l\xE0. "
   - 
   - 'Poursuivons un peu ton test, explique-moi comment concocter un sort. '
   - "Tr\xE8s bien ! Dans un premier temps, allons \xE0 notre chaudron qui est justement
     en \xE9bullition !"
-  - "Ensuite, nous pla\xE7ons le premier \xE9l\xE9ment qui sera plac\xE9 d\xE9terminera
-    la forme de notre terrain. Le deuxi\xE8me \xE9l\xE9ment remplacera l'\xE9l\xE9ment
-    sur ce terrain."
+  - "Ensuite, s\xE9lectionne le premier \xE9l\xE9ment que tu veux placer. Il d\xE9terminera
+    la forme du sort. Choisis ensuite le deuxi\xE8me, qui en d\xE9termine l'\xE9l\xE9ment."
   - 
-  - "Nous pouvons ensuite m\xE9langer notre sort, puis le placer sur le terrain.
-    Nos tours r\xE9cup\xE8reront les bonus des terrains dans la foul\xE9e !"
+  - "M\xE9lange ensuite le sort, puis place-le sur le terrain. Nos tours r\xE9cup\xE8reront
+    les bonus des terrains dans la foul\xE9e !"
   - "Cependant, le sort ne devrait pas \xEAtre plac\xE9 sur une tour, auquel cas
     elle sera d\xE9truite, sans qu'on ne r\xE9cup\xE8re de ressources."
   - 
@@ -3349,7 +3357,7 @@ MonoBehaviour:
     souris une des cases et je vous montrerais les d\xE9tails de celle-ci !"
   - "Merci ! Mais fait attention, l'\xE9quilibre de la r\xE9gion est tr\xE8s fragile.
     En abusant de sorts d'un m\xEAme \xE9l\xE9ment, nous risquons de d\xE9s\xE9quilibrer
-    la zone et celui-ci verra son efficacit\xE9 drastiquement r\xE9duite."
+    la zone et diminuer le bonus des terrains."
   - Attention ! Une nouvelle vague d'ennemis est en approche !
   - '/!\ Objectif: Lancement vague 2'
   - "Pfiou... J'ai un peu de temps pour te parler d'un dernier outil : la Conversion
@@ -3563,8 +3571,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3672962465b29c4419c0dcebc13780d6, type: 2}
+  m_sharedMaterial: {fileID: -6177039100161719081, guid: 3672962465b29c4419c0dcebc13780d6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3588,8 +3596,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6116,7 +6124,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 276.1794, y: 46.6102}
+  m_SizeDelta: {x: 277.0134, y: 46.6102}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1363777066
 MonoBehaviour:
@@ -30509,6 +30517,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 64261802}
+    - target: {fileID: 754437573624317094, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 756782952832735625, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -30596,6 +30608,10 @@ PrefabInstance:
     - target: {fileID: 3088709487138606663, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_Name
       value: Panels
+      objectReference: {fileID: 0}
+    - target: {fileID: 3088709487138606663, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3109919566063676897, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -30999,8 +31015,8 @@ SceneRoots:
   - {fileID: 64261803}
   - {fileID: 672754177}
   - {fileID: 338851064}
-  - {fileID: 1359719240}
   - {fileID: 5659166513698722036}
+  - {fileID: 1359719240}
   - {fileID: 1516928700}
   - {fileID: 1477513368}
   - {fileID: 1809393144}

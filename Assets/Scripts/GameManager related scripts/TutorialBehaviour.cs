@@ -14,6 +14,8 @@ public class TutorialBehaviour : MonoBehaviour
     public RessourcesManager RM;
     public Spawn spawn;
     public GameObject launchWaveButton;
+    public GameObject ingamePanel;
+    public GameObject alchemyPanel;
 
     private bool AlchemyButtonCkicked = false;
     private bool alreadyOneSpellCoocked = false;
@@ -442,7 +444,7 @@ public class TutorialBehaviour : MonoBehaviour
                 break;
             case 6: // Les Terrains
                 ModifyToCurentText();
-                Highlight(new Vector2(-105, -270), new Vector2(2.5f, 1.25f));
+                Highlight(new Vector2(-105, -260), new Vector2(2.5f, 1.25f));
                 ModifyTextBoxScale(650f, 55f);
                 break; //
             case 7:
@@ -554,14 +556,14 @@ public class TutorialBehaviour : MonoBehaviour
                 ModifyToCurentText();
                 ModifyTextBoxScale();
                 ActivateGameobject(7); // Affiche le bouton d'Alchemy
-                Highlight(new Vector2(-850, 320), new Vector2(1f, 0.85f));
+                Highlight(new Vector2(-860, 319), new Vector2(1f, 0.9f));
                 // Le joueur doit cliquer sur le bouton d'Alchemy pour continuer
                 HideNextButton();
                 break;
             case 21:
                 ShowTextBox();
                 ModifyToCurentText();
-                Highlight(new Vector2(-510, -38), new Vector2(3.5f, 1.5f)); // Forme du Sort
+                Highlight(new Vector2(-518, -38), new Vector2(3.86f, 1.7f)); // Forme du Sort
                 MoveTextBox(new Vector3(1575, 450));
                 ModifyTextBoxScale(650f, 200f);
                 ShowNextButton();
@@ -585,10 +587,12 @@ public class TutorialBehaviour : MonoBehaviour
                 // Le joueur doit cook un sort pour continuer.
                 break;
             case 24:
+                MenuManager.activePanel = ingamePanel;
+                alchemyPanel.SetActive(false);
                 ChangeExpression(1, 20);
                 ModifySpeakingCharacter(1);
                 ModifyToCurentText();
-                Highlight(new Vector2(745, -245), new Vector2(5f, 0.85f));
+                Highlight(new Vector2(906, -187), new Vector2(1.26f, 1.7f));
                 ModifyTextBoxScale(650f, 170f);
                 HideNextButton();
                 UnlockCamera();
@@ -645,7 +649,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ChangeExpression(1, 23);
                 ActivateGameobject(8);
                 ModifyTextBoxScale(680f, 265f);
-                Highlight(new Vector2(-855, 225), new Vector2(2f, 0.9f));
+                Highlight(new Vector2(-864, 228), new Vector2(2.2f, 1.3f));
                 ShowNextButton();
                 break;
             case 31: // In SoulConverter Menu
@@ -654,7 +658,7 @@ public class TutorialBehaviour : MonoBehaviour
                 break;
             case 32:
                 // Bouquin
-                Highlight(new Vector2(-857, 115), new Vector2(1.75f, 1f));
+                Highlight(new Vector2(-861, 117), new Vector2(2.1f, 1.27f));
                 ModifyToCurentText();
                 ModifySpeakingCharacter(1);
                 ChangeExpression(2,2);
@@ -668,7 +672,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ChangeExpression(1, 8);
                 PlaceCharacterInCenter(2);
                 StopHighlighting();
-                ModifyToCurentText();
+                ModifyToCurentText();   
                 ActivateAllGameObjects();
                 UnlockCamera();
                 ModifyTextBoxScale();
