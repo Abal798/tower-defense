@@ -57,6 +57,13 @@ public class SpellsBrewingScripts : MonoBehaviour
         waterSoulDisplay.text = "Eau : " + RM.waterSoul.ToString();
         earthSoulDisplay.text = "Terre : " + RM.plantSoul.ToString();
 
+        if (RM.fireSoul < fireDosePrice) fireSoulDisplay.color = Color.red;
+        else fireSoulDisplay.color = Color.white;
+        if (RM.waterSoul < waterDosePrice) waterSoulDisplay.color = Color.red;
+        else waterSoulDisplay.color = Color.white;
+        if (RM.plantSoul < earthDosePrice) earthSoulDisplay.color = Color.red;
+        else earthSoulDisplay.color = Color.white;
+
         firePriceDisplay.text = "Prix : " + fireDosePrice.ToString();
         waterPriceDisplay.text = "Prix : " + waterDosePrice.ToString();
         earthPriceDisplay.text = "Prix : " + earthDosePrice.ToString();
@@ -102,13 +109,13 @@ public class SpellsBrewingScripts : MonoBehaviour
             else
             {
                 AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
-                UIM.DisplayAlert("cannot afford this");
+                UIM.DisplayAlert("pas assez d'âme");
             }
         }
         else
         {
             AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
-            UIM.DisplayAlert("3 is the maximum ingredient you can fit");
+            UIM.DisplayAlert("on ne peut placer que 2 ingredients");
         }
     }
 
@@ -128,13 +135,13 @@ public class SpellsBrewingScripts : MonoBehaviour
             else
             {
                 AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
-                UIM.DisplayAlert("cannot afford this");
+                UIM.DisplayAlert("pas assez d'âme");
             }
         }
         else
         {
             AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
-            UIM.DisplayAlert("3 is the maximum ingredient you can fit");
+            UIM.DisplayAlert("on ne peut placer que 2 ingredients");
         }
     }
 
@@ -154,13 +161,13 @@ public class SpellsBrewingScripts : MonoBehaviour
             else
             {
                 AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
-                UIM.DisplayAlert("cannot afford this");
+                UIM.DisplayAlert("pas assez d'âme");
             }
         }
         else
         {
             AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
-            UIM.DisplayAlert("only two ingredients can fit");
+            UIM.DisplayAlert("on ne peut placer que 2 ingredients");
         }
     }
 
@@ -209,7 +216,6 @@ public class SpellsBrewingScripts : MonoBehaviour
                 }
                 brewedSpell.Clear();
                 RecipieDisplayReset();
-                UIM.DisplayAlert("spell saved");
                 AudioManager.AM.PlaySfx(AudioManager.AM.cook);
             }
             
@@ -221,7 +227,6 @@ public class SpellsBrewingScripts : MonoBehaviour
                 }
                 brewedSpell.Clear();
                 RecipieDisplayReset();
-                UIM.DisplayAlert("spell saved");
                 AudioManager.AM.PlaySfx(AudioManager.AM.cook);
                 
             }
@@ -234,7 +239,6 @@ public class SpellsBrewingScripts : MonoBehaviour
                 }
                 brewedSpell.Clear();
                 RecipieDisplayReset();
-                UIM.DisplayAlert("spell saved");
                 AudioManager.AM.PlaySfx(AudioManager.AM.cook);
             }
 

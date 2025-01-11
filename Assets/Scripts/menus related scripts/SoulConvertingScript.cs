@@ -35,7 +35,7 @@ public class SoulConvertingScript : MonoBehaviour
         }
         else
         {
-            UIManager.UIM.DisplayAlert("recipie already complete");
+            UIManager.UIM.DisplayAlert("recette déjà complète");
             AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
         }
 
@@ -73,7 +73,7 @@ public class SoulConvertingScript : MonoBehaviour
     {
         if (recipie.Count != 3)
         {
-            UIManager.UIM.DisplayAlert("Not enough ingredients to convert");
+            UIManager.UIM.DisplayAlert("pas assez d'indication");
             AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
             return;
         }
@@ -81,7 +81,7 @@ public class SoulConvertingScript : MonoBehaviour
         float convertAmount = soulAmount.value;
         if (recipie[0] == recipie[1] && getSoulAmountWithType(recipie[0]) < convertAmount * 2)
         {
-            UIManager.UIM.DisplayAlert("Not enough soul amounts for conversion");
+            UIManager.UIM.DisplayAlert("pas assez d'ame");
             AudioManager.AM.PlaySfx(AudioManager.AM.alertDisplay);
             return;
         }
