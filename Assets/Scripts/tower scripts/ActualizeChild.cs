@@ -9,6 +9,7 @@ public class ActualizeChild : MonoBehaviour
     private void Start()
     {
         towerStats = transform.GetChild(0).gameObject.GetComponent<TowerStats>();
+        transform.GetChild(1).gameObject.SetActive(false);
     }
     
     public void AcutalizeChild() // Fixed method name
