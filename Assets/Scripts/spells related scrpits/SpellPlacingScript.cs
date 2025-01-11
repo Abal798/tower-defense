@@ -471,14 +471,19 @@ public class SpellPlacingScript : MonoBehaviour
         
         for (int i = 0; i < positions.Count; i++)
         {
-            if (GridBuilding.current.MainTilemap.GetTile(positions[i]) != GridBuilding.tileBases[TileType.Base])
+            if (GridBuilding.current.MainTilemap.GetTile(positions[i]) == GridBuilding.tileBases[TileType.Base])
             {
-                tiles[i] = tileBase;
-                numberToAdd += 1;
+                
+                
+            }
+            else if (GridBuilding.current.MainTilemap.GetTile(positions[i]) == GridBuilding.tileBases[TileType.Moutain])
+            {
+                tiles[i] = GridBuilding.tileBases[TileType.Moutain];
             }
             else
             {
-                tiles[i] = GridBuilding.tileBases[TileType.Base];
+                tiles[i] = tileBase;
+                numberToAdd += 1;
             }
         }
         

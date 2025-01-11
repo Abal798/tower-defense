@@ -108,8 +108,8 @@ public class TooltipManager : MonoBehaviour
                         TooltipCases.ShowToolTip_Static("<b>Tile Eau</b> \n Augmente la cadence des tours adjacentes.");
                         break;
                     
-                    case var value when value == GridBuilding.tileBases[TileType.Earth]: //Case Earth
-                        TooltipCases.ShowToolTip_Static("<b>Tile Terre</b> \n Augmente la portée des tours adjacentes.");
+                    case var value when value == GridBuilding.tileBases[TileType.Earth]: //Case Earth       
+                        TooltipCases.ShowToolTip_Static("<b>Tile Terre</b> \n Augmente portée et PV des tours adjacentes.");
                         break;
                     
                     case var value when value == GridBuilding.tileBases[TileType.Grey]: //Case Batiment
