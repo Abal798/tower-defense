@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager AM;
     public RessourcesManager RM;
+    public Spawn spawnScript;
 
 
 
@@ -54,7 +56,7 @@ public class AudioManager : MonoBehaviour
     {
         AM = this;
     }
-/*
+
     private void Start()
     {
         menusSounds = new List<AudioClip> { buttonClick, pageTurn};
@@ -63,18 +65,27 @@ public class AudioManager : MonoBehaviour
     
     private void Update()
     {
-        if (musicSource.clip == musicWaveBeginning && RM.wave >= waveToChangeMusic)
+        Debug.Log("IsInWave ? "+ spawnScript.isInVague);
+        if (SceneManager.GetActiveScene().name == "MainMenu")
         {
-            musicSource.clip = musicWaveEnd;
-            musicSource.Play();
+            musicSource.clip = musicMenu;
         }
-        else if (musicSource.clip == musicWaveEnd && RM.wave < waveToChangeMusic)
+        else
         {
-            musicSource.clip = musicWaveBeginning;
-            musicSource.Play();
+            if (musicSource.clip == musicWaveBeginning && !spawnScript.isInVague)
+            {
+                musicSource.clip = musicWaveEnd;
+                musicSource.Play();
+            }
+            else if (musicSource.clip == musicWaveEnd && spawnScript.isInVague)
+            {
+                musicSource.clip = musicWaveBeginning;
+                musicSource.Play();
+            }
         }
+        
     }
-*/
+
     public void PlaySfx(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);
@@ -91,19 +102,28 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Index invalide pour PlayMenuSound : " + i);
         }
     }
-/*
+
     public void PlayMusic()
     {
-        if (RM.wave < waveToChangeMusic)
+        if (SceneManager.GetActiveScene().name == "MainMenu")
         {
-            musicSource.clip = musicWaveBeginning;
+            musicSource.clip = musicMenu;
         }
         else
         {
-            musicSource.clip = musicWaveEnd;
+            if (spawnScript.isInVague)
+            {
+                musicSource.clip = musicWaveBeginning;
+            }
+            else
+            {
+                musicSource.clip = musicWaveEnd;
+            }
         }
+        
+        
 
         musicSource.loop = true; // Enable looping
         musicSource.Play(); // Start playing
-    }*/
+    }
 }

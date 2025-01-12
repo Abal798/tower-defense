@@ -371,7 +371,6 @@ public class TutorialBehaviour : MonoBehaviour
         StopHighlighting();
         ActivateAllGameObjects();
         tutorialTimeScale = 1f;
-        Time.timeScale = 1f;
     }
 
     public void ResumeTutorial()
@@ -429,7 +428,7 @@ public class TutorialBehaviour : MonoBehaviour
                 LockCamera();
                 ModifySpeakingCharacter(2); // Premier dialogue ou Arthur parle
                 ModifyToCurentText();
-                ModifyTextBoxScale(650f, 115f);
+                ModifyTextBoxScale(650f, 135f);
                 Debug.Log("Arthur parle");
                 break;
 
@@ -443,14 +442,15 @@ public class TutorialBehaviour : MonoBehaviour
                 ModifySpeakingCharacter(1);
                 ChangeExpression(1, 3);
                 ModifyToCurentText();
-                ModifyTextBoxScale(650f, 55f);
+                ModifyTextBoxScale(650f, 75f);
+                MoveTextBox(new Vector3(bottomPosition.transform.position.x, bottomPosition.transform.position.y + 20, 0));
                 break;
             case 4:
                 ChangeExpression(1, 17);
                 ModifyToCurentText();
                 ActivateGameobject(10); // Affiche le SoulsDisplay pour montrer les ressources
                 Highlight(new Vector2(-831, -380), new Vector2(3f, 3.8f)); // Highlight des Âmes
-                ModifyTextBoxScale(650f, 135f);
+                ModifyTextBoxScale(650f, 165f);
                 break;
             case 5:
                 ModifySpeakingCharacter(1);
@@ -515,6 +515,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ModifyTextBoxScale(650f, 250f);
                 break;
             case 13:
+                UnlockCamera();
                 MakeInteractable(new List<int> { 1,3,5});
                 StopHighlighting();
                 ModifyToCurentText();
@@ -525,6 +526,7 @@ public class TutorialBehaviour : MonoBehaviour
                 break;
             // Le joueur doit finir de placer ces défenses (Jusqu'à qu'il n'ait plus de ressources pour placer ses ressources dans les 3 éléments=
             case 14:
+                
                 ModifyToCurentText();
                 ModifySpeakingCharacter(1);
                 ChangeExpression(1, 3);
@@ -535,6 +537,7 @@ public class TutorialBehaviour : MonoBehaviour
                 MakeUninteractable(new List<int> { 1,3,5});
                 ActivateGameobject(17);
                 ModifyToCurentText();
+                MoveTextBox(new Vector3(1605,718, 0));
                 ChangeExpression(1, 18);
                 ModifySpeakingCharacter(1);
                 ChangeExpression(2,21);

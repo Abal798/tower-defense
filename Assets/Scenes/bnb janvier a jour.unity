@@ -634,6 +634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RM: {fileID: 0}
+  spawnScript: {fileID: 744501576}
   waveToChangeMusic: 0
   musicSource: {fileID: 439077683}
   SFXSource: {fileID: 1042538939}
@@ -656,9 +657,9 @@ MonoBehaviour:
   towerSelect: {fileID: 8300000, guid: affdcbfb0221df245886c490473c8e9c, type: 3}
   towerDeath: {fileID: 8300000, guid: a105befc4bd72584fa1a3caf317a5cf9, type: 3}
   towerUpgrade: {fileID: 8300000, guid: 0f4ac9fca82c4e9449c8d6527b9e73fa, type: 3}
-  musicMenu: {fileID: 0}
-  musicWaveBeginning: {fileID: 0}
-  musicWaveEnd: {fileID: 0}
+  musicMenu: {fileID: 8300000, guid: 29cecf9ced1cacc46b0a4399c78016af, type: 3}
+  musicWaveBeginning: {fileID: 8300000, guid: aa0c5e07f816fb94c91e53a898acfb27, type: 3}
+  musicWaveEnd: {fileID: 8300000, guid: a033abbc6c6192d49a5f49f9adeeed8a, type: 3}
 --- !u!4 &64261803
 Transform:
   m_ObjectHideFlags: 0
@@ -3028,6 +3029,7 @@ MonoBehaviour:
   monstersAlive: []
   basicWaveDuration: 0
   squareSize: 39
+  isInVague: 0
 --- !u!114 &744501577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3243,7 +3245,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 744501575}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 297b82ad2dda96a4980b82b77464e385, type: 3}
   m_Name: 
@@ -3355,7 +3357,8 @@ MonoBehaviour:
     elle sera d\xE9truite, sans qu'on ne r\xE9cup\xE8re de ressources."
   - 
   - "D'ailleurs, si vous le souhaitez, vous pouvez pointer avec votre curseur de
-    souris une des cases et je vous montrerais les d\xE9tails de celle-ci !"
+    souris une des cases ou une des tours et je vous montrerais les d\xE9tails de
+    celle-ci !"
   - "Merci ! Mais fait attention, l'\xE9quilibre de la r\xE9gion est tr\xE8s fragile.
     En abusant de sorts d'un m\xEAme \xE9l\xE9ment, nous risquons de d\xE9s\xE9quilibrer
     la zone et diminuer le bonus des terrains."
@@ -6010,7 +6013,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1359719237
 MonoBehaviour:
   m_ObjectHideFlags: 0

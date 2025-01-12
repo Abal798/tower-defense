@@ -38,7 +38,7 @@ public class Spawn : MonoBehaviour
     private float timeBetweenSpawn;
 
     public float squareSize = 50;
-
+    public bool isInVague;
 
     private void Start()
     {
@@ -49,12 +49,21 @@ public class Spawn : MonoBehaviour
     {
         monstersAlive.RemoveAll(monster => monster == null);
         if(RM.wave == endWaveNumber && monstersAlive.Count == 0 && TutorialBehaviour.isInTutorial == false) victoryPanel.SetActive(true);
-        if(monstersAlive.Count > 0) launchWaveButton.SetActive(false);
-        else launchWaveButton.SetActive(true);
+        if (monstersAlive.Count > 0)
+        {
+            launchWaveButton.SetActive(false);
+            isInVague = true;
+        }
+        else
+        {
+            launchWaveButton.SetActive(true);
+            isInVague = false;
+        }
     }
 
     public void ButtonFonctionLaunchWave()
     {
+        isInVague = true;
         CleanMonstersAlive();
         RM.wave++;
 
