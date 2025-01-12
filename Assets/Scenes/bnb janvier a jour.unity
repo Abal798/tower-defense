@@ -3243,7 +3243,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 744501575}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 297b82ad2dda96a4980b82b77464e385, type: 3}
   m_Name: 
@@ -3314,7 +3314,7 @@ MonoBehaviour:
   - "En effet, c'est assez loin de la ville pour que nos poursuivants n'attirent
     d'ennuis \xE0 personne."
   - "\xC9valuons un peu ta connaissance de l\u2019alchimie ! Dicte-moi ce que je
-    dois faire pour \xE9tablir une premi\xE8re ligne de d\xE9fense."
+    dois faire pour \xE9tablir une premi\xE8re ligne de d\xE9fenses."
   - Merci de votre confiance !
   - "Pour commencer, les \xE2mes. On les obtient en detruisant des ennemis. Le type
     d'ame depend des tours qui ont particip\xE9."
@@ -6009,7 +6009,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1359719237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30727,6 +30727,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 360c810e726279c4a8a0c3d61745a409, type: 3}
+    - target: {fileID: 7590100193199770743, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8030935312486708231, guid: 0ca67fc932106aa4b8e201871ac764a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 

@@ -380,6 +380,22 @@ public class TutorialBehaviour : MonoBehaviour
         ShowTextBox();
     }
 
+    public void MakeUninteractable(List<int> gameObjectToUninteractable) 
+    {
+        foreach (var objectToUninteractable in gameObjectToUninteractable)
+        {
+            objectsToHideAndShow[objectToUninteractable].GetComponent<Button>().enabled = false;
+        }
+    }
+    
+    public void MakeInteractable(List<int> gameObjectToInteractable) 
+    {
+        foreach (var objectToInteractable in gameObjectToInteractable)
+        {
+            objectsToHideAndShow[objectToInteractable].GetComponent<Button>().enabled = true;
+        }
+        
+    }
     public void NextStep()
     {
 
@@ -398,6 +414,7 @@ public class TutorialBehaviour : MonoBehaviour
         if (tutorialStep == 30 && waveTwoFinished) tutorialStep++;
         if (tutorialStep > 30) tutorialStep++;
 
+        
 
 
 
@@ -488,15 +505,17 @@ public class TutorialBehaviour : MonoBehaviour
                 StopHighlighting();
                 break;
             case 12:
+                MakeUninteractable(new List<int> { 1,3,5});
                 ModifyToCurentText(); // Suppression de tour
                 ChangeExpression(2, 8);
                 ModifySpeakingCharacter(2);
                 MoveTextBox(new Vector3(1605, 150, 0));
                 Highlight(new Vector2(161, -481), new Vector2(0.9f, 0.9f));
                 ActivateGameobject(9); // Affiche le bouton de Suppression
-                ModifyTextBoxScale(650f, 200f);
+                ModifyTextBoxScale(650f, 250f);
                 break;
             case 13:
+                MakeInteractable(new List<int> { 1,3,5});
                 StopHighlighting();
                 ModifyToCurentText();
                 ModifySpeakingCharacter(2);
@@ -513,6 +532,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ModifyTextBoxScale(650f, 55f);
                 break;
             case 15:
+                MakeUninteractable(new List<int> { 1,3,5});
                 ActivateGameobject(17);
                 ModifyToCurentText();
                 ChangeExpression(1, 18);
@@ -566,7 +586,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ShowTextBox();
                 ModifyToCurentText();
                 Highlight(new Vector2(-518, -38), new Vector2(3.86f, 1.7f)); // Forme du Sort
-                MoveTextBox(new Vector3(1575, 450));
+                MoveTextBox(new Vector3(1400, 320));
                 ModifyTextBoxScale(650f, 200f);
                 ShowNextButton();
                 break;
@@ -626,6 +646,7 @@ public class TutorialBehaviour : MonoBehaviour
                 ModifyTextBoxScale(685f, 250f);
                 break;
             case 28:
+                MakeInteractable(new List<int> { 1,3,5});
                 ActivateGameobject(17);
                 Highlight(new Vector2(805, 452.5f), new Vector2(3.2f, 0.35f));
                 ModifyToCurentText();
@@ -637,6 +658,7 @@ public class TutorialBehaviour : MonoBehaviour
                 // Le joueur doit lancer la prochaine vague pour continuer.
                 break;
             case 29:
+                DesactivateGameObject(17);  
                 StopHighlighting();
                 UnlockCamera();
                 HideTextBox();
@@ -644,7 +666,7 @@ public class TutorialBehaviour : MonoBehaviour
                 break;
             case 30:
                 // SoulConverter display
-                DesactivateGameObject(17);
+                
                 ShowTextBox();
                 LockCamera();
                 ModifyToCurentText();

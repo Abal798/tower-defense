@@ -473,8 +473,8 @@ public class SpellPlacingScript : MonoBehaviour
         {
             if (GridBuilding.current.MainTilemap.GetTile(positions[i]) == GridBuilding.tileBases[TileType.Base])
             {
-                
-                
+                tiles[i] = GridBuilding.tileBases[TileType.Base];
+                    
             }
             else if (GridBuilding.current.MainTilemap.GetTile(positions[i]) == GridBuilding.tileBases[TileType.Moutain])
             {
