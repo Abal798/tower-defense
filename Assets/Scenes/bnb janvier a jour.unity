@@ -3021,7 +3021,7 @@ MonoBehaviour:
   chanceDeSpawnElementaireEntreZeroEtUn: 0
   vagueDapparitionDesElementaires: 0
   endWaveNumber: 15
-  monsterOneWaveList: 000000000c00000018000000280000003e0000004b000000500000007d000000aa000000b4000000f00000002c0100005e010000c2010000300200009e020000
+  monsterOneWaveList: 000000000c00000014000000280000003e0000004b000000500000007d000000aa000000b4000000f00000002c0100005e010000c2010000300200009e020000
   monsterTwoWaveList: 00000000000000000000000000000000000000000200000006000000080000000c00000016000000240000002e0000004b0000006e000000b4000000fa000000
   monsterThreeWaveList: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000a0000000a0000000f00000000000000
   monsterFourWaveList: 000000000000000000000000000000000000000000000000000000000000000004000000100000001e0000003c0000005000000096000000d20000002c010000
@@ -3314,14 +3314,15 @@ MonoBehaviour:
   - "En effet, c'est assez loin de la ville pour que nos poursuivants n'attirent
     d'ennuis \xE0 personne."
   - "\xC9valuons un peu ta connaissance de l\u2019alchimie ! Dicte-moi ce que je
-    dois faire pour \xE9tablir une premi\xE8re ligne de d\xE9fenses."
+    dois faire pour \xE9tablir une premi\xE8re ligne de d\xE9fense."
   - Merci de votre confiance !
-  - "Pour commencer, les \xE2mes. On les obtient en detruisant des ennemis. Le type
-    d'ame depend des tours qui ont particip\xE9."
+  - "Pour commencer, les \xE2mes. On les obtient en d\xE9truisant des ennemis. Le
+    type d'\xE2me depend des tours qui ont particip\xE9 \xE0 l'\xE9limination de
+    l'ennemi."
   - "Nous pourrons aussi profiter des terrains et renforcer nos tours en les pla\xE7ant
     \xE0 c\xF4t\xE9 de :"
   - "- La for\xEAt pour la port\xE9e et les PV ;"
-  - "- La terre de feu pour les d\xE9g\xE2ts ;"
+  - "- La terre br\xFBl\xE9e pour les d\xE9g\xE2ts ;"
   - "- Les rivi\xE8res pour la cadence. Ai-je oubli\xE9 quelque chose, professeur
     ?"
   - "Je vois que tu connais bien ta le\xE7on, c'est bien. Maintenant, laisse-moi
@@ -3330,8 +3331,8 @@ MonoBehaviour:
     sur les terrains elementaires.
   - 
   - "Si on le souhaite, on peut utiliser un outil pour d\xE9truire une tour, mais
-    on ne r\xE9cup\xE8re que tr\xE8s peu par la destruction. Je te deconseille de
-    le faire sur tes premi\xE8res tours."
+    on ne r\xE9cup\xE8re que tr\xE8s peu d'\xE2mes par la destruction. Je te deconseille
+    de le faire sur tes premi\xE8res tours."
   - "Tu peux aussi am\xE9liorer tes tours un maximum de 2 fois. Cela augmente  grandement
     leurs puissance. Je te laisse finir de pr\xE9parer nos lignes de d\xE9fense librement,
     voir si tu as bien assimil\xE9 ce que j'ai dis."
