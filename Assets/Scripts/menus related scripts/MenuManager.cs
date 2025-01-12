@@ -11,6 +11,8 @@ public class MenuManager : MonoBehaviour
 {
     public RessourcesManager RM;
     public Spawn spawn;
+    public TutorialBehaviour TutorialBehaviour;
+    public GameObject canvasTuto;
     
     public Button speedSimulationButton;
     public GameObject nextWaveButton;
@@ -62,6 +64,7 @@ public class MenuManager : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log("DERNIER AH " + TutorialBehaviour.isInTutorial);
         fireSoulIngameDisplay.text = "" + RM.fireSoul;
         waterSoulIngameDisplay.text = "" + RM.waterSoul;
         earthSoulIngameDisplay.text = "" + RM.plantSoul;
@@ -209,6 +212,10 @@ public class MenuManager : MonoBehaviour
     
     public void GoToBookPanel()
     {
+        if (TutorialBehaviour.isInTutorial)
+        {
+            canvasTuto.SetActive(false);
+        }
         ingamePanel.SetActive(false);
         pausePanel.SetActive(false);
         SoulConverterPanel.SetActive(false);
@@ -242,6 +249,10 @@ public class MenuManager : MonoBehaviour
         panel.SetActive(false);
         ingamePanel.SetActive(true);
         activePanel = ingamePanel;
+        if (TutorialBehaviour.isInTutorial)
+        {
+            canvasTuto.SetActive(true);
+        }
     }
 
     public void GoToKeyPanel()
@@ -271,6 +282,10 @@ public class MenuManager : MonoBehaviour
 
     public void PauseGame()
     {
+        if (TutorialBehaviour.isInTutorial)
+        {
+            canvasTuto.SetActive(false);
+        }
         Debug.Log("pause game");
         pausePanel.SetActive(true);
         ingamePanel.SetActive(false);
@@ -296,6 +311,7 @@ public class MenuManager : MonoBehaviour
     {
         Time.timeScale = 1;
         isPaused = false;
+        TutorialBehaviour.cameraLocked = false;
         activePanel = ingamePanel;
         SceneManager.LoadScene(0);
         
